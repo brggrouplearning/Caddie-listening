@@ -7,7 +7,7 @@ if (typeof window.masterQuizData === 'undefined') {
     window.masterQuizData = [];
 }
 
-window.masterQuizData.push(
+const lesson1Data = [
     // =========================================================================
     // SECTION 1.1: BẢNG CHỮ CÁI TIẾNG ANH & ĐÁNH VẦN (60 CÂU)
     // =========================================================================
@@ -51,7 +51,7 @@ window.masterQuizData.push(
         lesson: "1", section: "section1.1", type: "fill",
         title: "[1.1 Điền từ] Nghe đoạn audio và ĐIỀN TỪ chuẩn xác:",
         audioText: "Hello Sir, my name is Rose.", displaySentence: "Caddy's name is _______.", translation: "Tên của Caddy là _______.",
-        targetWord: "rose", phonetic: "/roʊz/", hint: "💡 Gợi ý: Tên gồm 4 ký tự."
+        targetWord: "rose", phonetic: "/roʊz/", hint: "Tên gồm 4 ký tự."
     },
     {
         lesson: "1", section: "section1.1", type: "mcq",
@@ -121,7 +121,7 @@ window.masterQuizData.push(
         lesson: "1", section: "section1.1", type: "fill",
         title: "[1.1 Điền từ] Nghe đoạn audio và ĐIỀN TỪ chuẩn xác:",
         audioText: "My name is Mike.", displaySentence: "Golfer's name is _______.", translation: "Tên của Golfer là _______.",
-        targetWord: "mike", phonetic: "/maɪk/", hint: "💡 Gợi ý: Tên đơn giản gồm 4 ký tự."
+        targetWord: "mike", phonetic: "/maɪk/", hint: "Tên đơn giản gồm 4 ký tự."
     },
     {
         lesson: "1", section: "section1.1", type: "mcq",
@@ -133,7 +133,7 @@ window.masterQuizData.push(
         lesson: "1", section: "section1.1", type: "fill",
         title: "[1.1 Điền từ] Nghe đoạn audio và ĐIỀN TỪ chuẩn xác:",
         audioText: "My putter model is P I N G.", displaySentence: "Putter brand is _______.", translation: "Hãng gậy gạt là _______.",
-        targetWord: "ping", phonetic: "/pɪŋ/", hint: "💡 Gợi ý: Tên gồm 4 ký tự."
+        targetWord: "ping", phonetic: "/pɪŋ/", hint: "Tên gồm 4 ký tự."
     },
     {
         lesson: "1", section: "section1.1", type: "mcq",
@@ -211,7 +211,7 @@ window.masterQuizData.push(
         lesson: "1", section: "section1.1", type: "fill",
         title: "[1.1 Điền từ] Nghe đoạn audio và ĐIỀN TỪ chuẩn xác:",
         audioText: "My name is Anna.", displaySentence: "Caddy's name is _______.", translation: "Tên Caddy là _______.",
-        targetWord: "anna", phonetic: "/ˈæn.ə/", hint: "💡 Gợi ý: Tên đơn giản gồm 4 ký tự."
+        targetWord: "anna", phonetic: "/ˈæn.ə/", hint: "Tên đơn giản gồm 4 ký tự."
     },
     {
         lesson: "1", section: "section1.1", type: "mcq",
@@ -235,7 +235,7 @@ window.masterQuizData.push(
         lesson: "1", section: "section1.1", type: "fill",
         title: "[1.1 Điền từ] Nghe đoạn audio và ĐIỀN TỪ chuẩn xác:",
         audioText: "Call me Paul.", displaySentence: "Golfer's name is _______.", translation: "Tên Golfer là _______.",
-        targetWord: "paul", phonetic: "/pɔːl/", hint: "💡 Gợi ý: Tên gồm 4 ký tự."
+        targetWord: "paul", phonetic: "/pɔːl/", hint: "Tên gồm 4 ký tự."
     },
     {
         lesson: "1", section: "section1.1", type: "mcq",
@@ -259,9 +259,8 @@ window.masterQuizData.push(
         lesson: "1", section: "section1.1", type: "fill",
         title: "[1.1 Điền từ] Nghe đoạn audio và ĐIỀN TỪ chuẩn xác:",
         audioText: "I am Mary.", displaySentence: "Caddy's name is _______.", translation: "Tên Caddy là _______.",
-        targetWord: "mary", phonetic: "/ˈmer.i/", hint: "💡 Gợi ý: Tên gồm 4 ký tự."
+        targetWord: "mary", phonetic: "/ˈmer.i/", hint: "Tên gồm 4 ký tự."
     },
-    // New items (41-60)
     {
         lesson: "1", section: "section1.1", type: "mcq",
         title: "[1.1 Luyện nghe] Nghe đoạn audio và chọn câu tiếng Anh đúng:",
@@ -338,19 +337,19 @@ window.masterQuizData.push(
         lesson: "1", section: "section1.1", type: "fill",
         title: "[1.1 Điền từ] Nghe đoạn audio và ĐIỀN TỪ chuẩn xác:",
         audioText: "My name is Jack.", displaySentence: "Golfer's name is _______.", translation: "Tên Golfer là _______.",
-        targetWord: "jack", phonetic: "/dʒæk/", hint: "💡 Gợi ý: Tên gồm 4 ký tự."
+        targetWord: "jack", phonetic: "/dʒæk/", hint: "Tên gồm 4 ký tự."
     },
     {
         lesson: "1", section: "section1.1", type: "fill",
-        title: "[1.1 Điền từ] Nghe đoạn audio and ĐIỀN TỪ chuẩn xác:",
+        title: "[1.1 Điền từ] Nghe đoạn audio và ĐIỀN TỪ chuẩn xác:",
         audioText: "My name is Jane.", displaySentence: "Caddy's name is _______.", translation: "Tên Caddy là _______.",
-        targetWord: "jane", phonetic: "/dʒeɪn/", hint: "💡 Gợi ý: Tên gồm 4 ký tự."
+        targetWord: "jane", phonetic: "/dʒeɪn/", hint: "Tên gồm 4 ký tự."
     },
     {
         lesson: "1", section: "section1.1", type: "fill",
         title: "[1.1 Điền từ] Nghe đoạn audio và ĐIỀN TỪ chuẩn xác:",
         audioText: "Call me Mark.", displaySentence: "Golfer's name is _______.", translation: "Tên Golfer là _______.",
-        targetWord: "mark", phonetic: "/mɑːrk/", hint: "💡 Gợi ý: Tên gồm 4 ký tự."
+        targetWord: "mark", phonetic: "/mɑːrk/", hint: "Tên gồm 4 ký tự."
     },
     {
         lesson: "1", section: "section1.1", type: "mcq",
@@ -374,13 +373,13 @@ window.masterQuizData.push(
         lesson: "1", section: "section1.1", type: "fill",
         title: "[1.1 Điền từ] Nghe đoạn audio và ĐIỀN TỪ chuẩn xác:",
         audioText: "My name is Lucy.", displaySentence: "Caddy's name is _______.", translation: "Tên Caddy là _______.",
-        targetWord: "lucy", phonetic: "/ˈluː.si/", hint: "💡 Gợi ý: Tên gồm 4 ký tự."
+        targetWord: "lucy", phonetic: "/ˈluː.si/", hint: "Tên gồm 4 ký tự."
     },
     {
         lesson: "1", section: "section1.1", type: "fill",
         title: "[1.1 Điền từ] Nghe đoạn audio và ĐIỀN TỪ chuẩn xác:",
         audioText: "Call me Adam.", displaySentence: "Golfer's name is _______.", translation: "Tên Golfer là _______.",
-        targetWord: "adam", phonetic: "/ˈæd.əm/", hint: "💡 Gợi ý: Tên gồm 4 ký tự."
+        targetWord: "adam", phonetic: "/ˈæd.əm/", hint: "Tên gồm 4 ký tự."
     },
 
     // =========================================================================
@@ -534,7 +533,7 @@ window.masterQuizData.push(
         lesson: "1", section: "section1.2", type: "fill",
         title: "[1.2 Điền từ] Nghe đoạn audio và ĐIỀN TỪ chuẩn xác:",
         audioText: "I am here to assist you, Sir.", displaySentence: "I am here to _______ you, Sir.", translation: "Em ở đây để _______ anh ạ.",
-        targetWord: "assist", phonetic: "/əˈsɪst/", hint: "💡 Gợi ý: Từ gồm 6 ký tự."
+        targetWord: "assist", phonetic: "/əˈsɪst/", hint: "Từ gồm 6 ký tự."
     },
     {
         lesson: "1", section: "section1.2", type: "mcq",
@@ -629,7 +628,7 @@ window.masterQuizData.push(
         lesson: "1", section: "section1.2", type: "fill",
         title: "[1.2 Điền từ] Nghe đoạn audio và ĐIỀN TỪ chuẩn xác:",
         audioText: "Welcome to Golden Sands Golf Club, Sir!", displaySentence: "Welcome to Golden Sands Golf _______, Sir!", translation: "Chào mừng anh đến với Câu lạc bộ _______ Golden Sands Golf!",
-        targetWord: "club", phonetic: "/klʌb/", hint: "💡 Gợi ý: Từ gồm 4 ký tự."
+        targetWord: "club", phonetic: "/klʌb/", hint: "Từ gồm 4 ký tự."
     },
     {
         lesson: "1", section: "section1.2", type: "mcq",
@@ -679,9 +678,8 @@ window.masterQuizData.push(
         lesson: "1", section: "section1.2", type: "fill",
         title: "[1.2 Điền từ] Nghe đoạn audio và ĐIỀN TỪ chuẩn xác:",
         audioText: "Good luck and have fun, Sir!", displaySentence: "Good _______ and have fun, Sir!", translation: "Chúc anh gặp nhiều _______ mắn và chơi vui vẻ ạ!",
-        targetWord: "luck", phonetic: "/lʌk/", hint: "💡 Gợi ý: Từ gồm 4 ký tự."
+        targetWord: "luck", phonetic: "/lʌk/", hint: "Từ gồm 4 ký tự."
     },
-    // New items (31-60)
     {
         lesson: "1", section: "section1.2", type: "mcq",
         title: "[1.2 Luyện nghe] Nghe đoạn audio và chọn câu tiếng Anh đúng:",
@@ -741,13 +739,13 @@ window.masterQuizData.push(
         lesson: "1", section: "section1.2", type: "fill",
         title: "[1.2 Điền từ] Nghe đoạn audio và ĐIỀN TỪ chuẩn xác:",
         audioText: "I'm ready to go when you are.", displaySentence: "I'm _______ to go when you are.", translation: "Tôi đã _______ sàng khi nào ông muốn đi.",
-        targetWord: "ready", phonetic: "/ˈred.i/", hint: "💡 Gợi ý: Từ gồm 5 ký tự."
+        targetWord: "ready", phonetic: "/ˈred.i/", hint: "Từ gồm 5 ký tự."
     },
     {
         lesson: "1", section: "section1.2", type: "fill",
         title: "[1.2 Điền từ] Nghe đoạn audio và ĐIỀN TỪ chuẩn xác:",
         audioText: "It is a pleasure to support you.", displaySentence: "It is a _______ to support you.", translation: "Rất _______ hạnh được hỗ trợ ông.",
-        targetWord: "pleasure", phonetic: "/ˈpleʒ.ɚ/", hint: "💡 Gợi ý: Từ gồm 8 ký tự."
+        targetWord: "pleasure", phonetic: "/ˈpleʒ.ɚ/", hint: "Từ gồm 8 ký tự."
     },
     {
         lesson: "1", section: "section1.2", type: "mcq",
@@ -797,7 +795,7 @@ window.masterQuizData.push(
         lesson: "1", section: "section1.2", type: "fill",
         title: "[1.2 Điền từ] Nghe đoạn audio và ĐIỀN TỪ chuẩn xác:",
         audioText: "Please keep your phone and wallet, Sir.", displaySentence: "Please keep your _______ and wallet, Sir.", translation: "Xin tự giữ _______ thoại và ví tiền ạ.",
-        targetWord: "phone", phonetic: "/foʊn/", hint: "💡 Gợi ý: Từ gồm 5 ký tự."
+        targetWord: "phone", phonetic: "/foʊn/", hint: "Từ gồm 5 ký tự."
     },
     {
         lesson: "1", section: "section1.2", type: "mcq",
@@ -836,7 +834,7 @@ window.masterQuizData.push(
         lesson: "1", section: "section1.2", type: "fill",
         title: "[1.2 Điền từ] Nghe đoạn audio và ĐIỀN TỪ chuẩn xác:",
         audioText: "You can call me Kevin.", displaySentence: "You can _______ me Kevin.", translation: "Bạn có thể _______ tôi là Kevin.",
-        targetWord: "call", phonetic: "/kɔːl/", hint: "💡 Gợi ý: Từ gồm 4 ký tự."
+        targetWord: "call", phonetic: "/kɔːl/", hint: "Từ gồm 4 ký tự."
     },
     {
         lesson: "1", section: "section1.2", type: "mcq",
@@ -886,7 +884,7 @@ window.masterQuizData.push(
         lesson: "1", section: "section1.2", type: "fill",
         title: "[1.2 Điền từ] Nghe đoạn audio và ĐIỀN TỪ chuẩn xác:",
         audioText: "Always use Sir or Madam.", displaySentence: "Always use Sir or _______.", translation: "Luôn dùng kính ngữ Sir hoặc _______.",
-        targetWord: "madam", phonetic: "/ˈmæd.əm/", hint: "💡 Gợi ý: Từ gồm 5 ký tự."
+        targetWord: "madam", phonetic: "/ˈmæd.əm/", hint: "Từ gồm 5 ký tự."
     },
     {
         lesson: "1", section: "section1.2", type: "mcq",
@@ -914,7 +912,7 @@ window.masterQuizData.push(
         lesson: "1", section: "section1.2", type: "fill",
         title: "[1.2 Điền từ] Nghe đoạn audio và ĐIỀN TỪ chuẩn xác:",
         audioText: "Do not cross your arms.", displaySentence: "Do not _______ your arms.", translation: "Không bao giờ được _______ tay.",
-        targetWord: "cross", phonetic: "/krɑːs/", hint: "💡 Gợi ý: Từ gồm 5 ký tự."
+        targetWord: "cross", phonetic: "/krɑːs/", hint: "Từ gồm 5 ký tự."
     },
     {
         lesson: "1", section: "section1.2", type: "mcq",
@@ -953,7 +951,7 @@ window.masterQuizData.push(
         lesson: "1", section: "section1.2", type: "fill",
         title: "[1.2 Điền từ] Nghe đoạn audio và ĐIỀN TỪ chuẩn xác:",
         audioText: "I am confident and professional.", displaySentence: "I am confident and _______.", translation: "Tôi tự tin và chuyên _______.",
-        targetWord: "professional", phonetic: "/prəˈfeʃ.ən.əl/", hint: "💡 Gợi ý: Từ gồm 12 ký tự."
+        targetWord: "professional", phonetic: "/prəˈfeʃ.ən.əl/", hint: "Từ gồm 12 ký tự."
     },
     {
         lesson: "1", section: "section1.2", type: "mcq",
@@ -1139,13 +1137,13 @@ window.masterQuizData.push(
         lesson: "1", section: "section1.3", type: "fill",
         title: "[1.3 Điền từ] Nghe đoạn audio và ĐIỀN TỪ chuẩn xác:",
         audioText: "The distance to the green is 150 yards.", displaySentence: "The distance to the green is _______ yards.", translation: "Khoảng cách đến green là _______ yard.",
-        targetWord: "150", phonetic: "/wʌn ˈhʌn.drəd ænd ˈfɪf.ti/", hint: "💡 Gợi ý: Nhập số."
+        targetWord: "150", phonetic: "/wʌn ˈhʌn.drəd ænd ˈfɪf.ti/", hint: "Nhập số."
     },
     {
         lesson: "1", section: "section1.3", type: "fill",
         title: "[1.3 Điền từ] Nghe đoạn audio và ĐIỀN TỪ chuẩn xác:",
         audioText: "You have 100 yards left to the pin, Sir.", displaySentence: "You have _______ yards left to the pin.", translation: "Anh còn _______ yard nữa là tới cờ.",
-        targetWord: "100", phonetic: "/wʌn ˈhʌn.drəd/", hint: "💡 Gợi ý: Nhập số."
+        targetWord: "100", phonetic: "/wʌn ˈhʌn.drəd/", hint: "Nhập số."
     },
     {
         lesson: "1", section: "section1.3", type: "mcq",
@@ -1186,7 +1184,7 @@ window.masterQuizData.push(
         lesson: "1", section: "section1.3", type: "fill",
         title: "[1.3 Điền từ] Nghe đoạn audio và ĐIỀN TỪ chuẩn xác:",
         audioText: "This is hole number 5, Sir.", displaySentence: "This is hole number _______.", translation: "Đây là hố số _______.",
-        targetWord: "5", phonetic: "/faɪv/", hint: "💡 Gợi ý: Nhập số."
+        targetWord: "5", phonetic: "/faɪv/", hint: "Nhập số."
     },
     {
         lesson: "1", section: "section1.3", type: "mcq",
@@ -1204,7 +1202,7 @@ window.masterQuizData.push(
         lesson: "1", section: "section1.3", type: "fill",
         title: "[1.3 Điền từ] Nghe đoạn audio và ĐIỀN TỪ chuẩn xác:",
         audioText: "This is a Par 4 hole, Sir.", displaySentence: "This is a Par _______ hole.", translation: "Đây là hố Par _______.",
-        targetWord: "4", phonetic: "/fɔːr/", hint: "💡 Gợi ý: Nhập số."
+        targetWord: "4", phonetic: "/fɔːr/", hint: "Nhập số."
     },
     {
         lesson: "1", section: "section1.3", type: "mcq",
@@ -1222,7 +1220,7 @@ window.masterQuizData.push(
         lesson: "1", section: "section1.3", type: "fill",
         title: "[1.3 Điền từ] Nghe đoạn audio và ĐIỀN TỪ chuẩn xác:",
         audioText: "Here is your 8 iron, Sir.", displaySentence: "Here is your _______ iron, Sir.", translation: "Đây là gậy sắt số _______ của anh.",
-        targetWord: "8", phonetic: "/eɪt/", hint: "💡 Gợi ý: Nhập số."
+        targetWord: "8", phonetic: "/eɪt/", hint: "Nhập số."
     },
     {
         lesson: "1", section: "section1.3", type: "mcq",
@@ -1247,7 +1245,6 @@ window.masterQuizData.push(
             { en: "D. Two hundred yards", vi: "200 yard" }
         ], correct: 0
     },
-    // New items (41-60)
     {
         lesson: "1", section: "section1.3", type: "mcq",
         title: "[1.3 Luyện nghe] Nghe đoạn audio và chọn câu tiếng Anh đúng:",
@@ -1362,13 +1359,13 @@ window.masterQuizData.push(
         lesson: "1", section: "section1.3", type: "fill",
         title: "[1.3 Điền từ] Nghe đoạn audio và ĐIỀN TỪ chuẩn xác:",
         audioText: "I counted 14 clubs in your bag.", displaySentence: "I counted _______ clubs in your bag.", translation: "Tôi đếm được _______ cây gậy trong túi của ông.",
-        targetWord: "14", phonetic: "/ˌfɔːrˈtiːn/", hint: "💡 Gợi ý: Nhập số."
+        targetWord: "14", phonetic: "/ˌfɔːrˈtiːn/", hint: "Nhập số."
     },
     {
         lesson: "1", section: "section1.3", type: "fill",
         title: "[1.3 Điền từ] Nghe đoạn audio và ĐIỀN TỪ chuẩn xác:",
         audioText: "There are only 13 clubs in the bag.", displaySentence: "There are only _______ clubs in the bag.", translation: "Chỉ có _______ cây gậy trong túi thôi.",
-        targetWord: "13", phonetic: "/ˌθɜːrˈtiːn/", hint: "💡 Gợi ý: Nhập số."
+        targetWord: "13", phonetic: "/ˌθɜːrˈtiːn/", hint: "Nhập số."
     },
     {
         lesson: "1", section: "section1.3", type: "mcq",
@@ -1396,7 +1393,7 @@ window.masterQuizData.push(
         lesson: "1", section: "section1.3", type: "fill",
         title: "[1.3 Điền từ] Nghe đoạn audio và ĐIỀN TỪ chuẩn xác:",
         audioText: "I double check your golf bag.", displaySentence: "I double _______ your golf bag.", translation: "Tôi kiểm tra _______ túi gậy của ông.",
-        targetWord: "check", phonetic: "/tʃek/", hint: "💡 Gợi ý: Từ gồm 5 ký tự."
+        targetWord: "check", phonetic: "/tʃek/", hint: "Từ gồm 5 ký tự."
     },
     {
         lesson: "1", section: "section1.3", type: "mcq",
@@ -1435,7 +1432,7 @@ window.masterQuizData.push(
         lesson: "1", section: "section1.3", type: "fill",
         title: "[1.3 Điền từ] Nghe đoạn audio và ĐIỀN TỪ chuẩn xác:",
         audioText: "Do not comment on club brand price.", displaySentence: "Do not comment on club brand _______.", translation: "Tuyệt đối không bình luận về nhãn hiệu hay _______ tiền của gậy.",
-        targetWord: "price", phonetic: "/praɪs/", hint: "💡 Gợi ý: Từ gồm 5 ký tự."
+        targetWord: "price", phonetic: "/praɪs/", hint: "Từ gồm 5 ký tự."
     },
     {
         lesson: "1", section: "section1.3", type: "mcq",
@@ -1606,7 +1603,7 @@ window.masterQuizData.push(
         audioText: "I love listening to music.", 
         displaySentence: "I love listening to _______.", 
         translation: "Tôi rất thích nghe _______.",
-        targetWord: "music", phonetic: "/ˈmjuː.zɪk/", hint: "💡 Gợi ý: Từ gồm 5 ký tự."
+        targetWord: "music", phonetic: "/ˈmjuː.zɪk/", hint: "Từ gồm 5 ký tự."
     },
     {
         lesson: "1", section: "section1.4", type: "mcq",
@@ -1714,7 +1711,7 @@ window.masterQuizData.push(
         audioText: "I like playing tennis with my friends.", 
         displaySentence: "I like playing _______ with my friends.", 
         translation: "Tôi thích chơi _______ cùng với bạn bè.",
-        targetWord: "tennis", phonetic: "/ˈten.ɪs/", hint: "💡 Gợi ý: Từ gồm 6 ký tự."
+        targetWord: "tennis", phonetic: "/ˈten.ɪs/", hint: "Từ gồm 6 ký tự."
     },
     {
         lesson: "1", section: "section1.4", type: "mcq",
@@ -1729,7 +1726,6 @@ window.masterQuizData.push(
             { en: "D. Great ball striking ability, Sir!", vi: "Khả năng chạm bóng tuyệt vời quá anh ạ!" }
         ], correct: 0
     },
-    // New items (31-60)
     {
         lesson: "1", section: "section1.4", type: "mcq",
         title: "[1.4 Luyện nghe] Nghe đoạn audio và chọn câu tiếng Anh đúng:",
@@ -1778,13 +1774,13 @@ window.masterQuizData.push(
         lesson: "1", section: "section1.4", type: "fill",
         title: "[1.4 Điền từ] Nghe đoạn audio và ĐIỀN TỪ chuẩn xác:",
         audioText: "Golf helps me relax after work.", displaySentence: "Golf helps me _______ after work.", translation: "Golf giúp tôi _______ giãn sau giờ làm việc.",
-        targetWord: "relax", phonetic: "/rɪˈlæks/", hint: "💡 Gợi ý: Từ gồm 5 ký tự."
+        targetWord: "relax", phonetic: "/rɪˈlæks/", hint: "Từ gồm 5 ký tự."
     },
     {
         lesson: "1", section: "section1.4", type: "fill",
         title: "[1.4 Điền từ] Nghe đoạn audio và ĐIỀN TỪ chuẩn xác:",
         audioText: "I play golf for business networking.", displaySentence: "I play golf for business _______.", translation: "Tôi chơi golf để giao lưu kết nối _______ nghiệp.",
-        targetWord: "networking", phonetic: "/ˈnet.wɜːrk.ɪŋ/", hint: "💡 Gợi ý: Từ gồm 10 ký tự."
+        targetWord: "networking", phonetic: "/ˈnet.wɜːrk.ɪŋ/", hint: "Từ gồm 10 ký tự."
     },
     {
         lesson: "1", section: "section1.4", type: "mcq",
@@ -1845,7 +1841,7 @@ window.masterQuizData.push(
         lesson: "1", section: "section1.4", type: "fill",
         title: "[1.4 Điền từ] Nghe đoạn audio và ĐIỀN TỪ chuẩn xác:",
         audioText: "The scenery here is very peaceful.", displaySentence: "The scenery here is very _______.", translation: "Phong cảnh ở đây rất bình _______.",
-        targetWord: "peaceful", phonetic: "/ˈpiːs.fəl/", hint: "💡 Gợi ý: Từ gồm 8 ký tự."
+        targetWord: "peaceful", phonetic: "/ˈpiːs.fəl/", hint: "Từ gồm 8 ký tự."
     },
     {
         lesson: "1", section: "section1.4", type: "mcq",
@@ -1895,7 +1891,7 @@ window.masterQuizData.push(
         lesson: "1", section: "section1.4", type: "fill",
         title: "[1.4 Điền từ] Nghe đoạn audio và ĐIỀN TỪ chuẩn xác:",
         audioText: "Vietnamese coffee is strong and delicious.", displaySentence: "Vietnamese coffee is strong and _______.", translation: "Cà phê Việt Nam đậm đà và ngon _______.",
-        targetWord: "delicious", phonetic: "/dɪˈlɪʃ.əs/", hint: "💡 Gợi ý: Từ gồm 9 ký tự."
+        targetWord: "delicious", phonetic: "/dɪˈlɪʃ.əs/", hint: "Từ gồm 9 ký tự."
     },
     {
         lesson: "1", section: "section1.4", type: "mcq",
@@ -1923,7 +1919,7 @@ window.masterQuizData.push(
         lesson: "1", section: "section1.4", type: "fill",
         title: "[1.4 Điền từ] Nghe đoạn audio và ĐIỀN TỪ chuẩn xác:",
         audioText: "It was nice talking to you today.", displaySentence: "It was nice _______ to you today.", translation: "Trò _______ với anh hôm nay rất vui.",
-        targetWord: "talking", phonetic: "/ˈtɑːk.ɪŋ/", hint: "💡 Gợi ý: Từ gồm 7 ký tự."
+        targetWord: "talking", phonetic: "/ˈtɑːk.ɪŋ/", hint: "Từ gồm 7 ký tự."
     },
 
     // =========================================================================
@@ -2021,13 +2017,13 @@ window.masterQuizData.push(
         lesson: "1", section: "section1.5", type: "fill",
         title: "[1.5 Điền từ] Nghe đoạn audio và ĐIỀN TỪ chuẩn xác:",
         audioText: "Would you like a wet towel, Sir?", displaySentence: "Would you like a wet _______, Sir?", translation: "Anh có cần dùng một chiếc _______ lạnh không ạ?",
-        targetWord: "towel", phonetic: "/ˈtaʊ.əl/", hint: "💡 Gợi ý: Từ gồm 5 ký tự."
+        targetWord: "towel", phonetic: "/ˈtaʊ.əl/", hint: "Từ gồm 5 ký tự."
     },
     {
         lesson: "1", section: "section1.5", type: "fill",
         title: "[1.5 Điền từ] Nghe đoạn audio và ĐIỀN TỪ chuẩn xác:",
         audioText: "Good luck with your shot, Sir!", displaySentence: "Good _______ with your shot, Sir!", translation: "Chúc anh _______ mắn với cú đánh ạ!",
-        targetWord: "luck", phonetic: "/lʌk/", hint: "💡 Gợi ý: Từ gồm 4 ký tự."
+        targetWord: "luck", phonetic: "/lʌk/", hint: "Từ gồm 4 ký tự."
     },
     {
         lesson: "1", section: "section1.5", type: "mcq",
@@ -2143,7 +2139,7 @@ window.masterQuizData.push(
         lesson: "1", section: "section1.5", type: "fill",
         title: "[1.5 Điền từ] Nghe đoạn audio và ĐIỀN TỪ chuẩn xác:",
         audioText: "Would you like some cold water, Sir?", displaySentence: "Would you like some cold _______, Sir?", translation: "Anh có muốn dùng chút _______ lạnh không ạ?",
-        targetWord: "water", phonetic: "/ˈwɔː.tər/", hint: "💡 Gợi ý: Từ gồm 5 ký tự."
+        targetWord: "water", phonetic: "/ˈwɔː.tər/", hint: "Từ gồm 5 ký tự."
     },
     {
         lesson: "1", section: "section1.5", type: "mcq",
@@ -2228,7 +2224,6 @@ window.masterQuizData.push(
             { en: "D. Beautiful shot, Sir! The ball stopped right on the green.", vi: "Cú đánh đẹp quá ạ! Bóng dừng ngay trên green rồi ạ." }
         ], correct: 0
     },
-    // New items (26-60)
     {
         lesson: "1", section: "section1.5", type: "mcq",
         title: "[1.5 Luyện nghe] Nghe đoạn audio và chọn câu tiếng Anh đúng:",
@@ -2277,13 +2272,13 @@ window.masterQuizData.push(
         lesson: "1", section: "section1.5", type: "fill",
         title: "[1.5 Điền từ] Nghe đoạn audio và ĐIỀN TỪ chuẩn xác:",
         audioText: "The wind is strong today, Sir.", displaySentence: "The _______ is strong today, Sir.", translation: "Hôm nay _______ thổi rất mạnh thưa anh.",
-        targetWord: "wind", phonetic: "/wɪnd/", hint: "💡 Gợi ý: Từ gồm 4 ký tự."
+        targetWord: "wind", phonetic: "/wɪnd/", hint: "Từ gồm 4 ký tự."
     },
     {
         lesson: "1", section: "section1.5", type: "fill",
         title: "[1.5 Điền từ] Nghe đoạn audio và ĐIỀN TỪ chuẩn xác:",
         audioText: "Please aim slightly to the right.", displaySentence: "Please aim slightly to the _______.", translation: "Anh ngắm lệch nhẹ sang bên _______ giúp em.",
-        targetWord: "right", phonetic: "/raɪt/", hint: "💡 Gợi ý: Từ gồm 5 ký tự."
+        targetWord: "right", phonetic: "/raɪt/", hint: "Từ gồm 5 ký tự."
     },
     {
         lesson: "1", section: "section1.5", type: "mcq",
@@ -2344,13 +2339,13 @@ window.masterQuizData.push(
         lesson: "1", section: "section1.5", type: "fill",
         title: "[1.5 Điền từ] Nghe đoạn audio và ĐIỀN TỪ chuẩn xác:",
         audioText: "Red flag is at the front.", displaySentence: "Red flag is at the _______.", translation: "Cờ màu đỏ nằm ở phía _______ green.",
-        targetWord: "front", phonetic: "/frʌnt/", hint: "💡 Gợi ý: Từ gồm 5 ký tự."
+        targetWord: "front", phonetic: "/frʌnt/", hint: "Từ gồm 5 ký tự."
     },
     {
         lesson: "1", section: "section1.5", type: "fill",
         title: "[1.5 Điền từ] Nghe đoạn audio và ĐIỀN TỪ chuẩn xác:",
         audioText: "Blue flag is at the back.", displaySentence: "Blue flag is at the _______.", translation: "Cờ màu xanh nằm ở phía _______ green.",
-        targetWord: "back", phonetic: "/bæk/", hint: "💡 Gợi ý: Từ gồm 4 ký tự."
+        targetWord: "back", phonetic: "/bæk/", hint: "Từ gồm 4 ký tự."
     },
     {
         lesson: "1", section: "section1.5", type: "mcq",
@@ -2389,7 +2384,7 @@ window.masterQuizData.push(
         lesson: "1", section: "section1.5", type: "fill",
         title: "[1.5 Điền từ] Nghe đoạn audio và ĐIỀN TỪ chuẩn xác:",
         audioText: "Drop the ball from knee height.", displaySentence: "Drop the ball from _______ height.", translation: "Thả bóng từ độ cao ngang _______ đầu gối.",
-        targetWord: "knee", phonetic: "/niː/", hint: "💡 Gợi ý: Từ gồm 4 ký tự."
+        targetWord: "knee", phonetic: "/niː/", hint: "Từ gồm 4 ký tự."
     },
     {
         lesson: "1", section: "section1.5", type: "mcq",
@@ -2439,7 +2434,7 @@ window.masterQuizData.push(
         lesson: "1", section: "section1.5", type: "fill",
         title: "[1.5 Điền từ] Nghe đoạn audio và ĐIỀN TỪ chuẩn xác:",
         audioText: "Thank you for an excellent round today!", displaySentence: "Thank you for an _______ round today!", translation: "Cảm ơn anh vì một vòng đấu xuất _______ hôm nay!",
-        targetWord: "excellent", phonetic: "/ˈek.səl.ənt/", hint: "💡 Gợi ý: Từ gồm 9 ký tự."
+        targetWord: "excellent", phonetic: "/ˈek.səl.ənt/", hint: "Từ gồm 9 ký tự."
     },
     {
         lesson: "1", section: "section1.5", type: "mcq",
@@ -2467,6 +2462,23 @@ window.masterQuizData.push(
         lesson: "1", section: "section1.5", type: "fill",
         title: "[1.5 Điền từ] Nghe đoạn audio và ĐIỀN TỪ chuẩn xác:",
         audioText: "Have a safe drive home, Sir!", displaySentence: "Have a safe _______ home, Sir!", translation: "Chúc anh lái _______ về nhà an toàn ạ!",
-        targetWord: "drive", phonetic: "/draɪv/", hint: "💡 Gợi ý: Từ gồm 5 ký tự."
+        targetWord: "drive", phonetic: "/draɪv/", hint: "Từ gồm 5 ký tự."
     }
-);
+];
+
+// CHUẨN HÓA UNICODE NFC TOÀN BỘ CHUỖI TIẾNG VIỆT KHI NẠP DỮ LIỆU
+lesson1Data.forEach(item => {
+    if (item.translation) {
+        item.translation = item.translation.normalize('NFC').replace(/\s+/g, ' ').trim();
+    }
+    if (item.hint) {
+        item.hint = item.hint.normalize('NFC').replace(/\s+/g, ' ').trim();
+    }
+    if (item.options && Array.isArray(item.options)) {
+        item.options.forEach(opt => {
+            if (opt.vi) opt.vi = opt.vi.normalize('NFC').replace(/\s+/g, ' ').trim();
+        });
+    }
+});
+
+window.masterQuizData.push(...lesson1Data);
