@@ -5,14 +5,34 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>TIẾNG ANH GIAO TIẾP CƠ BẢN CHO CADDIE - LUYỆN TẬP NGHE</title>
     <style>
-        body { font-family: sans-serif; text-align: center; padding: 15px 10px; background-color: #f8f9fa; margin: 0; }
-        .brand-header { font-size: 20px; font-weight: bold; color: #B21818; letter-spacing: 1.5px; margin-bottom: 10px; text-transform: uppercase; }
-        .container { max-width: 600px; margin: 0 auto; background: white; padding: 20px 15px; border-radius: 12px; box-shadow: 0 4px 12px rgba(0,0,0,0.1); }
+        * { box-sizing: border-box; }
+        body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; text-align: center; padding: 15px 10px; background-color: #f8f9fa; margin: 0; color: #333; }
+        .brand-header { font-size: 22px; font-weight: 800; color: #B21818; letter-spacing: 1.5px; margin-bottom: 10px; text-transform: uppercase; }
+        .container { max-width: 640px; margin: 0 auto; background: white; padding: 20px 15px; border-radius: 16px; box-shadow: 0 8px 24px rgba(0,0,0,0.08); }
         
         h1 { color: #1e7e34; font-size: 18px; margin: 0 0 5px 0; font-weight: bold; text-transform: uppercase; line-height: 1.3; }
         h2 { color: #555; font-size: 12px; margin: 0 0 5px 0; font-weight: bold; text-transform: uppercase; letter-spacing: 0.5px; }
         .lesson-title { color: #0d6efd; font-size: 13.5px; margin: 0 0 12px 0; font-weight: bold; text-transform: uppercase; letter-spacing: 0.5px; }
 
+        /* GIAO DIỆN THÔNG TIN HỌC VIÊN SONG NGỮ */
+        .user-card { background: #ffffff; border: 2px solid #e7f1ff; border-radius: 12px; padding: 20px; text-align: left; box-shadow: 0 4px 12px rgba(13, 110, 253, 0.05); margin-bottom: 10px; }
+        .user-card-header { font-size: 15px; font-weight: bold; color: #0d6efd; border-bottom: 2px solid #e7f1ff; padding-bottom: 8px; margin-bottom: 15px; text-align: center; text-transform: uppercase; }
+        .form-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+        .form-group { margin-bottom: 12px; }
+        .form-group.full-width { grid-column: span 2; }
+        .form-group label { display: block; font-weight: 600; font-size: 12.5px; color: #495057; margin-bottom: 5px; }
+        .form-group input, .form-group select, .form-group textarea { width: 100%; padding: 10px 12px; border: 1.5px solid #ced4da; border-radius: 8px; font-size: 13.5px; transition: all 0.2s ease; outline: none; background-color: #fff; }
+        .form-group input:focus, .form-group select:focus, .form-group textarea:focus { border-color: #0d6efd; box-shadow: 0 0 0 3px rgba(13, 110, 253, 0.15); }
+
+        .selection-box { background: #f8f9fa; border: 1.5px dashed #b6d4fe; border-radius: 10px; padding: 12px 14px; margin-bottom: 12px; transition: border-color 0.2s; }
+        .selection-box.active { border-color: #0d6efd; background: #f0f7ff; }
+        .selection-header { display: flex; align-items: center; gap: 8px; font-weight: bold; font-size: 13px; color: #0d6efd; margin-bottom: 6px; cursor: pointer; }
+        .selection-header input[type="radio"] { width: 16px; height: 16px; cursor: pointer; accent-color: #0d6efd; }
+
+        .btn-start-quiz { width: 100%; padding: 13px; font-size: 15px; font-weight: bold; color: white; background: #198754; border: none; border-radius: 8px; cursor: pointer; margin-top: 10px; box-shadow: 0 4px 10px rgba(25, 135, 84, 0.25); transition: background 0.2s; }
+        .btn-start-quiz:hover { background: #146c43; }
+
+        /* VIEW LÀM BÀI */
         .meta-bar { display: flex; justify-content: space-between; align-items: center; margin-bottom: 12px; gap: 8px; flex-wrap: wrap; }
         #item-status { font-size: 12px; font-weight: bold; padding: 5px 12px; border-radius: 15px; text-align: left; }
         .status-answered { background-color: #d1e7dd; color: #0f5132; border: 1px solid #badbcc; }
@@ -23,7 +43,6 @@
 
         #timer-box { font-size: 12px; font-weight: bold; color: #0d6efd; background: #e7f1ff; padding: 5px 12px; border-radius: 15px; border: 1px solid #b6d4fe; transition: all 0.3s; white-space: nowrap; }
         .timer-warning { color: #dc3545 !important; background: #f8d7da !important; border-color: #f5c6cb !important; animation: blink 1s infinite; }
-
         @keyframes blink { 50% { opacity: 0.5; } }
 
         .audio-box { background: #e7f1ff; border: 2px dashed #0d6efd; padding: 12px; border-radius: 10px; margin: 10px 0; }
@@ -56,16 +75,41 @@
         
         #status { font-size: 13.5px; font-weight: bold; color: #0d6efd; margin-top: 10px; }
         
+        /* RESULT CARD & FEEDBACK */
         .result-card { text-align: center; }
-        .score-box { font-size: 36px; font-weight: bold; color: #1e7e34; margin: 8px 0 4px 0; }
-        .level-badge { display: inline-block; padding: 6px 16px; border-radius: 20px; font-weight: bold; font-size: 14px; margin-bottom: 10px; }
+        .score-box { font-size: 38px; font-weight: bold; color: #1e7e34; margin: 8px 0 4px 0; }
+        .level-badge { display: inline-block; padding: 6px 18px; border-radius: 20px; font-weight: bold; font-size: 14px; margin-bottom: 12px; }
         .level-excellent { background-color: #d1e7dd; color: #0f5132; border: 1px solid #badbcc; }
         .level-passed { background-color: #cff4fc; color: #055160; border: 1px solid #b6effb; }
         .level-needs-improvement { background-color: #f8d7da; color: #721c24; border: 1px solid #f5c6cb; }
-        .stats-box { background: #f8f9fa; border: 1px solid #dee2e6; border-radius: 8px; padding: 12px; margin: 15px 0; text-align: left; font-size: 13.5px; line-height: 1.6; }
+
+        .stats-box { background: #f8f9fa; border: 1px solid #dee2e6; border-radius: 10px; padding: 14px; margin: 15px 0; text-align: left; font-size: 13.5px; line-height: 1.6; }
+        
+        .feedback-card { background: #fff8e6; border: 1px solid #ffe8a1; border-radius: 10px; padding: 12px 15px; margin-top: 15px; text-align: left; }
+        .feedback-card label { font-size: 13px; font-weight: bold; color: #8c6d00; display: block; margin-bottom: 6px; }
+        .feedback-card textarea { 
+            width: 100%; 
+            resize: vertical; 
+            min-height: 70px;
+            max-height: 250px;
+            padding: 10px 12px; 
+            border: 1.5px solid #ffe082; 
+            border-radius: 8px; 
+            font-size: 13px; 
+            font-family: inherit; 
+            outline: none; 
+            background: #ffffff; 
+        }
+        .feedback-card textarea:focus { border-color: #ffc107; box-shadow: 0 0 0 3px rgba(255, 193, 7, 0.2); }
+        .btn-send-feedback { background: #ffc107; color: #000; font-weight: bold; border: none; padding: 10px 14px; border-radius: 8px; cursor: pointer; margin-top: 8px; width: 100%; transition: background 0.2s; }
+        .btn-send-feedback:hover { background: #e0a800; }
+
         .action-buttons { display: flex; gap: 10px; justify-content: center; margin-top: 15px; flex-wrap: wrap; }
-        .btn-review { background: #17a2b8; color: white; flex: 1; padding: 11px; border-radius: 6px; font-weight: bold; border: none; cursor: pointer; min-width: 130px; }
-        .btn-retry { background: #0d6efd; color: white; flex: 1; padding: 11px; border-radius: 6px; font-weight: bold; border: none; cursor: pointer; min-width: 130px; }
+        .btn-review { background: #17a2b8; color: white; flex: 1; padding: 11px; border-radius: 8px; font-weight: bold; border: none; cursor: pointer; min-width: 130px; }
+        .btn-retry { background: #0d6efd; color: white; flex: 1; padding: 11px; border-radius: 8px; font-weight: bold; border: none; cursor: pointer; min-width: 130px; }
+
+        .hidden { display: none !important; }
+        #save-status-msg { font-size: 12.5px; font-weight: bold; color: #0f5132; margin-top: 8px; background: #d1e7dd; padding: 8px 14px; border-radius: 20px; display: inline-block; border: 1px solid #badbcc; }
     </style>
 </head>
 <body>
@@ -77,12 +121,117 @@
         <h2>LUYỆN TẬP KỸ NĂNG NGHE (LISTENING PRACTICE)</h2>
         <h3 id="lesson-title" class="lesson-title">ĐANG TẢI BÀI HỌC...</h3>
         
-        <div class="meta-bar" id="top-meta-bar">
-            <div id="item-status" class="status-pending">⏳ Trạng thái: Chưa hoàn thành</div>
-            <div id="timer-box">⏳ Thời gian làm bài: <span id="time-left">00:00</span></div>
+        <!-- BƯỚC 1: THÔNG TIN HỌC VIÊN -->
+        <div id="user-info-view" class="user-card">
+            <div class="user-card-header">📋 THÔNG TIN HỌC VIÊN / STUDENT INFORMATION</div>
+            
+            <div class="form-grid">
+                <div class="form-group full-width">
+                    <label for="work-place">1. Nơi làm việc / Work place (*):</label>
+                    <select id="work-place">
+                        <option value="">-- Chọn đơn vị làm việc / Select Work Place --</option>
+                        <option value="KI">KINGS ISLAND</option>
+                        <option value="LH">LEGEND HILL</option>
+                        <option value="RT">RUBY TREE</option>
+                        <option value="LV">LEGEND VALLEY</option>
+                        <option value="LDN">LEGEND DANANG</option>
+                        <option value="GS">GOLDEN SANDS</option>
+                    </select>
+                </div>
+
+                <div class="form-group full-width">
+                    <label for="student-name">2. Họ Và Tên / Full name (*):</label>
+                    <input type="text" id="student-name" placeholder="Nhập họ và tên đầy đủ / Enter your full name">
+                </div>
+
+                <div class="form-group">
+                    <label for="staff-number">3. Mã Nhân viên / Staff ID (*):</label>
+                    <input type="text" id="staff-number" placeholder="Ví dụ / e.g. 123, 435">
+                </div>
+
+                <div class="form-group">
+                    <label for="birthday-date">4. Ngày sinh / Date of birth (*):</label>
+                    <input type="date" id="birthday-date" max="2008-08-03" min="1926-01-01">
+                </div>
+
+                <div class="form-group full-width">
+                    <label for="department">5. Bộ phận, Phòng, Ban / Department, Division (*):</label>
+                    <select id="department">
+                        <option value="">-- Chọn bộ phận / Select Department --</option>
+                        <option value="Caddie">Caddie</option>
+                        <option value="Marshal">Marshal</option>
+                        <option value="Starter">Starter</option>
+                        <option value="Valet">Valet</option>
+                        <option value="Other">Other</option>
+                    </select>
+                </div>
+
+                <!-- LỰA CHỌN 1 TRONG 2 -->
+                <div class="form-group full-width">
+                    <label style="color: #0d6efd; font-weight: bold; margin-bottom: 8px;">NỘI DUNG THI / EXAM CONTENT (Chọn 1 trong 2):</label>
+
+                    <div class="selection-box" id="box-section">
+                        <label class="selection-header">
+                            <input type="radio" name="content_mode" value="section" id="mode-section" onclick="toggleContentMode('section')">
+                            <span>6. Bài luyện tập (Lesson / Section)</span>
+                        </label>
+                        <select id="select-section" disabled onchange="syncRadioOnSelect('section')">
+                            <option value="">-- Chọn Chuyên đề Luyện tập --</option>
+                            <option value="1.1">section 1.1: Bảng chữ cái tiếng anh</option>
+                            <option value="1.2">section 1.2: Giới thiệu bản thân</option>
+                            <option value="1.3">section 1.3: Số đếm</option>
+                            <option value="1.4">section 1.4: Sở thích</option>
+                            <option value="1.5">section 1.5: Thực hành & luyện tập</option>
+                            <option value="2.1">section 2.1: Thời tiết</option>
+                            <option value="2.2">section 2.2: Mùa</option>
+                            <option value="2.3">section 2.3: Thực hành & luyện tập</option>
+                            <option value="3.1">section 3.1: Mô tả vị trí</option>
+                            <option value="3.2">section 3.2: Mô tả hướng</option>
+                            <option value="3.3">section 3.3: Giới thiệu trên sân</option>
+                            <option value="3.4">section 3.4: Thực hành & luyện tập</option>
+                            <option value="4.1">section 4.1: Màu sắc</option>
+                            <option value="4.2">section 4.2: Giao tiếp cơ bản</option>
+                            <option value="4.3">section 4.3: Thực hành & luyện tập</option>
+                            <option value="5.1">section 5.1: Lời than phiền</option>
+                            <option value="5.2">section 5.2: Lời đề nghị</option>
+                            <option value="5.3">section 5.3: Động viên, khích lệ</option>
+                            <option value="5.4">section 5.4: Lời chào tạm biệt</option>
+                            <option value="5.5">section 5.5: Thực hành & luyện tập</option>
+                            <option value="6.1">section 6.1: Sức khoẻ</option>
+                            <option value="6.2">section 6.2: Cảm xúc</option>
+                            <option value="6.3">section 6.3: Tình huống khẩn cấp</option>
+                            <option value="6.4">section 6.4: Thực hành & luyện tập</option>
+                        </select>
+                    </div>
+
+                    <div class="selection-box" id="box-exam">
+                        <label class="selection-header">
+                            <input type="radio" name="content_mode" value="exam" id="mode-exam" onclick="toggleContentMode('exam')">
+                            <span>7. Bài thi / Kiểm tra (Exam / Test)</span>
+                        </label>
+                        <select id="select-exam" disabled onchange="syncRadioOnSelect('exam')">
+                            <option value="">-- Chọn Bài thi / Kiểm tra --</option>
+                            <option value="1">exam 1: Giai đoạn 1 (Lesson 1)</option>
+                            <option value="2-3">exam 2: Giai đoạn 2 (Lesson 2-3)</option>
+                            <option value="4">exam 3: Giai đoạn 3 (Lesson 4)</option>
+                            <option value="5-6">exam 4: Giai đoạn 4 (Lesson 5-6)</option>
+                            <option value="all">final exam: Cuối khóa (Tất cả chuyên đề)</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+
+            <p id="user-info-error" style="color: #dc3545; font-size: 13px; font-weight: bold; margin: 5px 0 0 0; display: none;"></p>
+            <button class="btn-start-quiz" onclick="startQuizPractice()">BẮT ĐẦU LÀM BÀI / START TEST 🚀</button>
         </div>
-        
-        <div id="quiz-area">
+
+        <!-- BƯỚC 2: MÀN HÌNH LÀM BÀI (ẨN BAN ĐẦU) -->
+        <div id="quiz-area" class="hidden">
+            <div class="meta-bar" id="top-meta-bar">
+                <div id="item-status" class="status-pending">⏳ Trạng thái: Chưa hoàn thành</div>
+                <div id="timer-box">⏳ Thời gian làm bài: <span id="time-left">00:00</span></div>
+            </div>
+
             <div class="audio-box">
                 <button id="play-btn" onclick="playAudio()">🔊 NGHE CÂU HỎI</button>
             </div>
@@ -102,101 +251,93 @@
                 <button id="prev-btn" class="action-btn" onclick="goToPrevious()">⏮️ Câu trước</button>
                 <button id="next-btn" class="action-btn" onclick="goToNext()">Câu tiếp ⏩</button>
             </div>
+            <p id="status"></p>
         </div>
 
-        <p id="status"></p>
+        <!-- BƯỚC 3: MÀN HÌNH TỔNG KẾT & GÓP Ý -->
+        <div id="result-view" class="hidden"></div>
+
+        <!-- BƯỚC 4: MÀN HÌNH XEM LẠI BÀI LÀM -->
+        <div id="review-view" class="hidden"></div>
     </div>
 
     <!-- KHỞI TẠO MẢNG DỮ LIỆU CHUNG -->
     <script> window.masterQuizData = []; </script>
 
-    <!-- TRÌNH NẠP DỮ LIỆU ĐỘNG PROMISE BẤT ĐỒNG BỘ CHUẨN XÁC -->
+    <!-- SCRIPT LOADING TỰ ĐỘNG DỮ LIỆU 10 LESSON -->
     <script>
-        function parseRangeSequence(inputStr) {
-            if (!inputStr) return [];
-            let results = new Set();
-            let parts = inputStr.split(',');
-            parts.forEach(part => {
-                let trimmed = part.trim();
-                if (trimmed.includes('-')) {
-                    let rangeParts = trimmed.split('-');
-                    let start = parseInt(rangeParts[0].replace(/[^\d]/g, ''));
-                    let end = parseInt(rangeParts[1].replace(/[^\d]/g, ''));
-                    if (!isNaN(start) && !isNaN(end)) {
-                        let min = Math.min(start, end);
-                        let max = Math.max(start, end);
-                        for (let i = min; i <= max; i++) results.add(i);
-                    }
-                } else {
-                    let num = parseInt(trimmed.replace(/[^\d]/g, ''));
-                    if (!isNaN(num)) results.add(num);
-                }
-            });
-            return Array.from(results);
-        }
+        (function loadAllDataFiles() {
+            const filesToLoad = ['data/exams.js'];
+            for (let i = 1; i <= 10; i++) {
+                filesToLoad.push(`data/lesson${i}.js`);
+            }
 
-        function loadScriptPromise(src) {
-            return new Promise((resolve) => {
+            let loadedCount = 0;
+            let isInitialized = false;
+
+            const checkAndInit = () => {
+                if (isInitialized) return;
+                isInitialized = true;
+                if (typeof initApp === 'function') initApp();
+            };
+
+            filesToLoad.forEach(src => {
                 const script = document.createElement('script');
                 script.src = src;
-                script.onload = () => resolve(true);
-                script.onerror = () => {
-                    console.log(`[BRG Learning] File ${src} không tồn tại hoặc chưa tạo.`);
-                    resolve(false);
+                script.async = false;
+                script.onload = script.onerror = () => {
+                    loadedCount++;
+                    if (loadedCount === filesToLoad.length) {
+                        checkAndInit();
+                    }
                 };
                 document.head.appendChild(script);
             });
-        }
-
-        async function loadAllDataFilesAndInit() {
-            const urlParams = new URLSearchParams(window.location.search);
-            const reqLesson = urlParams.get('lesson');
-            const reqSection = urlParams.get('section');
-            const reqExam = urlParams.get('exam');
-
-            const filesToLoad = new Set(['data/exams.js']);
-
-            if (reqSection) {
-                let secMatches = reqSection.match(/\d+/g);
-                if (secMatches) {
-                    secMatches.forEach(numStr => {
-                        let n = parseInt(numStr);
-                        if (!isNaN(n)) filesToLoad.add(`data/lesson${n}.js`);
-                    });
-                }
-            } 
-            if (reqLesson) {
-                let lessonNums = parseRangeSequence(reqLesson);
-                lessonNums.forEach(num => filesToLoad.add(`data/lesson${num}.js`));
-            } 
-            if (reqExam) {
-                let examNums = parseRangeSequence(reqExam);
-                if (examNums.length > 0) {
-                    examNums.forEach(num => filesToLoad.add(`data/lesson${num}.js`));
-                } else {
-                    for (let i = 1; i <= 20; i++) filesToLoad.add(`data/lesson${i}.js`);
-                }
-            } 
-            
-            if (!reqLesson && !reqSection && !reqExam) {
-                for (let i = 1; i <= 10; i++) filesToLoad.add(`data/lesson${i}.js`);
-            }
-
-            // Đợi tất cả các file Javascript nạp xong hoàn toàn mới khởi chạy app
-            const loadPromises = Array.from(filesToLoad).map(src => loadScriptPromise(src));
-            await Promise.all(loadPromises);
-
-            initApp();
-        }
+        })();
     </script>
 
     <!-- CORE ENGINE LUYỆN NGHE -->
     <script>
-        const fallbackData = [
-            { lesson: "1", section: "section1.1", type: "mcq", title: "[1.1 Chào hỏi] Nghe Golfer đánh vần tên:", audioText: "My name is Arthur.", options: [{ en: "A. ARTHUR", vi: "Arthur" }, { en: "B. AUTHOR", vi: "Author" }, { en: "C. ARCHER", vi: "Archer" }, { en: "D. MARK", vi: "Mark" }], correct: 0 },
-            { lesson: "1", section: "section1.1", type: "fill", title: "[1.1 Chào hỏi] Nghe Caddie tự giới thiệu tên:", audioText: "My name is Rose.", displaySentence: "Caddie's name is _______.", translation: "Tên của Caddie là _______.", targetWord: "rose", hint: "💡 Gợi ý: Tên gồm 4 ký tự." },
-            { lesson: "1", section: "section1.3", type: "mcq", title: "[1.3 Số đếm] Nghe khoảng cách:", audioText: "It is 150 yards to the green.", options: [{ en: "A. 130 yards", vi: "130 yard" }, { en: "B. 150 yards", vi: "150 yard" }, { en: "C. 180 yards", vi: "180 yard" }, { en: "D. 200 yards", vi: "200 yard" }], correct: 1 }
-        ];
+        // URL WEB APP MỚI NHẤT DÀNH CHO BÀI NGHE
+        const GOOGLE_SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbxByFTaOiiQITIFvZc8A0y0x3nA8veNpa4zWQRbxBYNFYFj3jEu6zT4XYApReLGqDwg/exec';
+
+        function toggleContentMode(mode) {
+            const radioSection = document.getElementById('mode-section');
+            const radioExam = document.getElementById('mode-exam');
+            const selectSection = document.getElementById('select-section');
+            const selectExam = document.getElementById('select-exam');
+            const boxSection = document.getElementById('box-section');
+            const boxExam = document.getElementById('box-exam');
+
+            if (mode === 'section') {
+                radioSection.checked = true;
+                selectSection.disabled = false;
+                boxSection.classList.add('active');
+
+                radioExam.checked = false;
+                selectExam.disabled = true;
+                selectExam.value = "";
+                boxExam.classList.remove('active');
+            } else if (mode === 'exam') {
+                radioExam.checked = true;
+                selectExam.disabled = false;
+                boxExam.classList.add('active');
+
+                radioSection.checked = false;
+                selectSection.disabled = true;
+                selectSection.value = "";
+                boxSection.classList.remove('active');
+            }
+        }
+
+        function syncRadioOnSelect(mode) {
+            toggleContentMode(mode);
+        }
+
+        function cleanSectionCode(secStr) {
+            if (secStr === null || secStr === undefined) return "";
+            return secStr.toString().toLowerCase().replace(/section/gi, '').replace(/\s+/g, '').trim();
+        }
 
         function shuffleArray(array) {
             for (let i = array.length - 1; i > 0; i--) {
@@ -205,86 +346,52 @@
             }
         }
 
-        function getSmartFilteredQuizData() {
-            const urlParams = new URLSearchParams(window.location.search);
-            const reqLesson = urlParams.get('lesson');   
-            const reqSection = urlParams.get('section');  
-            const reqExam = urlParams.get('exam');        
-
-            let pool = (window.masterQuizData && window.masterQuizData.length > 0) ? [...window.masterQuizData] : [...fallbackData];
+        function getFilteredListeningItemsBySelection(isSectionMode, selectedVal) {
+            let rawPool = (window.masterQuizData && window.masterQuizData.length > 0) ? [...window.masterQuizData] : [];
+            let filtered = [];
             let targetCount = 30; 
             let titleBanner = "LUYỆN NGHE TỔNG HỢP";
 
-            if (reqExam) {
-                targetCount = 50; 
-                let cleanExam = reqExam.toLowerCase().trim();
-                let examNums = parseRangeSequence(cleanExam);
-
-                if (cleanExam === "all" || cleanExam === "examall") {
-                    titleBanner = "KIỂM TRA NGHE CUỐI KHÓA - TỔNG QUAN (50 CÂU)";
-                } else if (examNums.length > 0) {
-                    pool = pool.filter(q => {
-                        let lNum = parseInt(String(q.lesson || '').replace(/[^\d]/g, ''));
-                        let eNum = parseInt(String(q.exam || '').replace(/[^\d]/g, ''));
-                        return examNums.includes(lNum) || examNums.includes(eNum);
-                    });
-                    titleBanner = `KIỂM TRA NGHE MẶT BẰNG GIAI ĐOẠN (${reqExam.toUpperCase()}) (50 CÂU)`;
+            if (isSectionMode && selectedVal) {
+                titleBanner = `LUYỆN NGHE - SECTION ${selectedVal}`;
+                let cleanTarget = cleanSectionCode(selectedVal);
+                filtered = rawPool.filter(q => q.section && cleanSectionCode(q.section) === cleanTarget);
+                targetCount = 30;
+            } else if (!isSectionMode && selectedVal) {
+                if (selectedVal === 'all') {
+                    titleBanner = "KIỂM TRA NGHE CUỐI KHÓA - FINAL EXAM";
+                    filtered = [...rawPool];
+                    targetCount = 50;
                 } else {
-                    let examNum = cleanExam.replace(/[^\d]/g, '');
-                    if (examNum) {
-                        pool = pool.filter(q => q.lesson === examNum || q.lesson === `L${examNum}` || q.exam === examNum || q.exam === `exam${examNum}`);
-                    }
-                    titleBanner = `KIỂM TRA NGHE GIAI ĐOẠN ${examNum} (50 CÂU)`;
-                }
-            } 
-            else if (reqSection || reqLesson) {
-                targetCount = 30; 
-
-                // LỌC THEO SECTION NẾU CÓ TRÊN URL
-                if (reqSection) {
-                    let rawSecList = reqSection.split(',');
-                    let cleanSecList = rawSecList.map(s => s.trim().toLowerCase().replace('section', ''));
-
-                    let sectionFiltered = pool.filter(q => {
-                        if (!q.section) return false;
-                        let qSec = String(q.section).trim().toLowerCase().replace('section', '');
-                        return cleanSecList.includes(qSec);
+                    titleBanner = `KIỂM TRA NGHE - EXAM ${selectedVal}`;
+                    let examLessons = selectedVal.split('-').map(n => n.trim());
+                    filtered = rawPool.filter(q => {
+                        let qLes = (q.lesson || "").toString().replace(/[^\d]/g, '');
+                        return examLessons.includes(qLes);
                     });
-
-                    if (sectionFiltered.length > 0) {
-                        pool = sectionFiltered;
-                    }
-
-                    titleBanner = `LUYỆN NGHE - SECTION (${reqSection.toUpperCase()}) (30 CÂU)`;
-                } 
-                else if (reqLesson) {
-                    let lessonList = parseRangeSequence(reqLesson);
-                    if (lessonList.length > 0) {
-                        pool = pool.filter(q => {
-                            let lNum = parseInt(String(q.lesson || '').replace(/[^\d]/g, ''));
-                            return lessonList.includes(lNum);
-                        });
-                        titleBanner = `LUYỆN NGHE - LESSON ${reqLesson} (30 CÂU)`;
-                    } else {
-                        let lessonNum = reqLesson.replace(/[^\d]/g, '');
-                        pool = pool.filter(q => q.lesson === lessonNum || q.lesson === `L${lessonNum}`);
-                        titleBanner = `LUYỆN NGHE - LESSON ${lessonNum} (30 CÂU)`;
-                    }
+                    targetCount = 50;
                 }
             }
 
-            const titleElem = document.getElementById('lesson-title');
-            if (titleElem) titleElem.innerText = titleBanner;
+            const subTitleElem = document.getElementById('lesson-title');
+            if (subTitleElem) subTitleElem.innerText = titleBanner;
 
-            if (pool.length === 0) pool = [...fallbackData];
+            filtered.forEach(item => {
+                if (item.translation) item.translation = item.translation.replace(/\+\]/gi, '').replace(/cite:\s*[\d,\s]+/gi, '').trim();
+            });
 
-            shuffleArray(pool);
-            return pool.slice(0, Math.min(targetCount, pool.length));
+            if (filtered.length === 0) {
+                document.getElementById('question-title').innerText = "⚠️ Chưa có dữ liệu câu hỏi nghe cho bài đã chọn!";
+                return [];
+            }
+
+            shuffleArray(filtered);
+            return filtered.slice(0, Math.min(targetCount, filtered.length));
         }
 
         let quizData = [];
         const MAX_LISTEN_PER_QUESTION = 3; 
-        const DELAY_BEFORE_AUDIO_MS = 1200; 
+        const DELAY_BEFORE_AUDIO_MS = 1000; 
         let autoPlayTimer = null; 
 
         let listenCounts = []; 
@@ -297,19 +404,78 @@
         let elapsedSeconds = 0; 
         let timerInterval = null;
         let startTimeFormatted = "";
+        let lastSavedPayload = null;
 
-        function initApp() {
-            const now = new Date();
-            const timeStr = now.toLocaleTimeString('vi-VN', { hour: '2-digit', minute: '2-digit', second: '2-digit' });
-            const dateStr = now.toLocaleDateString('vi-VN', { day: '2-digit', month: '2-digit', year: 'numeric' });
-            startTimeFormatted = `${timeStr} - ${dateStr}`;
+        function initApp() {}
 
-            quizData = getSmartFilteredQuizData();
+        function startQuizPractice() {
+            const workPlace = document.getElementById('work-place').value;
+            const studentName = document.getElementById('student-name').value.trim();
+            const staffNumber = document.getElementById('staff-number').value.trim();
+            const birthdayDate = document.getElementById('birthday-date').value;
+            const department = document.getElementById('department').value;
+            const errorElem = document.getElementById('user-info-error');
+
+            const isSectionMode = document.getElementById('mode-section').checked;
+            const isExamMode = document.getElementById('mode-exam').checked;
+            const selectedSection = document.getElementById('select-section').value;
+            const selectedExam = document.getElementById('select-exam').value;
+
+            if (!workPlace || !studentName || !staffNumber || !birthdayDate || !department) {
+                errorElem.innerText = "⚠️ Vui lòng điền đầy đủ thông tin học viên / Please fill in all required fields (*)!";
+                errorElem.style.display = "block";
+                return;
+            }
+
+            if (birthdayDate) {
+                const birthYear = new Date(birthdayDate).getFullYear();
+                const currentYear = new Date().getFullYear();
+                const age = currentYear - birthYear;
+                if (isNaN(age) || age < 18 || birthYear > currentYear) {
+                    errorElem.innerText = "⚠️ Ngày sinh không hợp lệ! Học viên phải từ 18 tuổi trở lên.";
+                    errorElem.style.display = "block";
+                    return;
+                }
+            }
+
+            if (!isSectionMode && !isExamMode) {
+                errorElem.innerText = "⚠️ Vui lòng chọn Mục 6 (Bài luyện tập) hoặc Mục 7 (Bài thi/kiểm tra)!";
+                errorElem.style.display = "block";
+                return;
+            }
+
+            if (isSectionMode && !selectedSection) {
+                errorElem.innerText = "⚠️ Vui lòng chọn một Chuyên đề Luyện tập ở Mục 6!";
+                errorElem.style.display = "block";
+                return;
+            }
+
+            if (isExamMode && !selectedExam) {
+                errorElem.innerText = "⚠️ Vui lòng chọn một Bài thi / Kiểm tra ở Mục 7!";
+                errorElem.style.display = "block";
+                return;
+            }
+
+            errorElem.style.display = "none";
+
+            const selectedVal = isSectionMode ? selectedSection : selectedExam;
+            quizData = getFilteredListeningItemsBySelection(isSectionMode, selectedVal);
+            if (quizData.length === 0) return;
+
             listenCounts = new Array(quizData.length).fill(0);
             userAnswers = new Array(quizData.length).fill(null);
-            
+            currentIndex = 0;
+
             initialSeconds = Math.round(quizData.length * 45); 
             totalSeconds = initialSeconds;
+
+            const now = new Date();
+            const timeStr = now.toLocaleTimeString('en-US', { hour: '2-digit', minute: '2-digit', hour12: true });
+            const dateStr = now.toLocaleDateString('vi-VN', { day: '2-digit', month: '2-digit', year: 'numeric' });
+            startTimeFormatted = `${timeStr}, ngày ${dateStr}`;
+
+            document.getElementById('user-info-view').classList.add('hidden');
+            document.getElementById('quiz-area').classList.remove('hidden');
 
             startTotalTimer();
             loadQuestion();
@@ -366,7 +532,7 @@
                     clearInterval(timerInterval);
                     clearTimeout(autoPlayTimer);
                     if ('speechSynthesis' in window) window.speechSynthesis.cancel();
-                    showResult(true); 
+                    finishSession("⏰ ĐÃ HẾT THỜI GIAN LÀM BÀI!");
                 }
             }, 1000);
         }
@@ -508,10 +674,10 @@
 
             } else {
                 if (isReviewMode) {
-                    showResult(false);
+                    finishSession("🎉 HOÀN THÀNH BÀI KIỂM TRA NGHE!");
                 } else {
                     clearInterval(timerInterval);
-                    showResult(false);
+                    finishSession("🎉 HOÀN THÀNH BÀI KIỂM TRA NGHE!");
                 }
             }
         }
@@ -613,7 +779,7 @@
             if ('speechSynthesis' in window) window.speechSynthesis.cancel();
             
             if (isReviewMode && currentIndex === quizData.length - 1) {
-                showResult(false);
+                finishSession("🎉 HOÀN THÀNH BÀI KIỂM TRA NGHE!");
                 return;
             }
 
@@ -630,52 +796,57 @@
             }
         }
 
-        function startReview() {
-            isReviewMode = true;
-            currentIndex = 0;
-            
-            const mainContainer = document.getElementById('main-container');
-            mainContainer.innerHTML = `
-                <h1>TIẾNG ANH GIAO TIẾP CƠ BẢN CHO CADDIE</h1>
-                <h2>LUYỆN TẬP KỸ NĂNG NGHE (LISTENING PRACTICE)</h2>
-                <h3 id="lesson-title" class="lesson-title">${document.getElementById('lesson-title') ? document.getElementById('lesson-title').innerText : ''}</h3>
-                
-                <div class="meta-bar" id="top-meta-bar">
-                    <div id="item-status" class="status-pending"></div>
-                    <div id="timer-box">🔍 ĐANG Ở CHẾ ĐỘ XEM LẠI</div>
-                </div>
-                
-                <div id="quiz-area">
-                    <div class="audio-box">
-                        <button id="play-btn" onclick="playAudio()">🔊 NGHE LẠI ÂM THANH</button>
-                    </div>
+        // HÀM GỬI DỮ LIỆU ĐÃ TỐI ƯU TRẠNG THÁI HIỂN THỊ TỨC THÌ
+        function sendResultToGoogleSheet(payload, isFeedback = false) {
+            if (!GOOGLE_SCRIPT_URL) return;
 
-                    <div id="question-title" class="question-title">...</div>
-                    
-                    <div id="mcq-container" class="options-container"></div>
+            const msgElem = document.getElementById('save-status-msg');
 
-                    <div id="fill-container" class="fill-container" style="display:none;">
-                        <div id="blank-sentence" class="blank-sentence"></div>
-                        <input type="text" id="fill-input" class="fill-input" disabled>
-                        <span id="char-hint" class="char-hint"></span>
-                        <span id="correct-answer-display" class="correct-answer-text"></span>
-                    </div>
+            fetch(GOOGLE_SCRIPT_URL, {
+                method: 'POST',
+                mode: 'no-cors',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify(payload)
+            }).catch(err => console.error("Error sending data:", err));
 
-                    <div class="control-group">
-                        <button id="prev-btn" class="action-btn" onclick="goToPrevious()">⏮️ Câu trước</button>
-                        <button id="next-btn" class="action-btn" onclick="goToNext()">Câu tiếp ⏩</button>
-                    </div>
-                    
-                    <button id="back-result-btn" class="action-btn" onclick="showResult(false)">📊 Quay lại Màn hình Điểm</button>
-                </div>
-
-                <p id="status"></p>
-            `;
-            loadQuestion();
+            if (msgElem) {
+                if (isFeedback) {
+                    msgElem.innerText = "✅ Cảm ơn bạn đã góp ý/đề xuất! / Thank you for your feedback!";
+                    msgElem.style.color = "#0f5132";
+                    msgElem.style.backgroundColor = "#d1e7dd";
+                } else {
+                    msgElem.innerText = "✅ Đã lưu kết quả thi lên Google Sheet thành công!";
+                    msgElem.style.color = "#0f5132";
+                    msgElem.style.backgroundColor = "#d1e7dd";
+                }
+            }
         }
 
-        function showResult(isTimeOut = false) {
-            isReviewMode = false;
+        function sendFeedbackOnly() {
+            if (!lastSavedPayload) return;
+            const fbTextarea = document.getElementById('user-feedback');
+            const fbBtn = document.querySelector('.btn-send-feedback');
+            const fbText = fbTextarea ? fbTextarea.value.trim() : '';
+
+            if (!fbText) {
+                alert("Vui lòng nhập nội dung góp ý trước khi gửi / Please enter your comment!");
+                return;
+            }
+
+            lastSavedPayload.feedback = fbText;
+
+            if (fbTextarea) fbTextarea.disabled = true;
+            if (fbBtn) {
+                fbBtn.disabled = true;
+                fbBtn.innerText = "✔ Đã gửi góp ý / Sent";
+                fbBtn.style.opacity = "0.6";
+                fbBtn.style.cursor = "not-allowed";
+            }
+
+            sendResultToGoogleSheet(lastSavedPayload, true);
+        }
+
+        function finishSession(message) {
             clearInterval(timerInterval);
             clearTimeout(autoPlayTimer);
 
@@ -713,37 +884,82 @@
                 adviceText = "<b>Đánh giá:</b> Nghe hiểu tốt ý chính và thông tin chi tiết; cần chú ý phân biệt các từ dễ nhầm (số đếm, tên riêng).";
             } else {
                 levelBadgeHtml = `<div class="level-badge level-needs-improvement">⚠️ MỐC NĂNG LỰC: CẦN CẢI THIỆN (${calculatedScore}/100)</div>`;
-                adviceText = "<b>Đánh giá:</b> Chưa đạt yêu cầu phản xạ nghe hiểu; khuyến nghị tập nghe lại nhiều lần kết hợp bài tập chép chính tả (Dictation).";
+                adviceText = "<b>Đánh giá:</b> Chưa đạt yêu cầu phản xạ nghe hiểu; khuyến nghị tập nghe lại nhiều lần.";
             }
 
-            let titleText = isTimeOut ? "⏰ ĐÃ HẾT THỜI GIAN LÀM BÀI!" : "🎉 HOÀN THÀNH BÀI KIỂM TRA NGHE!";
-            const actualTimeStr = formatDuration(elapsedSeconds);
-            const remainingTimeStr = totalSeconds > 0 ? formatTime(totalSeconds) : "00:00 (Hết giờ)";
+            const isSection = document.getElementById('mode-section') ? document.getElementById('mode-section').checked : false;
+            const isExam = document.getElementById('mode-exam') ? document.getElementById('mode-exam').checked : false;
+            
+            let rawLessonCode = "";
+            if (isSection) {
+                const secVal = document.getElementById('select-section').value;
+                rawLessonCode = secVal ? ("section" + secVal) : "";
+            } else if (isExam) {
+                const exVal = document.getElementById('select-exam').value;
+                rawLessonCode = (exVal === 'all') ? 'examall' : ('exam' + exVal);
+            }
+
+            const studentName = document.getElementById('student-name').value.trim();
+            const staffNumber = document.getElementById('staff-number').value.trim();
+            const birthday = document.getElementById('birthday-date').value;
+            const workPlace = document.getElementById('work-place').value;
+            const department = document.getElementById('department').value;
+            const lessonTitle = document.getElementById('lesson-title') ? document.getElementById('lesson-title').innerText : 'Luyện nghe';
+
+            lastSavedPayload = {
+                timestamp: startTimeFormatted,
+                studentName: studentName,
+                staffNumber: staffNumber,
+                birthday: birthday,
+                workPlace: workPlace,
+                department: department,
+                rawLessonCode: rawLessonCode,
+                lessonTitle: lessonTitle,
+                score: calculatedScore,
+                passedCount: `${correctCount}/${totalItems}`,
+                approxCount: "0 câu",
+                skippedCount: `${incorrectCount + skippedCount}/${totalItems}`,
+                elapsedTime: formatDuration(elapsedSeconds),
+                feedback: ""
+            };
+
+            sendResultToGoogleSheet(lastSavedPayload, false);
 
             const container = document.getElementById('main-container');
             container.innerHTML = `
                 <h1>TIẾNG ANH GIAO TIẾP CƠ BẢN CHO CADDIE</h1>
                 <h2>LUYỆN TẬP KỸ NĂNG NGHE (LISTENING PRACTICE)</h2>
                 <div class="result-card">
-                    <b style="font-size:15px;">${titleText}</b>
+                    <b style="font-size:15px;">${message}</b>
                     <div class="score-box">${calculatedScore} <span style="font-size:18px; color:#555;">/ 100 điểm</span></div>
                     
                     ${levelBadgeHtml}
+                    <br><div id="save-status-msg">✅ Đã lưu kết quả thi lên Google Sheet thành công!</div><br>
                     
-                    <p style="font-size:13.5px; line-height:1.5; color:#333; margin: 5px 0 15px 0; background:#e9ecef; padding:10px; border-radius:6px; text-align:left;">
+                    <p style="font-size:13.5px; line-height:1.5; color:#333; margin: 5px 0 15px 0; background:#e9ecef; padding:10px; border-radius:8px; text-align:left;">
                         ${adviceText}
                     </p>
 
                     <div class="stats-box">
                         📊 <b>BẢNG THỐNG KÊ CHI TIẾT:</b><br>
-                        • 🕒 Thời gian bắt đầu làm bài: <b>${startTimeFormatted}</b><br>
+                        • 👤 Họ tên thí sinh: <b>${studentName}</b><br>
+                        • 🆔 Mã NV/Caddie: <b>${staffNumber}</b><br>
+                        • 🎂 Ngày sinh: <b>${birthday}</b><br>
+                        • ⛳ Đơn vị: <b>${workPlace}</b> | Bộ phận: <b>${department}</b><br>
+                        <hr style="border: 0; border-top: 1px dashed #ccc; margin: 6px 0;">
+                        • 🕒 Thời gian bắt đầu: <b>${startTimeFormatted}</b><br>
+                        • ⏱️ Thời gian thực tế: <b>${formatDuration(elapsedSeconds)}</b><br>
+                        • ⏳ Thời gian còn lại: <b>${totalSeconds > 0 ? formatTime(totalSeconds) : "00:00"}</b><br>
                         <hr style="border: 0; border-top: 1px dashed #ccc; margin: 6px 0;">
                         • ✅ Số câu trả lời ĐÚNG: <b>${correctCount} / ${totalItems}</b> câu<br>
                         • ❌ Số câu trả lời SAI: <b>${incorrectCount} / ${totalItems}</b> câu<br>
-                        • ⏭️ Số câu BỎ QUA: <b>${skippedCount} / ${totalItems}</b> câu<br>
-                        <hr style="border: 0; border-top: 1px dashed #ccc; margin: 6px 0;">
-                        • ⏱️ Thời gian đã làm thực tế: <b>${actualTimeStr}</b><br>
-                        • ⏳ Thời gian còn lại: <b>${remainingTimeStr}</b>
+                        • ⏭️ Số câu CHƯA ĐẠT / BỎ QUA: <b>${skippedCount} / ${totalItems}</b> câu
+                    </div>
+
+                    <div class="feedback-card">
+                        <label for="user-feedback">✍️ Đề xuất góp ý (nếu có) / Feedbacks & Comments:</label>
+                        <textarea id="user-feedback" rows="3" placeholder="Nhập ý kiến đóng góp của bạn về bài học / Enter your comments..."></textarea>
+                        <button class="btn-send-feedback" onclick="sendFeedbackOnly()">✉️ Gửi góp ý bổ sung / Submit Feedback</button>
                     </div>
 
                     <div class="action-buttons">
@@ -754,13 +970,56 @@
             `;
         }
 
+        function startReview() {
+            isReviewMode = true;
+            currentIndex = 0;
+            
+            const mainContainer = document.getElementById('main-container');
+            mainContainer.innerHTML = `
+                <h1>TIẾNG ANH GIAO TIẾP CƠ BẢN CHO CADDIE</h1>
+                <h2>LUYỆN TẬP KỸ NĂNG NGHE (LISTENING PRACTICE)</h2>
+                <h3 id="lesson-title" class="lesson-title">XEM LẠI CHI TIẾT BÀI THI NGHE</h3>
+                
+                <div class="meta-bar" id="top-meta-bar">
+                    <div id="item-status" class="status-pending"></div>
+                    <div id="timer-box">🔍 ĐANG Ở CHẾ ĐỘ XEM LẠI</div>
+                </div>
+                
+                <div id="quiz-area">
+                    <div class="audio-box">
+                        <button id="play-btn" onclick="playAudio()">🔊 NGHE LẠI ÂM THANH</button>
+                    </div>
+
+                    <div id="question-title" class="question-title">...</div>
+                    
+                    <div id="mcq-container" class="options-container"></div>
+
+                    <div id="fill-container" class="fill-container" style="display:none;">
+                        <div id="blank-sentence" class="blank-sentence"></div>
+                        <input type="text" id="fill-input" class="fill-input" disabled>
+                        <span id="char-hint" class="char-hint"></span>
+                        <span id="correct-answer-display" class="correct-answer-text"></span>
+                    </div>
+
+                    <div class="control-group">
+                        <button id="prev-btn" class="action-btn" onclick="goToPrevious()">⏮️ Câu trước</button>
+                        <button id="next-btn" class="action-btn" onclick="goToNext()">Câu tiếp ⏩</button>
+                    </div>
+                    
+                    <button id="back-result-btn" class="action-btn" onclick="finishSession('🎉 HOÀN THÀNH BÀI KIỂM TRA NGHE!')">📊 Quay lại Màn hình Điểm</button>
+                </div>
+
+                <p id="status"></p>
+            `;
+            loadQuestion();
+        }
+
         if ('speechSynthesis' in window) {
             window.speechSynthesis.onvoiceschanged = () => { window.speechSynthesis.getVoices(); };
         }
 
-        // Tải toàn bộ file JS xong 100% rồi mới khởi chạy initApp()
         window.addEventListener('DOMContentLoaded', () => {
-            loadAllDataFilesAndInit();
+            initApp();
         });
     </script>
 </body>
