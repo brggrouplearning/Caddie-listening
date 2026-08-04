@@ -69,7 +69,7 @@
             word-spacing: normal;
         }
 
-        /* KHẮC PHỤC HOÀN TOÀN TÍNH THẨM MỸ CHO DẠNG ĐIỀN TỪ (FILL) */
+        /* KHẮC PHỤC TÍNH THẨM MỸ DẠNG ĐIỀN TỪ (FILL) */
         .fill-container {
             background: #ffffff;
             border: 1.5px solid #e2e8f0;
@@ -426,10 +426,13 @@
             }
         }
 
-        // TỰ ĐỘNG LÀM SẠCH VÀ LÀM ĐẸP CHUỖI TIẾNG VIỆT
+        // TỰ ĐỘNG CHUẨN HÓA VÀ LÀM SẠCH CHUỖI TIẾNG VIỆT
         function fixStuckText(text) {
             if (!text) return "";
-            return text.normalize('NFC').replace(/([!?.A-Za-z0-9])([À-Ỹà-ỹ])/g, '$1 $2').trim();
+            return text.normalize('NFC')
+                       .replace(/\s+/g, ' ')
+                       .replace(/([!?.A-Za-z0-9])([À-Ỹà-ỹ])/g, '$1 $2')
+                       .trim();
         }
 
         function getFilteredListeningItemsBySelection(isSectionMode, selectedVal) {
@@ -735,7 +738,14 @@
                         ${currentQuiz.displaySentence}
                         <span class="vi-trans">${currentQuiz.translation || ""}</span>
                     `;
-                    document.getElementById('char-hint').innerText = currentQuiz.hint ? `💡 Gợi ý: ${currentQuiz.hint}` : "";
+
+                    // KHẮC PHỤC TRIỆT ĐỂ LỖI TRÙNG LẶP NỘI DUNG GỢI Ý
+                    if (currentQuiz.hint) {
+                        let cleanHint = currentQuiz.hint.replace(/^💡\s*/, '').replace(/^Gợi ý:\s*/i, '').trim();
+                        document.getElementById('char-hint').innerText = `💡 Gợi ý: ${cleanHint}`;
+                    } else {
+                        document.getElementById('char-hint').innerText = "";
+                    }
 
                     const fillInput = document.getElementById('fill-input');
                     fillInput.value = userAnswers[currentIndex] || "";
@@ -917,7 +927,7 @@
                     msgElem.style.color = "#0f5132";
                     msgElem.style.backgroundColor = "#d1e7dd";
                 } else {
-                    msgElem.innerText = "✅ Đã lưu kết quả thi lên Google Sheet thành công!";
+                    msgElem.innerText = "✅ Đã lưu kết quả thi thành công!";
                     msgElem.style.color = "#0f5132";
                     msgElem.style.backgroundColor = "#d1e7dd";
                 }
@@ -1126,7 +1136,7 @@
                     <div class="score-box">${calculatedScore} <span style="font-size:18px; color:#555;">/ 100 điểm</span></div>
                     
                     ${levelBadgeHtml}
-                    <br><div id="save-status-msg">✅ Đã lưu kết quả thi lên Google Sheet thành công!</div><br>
+                    <br><div id="save-status-msg">✅ Đã lưu kết quả thi thành công!</div><br>
                     
                     <p style="font-size:13.5px; line-height:1.5; color:#333; margin: 5px 0 15px 0; background:#e9ecef; padding:10px; border-radius:8px; text-align:left;">
                         ${adviceText}
