@@ -298,7 +298,6 @@
 
     <!-- CORE ENGINE LUYỆN NGHE -->
     <script>
-        // URL WEB APP MỚI NHẤT DÀNH CHO BÀI NGHE
         const GOOGLE_SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbxByFTaOiiQITIFvZc8A0y0x3nA8veNpa4zWQRbxBYNFYFj3jEu6zT4XYApReLGqDwg/exec';
 
         function toggleContentMode(mode) {
@@ -796,7 +795,6 @@
             }
         }
 
-        // HÀM GỬI DỮ LIỆU ĐÃ TỐI ƯU TRẠNG THÁI HIỂN THỊ TỨC THÌ
         function sendResultToGoogleSheet(payload, isFeedback = false) {
             if (!GOOGLE_SCRIPT_URL) return;
 
@@ -815,7 +813,7 @@
                     msgElem.style.color = "#0f5132";
                     msgElem.style.backgroundColor = "#d1e7dd";
                 } else {
-                    msgElem.innerText = "✅ Đã lưu kết quả thi thành công!";
+                    msgElem.innerText = "✅ Đã lưu kết quả thi lên Google Sheet thành công!";
                     msgElem.style.color = "#0f5132";
                     msgElem.style.backgroundColor = "#d1e7dd";
                 }
@@ -846,6 +844,7 @@
             sendResultToGoogleSheet(lastSavedPayload, true);
         }
 
+        // HÀM TÍNH TOÁN VÀ KHẮC PHỤC CHÍNH XÁC SỐ CÂU TRẢ LỜI ĐÚNG / SAI / BỎ QUA
         function finishSession(message) {
             clearInterval(timerInterval);
             clearTimeout(autoPlayTimer);
@@ -906,6 +905,7 @@
             const department = document.getElementById('department').value;
             const lessonTitle = document.getElementById('lesson-title') ? document.getElementById('lesson-title').innerText : 'Luyện nghe';
 
+            // CHỈNH SỬA SỐ CÂU CHUẨN XÁC TRUYỀN VỀ GOOGLE SHEET (KHÔNG BỊ CỘNG GỘP NHẦM)
             lastSavedPayload = {
                 timestamp: startTimeFormatted,
                 studentName: studentName,
@@ -916,9 +916,9 @@
                 rawLessonCode: rawLessonCode,
                 lessonTitle: lessonTitle,
                 score: calculatedScore,
-                passedCount: `${correctCount}/${totalItems}`,
-                approxCount: "0 câu",
-                skippedCount: `${incorrectCount + skippedCount}/${totalItems}`,
+                passedCount: `${correctCount}/${totalItems}`,      // Cột I: Số câu đúng (vd: 0/50)
+                approxCount: `0/${totalItems}`,                   // Cột J: Định dạng đồng bộ phân số (0/50)
+                skippedCount: `${skippedCount}/${totalItems}`,    // Cột K: Chỉ đếm đúng số câu bỏ qua (vd: 36/50)
                 elapsedTime: formatDuration(elapsedSeconds),
                 feedback: ""
             };
@@ -934,7 +934,7 @@
                     <div class="score-box">${calculatedScore} <span style="font-size:18px; color:#555;">/ 100 điểm</span></div>
                     
                     ${levelBadgeHtml}
-                    <br><div id="save-status-msg">✅ Đã lưu kết quả thi thành công!</div><br>
+                    <br><div id="save-status-msg">✅ Đã lưu kết quả thi lên Google Sheet thành công!</div><br>
                     
                     <p style="font-size:13.5px; line-height:1.5; color:#333; margin: 5px 0 15px 0; background:#e9ecef; padding:10px; border-radius:8px; text-align:left;">
                         ${adviceText}
