@@ -133,7 +133,7 @@
         #prev-btn { background: #fd7e14; color: white; }
         #next-btn { background: #198754; color: white; }
         
-        /* RESULT CARD & FEEDBACK THU GỌN */
+        /* RESULT CARD & FEEDBACK THU GỌN VỪA KHÍT KHUNG */
         .result-card { text-align: center; }
         .score-box { font-size: 38px; font-weight: bold; color: #1e7e34; margin: 8px 0 4px 0; }
         .level-badge { display: inline-block; padding: 6px 18px; border-radius: 20px; font-weight: bold; font-size: 14px; margin-bottom: 12px; }
@@ -143,13 +143,13 @@
 
         .stats-box { background: #f8f9fa; border: 1px solid #dee2e6; border-radius: 10px; padding: 14px; margin: 15px 0; text-align: left; font-size: 13.5px; line-height: 1.6; }
         
-        .feedback-card { background: #fff8e6; border: 1px solid #ffe8a1; border-radius: 10px; padding: 10px 12px; margin-top: 12px; text-align: left; }
-        .feedback-card label { font-size: 12.5px; font-weight: bold; color: #8c6d00; display: block; margin-bottom: 4px; }
+        .feedback-card { background: #fff8e6; border: 1px solid #ffe8a1; border-radius: 10px; padding: 12px 14px; margin-top: 12px; text-align: left; width: 100%; }
+        .feedback-card label { font-size: 12.5px; font-weight: bold; color: #8c6d00; display: block; margin-bottom: 6px; }
         .feedback-card textarea { 
             width: 100%; 
             resize: vertical; 
-            min-height: 50px; 
-            max-height: 180px;
+            min-height: 65px; 
+            max-height: 140px;
             padding: 8px 10px; 
             border: 1.5px solid #ffe082; 
             border-radius: 6px; 
@@ -158,10 +158,10 @@
             outline: none; 
             background: #ffffff; 
         }
-        .btn-send-feedback { background: #ffc107; color: #000; font-weight: bold; border: none; padding: 8px 12px; border-radius: 6px; cursor: pointer; margin-top: 6px; width: 100%; font-size: 13px; }
+        .btn-send-feedback { background: #ffc107; color: #000; font-weight: bold; border: none; padding: 9px 12px; border-radius: 6px; cursor: pointer; margin-top: 8px; width: 100%; font-size: 13px; }
 
-        .extra-tools-card { background: #f0f7ff; border: 1.5px solid #b6d4fe; border-radius: 10px; padding: 12px; margin-top: 12px; display: flex; gap: 8px; flex-wrap: wrap; text-align: left; }
-        .extra-tools-title { width: 100%; font-size: 12.5px; font-weight: bold; color: #0d6efd; margin-bottom: 4px; }
+        .extra-tools-card { background: #f0f7ff; border: 1.5px solid #b6d4fe; border-radius: 10px; padding: 12px; margin-top: 12px; display: flex; gap: 8px; flex-wrap: wrap; text-align: left; width: 100%; }
+        .extra-tools-title { width: 100%; font-size: 12.5px; font-weight: bold; color: #0d6efd; margin-bottom: 6px; }
         .btn-tool { flex: 1; min-width: 140px; padding: 10px 8px; font-size: 12.5px; font-weight: bold; border: none; border-radius: 6px; cursor: pointer; transition: background 0.2s; }
         .btn-screenshot { background: #0d6efd; color: white; }
         .btn-upload-drive { background: #198754; color: white; }
@@ -426,12 +426,9 @@
             }
         }
 
-        // ĐÃ KHẮC PHỤC: BỎ REGEX GÂY LỖI KHOẢNG TRẮNG TIẾNG VIỆT
         function fixStuckText(text) {
             if (!text) return "";
-            return text.normalize('NFC')
-                       .replace(/\s+/g, ' ')
-                       .trim();
+            return text.normalize('NFC').replace(/\s+/g, ' ').trim();
         }
 
         function getFilteredListeningItemsBySelection(isSectionMode, selectedVal) {
@@ -1156,16 +1153,18 @@
                         • ⏭️ Số câu CHƯA ĐẠT / BỎ QUA: <b>${skippedCount} / ${totalItems}</b> câu
                     </div>
 
-                    <div class="extra-tools-card">
-                        <div class="extra-tools-title">🛠️ TIỆN ÍCH BỔ SUNG / ADDITIONAL TOOLS:</div>
-                        <button class="btn-tool btn-screenshot" onclick="captureResultScreenshot()">📸 Chụp ảnh kết quả (Save Result Image)</button>
-                        <button class="btn-tool btn-upload-drive" id="btn-drive-status" onclick="uploadResultToDrive()">☁️ Tải ảnh lên Google Drive (Upload to Drive)</button>
-                    </div>
-
+                    <!-- Ô GÓP Ý ĐÃ ĐƯỢC CHỈNH VỪA KHÍT VÀ ĐẶT LÊN TRÊN -->
                     <div class="feedback-card">
                         <label for="user-feedback">✍️ Đề xuất góp ý (nếu có) / Feedbacks & Comments:</label>
                         <textarea id="user-feedback" rows="2" placeholder="Nhập ý kiến đóng góp của bạn về bài học / Enter your comments..."></textarea>
                         <button class="btn-send-feedback" onclick="sendFeedbackOnly()">✉️ Gửi góp ý bổ sung / Submit Feedback</button>
+                    </div>
+
+                    <!-- TIỆN ÍCH BỔ SUNG ĐÃ ĐƯỢC CHUYỂN XUỐNG DƯỚI -->
+                    <div class="extra-tools-card">
+                        <div class="extra-tools-title">🛠️ LƯU KẾT QUẢ & TIỆN ÍCH BỔ SUNG / SAVE RESULT & ADDITIONAL TOOLS:</div>
+                        <button class="btn-tool btn-screenshot" onclick="captureResultScreenshot()">📸 Chụp ảnh kết quả (Save Result Image)</button>
+                        <button class="btn-tool btn-upload-drive" id="btn-drive-status" onclick="uploadResultToDrive()">☁️ Tải ảnh lên Google Drive (Upload to Drive)</button>
                     </div>
 
                     <div class="action-buttons">
