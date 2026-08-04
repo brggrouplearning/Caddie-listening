@@ -146,7 +146,7 @@
         .feedback-card { background: #fff8e6; border: 1px solid #ffe8a1; border-radius: 10px; padding: 10px 12px; margin-top: 12px; text-align: left; }
         .feedback-card label { font-size: 12.5px; font-weight: bold; color: #8c6d00; display: block; margin-bottom: 4px; }
         .feedback-card textarea { 
-            width: 100%; 
+            width: 1005; 
             resize: vertical; 
             min-height: 50px; 
             max-height: 180px;
@@ -426,12 +426,11 @@
             }
         }
 
-        // TỰ ĐỘNG CHUẨN HÓA VÀ LÀM SẠCH CHUỖI TIẾNG VIỆT
+        // ĐÃ KHẮC PHỤC: BỎ REGEX GÂY LỖI KHOẢNG TRẮNG TIẾNG VIỆT
         function fixStuckText(text) {
             if (!text) return "";
             return text.normalize('NFC')
                        .replace(/\s+/g, ' ')
-                       .replace(/([!?.A-Za-z0-9])([À-Ỹà-ỹ])/g, '$1 $2')
                        .trim();
         }
 
@@ -739,7 +738,6 @@
                         <span class="vi-trans">${currentQuiz.translation || ""}</span>
                     `;
 
-                    // KHẮC PHỤC TRIỆT ĐỂ LỖI TRÙNG LẶP NỘI DUNG GỢI Ý
                     if (currentQuiz.hint) {
                         let cleanHint = currentQuiz.hint.replace(/^💡\s*/, '').replace(/^Gợi ý:\s*/i, '').trim();
                         document.getElementById('char-hint').innerText = `💡 Gợi ý: ${cleanHint}`;
