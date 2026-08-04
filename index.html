@@ -57,6 +57,15 @@
         .option-btn.opt-correct { background-color: #d1e7dd !important; border-color: #198754 !important; color: #0f5132; font-weight: bold; }
         .option-btn.opt-incorrect { background-color: #f8d7da !important; border-color: #dc3545 !important; color: #842029; font-weight: bold; }
 
+        /* KỶ NĂNG XỬ LÝ LỖI DÍNH CHỮ TIẾNG VIỆT */
+        .vi-trans { 
+            display: block; 
+            margin-top: 4px; 
+            font-weight: normal; 
+            font-size: 13px; 
+            color: #495057; 
+        }
+
         .control-group { display: flex; justify-content: space-between; gap: 10px; margin-top: 18px; flex-wrap: wrap; }
         .action-btn { padding: 11px 16px; font-size: 13.5px; font-weight: bold; border: none; border-radius: 6px; cursor: pointer; flex: 1; min-width: 120px; }
         #prev-btn { background: #fd7e14; color: white; }
@@ -302,6 +311,8 @@
             lessonTitle: ''
         };
 
+        let lastSessionMessage = "";
+
         function toggleContentMode(mode) {
             const radioSection = document.getElementById('mode-section');
             const radioExam = document.getElementById('mode-exam');
@@ -352,6 +363,12 @@
             }
         }
 
+        // HÀM TỰ ĐỘNG KHẮC PHỤC LỖI DÍNH CHỮ GIỮA TIẾNG ANH VÀ TIẾNG VIỆT
+        function fixStuckText(text) {
+            if (!text) return "";
+            return text.replace(/([!?.A-Za-z0-9])([À-Ỹà-ỹ])/g, '$1 $2').trim();
+        }
+
         function getFilteredListeningItemsBySelection(isSectionMode, selectedVal) {
             let rawPool = (window.masterQuizData && window.masterQuizData.length > 0) ? [...window.masterQuizData] : [];
             let filtered = [];
@@ -383,7 +400,15 @@
             if (subTitleElem) subTitleElem.innerText = titleBanner;
 
             filtered.forEach(item => {
-                if (item.translation) item.translation = item.translation.replace(/\+\]/gi, '').replace(/cite:\s*[\d,\s]+/gi, '').trim();
+                if (item.translation) {
+                    item.translation = fixStuckText(item.translation.replace(/\+\]/gi, '').replace(/cite:\s*[\d,\s]+/gi, '').trim());
+                }
+                if (item.options && Array.isArray(item.options)) {
+                    item.options.forEach(opt => {
+                        if (opt.en) opt.en = fixStuckText(opt.en);
+                        if (opt.vi) opt.vi = fixStuckText(opt.vi);
+                    });
+                }
             });
 
             if (filtered.length === 0) {
@@ -464,7 +489,6 @@
 
             errorElem.style.display = "none";
 
-            // LƯU CỐ ĐỊNH THÔNG TIN HỌC VIÊN ĐỂ DÙNG KHI QUAY LẠI MÀN HÌNH ĐIỂM
             studentInfo.workPlace = workPlace;
             studentInfo.studentName = studentName;
             studentInfo.staffNumber = staffNumber;
@@ -636,7 +660,7 @@
                             }
                         }
 
-                        btn.innerHTML = `${displayEnText}<span class="vi-trans">${optObj.vi}</span>`;
+                        btn.innerHTML = `<span>${displayEnText}</span><span class="vi-trans">${optObj.vi}</span>`;
                         mcqContainer.appendChild(btn);
                     });
                 } 
@@ -690,7 +714,7 @@
 
             } else {
                 if (isReviewMode) {
-                    finishSession("🎉 HOÀN THÀNH BÀI KIỂM TRA NGHE!", true);
+                    finishSession(lastSessionMessage || "🎉 HOÀN THÀNH BÀI KIỂM TRA NGHE!", true);
                 } else {
                     clearInterval(timerInterval);
                     finishSession("🎉 HOÀN THÀNH BÀI KIỂM TRA NGHE!");
@@ -795,7 +819,7 @@
             if ('speechSynthesis' in window) window.speechSynthesis.cancel();
             
             if (isReviewMode && currentIndex === quizData.length - 1) {
-                finishSession("🎉 HOÀN THÀNH BÀI KIỂM TRA NGHE!", true);
+                finishSession(lastSessionMessage || "🎉 HOÀN THÀNH BÀI KIỂM TRA NGHE!", true);
                 return;
             }
 
@@ -963,11 +987,11 @@
             });
         }
 
-        // HÀM HIỂN THỊ KẾT QUẢ - ĐÃ KHẮC PHỤC LỖI NÚT "QUAY LẠI MÀN HÌNH ĐIỂM"
         function finishSession(message, isFromReview = false) {
             clearInterval(timerInterval);
             clearTimeout(autoPlayTimer);
             isReviewMode = false;
+            lastSessionMessage = message;
 
             let correctCount = 0;
             let incorrectCount = 0;
@@ -1006,7 +1030,6 @@
                 adviceText = "<b>Đánh giá:</b> Chưa đạt yêu cầu phản xạ nghe hiểu; khuyến nghị tập nghe lại nhiều lần.";
             }
 
-            // CHỈ GỬI ĐỮ LIỆU LÊN SHEET LẦN ĐẦU KHI NỘP BÀI (KHÔNG GỬI LẠI KHI BẤM "QUAY LẠI MÀN HÌNH ĐIỂM")
             if (!isFromReview) {
                 lastSavedPayload = {
                     timestamp: startTimeFormatted,
@@ -1027,7 +1050,6 @@
                 sendResultToGoogleSheet(lastSavedPayload, false);
             }
 
-            // ẨN VIEW LÀM BÀI VÀ REVIEW VIEW, HIỂN THỊ MÀN HÌNH ĐIỂM
             const quizArea = document.getElementById('quiz-area');
             const reviewArea = document.getElementById('review-view');
             const resultArea = document.getElementById('result-view');
@@ -1063,7 +1085,6 @@
                         • ⏭️ Số câu CHƯA ĐẠT / BỎ QUA: <b>${skippedCount} / ${totalItems}</b> câu
                     </div>
 
-                    <!-- KHUNG CÔNG CỤ BỔ SUNG -->
                     <div class="extra-tools-card">
                         <div class="extra-tools-title">🛠️ TIỆN ÍCH BỔ SUNG / ADDITIONAL TOOLS:</div>
                         <button class="btn-tool btn-screenshot" onclick="captureResultScreenshot()">📸 Chụp ảnh kết quả (Save Result Image)</button>
@@ -1101,7 +1122,6 @@
             const timerBox = document.getElementById('timer-box');
             if (timerBox) timerBox.innerText = "🔍 ĐANG Ở CHẾ ĐỘ XEM LẠI";
 
-            // THÊM NÚT QUAY LẠI MÀN HÌNH ĐIỂM
             let backBtn = document.getElementById('back-result-btn');
             if (!backBtn) {
                 backBtn = document.createElement('button');
@@ -1112,7 +1132,7 @@
                 backBtn.style.width = '100%';
                 backBtn.style.marginTop = '12px';
                 backBtn.innerHTML = '📊 Quay lại Màn hình Điểm';
-                backBtn.onclick = () => finishSession(lastSessionMessage, true);
+                backBtn.onclick = () => finishSession(lastSessionMessage || "🎉 HOÀN THÀNH BÀI KIỂM TRA NGHE!", true);
                 
                 const quizContainer = document.getElementById('quiz-area');
                 if (quizContainer) quizContainer.appendChild(backBtn);
