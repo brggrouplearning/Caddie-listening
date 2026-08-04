@@ -225,7 +225,7 @@
             <button class="btn-start-quiz" onclick="startQuizPractice()">BẮT ĐẦU LÀM BÀI / START TEST 🚀</button>
         </div>
 
-        <!-- BƯỚC 2: MÀN HÌNH LÀM BÀI (ẨN BAN ĐẦU) -->
+        <!-- BƯỚC 2: MÀN HÌNH LÀM BÀI -->
         <div id="quiz-area" class="hidden">
             <div class="meta-bar" id="top-meta-bar">
                 <div id="item-status" class="status-pending">⏳ Trạng thái: Chưa hoàn thành</div>
@@ -844,7 +844,7 @@
             sendResultToGoogleSheet(lastSavedPayload, true);
         }
 
-        // HÀM TÍNH TOÁN VÀ KHẮC PHỤC CHÍNH XÁC SỐ CÂU TRẢ LỜI ĐÚNG / SAI / BỎ QUA
+        // HÀM HOÀN THIỆN BÀI THI - GỬI CỘT J NGUYÊN BẢN SỐ CÂU SAI DẠNG PHÂN SỐ
         function finishSession(message) {
             clearInterval(timerInterval);
             clearTimeout(autoPlayTimer);
@@ -905,7 +905,7 @@
             const department = document.getElementById('department').value;
             const lessonTitle = document.getElementById('lesson-title') ? document.getElementById('lesson-title').innerText : 'Luyện nghe';
 
-            // CHỈNH SỬA SỐ CÂU CHUẨN XÁC TRUYỀN VỀ GOOGLE SHEET (KHÔNG BỊ CỘNG GỘP NHẦM)
+            // CẬP NHẬT CỘT J VÀ CỘT K ĐÚNG ĐỊNH DẠNG THEO MÀN HÌNH HỌC VIÊN
             lastSavedPayload = {
                 timestamp: startTimeFormatted,
                 studentName: studentName,
@@ -916,9 +916,9 @@
                 rawLessonCode: rawLessonCode,
                 lessonTitle: lessonTitle,
                 score: calculatedScore,
-                passedCount: `${correctCount}/${totalItems}`,      // Cột I: Số câu đúng (vd: 0/50)
-                approxCount: `0/${totalItems}`,                   // Cột J: Định dạng đồng bộ phân số (0/50)
-                skippedCount: `${skippedCount}/${totalItems}`,    // Cột K: Chỉ đếm đúng số câu bỏ qua (vd: 36/50)
+                passedCount: `${correctCount}/${totalItems}`,        // Cột I: Số câu đúng (vd: 3/30)
+                approxCount: `${incorrectCount}/${totalItems}`,      // Cột J: Số câu sai (vd: 15/30)
+                skippedCount: `${skippedCount}/${totalItems}`,      // Cột K: Số câu bỏ qua (vd: 12/30)
                 elapsedTime: formatDuration(elapsedSeconds),
                 feedback: ""
             };
