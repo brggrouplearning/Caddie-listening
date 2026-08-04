@@ -9,7 +9,7 @@ if (typeof window.masterQuizData === 'undefined') {
 
 window.masterQuizData.push(
     // =========================================================================
-    // SECTION 5.1: LỜI THAN PHIỀN (COMPLAINTS & APOLOGIES)
+    // SECTION 5.1: LỜI THAN PHIỀN (COMPLAINTS & APOLOGIES) - 61 CÂU
     // =========================================================================
     {
         "lesson": "5",
@@ -94,6 +94,246 @@ window.masterQuizData.push(
     {
         "lesson": "5",
         "section": "section5.1",
+        "type": "mcq",
+        "title": "[5.1 Luyện nghe] Nghe đoạn audio và chọn câu tiếng Anh đúng:",
+        "audioText": "I sincerely apologize for giving you the wrong distance, Sir.",
+        "phonetic": "/aɪ sɪnˈsɪr.li əˈpɑː.lə.dʒaɪz fɔːr ˈɡɪv.ɪŋ juː ðə rɑːŋ ˈdɪs.təns, sɜːr/",
+        "translation": "Em thành thật xin lỗi vì đã báo sai khoảng cách cho ông ạ.",
+        "options": [
+            { "en": "A. I sincerely apologize for giving you the wrong distance, Sir.", "vi": "Thành thật xin lỗi vì báo sai khoảng cách ạ" },
+            { "en": "B. You misheard my number, Sir.", "vi": "Ông nghe nhầm số của em rồi ạ" },
+            { "en": "C. The distance marker is incorrect, not me, Sir.", "vi": "Cọc khoảng cách sai chứ không phải em ạ" },
+            { "en": "D. It is only 10 yards difference, Sir.", "vi": "Chỉ lệch có 10 yard thôi mà ông" }
+        ],
+        "correct": 0
+    },
+    {
+        "lesson": "5",
+        "section": "section5.1",
+        "type": "mcq",
+        "title": "[5.1 Luyện nghe] Nghe đoạn audio và chọn câu tiếng Anh đúng:",
+        "audioText": "I am so sorry for dropping your club, Sir. Let me clean it for you.",
+        "phonetic": "/aɪ æm soʊ ˈsɑː.ri fɔːr ˈdrɑː.pɪŋ jʊər klʌb, sɜːr. let miː kliːn ɪt fɔːr juː/",
+        "translation": "Em xin lỗi vì làm rơi gậy của ông. Để em lau sạch lại cho ông ạ.",
+        "options": [
+            { "en": "A. I am so sorry for dropping your club, Sir. Let me clean it for you.", "vi": "Xin lỗi vì làm rơi gậy, để em lau lại ạ" },
+            { "en": "B. Your club was too slippery, Sir.", "vi": "Gậy của ông trơn quá ạ" },
+            { "en": "C. Pick up the club yourself, Sir.", "vi": "Ông tự nhặt gậy lên đi ạ" },
+            { "en": "D. It is not broken, don't worry, Sir.", "vi": "Gậy chưa gãy đâu, đừng lo ạ" }
+        ],
+        "correct": 0
+    },
+    {
+        "lesson": "5",
+        "section": "section5.1",
+        "type": "mcq",
+        "title": "[5.1 Luyện nghe] Nghe đoạn audio và chọn câu tiếng Anh đúng:",
+        "audioText": "My apologies, Sir. I forgot to put wet towel on the cart.",
+        "phonetic": "/maɪ əˈpɑː.lə.dʒiːz, sɜːr. aɪ fɚˈɡɑːt tə pʊt wet ˈtaʊ.əl ɑːn ðə kɑːrt/",
+        "translation": "Cho em xin lỗi ạ. Em đã quên mang theo khăn ướt lên xe điện ạ.",
+        "options": [
+            { "en": "A. My apologies, Sir. I forgot to put wet towel on the cart.", "vi": "Xin lỗi ông, em quên mang khăn ướt lên xe ạ" },
+            { "en": "B. You don't need wet towel today, Sir.", "vi": "Hôm nay ông không cần khăn ướt đâu ạ" },
+            { "en": "C. Use your own handkerchief, Sir.", "vi": "Ông dùng khăn tay của ông đi ạ" },
+            { "en": "D. Towels are out of stock today, Sir.", "vi": "Hôm nay hết khăn ướt rồi ạ" }
+        ],
+        "correct": 0
+    },
+    {
+        "lesson": "5",
+        "section": "section5.1",
+        "type": "mcq",
+        "title": "[5.1 Luyện nghe] Nghe đoạn audio và chọn câu tiếng Anh đúng:",
+        "audioText": "I am sorry for the delay, Sir. The rough grass is very deep here.",
+        "phonetic": "/aɪ æm ˈsɑː.ri fɔːr ðə dɪˈleɪ, sɜːr. ðə rʌf ɡræs ɪz ˈver.i diːp hɪər/",
+        "translation": "Em xin lỗi vì sự chậm trễ ạ. Cỏ ở khu vực rough này rất dày.",
+        "options": [
+            { "en": "A. I am sorry for the delay, Sir. The rough grass is very deep here.", "vi": "Xin lỗi vì chậm trễ, cỏ rough ở đây quá dày ạ" },
+            { "en": "B. You shouldn't hit into the deep grass, Sir.", "vi": "Lẽ ra ông không nên đánh vào cỏ dày ạ" },
+            { "en": "C. Buy a new ball and stop searching, Sir.", "vi": "Mua bóng mới và ngừng tìm đi ạ" },
+            { "en": "D. I don't want to search in this grass, Sir.", "vi": "Em không muốn tìm ở khu cỏ này đâu ạ" }
+        ],
+        "correct": 0
+    },
+    {
+        "lesson": "5",
+        "section": "section5.1",
+        "type": "mcq",
+        "title": "[5.1 Luyện nghe] Nghe đoạn audio và chọn câu tiếng Anh đúng:",
+        "audioText": "I am terribly sorry for moving while you were swinging, Sir.",
+        "phonetic": "/aɪ æm ˈter.ə.bli ˈsɑː.ri fɔːr ˈmuː.vɪŋ waɪl juː wɜːr ˈswɪŋ.ɪŋ, sɜːr/",
+        "translation": "Em vô cùng xin lỗi vì đã di chuyển trong lúc ông đang vung gậy ạ.",
+        "options": [
+            { "en": "A. I am terribly sorry for moving while you were swinging, Sir.", "vi": "Vô cùng xin lỗi vì di chuyển khi ông vung gậy ạ" },
+            { "en": "B. You swung too quickly without warning, Sir.", "vi": "Ông swing nhanh quá không báo trước ạ" },
+            { "en": "C. A little movement is normal, Sir.", "vi": "Di chuyển chút xíu là bình thường mà ạ" },
+            { "en": "D. Don't look at me when you swing, Sir.", "vi": "Đừng nhìn em khi ông vung gậy ạ" }
+        ],
+        "correct": 0
+    },
+    {
+        "lesson": "5",
+        "section": "section5.1",
+        "type": "mcq",
+        "title": "[5.1 Luyện nghe] Nghe đoạn audio và chọn câu tiếng Anh đúng:",
+        "audioText": "I apologize for this issue, Sir. I will arrange another cart right away.",
+        "phonetic": "/aɪ əˈpɑː.lə.dʒaɪz fɔːr ðɪs ˈɪʃ.uː, sɜːr. aɪ wɪl əˈreɪndʒ əˈnʌð.ɚ kɑːrt raɪt əˈweɪ/",
+        "translation": "Em xin lỗi vì sự cố này ạ. Em sẽ đổi xe điện khác ngay lập tức.",
+        "options": [
+            { "en": "A. I apologize for this issue, Sir. I will arrange another cart right away.", "vi": "Em xin lỗi, em sẽ đổi xe khác ngay ạ" },
+            { "en": "B. You can walk for the rest of the game, Sir.", "vi": "Ông có thể đi bộ phần còn lại ạ" },
+            { "en": "C. Drive slowly and it will be fine, Sir.", "vi": "Cứ lái chậm thôi là được ạ" },
+            { "en": "D. The mechanics are sleeping now, Sir.", "vi": "Thợ sửa xe đang ngủ rồi ạ" }
+        ],
+        "correct": 0
+    },
+    {
+        "lesson": "5",
+        "section": "section5.1",
+        "type": "mcq",
+        "title": "[5.1 Luyện nghe] Nghe đoạn audio và chọn câu tiếng Anh đúng:",
+        "audioText": "I'm sorry, Sir. I read the break incorrectly. I will pay more attention.",
+        "phonetic": "/aɪm ˈsɑː.ri, sɜːr. aɪ red ðə breɪk ˌɪn.kəˈrekt.li. aɪ wɪl peɪ mɔːr əˈten.ʃən/",
+        "translation": "Em xin lỗi ông. Em đã đọc sai hướng đổ green. Em sẽ chú ý hơn ạ.",
+        "options": [
+            { "en": "A. I'm sorry, Sir. I read the break incorrectly. I will pay more attention.", "vi": "Xin lỗi ông, em đọc sai line, em sẽ chú ý hơn ạ" },
+            { "en": "B. The green changed direction suddenly, Sir.", "vi": "Green tự nhiên đổi hướng đấy chứ ạ" },
+            { "en": "C. You hit the ball too hard, Sir.", "vi": "Tại ông đánh bóng quá lực ạ" },
+            { "en": "D. Don't ask for line next time, Sir.", "vi": "Lần sau đừng hỏi line em nữa ạ" }
+        ],
+        "correct": 0
+    },
+    {
+        "lesson": "5",
+        "section": "section5.1",
+        "type": "mcq",
+        "title": "[5.1 Luyện nghe] Nghe đoạn audio và chọn câu tiếng Anh đúng:",
+        "audioText": "I assure you this will not happen again, Sir.",
+        "phonetic": "/aɪ əˈʃʊr juː ðɪs wɪl nɑːt ˈhæp.ən əˈɡen, sɜːr/",
+        "translation": "Em cam đoan với ông điều này sẽ không xảy ra lần nữa đâu ạ.",
+        "options": [
+            { "en": "A. I assure you this will not happen again, Sir.", "vi": "Cam đoan việc này sẽ không lặp lại ạ" },
+            { "en": "B. Mistakes happen all the time, Sir.", "vi": "Sai sót xảy ra suốt ấy mà ạ" },
+            { "en": "C. Don't be so strict with me, Sir.", "vi": "Đừng quá khắt khe với em ạ" },
+            { "en": "D. I cannot promise anything, Sir.", "vi": "Em không hứa trước được điều gì đâu ạ" }
+        ],
+        "correct": 0
+    },
+    {
+        "lesson": "5",
+        "section": "section5.1",
+        "type": "mcq",
+        "title": "[5.1 Luyện nghe] Nghe đoạn audio và chọn câu tiếng Anh đúng:",
+        "audioText": "Thank you for your feedback, Sir. I will improve my attitude.",
+        "phonetic": "/θæŋk juː fɔːr jʊər ˈfiːd.bæk, sɜːr. aɪ wɪl ɪmˈpruːv maɪ ˈæt̬.ə.tuːd/",
+        "translation": "Cảm ơn góp ý của ông ạ. Em sẽ cải thiện thái độ của mình.",
+        "options": [
+            { "en": "A. Thank you for your feedback, Sir. I will improve my attitude.", "vi": "Cảm ơn góp ý, em sẽ cải thiện thái độ ạ" },
+            { "en": "B. My attitude is totally fine, Sir.", "vi": "Thái độ của em hoàn toàn bình thường ạ" },
+            { "en": "C. You are too hard to please, Sir.", "vi": "Ông khó tính quá đấy ạ" },
+            { "en": "D. I don't care about feedback, Sir.", "vi": "Em không quan tâm góp ý đâu ạ" }
+        ],
+        "correct": 0
+    },
+    {
+        "lesson": "5",
+        "section": "section5.1",
+        "type": "mcq",
+        "title": "[5.1 Luyện nghe] Nghe đoạn audio và chọn câu tiếng Anh đúng:",
+        "audioText": "I'm sorry, Sir. I brought you the 7-iron instead of 8-iron.",
+        "phonetic": "/aɪm ˈsɑː.ri, sɜːr. aɪ brɔːt juː ðə ˈsev.ən aɪ.ɚn ɪnˈsted əv eɪt aɪ.ɚn/",
+        "translation": "Em xin lỗi ông. Em lấy nhầm cây gậy sắt số 7 thay vì số 8 ạ.",
+        "options": [
+            { "en": "A. I'm sorry, Sir. I brought you the 7-iron instead of 8-iron.", "vi": "Xin lỗi ông, em lấy nhầm gậy sắt 7 thay vì 8 ạ" },
+            { "en": "B. 7-iron and 8-iron are the same, Sir.", "vi": "Gậy 7 với gậy 8 giống nhau mà ạ" },
+            { "en": "C. You told me to bring 7-iron, Sir.", "vi": "Chính ông bảo em lấy gậy 7 mà ạ" },
+            { "en": "D. Use 7-iron anyway, Sir.", "vi": "Cứ đánh gậy 7 đi ạ" }
+        ],
+        "correct": 0
+    },
+    {
+        "lesson": "5",
+        "section": "section5.1",
+        "type": "mcq",
+        "title": "[5.1 Luyện nghe] Nghe đoạn audio và chọn câu tiếng Anh đúng:",
+        "audioText": "I apologize, Sir. Let me clean this club head properly right now.",
+        "phonetic": "/aɪ əˈpɑː.lə.dʒaɪz, sɜːr. let miː kliːn ðɪs klʌb hed ˈprɑː.pɚ.li raɪt naʊ/",
+        "translation": "Em xin lỗi ạ. Để em lau thật sạch mặt gậy này ngay bây giờ.",
+        "options": [
+            { "en": "A. I apologize, Sir. Let me clean this club head properly right now.", "vi": "Em xin lỗi, để em lau sạch mặt gậy ngay ạ" },
+            { "en": "B. A little mud doesn't matter, Sir.", "vi": "Dính chút bùn không sao đâu ạ" },
+            { "en": "C. Clean it yourself with towel, Sir.", "vi": "Lấy khăn tự lau đi ạ" },
+            { "en": "D. Grass is clean enough, Sir.", "vi": "Dính cỏ thế này là sạch rồi ạ" }
+        ],
+        "correct": 0
+    },
+    {
+        "lesson": "5",
+        "section": "section5.1",
+        "type": "mcq",
+        "title": "[5.1 Luyện nghe] Nghe đoạn audio và chọn câu tiếng Anh đúng:",
+        "audioText": "I am deeply sorry, Sir. I will run to get an umbrella for you right now.",
+        "phonetic": "/aɪ æm ˈdiːp.li ˈsɑː.ri, sɜːr. aɪ wɪl rʌn tə ɡet æn ʌmˈbrel.ə fɔːr juː raɪt naʊ/",
+        "translation": "Em thành thật xin lỗi ông. Em sẽ chạy đi lấy ô cho ông ngay ạ.",
+        "options": [
+            { "en": "A. I am deeply sorry, Sir. I will run to get an umbrella for you right now.", "vi": "Xin lỗi ông, em sẽ chạy đi lấy ô ngay ạ" },
+            { "en": "B. The sun is good for your health, Sir.", "vi": "Nắng tốt cho sức khỏe mà ông" },
+            { "en": "C. You should wear a hat, Sir.", "vi": "Lẽ ra ông phải đội mũ chứ ạ" },
+            { "en": "D. We don't provide umbrellas, Sir.", "vi": "Sân em không cung cấp ô đâu ạ" }
+        ],
+        "correct": 0
+    },
+    {
+        "lesson": "5",
+        "section": "section5.1",
+        "type": "mcq",
+        "title": "[5.1 Luyện nghe] Nghe đoạn audio và chọn câu tiếng Anh đúng:",
+        "audioText": "I'm sorry, Sir. We will speed up our pace of play immediately.",
+        "phonetic": "/aɪm ˈsɑː.ri, sɜːr. wiː wɪl spiːd ʌp aʊər peɪs əv pleɪ ɪˈmiː.di.ət.li/",
+        "translation": "Em xin lỗi ông. Nhóm em sẽ đẩy nhanh tốc độ chơi ngay lập tức ạ.",
+        "options": [
+            { "en": "A. I'm sorry, Sir. We will speed up our pace of play immediately.", "vi": "Xin lỗi ông, nhóm em sẽ chơi nhanh hơn ngay ạ" },
+            { "en": "B. You can wait behind us, Sir.", "vi": "Các ông cứ việc chờ phía sau ạ" },
+            { "en": "C. We paid for 4 hours, Sir.", "vi": "Bọn em trả tiền chơi 4 tiếng mà ạ" },
+            { "en": "D. Don't rush us, Sir.", "vi": "Đừng thúc giục bọn em ạ" }
+        ],
+        "correct": 0
+    },
+    {
+        "lesson": "5",
+        "section": "section5.1",
+        "type": "mcq",
+        "title": "[5.1 Luyện nghe] Nghe đoạn audio và chọn câu tiếng Anh đúng:",
+        "audioText": "It was completely my fault, Sir. I apologize for my carelessness.",
+        "phonetic": "/ɪt wɑːz kəmˈpliːt.li maɪ fɑːlt, sɜːr. aɪ əˈpɑː.lə.dʒaɪz fɔːr maɪ ˈker.ləs.nəs/",
+        "translation": "Hoàn toàn là lỗi của em ạ. Em xin lỗi vì sự bất cẩn của mình.",
+        "options": [
+            { "en": "A. It was completely my fault, Sir. I apologize for my carelessness.", "vi": "Hoàn toàn là lỗi của em, xin lỗi vì bất cẩn ạ" },
+            { "en": "B. Nobody is perfect, Sir.", "vi": "Không ai hoàn hảo cả thưa ông" },
+            { "en": "C. It's half your fault too, Sir.", "vi": "Một nửa cũng là lỗi của ông ạ" },
+            { "en": "D. Blame the weather, not me, Sir.", "vi": "Trách thời tiết chứ đừng trách em ạ" }
+        ],
+        "correct": 0
+    },
+    {
+        "lesson": "5",
+        "section": "section5.1",
+        "type": "mcq",
+        "title": "[5.1 Luyện nghe] Nghe đoạn audio và chọn câu tiếng Anh đúng:",
+        "audioText": "I'm sorry, Sir. I will rake the bunker smoothly right now.",
+        "phonetic": "/aɪm ˈsɑː.ri, sɜːr. aɪ wɪl reɪk ðə ˈbʌŋ.kɚ ˈsmuːð.li raɪt naʊ/",
+        "translation": "Em xin lỗi ông. Em sẽ cào bẫy cát thật phẳng ngay đây ạ.",
+        "options": [
+            { "en": "A. I'm sorry, Sir. I will rake the bunker smoothly right now.", "vi": "Xin lỗi ông, em sẽ cào bẫy cát phẳng ngay ạ" },
+            { "en": "B. The sand is already fine, Sir.", "vi": "Cát thế này phẳng rồi ạ" },
+            { "en": "C. Other caddies didn't rake either, Sir.", "vi": "Caddie khác cũng đâu có cào đâu ạ" },
+            { "en": "D. Rake it yourself if you want, Sir.", "vi": "Thích thì tự cào đi ạ" }
+        ],
+        "correct": 0
+    },
+    {
+        "lesson": "5",
+        "section": "section5.1",
         "type": "fill",
         "title": "[5.1 Điền từ] Nghe đoạn audio và ĐIỀN TỪ chuẩn xác:",
         "audioText": "I'm sorry, I will be quicker next time, Sir.",
@@ -113,11 +353,387 @@ window.masterQuizData.push(
         "translation": "Thưa ông, em chân thành xin lỗi vì sự bất tiện này ạ.",
         "displaySentence": "Sir, I sincerely apologize for this _______.",
         "targetWord": "inconvenience",
-        "hint": "💡 Gợi ý: Từ gồm 14 kí tự."
+        "hint": "💡 Gợi ý: Từ 13 ký tự."
+    },
+    {
+        "lesson": "5",
+        "section": "section5.1",
+        "type": "fill",
+        "title": "[5.1 Điền từ] Nghe đoạn audio và ĐIỀN TỪ chuẩn xác:",
+        "audioText": "I completely understand your frustration, Sir.",
+        "phonetic": "/aɪ kəmˈpliːt.li ˌʌn.dɚˈstænd jʊər frʌsˈtreɪ.ʃən, sɜːr/",
+        "translation": "Em hoàn toàn hiểu sự bức xúc của ông ạ.",
+        "displaySentence": "I completely understand your _______, Sir.",
+        "targetWord": "frustration",
+        "hint": "💡 Gợi ý: Từ 11 ký tự."
+    },
+    {
+        "lesson": "5",
+        "section": "section5.1",
+        "type": "fill",
+        "title": "[5.1 Điền từ] Nghe đoạn audio và ĐIỀN TỪ chuẩn xác:",
+        "audioText": "I am sorry for bringing the wrong club, Sir.",
+        "phonetic": "/aɪ æm ˈsɑː.ri fɔːr ˈbrɪŋ.ɪŋ ðə rɑːŋ klʌb, sɜːr/",
+        "translation": "Em xin lỗi vì mang sai gậy ạ.",
+        "displaySentence": "I am sorry for bringing the _______ club, Sir.",
+        "targetWord": "wrong",
+        "hint": "💡 Gợi ý: Từ 5 ký tự."
+    },
+    {
+        "lesson": "5",
+        "section": "section5.1",
+        "type": "fill",
+        "title": "[5.1 Điền từ] Nghe đoạn audio và ĐIỀN TỪ chuẩn xác:",
+        "audioText": "I will pay more attention to your game, Sir.",
+        "phonetic": "/aɪ wɪl peɪ mɔːr əˈten.ʃən tə jʊər ɡeɪm, sɜːr/",
+        "translation": "Em sẽ chú ý nhiều hơn đến trận đấu của ông ạ.",
+        "displaySentence": "I will pay more _______ to your game, Sir.",
+        "targetWord": "attention",
+        "hint": "💡 Gợi ý: Từ 9 ký tự."
+    },
+    {
+        "lesson": "5",
+        "section": "section5.1",
+        "type": "fill",
+        "title": "[5.1 Điền từ] Nghe đoạn audio và ĐIỀN TỪ chuẩn xác:",
+        "audioText": "I will report this problem to my manager, Sir.",
+        "phonetic": "/aɪ wɪl rɪˈpɔːrt ðɪs ˈprɑː.bləm tə maɪ ˈmæn.ə.dʒɚ, sɜːr/",
+        "translation": "Em sẽ báo cáo vấn đề này tới quản lý ạ.",
+        "displaySentence": "I will report this problem to my _______, Sir.",
+        "targetWord": "manager",
+        "hint": "💡 Gợi ý: Từ 7 ký tự."
+    },
+    {
+        "lesson": "5",
+        "section": "section5.1",
+        "type": "fill",
+        "title": "[5.1 Điền từ] Nghe đoạn audio và ĐIỀN TỪ chuẩn xác:",
+        "audioText": "Please forgive my carelessness, Sir.",
+        "phonetic": "/pliːz fɚˈɡɪv maɪ ˈker.ləs.nəs, sɜːr/",
+        "translation": "Xin ông thứ lỗi cho sự bất cẩn của em ạ.",
+        "displaySentence": "Please forgive my _______, Sir.",
+        "targetWord": "carelessness",
+        "hint": "💡 Gợi ý: Từ 12 ký tự."
+    },
+    {
+        "lesson": "5",
+        "section": "section5.1",
+        "type": "fill",
+        "title": "[5.1 Điền từ] Nghe đoạn audio và ĐIỀN TỪ chuẩn xác:",
+        "audioText": "I apologize for disturbing your concentration, Sir.",
+        "phonetic": "/aɪ əˈpɑː.lə.dʒaɪz fɔːr dɪˈstɜːr.bɪŋ jʊər ˌkɑːn.sənˈtreɪ.ʃən, sɜːr/",
+        "translation": "Em xin lỗi vì làm gián đoạn sự tập trung của ông ạ.",
+        "displaySentence": "I apologize for disturbing your _______, Sir.",
+        "targetWord": "concentration",
+        "hint": "💡 Gợi ý: Từ 13 ký tự."
+    },
+    {
+        "lesson": "5",
+        "section": "section5.1",
+        "type": "fill",
+        "title": "[5.1 Điền từ] Nghe đoạn audio và ĐIỀN TỪ chuẩn xác:",
+        "audioText": "I will check all clubs carefully before starting, Sir.",
+        "phonetic": "/aɪ wɪl tʃek ɑːl klʌbz ˈker.fəl.i bɪˈfɔːr ˈstɑːrt.ɪŋ, sɜːr/",
+        "translation": "Em sẽ kiểm tra toàn bộ gậy cẩn thận trước khi bắt đầu ạ.",
+        "displaySentence": "I will check all clubs _______ before starting, Sir.",
+        "targetWord": "carefully",
+        "hint": "💡 Gợi ý: Từ 9 ký tự."
+    },
+    {
+        "lesson": "5",
+        "section": "section5.1",
+        "type": "fill",
+        "title": "[5.1 Điền từ] Nghe đoạn audio và ĐIỀN TỪ chuẩn xác:",
+        "audioText": "I am sorry for losing sight of your ball, Sir.",
+        "phonetic": "/aɪ æm ˈsɑː.ri fɔːr ˈluː.zɪŋ saɪt əv jʊər bɔːl, sɜːr/",
+        "translation": "Em xin lỗi vì mất dấu bóng của ông ạ.",
+        "displaySentence": "I am sorry for losing _______ of your ball, Sir.",
+        "targetWord": "sight",
+        "hint": "💡 Gợi ý: Từ 5 ký tự."
+    },
+    {
+        "lesson": "5",
+        "section": "section5.1",
+        "type": "mcq",
+        "title": "[5.1 Luyện nghe] Nghe đoạn audio và chọn câu tiếng Anh đúng:",
+        "audioText": "I'm sorry, Sir. I will fetch fresh ice for your drinks immediately.",
+        "phonetic": "/aɪm ˈsɑː.ri, sɜːr. aɪ wɪl fetʃ freʃ aɪs fɔːr jʊər drɪŋks ɪˈmiː.di.ət.li/",
+        "translation": "Em xin lỗi ông. Em sẽ đi lấy thêm đá tươi cho nước uống ngay ạ.",
+        "options": [
+            { "en": "A. I'm sorry, Sir. I will fetch fresh ice for your drinks immediately.", "vi": "Xin lỗi ông, em sẽ lấy thêm đá lạnh ngay ạ" },
+            { "en": "B. Drink warm water, it is healthier, Sir.", "vi": "Uống nước ấm tốt hơn cho sức khỏe ạ" },
+            { "en": "C. Ice is finished on the course today, Sir.", "vi": "Hôm nay trên sân hết đá rồi ạ" },
+            { "en": "D. You drink too fast, Sir.", "vi": "Ông uống nhanh quá ạ" }
+        ],
+        "correct": 0
+    },
+    {
+        "lesson": "5",
+        "section": "section5.1",
+        "type": "mcq",
+        "title": "[5.1 Luyện nghe] Nghe đoạn audio và chọn câu tiếng Anh đúng:",
+        "audioText": "I apologize, Sir. I will walk back to find your headcover right now.",
+        "phonetic": "/aɪ əˈpɑː.lə.dʒaɪz, sɜːr. aɪ wɪl wɑːk bæk tə faɪnd jʊər ˈhed.kʌv.ɚ raɪt naʊ/",
+        "translation": "Em xin lỗi ạ. Em sẽ quay lại tìm bọc đầu gậy cho ông ngay bây giờ.",
+        "options": [
+            { "en": "A. I apologize, Sir. I will walk back to find your headcover right now.", "vi": "Em xin lỗi, em quay lại tìm bọc gậy ngay ạ" },
+            { "en": "B. Headcover is not important, Sir.", "vi": "Bọc gậy không quan trọng đâu ạ" },
+            { "en": "C. Buy a new one at Proshop, Sir.", "vi": "Mua cái mới ở Proshop đi ạ" },
+            { "en": "D. You lost it yourself, Sir.", "vi": "Do ông tự làm mất đấy chứ ạ" }
+        ],
+        "correct": 0
+    },
+    {
+        "lesson": "5",
+        "section": "section5.1",
+        "type": "mcq",
+        "title": "[5.1 Luyện nghe] Nghe đoạn audio và chọn câu tiếng Anh đúng:",
+        "audioText": "I am so sorry for spilling water on your bag, Sir. Let me wipe it dry.",
+        "phonetic": "/aɪ æm soʊ ˈsɑː.ri fɔːr ˈspɪl.ɪŋ ˈwɔː.tər ɑːn jʊər bæɡ, sɜːr. let miː waɪp ɪt draɪ/",
+        "translation": "Em xin lỗi vì làm đổ nước lên túi gậy. Để em lau khô ngay ạ.",
+        "options": [
+            { "en": "A. I am so sorry for spilling water on your bag, Sir. Let me wipe it dry.", "vi": "Xin lỗi vì làm đổ nước, để em lau khô túi ạ" },
+            { "en": "B. Water makes your bag cleaner, Sir.", "vi": "Nước làm túi gậy sạch hơn mà ạ" },
+            { "en": "C. It will dry under the sun quickly, Sir.", "vi": "Nắng chiếu chút là khô thôi ạ" },
+            { "en": "D. Don't worry, leather is waterproof, Sir.", "vi": "Đừng lo, chất liệu da chống nước ạ" }
+        ],
+        "correct": 0
+    },
+    {
+        "lesson": "5",
+        "section": "section5.1",
+        "type": "mcq",
+        "title": "[5.1 Luyện nghe] Nghe đoạn audio và chọn câu tiếng Anh đúng:",
+        "audioText": "I am sorry, Sir. I will stand behind your line of sight from now on.",
+        "phonetic": "/aɪ æm ˈsɑː.ri, sɜːr. aɪ wɪl stænd bɪˈhaɪnd jʊər laɪn əv saɪt frɑːm naʊ ɑːn/",
+        "translation": "Em xin lỗi ông. Từ giờ em sẽ đứng phía sau tầm nhìn của ông ạ.",
+        "options": [
+            { "en": "A. I am sorry, Sir. I will stand behind your line of sight from now on.", "vi": "Em xin lỗi, từ giờ sẽ đứng ngoài tầm nhìn ạ" },
+            { "en": "B. Where should I stand then, Sir?", "vi": "Thế ông muốn em đứng đâu ạ?" },
+            { "en": "C. You have broad eyes, Sir.", "vi": "Thị lực ông rộng mà ạ" },
+            { "en": "D. Close your eyes before hitting, Sir.", "vi": "Nhắm mắt lại trước khi đánh đi ạ" }
+        ],
+        "correct": 0
+    },
+    {
+        "lesson": "5",
+        "section": "section5.1",
+        "type": "mcq",
+        "title": "[5.1 Luyện nghe] Nghe đoạn audio và chọn câu tiếng Anh đúng:",
+        "audioText": "I apologize for not warning you about the hidden water hazard, Sir.",
+        "phonetic": "/aɪ əˈpɑː.lə.dʒaɪz fɔːr nɑːt ˈwɔːrn.ɪŋ juː əˈbaʊt ðə ˈhɪd.ən ˈwɔː.tər ˈhæz.ɚd, sɜːr/",
+        "translation": "Em xin lỗi vì đã không cảnh báo ông về bẫy nước ẩn phía trước ạ.",
+        "options": [
+            { "en": "A. I apologize for not warning you about the hidden water hazard, Sir.", "vi": "Em xin lỗi vì không nhắc về bẫy nước ẩn ạ" },
+            { "en": "B. You played this course before, Sir.", "vi": "Ông từng chơi sân này rồi mà ạ" },
+            { "en": "C. The hazard is on the scorecard map, Sir.", "vi": "Bẫy nước có trên bản đồ bảng điểm mà ạ" },
+            { "en": "D. Look at the course carefully next time, Sir.", "vi": "Lần sau nhìn sân cho kỹ ạ" }
+        ],
+        "correct": 0
+    },
+    {
+        "lesson": "5",
+        "section": "section5.1",
+        "type": "mcq",
+        "title": "[5.1 Luyện nghe] Nghe đoạn audio và chọn câu tiếng Anh đúng:",
+        "audioText": "My deepest apologies, Sir. I will remain completely still and quiet.",
+        "phonetic": "/maɪ ˈdiː.pɪst əˈpɑː.lə.dʒiːz, sɜːr. aɪ wɪl rɪˈmeɪn kəmˈpliːt.li stɪl ænd ˈkwaɪ.ət/",
+        "translation": "Em thành thật xin lỗi ạ. Em sẽ đứng im tuyệt đối và giữ yên lặng.",
+        "options": [
+            { "en": "A. My deepest apologies, Sir. I will remain completely still and quiet.", "vi": "Em xin lỗi sâu sắc, em sẽ đứng im và giữ yên lặng ạ" },
+            { "en": "B. I was just breathing normally, Sir.", "vi": "Em chỉ hít thở bình thường thôi ạ" },
+            { "en": "C. You are too sensitive, Sir.", "vi": "Ông nhạy cảm quá rồi ạ" },
+            { "en": "D. Everyone moves on the green, Sir.", "vi": "Ai trên green cũng cử động mà ạ" }
+        ],
+        "correct": 0
+    },
+    {
+        "lesson": "5",
+        "section": "section5.1",
+        "type": "mcq",
+        "title": "[5.1 Luyện nghe] Nghe đoạn audio và chọn câu tiếng Anh đúng:",
+        "audioText": "I'm sorry, Sir. I will run back and put the flagstick in right away.",
+        "phonetic": "/aɪm ˈsɑː.ri, sɜːr. aɪ wɪl rʌn bæk ænd pʊt ðə ˈflæɡ.stɪk ɪn raɪt əˈweɪ/",
+        "translation": "Em xin lỗi ông. Em sẽ chạy lại cắm cờ ngay lập tức ạ.",
+        "options": [
+            { "en": "A. I'm sorry, Sir. I will run back and put the flagstick in right away.", "vi": "Xin lỗi ông, em sẽ chạy lại cắm cờ ngay ạ" },
+            { "en": "B. Group behind will insert it for us, Sir.", "vi": "Nhóm sau sẽ cắm hộ mình ạ" },
+            { "en": "C. Flag is not necessary now, Sir.", "vi": "Giờ cờ đâu có quan trọng ạ" },
+            { "en": "D. Another caddie forgot it, Sir.", "vi": "Caddie khác quên chứ không phải em ạ" }
+        ],
+        "correct": 0
+    },
+    {
+        "lesson": "5",
+        "section": "section5.1",
+        "type": "mcq",
+        "title": "[5.1 Luyện nghe] Nghe đoạn audio và chọn câu tiếng Anh đúng:",
+        "audioText": "I understand your disappointment, Sir. I will inform F&B supervisor.",
+        "phonetic": "/aɪ ˌʌn.dɚˈstænd jʊər ˌdɪs.əˈpɔɪnt.mənt, sɜːr. aɪ wɪl ɪnˈfɔːrm ˌef.ənˈbiː ˈsuː.pɚ.vaɪ.zɚ/",
+        "translation": "Em hiểu sự thất vọng của ông ạ. Em sẽ báo giám sát nhà hàng ngay.",
+        "options": [
+            { "en": "A. I understand your disappointment, Sir. I will inform F&B supervisor.", "vi": "Em hiểu, em sẽ báo giám sát nhà hàng ngay ạ" },
+            { "en": "B. Restaurant is not my duty, Sir.", "vi": "Nhà hàng không thuộc trách nhiệm của em ạ" },
+            { "en": "C. Cooking takes time, Sir.", "vi": "Nấu ăn thì phải tốn thời gian chứ ạ" },
+            { "en": "D. Eat snacks on cart instead, Sir.", "vi": "Uống đồ ăn vặt trên xe tạm đi ạ" }
+        ],
+        "correct": 0
+    },
+    {
+        "lesson": "5",
+        "section": "section5.1",
+        "type": "mcq",
+        "title": "[5.1 Luyện nghe] Nghe đoạn audio và chọn câu tiếng Anh đúng:",
+        "audioText": "I'm sorry, Sir. I will clean the cart wheels before we move forward.",
+        "phonetic": "/aɪm ˈsɑː.ri, sɜːr. aɪ wɪl kliːn ðə kɑːrt wiːlz bɪˈfɔːr wiː muːv ˈfɔːr.wɚd/",
+        "translation": "Em xin lỗi ông. Em sẽ rửa sạch bánh xe trước khi mình đi tiếp ạ.",
+        "options": [
+            { "en": "A. I'm sorry, Sir. I will clean the cart wheels before we move forward.", "vi": "Em xin lỗi, em sẽ rửa bánh xe điện ngay ạ" },
+            { "en": "B. Wheels are meant to get dirty, Sir.", "vi": "Bánh xe thì phải bẩn chứ ạ" },
+            { "en": "C. Rain will wash it off, Sir.", "vi": "Mưa xuống là nó tự sạch ạ" },
+            { "en": "D. We don't have water hose here, Sir.", "vi": "Ở đây không có vòi nước ạ" }
+        ],
+        "correct": 0
+    },
+    {
+        "lesson": "5",
+        "section": "section5.1",
+        "type": "mcq",
+        "title": "[5.1 Luyện nghe] Nghe đoạn audio và chọn câu tiếng Anh đúng:",
+        "audioText": "My mistake, Sir. Let me correct the score on your scorecard right now.",
+        "phonetic": "/maɪ mɪˈsteɪk, sɜːr. let miː kəˈrekt ðə skɔːr ɑːn jʊər ˈskɔːr.kɑːrd raɪt naʊ/",
+        "translation": "Lỗi của em ạ. Để em sửa lại điểm trên bảng điểm cho ông ngay.",
+        "options": [
+            { "en": "A. My mistake, Sir. Let me correct the score on your scorecard right now.", "vi": "Lỗi của em, em xin sửa lại điểm ngay ạ" },
+            { "en": "B. You counted your strokes wrong, Sir.", "vi": "Ông tự đếm sai số gậy đấy chứ ạ" },
+            { "en": "C. Scorecard cannot be erased, Sir.", "vi": "Bảng điểm không xóa được đâu ạ" },
+            { "en": "D. It's just a friendly match, Sir.", "vi": "Trận giao hữu thôi mà ông" }
+        ],
+        "correct": 0
+    },
+    {
+        "lesson": "5",
+        "section": "section5.1",
+        "type": "fill",
+        "title": "[5.1 Điền từ] Nghe đoạn audio và ĐIỀN TỪ chuẩn xác:",
+        "audioText": "I apologize for disturbing your swing, Sir.",
+        "phonetic": "/aɪ əˈpɑː.lə.dʒaɪz fɔːr dɪˈstɜːr.bɪŋ jʊər swɪŋ, sɜːr/",
+        "translation": "Em xin lỗi vì làm ảnh hưởng cú swing của ông ạ.",
+        "displaySentence": "I apologize for disturbing your _______, Sir.",
+        "targetWord": "swing",
+        "hint": "💡 Gợi ý: Từ 5 ký tự."
+    },
+    {
+        "lesson": "5",
+        "section": "section5.1",
+        "type": "fill",
+        "title": "[5.1 Điền từ] Nghe đoạn audio và ĐIỀN TỪ chuẩn xác:",
+        "audioText": "I will speed up my pace right away, Sir.",
+        "phonetic": "/aɪ wɪl spiːd ʌp maɪ peɪs raɪt əˈweɪ, sɜːr/",
+        "translation": "Em sẽ đẩy nhanh tốc độ ngay lập tức ạ.",
+        "displaySentence": "I will speed up my _______ right away, Sir.",
+        "targetWord": "pace",
+        "hint": "💡 Gợi ý: Từ 4 ký tự."
+    },
+    {
+        "lesson": "5",
+        "section": "section5.1",
+        "type": "fill",
+        "title": "[5.1 Điền từ] Nghe đoạn audio và ĐIỀN TỪ chuẩn xác:",
+        "audioText": "I am sorry for the wrong distance advice, Sir.",
+        "phonetic": "/aɪ æm ˈsɑː.ri fɔːr ðə rɑːŋ ˈdɪs.təns ədˈvaɪs, sɜːr/",
+        "translation": "Em xin lỗi vì đã tư vấn sai khoảng cách ạ.",
+        "displaySentence": "I am sorry for the wrong distance _______, Sir.",
+        "targetWord": "advice",
+        "hint": "💡 Gợi ý: Từ 6 ký tự."
+    },
+    {
+        "lesson": "5",
+        "section": "section5.1",
+        "type": "fill",
+        "title": "[5.1 Điền từ] Nghe đoạn audio và ĐIỀN TỪ chuẩn xác:",
+        "audioText": "Thank you for pointing out my error, Sir.",
+        "phonetic": "/θæŋk juː fɔːr ˈpɔɪnt.ɪŋ aʊt maɪ ˈer.ɚ, sɜːr/",
+        "translation": "Cảm ơn ông đã chỉ ra sai sót của em ạ.",
+        "displaySentence": "Thank you for pointing out my _______, Sir.",
+        "targetWord": "error",
+        "hint": "💡 Gợi ý: Từ 5 ký tự."
+    },
+    {
+        "lesson": "5",
+        "section": "section5.1",
+        "type": "fill",
+        "title": "[5.1 Điền từ] Nghe đoạn audio và ĐIỀN TỪ chuẩn xác:",
+        "audioText": "I will watch your ball landing area closely, Sir.",
+        "phonetic": "/aɪ wɪl wɑːtʃ jʊər bɔːl ˈlænd.ɪŋ ˈer.i.ə ˈkloʊs.li, sɜːr/",
+        "translation": "Em sẽ quan sát điểm bóng rơi thật kỹ ạ.",
+        "displaySentence": "I will watch your ball landing area _______, Sir.",
+        "targetWord": "closely",
+        "hint": "💡 Gợi ý: Từ 7 ký tự."
+    },
+    {
+        "lesson": "5",
+        "section": "section5.1",
+        "type": "fill",
+        "title": "[5.1 Điền từ] Nghe đoạn audio và ĐIỀN TỪ chuẩn xác:",
+        "audioText": "I take full responsibility for this mistake, Sir.",
+        "phonetic": "/aɪ teɪk fʊl rɪˌspɑːn.səˈbɪl.ə.ti fɔːr ðɪs mɪˈsteɪk, sɜːr/",
+        "translation": "Em xin chịu toàn bộ trách nhiệm cho sai sót này ạ.",
+        "displaySentence": "I take full _______ for this mistake, Sir.",
+        "targetWord": "responsibility",
+        "hint": "💡 Gợi ý: Từ 14 ký tự."
+    },
+    {
+        "lesson": "5",
+        "section": "section5.1",
+        "type": "fill",
+        "title": "[5.1 Điền từ] Nghe đoạn audio và ĐIỀN TỪ chuẩn xác:",
+        "audioText": "I promise not to repeat this mistake, Sir.",
+        "phonetic": "/aɪ ˈprɑː.mɪs nɑːt tə rɪˈpiːt ðɪs mɪˈsteɪk, sɜːr/",
+        "translation": "Em hứa không lặp lại sai lầm này ạ.",
+        "displaySentence": "I promise not to _______ this mistake, Sir.",
+        "targetWord": "repeat",
+        "hint": "💡 Gợi ý: Từ 6 ký tự, động từ."
+    },
+    {
+        "lesson": "5",
+        "section": "section5.1",
+        "type": "fill",
+        "title": "[5.1 Điền từ] Nghe đoạn audio và ĐIỀN TỪ chuẩn xác:",
+        "audioText": "I apologize for the dirt on your golf bag, Sir.",
+        "phonetic": "/aɪ əˈpɑː.lə.dʒaɪz fɔːr ðə dɜːrt ɑːn jʊər ɡɑːlf bæɡ, sɜːr/",
+        "translation": "Em xin lỗi vì vết bẩn trên túi gậy của ông ạ.",
+        "displaySentence": "I apologize for the _______ on your golf bag, Sir.",
+        "targetWord": "dirt",
+        "hint": "💡 Gợi ý: Từ 4 ký tự."
+    },
+    {
+        "lesson": "5",
+        "section": "section5.1",
+        "type": "fill",
+        "title": "[5.1 Điền từ] Nghe đoạn audio và ĐIỀN TỪ chuẩn xác:",
+        "audioText": "I will do my best to ensure a comfortable round, Sir.",
+        "phonetic": "/aɪ wɪl duː maɪ best tə ɪnˈʃʊr ə ˈkʌm.fɚ.t̬ə.bəl raʊnd, sɜːr/",
+        "translation": "Em sẽ cố gắng hết sức để bảo đảm vòng đấu thoải mái ạ.",
+        "displaySentence": "I will do my best to ensure a _______ round, Sir.",
+        "targetWord": "comfortable",
+        "hint": "💡 Gợi ý: Từ 11 ký tự, tính từ."
+    },
+    {
+        "lesson": "5",
+        "section": "section5.1",
+        "type": "fill",
+        "title": "[5.1 Điền từ] Nghe đoạn audio và ĐIỀN TỪ chuẩn xác:",
+        "audioText": "Sorry, I gave you the short tee by mistake, Sir.",
+        "phonetic": "/ˈsɑː.ri, aɪ ɡeɪv juː ðə ʃɔːrt tiː baɪ mɪˈsteɪk, sɜːr/",
+        "translation": "Xin lỗi, em nhầm đưa ông chiếc tee ngắn ạ.",
+        "displaySentence": "Sorry, I gave you the short tee by _______, Sir.",
+        "targetWord": "mistake",
+        "hint": "💡 Gợi ý: Từ 7 ký tự."
     },
 
     // =========================================================================
-    // SECTION 5.2: LỜI ĐỀ NGHỊ (OFFERS & SUGGESTIONS)
+    // SECTION 5.2: LỜI ĐỀ NGHỊ (OFFERS & SUGGESTIONS) - 61 CÂU
     // =========================================================================
     {
         "lesson": "5",
@@ -146,7 +762,7 @@ window.masterQuizData.push(
         "options": [
             { "en": "A. Would you like me to open the umbrella for you, Sir?", "vi": "Ông có cần em mở ô che cho ông không ạ?" },
             { "en": "B. Hold the umbrella for me, Sir.", "vi": "Cầm ô giúp em thưa ông" },
-            { "en": "C. Close your umbrella immediately, Sir.", "vi": "Oán ô lại ngay đi ạ" },
+            { "en": "C. Close your umbrella immediately, Sir.", "vi": "Đóng ô lại ngay đi ạ" },
             { "en": "D. We don't have umbrellas today, Sir.", "vi": "Hôm nay chúng em không có ô ạ" }
         ],
         "correct": 0
@@ -192,10 +808,250 @@ window.masterQuizData.push(
         "phonetic": "/pliːz teɪk ə ʃɔːrt rest, sɜːr. aɪ wɪl ˈkɑːn.tækt ðə ˈmɑːr.ʃəl tə sɑːlv ðɪs naʊ/",
         "translation": "Xin ông nghỉ ngơi ít phút ạ. Em sẽ liên hệ với Marshal để xử lý việc này ngay ạ.",
         "options": [
-            { "en": "A. I will contact the Marshal to solve the situation now, Sir.", "vi": "Em sẽ liên hệ Marshal xử lý ngay ạ" },
+            { "en": "A. Please take a short rest, Sir. I will contact the Marshal to solve this now.", "vi": "Xin ông nghỉ chút, em sẽ gọi Marshal xử lý ngay ạ" },
             { "en": "B. Call the Marshal by your phone, Sir.", "vi": "Ông tự lấy điện thoại gọi Marshal đi ạ" },
             { "en": "C. Nobody can help you right now, Sir.", "vi": "Không ai giúp được ông lúc này đâu ạ" },
             { "en": "D. Leave the course immediately, Sir.", "vi": "Rời khỏi sân ngay lập tức ạ" }
+        ],
+        "correct": 0
+    },
+    {
+        "lesson": "5",
+        "section": "section5.2",
+        "type": "mcq",
+        "title": "[5.2 Luyện nghe] Nghe đoạn audio và chọn câu tiếng Anh đúng:",
+        "audioText": "Would you like a cold towel to refresh yourself, Sir?",
+        "phonetic": "/wʊd juː laɪk ə koʊld ˈtaʊ.əl tə rɪˈfreʃ jʊərˈself, sɜːr/",
+        "translation": "Ông có muốn dùng khăn lạnh để lau cho mát không ạ?",
+        "options": [
+            { "en": "A. Would you like a cold towel to refresh yourself, Sir?", "vi": "Ông muốn dùng khăn lạnh cho mát không ạ?" },
+            { "en": "B. Wash your face at the lake, Sir.", "vi": "Ra hồ mà rửa mặt thưa ông" },
+            { "en": "C. Hot towel is better for your skin, Sir.", "vi": "Khăn nóng tốt cho da hơn ạ" },
+            { "en": "D. You don't look sweaty at all, Sir.", "vi": "Trông ông chẳng có tẹo mồ hôi nào ạ" }
+        ],
+        "correct": 0
+    },
+    {
+        "lesson": "5",
+        "section": "section5.2",
+        "type": "mcq",
+        "title": "[5.2 Luyện nghe] Nghe đoạn audio và chọn câu tiếng Anh đúng:",
+        "audioText": "Shall I bring both 7-iron and 8-iron for you to choose, Sir?",
+        "phonetic": "/ʃæl aɪ brɪŋ boʊθ ˈsev.ən aɪ.ɚn ænd eɪt aɪ.ɚn fɔːr juː tə tʃuːz, sɜːr/",
+        "translation": "Em lấy cả gậy sắt 7 và sắt 8 để ông chọn nhé ạ?",
+        "options": [
+            { "en": "A. Shall I bring both 7-iron and 8-iron for you to choose, Sir?", "vi": "Em cầm cả gậy 7 và 8 ra cho ông chọn nhé ạ?" },
+            { "en": "B. Choose one club only, I don't carry two, Sir.", "vi": "Chọn một cây thôi, em không mang hai cây đâu ạ" },
+            { "en": "C. Decide your club before walking, Sir.", "vi": "Quyết định chọn gậy trước khi đi đi ạ" },
+            { "en": "D. Hit with any club you see, Sir.", "vi": "Thấy cây nào thì đánh cây đó đi ạ" }
+        ],
+        "correct": 0
+    },
+    {
+        "lesson": "5",
+        "section": "section5.2",
+        "type": "mcq",
+        "title": "[5.2 Luyện nghe] Nghe đoạn audio và chọn câu tiếng Anh đúng:",
+        "audioText": "We are passing the kiosk. Would you like to grab a snack, Sir?",
+        "phonetic": "/wiː ɑːr ˈpæs.ɪŋ ðə ˈkiː.ɑːsk. wʊd juː laɪk tə ɡræb ə snæk, sɜːr/",
+        "translation": "Chúng ta đang qua trạm nghỉ. Ông có muốn dùng chút đồ ăn nhẹ không ạ?",
+        "options": [
+            { "en": "A. We are passing the kiosk. Would you like to grab a snack, Sir?", "vi": "Gần trạm nghỉ, ông muốn mua chút đồ ăn nhẹ không ạ?" },
+            { "en": "B. Kiosk is closed today, Sir.", "vi": "Trạm nghỉ hôm nay đóng cửa rồi ạ" },
+            { "en": "C. Don't eat food while playing, Sir.", "vi": "Đừng ăn trong lúc chơi ạ" },
+            { "en": "D. Buy lunch for me at kiosk, Sir.", "vi": "Mua đồ ăn trưa cho em ở trạm nghỉ đi ạ" }
+        ],
+        "correct": 0
+    },
+    {
+        "lesson": "5",
+        "section": "section5.2",
+        "type": "mcq",
+        "title": "[5.2 Luyện nghe] Nghe đoạn audio và chọn câu tiếng Anh đúng:",
+        "audioText": "Please hop on the cart, Sir. I will drive you directly to your ball.",
+        "phonetic": "/pliːz hɑːp ɑːn ðə kɑːrt, sɜːr. aɪ wɪl draɪv juː dɪˈrekt.li tə jʊər bɔːl/",
+        "translation": "Xin mời ông lên xe ạ. Em sẽ chở ông đến thẳng vị trí bóng ạ.",
+        "options": [
+            { "en": "A. Please hop on the cart, Sir. I will drive you directly to your ball.", "vi": "Mời ông lên xe em chở thẳng tới bóng ạ" },
+            { "en": "B. You should walk to exercise, Sir.", "vi": "Ông nên đi bộ để tập thể dục ạ" },
+            { "en": "C. Drive the cart yourself, Sir.", "vi": "Ông tự lái xe điện đi ạ" },
+            { "en": "D. Cart is out of battery, Sir.", "vi": "Xe điện hết điện rồi ạ" }
+        ],
+        "correct": 0
+    },
+    {
+        "lesson": "5",
+        "section": "section5.2",
+        "type": "mcq",
+        "title": "[5.2 Luyện nghe] Nghe đoạn audio và chọn câu tiếng Anh đúng:",
+        "audioText": "May I suggest playing safely to the right side to avoid the bunker, Sir?",
+        "phonetic": "/meɪ aɪ səˈdʒest ˈpleɪ.ɪŋ ˈseɪf.li tə ðə raɪt saɪd tə əˈvɔɪd ðə ˈbʌŋ.kɚ, sɜːr/",
+        "translation": "Em xin phép gợi ý đánh an toàn sang bên phải để tránh bẫy cát được không ạ?",
+        "options": [
+            { "en": "A. May I suggest playing safely to the right side to avoid the bunker, Sir?", "vi": "Gợi ý ông đánh an toàn sang phải tránh cát ạ?" },
+            { "en": "B. Hit straight into bunker for fun, Sir.", "vi": "Đánh thẳng vào bẫy cát cho vui đi ạ" },
+            { "en": "C. You cannot avoid bunkers on this hole, Sir.", "vi": "Hố này ông không tránh nổi bẫy cát đâu ạ" },
+            { "en": "D. Don't ask me for strategy, Sir.", "vi": "Đừng hỏi em chiến thuật ạ" }
+        ],
+        "correct": 0
+    },
+    {
+        "lesson": "5",
+        "section": "section5.2",
+        "type": "mcq",
+        "title": "[5.2 Luyện nghe] Nghe đoạn audio và chọn câu tiếng Anh đúng:",
+        "audioText": "The sun is getting strong. Would you like some sunscreen, Sir?",
+        "phonetic": "/ðə sʌn ɪz ˈɡet.ɪŋ strɑːŋ. wʊd juː laɪk səm ˈsʌn.skriːn, sɜːr/",
+        "translation": "Trời đang nắng gắt ạ. Ông có muốn dùng thêm kem chống nắng không ạ?",
+        "options": [
+            { "en": "A. The sun is getting strong. Would you like some sunscreen, Sir?", "vi": "Trắng nắng gắt, ông dùng kem chống nắng không ạ?" },
+            { "en": "B. You are getting sunburned, Sir.", "vi": "Ông đang bị cháy nắng kìa" },
+            { "en": "C. Sunscreen is very expensive, Sir.", "vi": "Kem chống nắng đắt lắm ạ" },
+            { "en": "D. Wear long jacket in this sun, Sir.", "vi": "Mặc áo khoác dài dưới nắng này đi ạ" }
+        ],
+        "correct": 0
+    },
+    {
+        "lesson": "5",
+        "section": "section5.2",
+        "type": "mcq",
+        "title": "[5.2 Luyện nghe] Nghe đoạn audio và chọn câu tiếng Anh đúng:",
+        "audioText": "Your glove looks wet from rain. Would you like to change to a fresh glove, Sir?",
+        "phonetic": "/jʊər ɡlʌv lʊks wet frɑːm reɪn. wʊd juː laɪk tə tʃeɪndʒ tə ə freʃ ɡlʌv, sɜːr/",
+        "translation": "Găng tay của ông bị ướt do mưa rồi. Ông có muốn đổi găng khô mới không ạ?",
+        "options": [
+            { "en": "A. Your glove looks wet. Would you like to change to a fresh glove, Sir?", "vi": "Găng ướt rồi, ông có muốn đổi găng khô mới không ạ?" },
+            { "en": "B. Take off your glove and play barehanded, Sir.", "vi": "Tháo găng ra đánh tay trần đi ạ" },
+            { "en": "C. Wet gloves give better grip, Sir.", "vi": "Găng ướt bám tốt hơn đấy ạ" },
+            { "en": "D. You forgot to buy spare gloves, Sir.", "vi": "Ông quên mua găng dự phòng rồi ạ" }
+        ],
+        "correct": 0
+    },
+    {
+        "lesson": "5",
+        "section": "section5.2",
+        "type": "mcq",
+        "title": "[5.2 Luyện nghe] Nghe đoạn audio và chọn câu tiếng Anh đúng:",
+        "audioText": "Excuse me, Sir. Would you like me to wipe your sunglasses?",
+        "phonetic": "/ɪkˈskjuːz miː, sɜːr. wʊd juː laɪk miː tə waɪp jʊər ˈsʌnˌɡlæs.ɪz/",
+        "translation": "Xin phép ông, em lau giúp ông kính râm nhé ạ?",
+        "options": [
+            { "en": "A. Excuse me, Sir. Would you like me to wipe your sunglasses?", "vi": "Xin phép em lau kính râm giúp ông nhé ạ?" },
+            { "en": "B. Your glasses are very dirty, Sir.", "vi": "Kính của ông bẩn quá ạ" },
+            { "en": "C. Don't wear glasses on green, Sir.", "vi": "Đừng đeo kính trên green ạ" },
+            { "en": "D. Put your sunglasses in my pocket, Sir.", "vi": "Cất kính vào túi em đi ạ" }
+        ],
+        "correct": 0
+    },
+    {
+        "lesson": "5",
+        "section": "section5.2",
+        "type": "mcq",
+        "title": "[5.2 Luyện nghe] Nghe đoạn audio và chọn câu tiếng Anh đúng:",
+        "audioText": "Shall we let the group behind pass us while we look for the ball, Sir?",
+        "phonetic": "/ʃæl wiː let ðə ɡruːp bɪˈhaɪnd pæs ʌs waɪl wiː lʊk fɔːr ðə bɔːl, sɜːr/",
+        "translation": "Hay mình nhường cho nhóm sau đi qua trước trong lúc tìm bóng nhé thưa ông?",
+        "options": [
+            { "en": "A. Shall we let the group behind pass us while we look for the ball, Sir?", "vi": "Nhường nhóm sau đi trước trong lúc tìm bóng nhé ạ?" },
+            { "en": "B. Block the group behind us, Sir.", "vi": "Cản đường nhóm phía sau đi ạ" },
+            { "en": "C. Tell them to wait for 30 minutes, Sir.", "vi": "Bảo họ chờ 30 phút đi ạ" },
+            { "en": "D. We don't care about other players, Sir.", "vi": "Kệ người chơi khác đi ạ" }
+        ],
+        "correct": 0
+    },
+    {
+        "lesson": "5",
+        "section": "section5.2",
+        "type": "mcq",
+        "title": "[5.2 Luyện nghe] Nghe đoạn audio và chọn câu tiếng Anh đúng:",
+        "audioText": "May I take your empty bottle and trash, Sir?",
+        "phonetic": "/meɪ aɪ teɪk jʊər ˈemp.ti ˈbɑː.t̬əl ænd træʃ, sɜːr/",
+        "translation": "Em xin phép dọn vỏ chai rỗng và rác cho ông nhé ạ?",
+        "options": [
+            { "en": "A. May I take your empty bottle and trash, Sir?", "vi": "Em xin phép dọn vỏ chai và rác cho ông ạ?" },
+            { "en": "B. Throw trash on the fairway grass, Sir.", "vi": "Vứt rác ra cỏ fairway đi ạ" },
+            { "en": "C. Keep empty bottles in your pocket, Sir.", "vi": "Cất vỏ chai vào túi quần đi ạ" },
+            { "en": "D. Leave your trash on the green, Sir.", "vi": "Để rác lại trên green đi ạ" }
+        ],
+        "correct": 0
+    },
+    {
+        "lesson": "5",
+        "section": "section5.2",
+        "type": "mcq",
+        "title": "[5.2 Luyện nghe] Nghe đoạn audio và chọn câu tiếng Anh đúng:",
+        "audioText": "Allow me to fix this pitch mark for you, Sir.",
+        "phonetic": "/əˈlaʊ miː tə fɪks ðɪs pɪtʃ mɑːrk fɔːr juː, sɜːr/",
+        "translation": "Cho phép em sửa vết bóng lún này giúp ông ạ.",
+        "options": [
+            { "en": "A. Allow me to fix this pitch mark for you, Sir.", "vi": "Cho phép em sửa vết bóng lún giúp ông ạ" },
+            { "en": "B. You created a big hole on green, Sir.", "vi": "Ông làm thủng hố to trên green kìa" },
+            { "en": "C. Pitch marks don't need repair, Sir.", "vi": "Vết bóng lún không cần sửa đâu ạ" },
+            { "en": "D. Fix the green with your iron club, Sir.", "vi": "Dùng gậy sắt mà sửa green đi ạ" }
+        ],
+        "correct": 0
+    },
+    {
+        "lesson": "5",
+        "section": "section5.2",
+        "type": "mcq",
+        "title": "[5.2 Luyện nghe] Nghe đoạn audio và chọn câu tiếng Anh đúng:",
+        "audioText": "Wind is tailwind now. Would you like to use Driver for maximum distance, Sir?",
+        "phonetic": "/wɪnd ɪz ˈteɪl.wɪnd naʊ. wʊd juː laɪk tə juːz ˈdraɪ.vɚ fɔːr ˈmæk.sə.məm ˈdɪs.təns, sɜːr/",
+        "translation": "Gió đang xuôi chiều. Ông có muốn dùng gậy Driver để đạt khoảng cách tối đa không ạ?",
+        "options": [
+            { "en": "A. Wind is tailwind. Would you like to use Driver for maximum distance, Sir?", "vi": "Gió xuôi, ông muốn dùng gậy Driver để đánh xa nhất không ạ?" },
+            { "en": "B. Tailwind will blow your ball away, Sir.", "vi": "Gió xuôi thổi mất bóng ông đấy ạ" },
+            { "en": "C. Use Putter off the tee today, Sir.", "vi": "Dùng gậy gạt Putter phát bóng đi ạ" },
+            { "en": "D. Don't hit far on this hole, Sir.", "vi": "Hố này đừng đánh xa ạ" }
+        ],
+        "correct": 0
+    },
+    {
+        "lesson": "5",
+        "section": "section5.2",
+        "type": "mcq",
+        "title": "[5.2 Luyện nghe] Nghe đoạn audio và chọn câu tiếng Anh đúng:",
+        "audioText": "Let me hold the umbrella while you take your practice swing, Sir.",
+        "phonetic": "/let miː hoʊld ðə ʌmˈbrel.ə waɪl juː teɪk jʊər ˈpræk.tɪs swɪŋ, sɜːr/",
+        "translation": "Để em giữ ô giúp ông trong lúc ông nháp cú vung gậy ạ.",
+        "options": [
+            { "en": "A. Let me hold the umbrella while you take your practice swing, Sir.", "vi": "Để em cầm ô cho ông đánh nháp ạ" },
+            { "en": "B. Swing with umbrella in your hand, Sir.", "vi": "Cầm ô mà vung gậy đi ạ" },
+            { "en": "C. Put umbrella on fairway grass, Sir.", "vi": "Vứt ô xuống cỏ đi ạ" },
+            { "en": "D. Umbrella is too heavy for me, Sir.", "vi": "Ô nặng quá em không cầm nổi ạ" }
+        ],
+        "correct": 0
+    },
+    {
+        "lesson": "5",
+        "section": "section5.2",
+        "type": "mcq",
+        "title": "[5.2 Luyện nghe] Nghe đoạn audio và chọn câu tiếng Anh đúng:",
+        "audioText": "Would you like me to order some snacks to be delivered to hole 10, Sir?",
+        "phonetic": "/wʊd juː laɪk miː tə ˈɔːr.dɚ səm snæks tə biː dɪˈlɪv.ɚd tə hoʊl ten, sɜːr/",
+        "translation": "Ông có muốn em gọi đồ ăn nhẹ mang ra hố số 10 không ạ?",
+        "options": [
+            { "en": "A. Would you like me to order snacks delivered to hole 10, Sir?", "vi": "Ông muốn em gọi đồ ăn chuyển ra hố 10 không ạ?" },
+            { "en": "B. Delivery service is not allowed here, Sir.", "vi": "Sân không cho ship đồ ăn đâu ạ" },
+            { "en": "C. Eat after 18 holes, don't eat now, Sir.", "vi": "Đánh xong 18 hố rồi ăn ạ" },
+            { "en": "D. Cook your own food on cart, Sir.", "vi": "Tự nấu ăn trên xe điện đi ạ" }
+        ],
+        "correct": 0
+    },
+    {
+        "lesson": "5",
+        "section": "section5.2",
+        "type": "mcq",
+        "title": "[5.2 Luyện nghe] Nghe đoạn audio và chọn câu tiếng Anh đúng:",
+        "audioText": "Shall I pull the flagstick out for you now, Sir?",
+        "phonetic": "/ʃæl aɪ pʊl ðə ˈflæɡ.stɪk aʊt fɔːr juː naʊ, sɜːr/",
+        "translation": "Rút cờ ra cho ông bây giờ luôn nhé ạ?",
+        "options": [
+            { "en": "A. Shall I pull the flagstick out for you now, Sir?", "vi": "Em rút cờ ra cho ông bây giờ nhé ạ?" },
+            { "en": "B. Leave the flagstick falling down, Sir.", "vi": "Cứ để cờ đổ gục xuống ạ" },
+            { "en": "C. Pull the flagstick and throw it, Sir.", "vi": "Rút cờ ra rồi ném đi ạ" },
+            { "en": "D. You must pull the flagstick yourself, Sir.", "vi": "Ông phải tự rút cờ chứ ạ" }
         ],
         "correct": 0
     },
@@ -221,1577 +1077,382 @@ window.masterQuizData.push(
         "translation": "Dừa tươi của chúng em hôm nay rất mát lành thưa ông.",
         "displaySentence": "Our fresh _______ is very refreshing today, Sir.",
         "targetWord": "coconut",
-        "hint": "💡 Gợi ý: Từ chỉ quả dừa tươi."
+        "hint": "💡 Gợi ý: Từ 7 ký tự."
     },
-
-    // =========================================================================
-    // SECTION 5.3: ĐỘNG VIÊN, KHÍCH LỆ (ENCOURAGEMENT & POSITIVE ENERGY)
-    // =========================================================================
     {
         "lesson": "5",
-        "section": "section5.3",
-        "type": "mcq",
-        "title": "[5.3 Luyện nghe] Nghe đoạn audio và chọn câu tiếng Anh đúng:",
-        "audioText": "Great drive, Sir! The ball is right in the middle of the fairway!",
-        "phonetic": "/ɡreɪt draɪv, sɜːr! ðə bɔːl ɪz raɪt ɪn ðə ˈmɪd.əl əv ðə ˈfer.weɪ/",
-        "translation": "Cú phát bóng tuyệt vời quá ông ơi! Bóng nằm ngay giữa fairway rồi ạ!",
-        "options": [
-            { "en": "A. Great drive, Sir! The ball is right in the middle of the fairway!", "vi": "Cú phát bóng tuyệt vời chính giữa fairway ạ!" },
-            { "en": "B. Bad drive, Sir. The ball went into the lake.", "vi": "Cú phát bóng tệ quá xuống hồ rồi ạ" },
-            { "en": "C. Your ball is out of bounds, Sir.", "vi": "Bóng ra ngoài biên OB rồi ạ" },
-            { "en": "D. You missed the ball, Sir.", "vi": "Ông đánh trượt bóng rồi ạ" }
-        ],
-        "correct": 0
-    },
-    {
-        "lesson": "5",
-        "section": "section5.3",
-        "type": "mcq",
-        "title": "[5.3 Luyện nghe] Nghe đoạn audio và chọn câu tiếng Anh đúng:",
-        "audioText": "Unlucky, Sir! Don't worry, the next shot will be better.",
-        "phonetic": "/ʌnˈlʌk.i, sɜːr! doʊnt ˈwɜːr.i, ðə nekst ʃɑːt wɪl biː ˈbet̬.ɚ/",
-        "translation": "Tiếc quá ông ơi! Đừng lo lắng, quả sau sẽ tốt hơn thôi ạ.",
-        "options": [
-            { "en": "A. Unlucky, Sir! Don't worry, the next shot will be better.", "vi": "Tiếc quá ông ơi! Đừng lo, quả sau sẽ tốt hơn ạ" },
-            { "en": "B. You played so poorly on this hole, Sir.", "vi": "Ông đánh quá tệ ở hố này ạ" },
-            { "en": "C. Stop playing golf today, Sir.", "vi": "Dừng chơi golf hôm nay đi ạ" },
-            { "en": "D. That was a terrible shot, Sir.", "vi": "Đó là một cú đánh kinh khủng ạ" }
-        ],
-        "correct": 0
-    },
-    {
-        "lesson": "5",
-        "section": "section5.3",
-        "type": "mcq",
-        "title": "[5.3 Luyện nghe] Nghe đoạn audio và chọn câu tiếng Anh đúng:",
-        "audioText": "Amazing save, Sir! That was pure skill!",
-        "phonetic": "/əˈmeɪ.zɪŋ seɪv, sɜːr! ðæt wɑːz pjʊr skɪl/",
-        "translation": "Cứu bóng kinh ngạc quá ông ơi! Đó hoàn toàn là kỹ năng đỉnh cao ạ!",
-        "options": [
-            { "en": "A. Amazing save, Sir! That was pure skill!", "vi": "Cứu bóng kinh ngạc quá! Hoàn toàn là kỹ năng ạ!" },
-            { "en": "B. You just got lucky, Sir.", "vi": "Ông chỉ may mắn thôi ạ" },
-            { "en": "C. The bunker was easy, Sir.", "vi": "Bẫy cát này dễ mà ạ" },
-            { "en": "D. You hit into the sand again, Sir.", "vi": "Ông lại đánh vào cát rồi ạ" }
-        ],
-        "correct": 0
-    },
-    {
-        "lesson": "5",
-        "section": "section5.3",
-        "type": "mcq",
-        "title": "[5.3 Luyện nghe] Nghe đoạn audio và chọn câu tiếng Anh đúng:",
-        "audioText": "Take your time, Sir. Relax and take a deep breath.",
-        "phonetic": "/teɪk jʊər taɪm, sɜːr. rɪˈlæks ænd teɪk ə diːp breθ/",
-        "translation": "Cứ thong thả thôi thưa ông. Thư giãn và hít một hơi thật sâu ạ.",
-        "options": [
-            { "en": "A. Take your time, Sir. Relax and take a deep breath.", "vi": "Cứ thong thả, thư giãn và hít thở sâu ạ" },
-            { "en": "B. Hurry up, you are taking too long, Sir.", "vi": "Nhanh lên ông mất thời gian quá ạ" },
-            { "en": "C. Don't breathe so loud, Sir.", "vi": "Đừng hít thở to thế ạ" },
-            { "en": "D. Hit immediately without thinking, Sir.", "vi": "Đánh ngay không cần suy nghĩ ạ" }
-        ],
-        "correct": 0
-    },
-    {
-        "lesson": "5",
-        "section": "section5.3",
-        "type": "mcq",
-        "title": "[5.3 Luyện nghe] Nghe đoạn audio và chọn câu tiếng Anh đúng:",
-        "audioText": "Nice Birdie, Sir! You read the green very well!",
-        "phonetic": "/naɪs ˈbɜːr.di, sɜːr! juː red ðə ɡriːn ˈver.i wel/",
-        "translation": "Điểm Birdie đẹp quá thưa ông! Ông đọc đường green quá chuẩn ạ!",
-        "options": [
-            { "en": "A. Nice Birdie, Sir! You read the green very well!", "vi": "Birdie đẹp quá! Ông đọc green rất chuẩn ạ!" },
-            { "en": "B. Bad Birdie, you got lucky, Sir.", "vi": "Birdie tệ, ông may thôi ạ" },
-            { "en": "C. That was a Double Bogey, Sir.", "vi": "Đó là điểm Double Bogey ạ" },
-            { "en": "D. You missed the cup, Sir.", "vi": "Ông đánh trượt hố rồi ạ" }
-        ],
-        "correct": 0
-    },
-    {
-        "lesson": "5",
-        "section": "section5.3",
-        "type": "mcq",
-        "title": "[5.3 Luyện nghe] Nghe đoạn audio và chọn câu tiếng Anh đúng:",
-        "audioText": "Forget about the last shot, Sir. Let's focus on the next one.",
-        "phonetic": "/fɚˈɡet əˈbaʊt ðə læst ʃɑːt, sɜːr. lets ˈfoʊ.kəs ɑːn ðə nekst wʌn/",
-        "translation": "Hãy quên cú đánh vừa rồi đi thưa ông. Cùng tập trung vào quả tiếp theo nhé ạ.",
-        "options": [
-            { "en": "A. Forget about the last shot, Sir. Let's focus on the next one.", "vi": "Quên quả vừa rồi đi, tập trung quả tiếp theo ạ" },
-            { "en": "B. Remember how bad your last shot was, Sir.", "vi": "Hãy nhớ cú đánh vừa rồi tệ thế nào ạ" },
-            { "en": "C. Give up this round, Sir.", "vi": "Bỏ vòng đấu này đi ạ" },
-            { "en": "D. You ruined the game, Sir.", "vi": "Ông làm hỏng trận đấu rồi ạ" }
-        ],
-        "correct": 0
-    },
-    {
-        "lesson": "5",
-        "section": "section5.3",
-        "type": "fill",
-        "title": "[5.3 Điền từ] Nghe đoạn audio và ĐIỀN TỪ chuẩn xác:",
-        "audioText": "Great swing, Sir! You have a perfect rhythm!",
-        "phonetic": "/ɡreɪt swɪŋ, sɜːr! juː hæv ə ˈpɜːr.fekt ˈrɪð.əm/",
-        "translation": "Cú swing tuyệt vời thưa ông! Nhịp điệu của ông rất hoàn hảo ạ!",
-        "displaySentence": "Great swing, Sir! You have a perfect _______!",
-        "targetWord": "rhythm",
-        "hint": "💡 Gợi ý: Từ chỉ nhịp điệu động tác."
-    },
-    {
-        "lesson": "5",
-        "section": "section5.3",
-        "type": "fill",
-        "title": "[5.3 Điền từ] Nghe đoạn audio và ĐIỀN TỪ chuẩn xác:",
-        "audioText": "Stay focused, Sir! You've got this!",
-        "phonetic": "/steɪ ˈfoʊ.kəst, sɜːr! juːv ɡɑːt ðɪs/",
-        "translation": "Giữ tập trung thưa ông! Ông làm được mà!",
-        "displaySentence": "Stay _______, Sir! You've got this!",
-        "targetWord": "focused",
-        "hint": "💡 Gợi ý: Từ chỉ sự tập trung."
-    },
-
-    // =========================================================================
-    // SECTION 5.4: LỜI CHÀO TẠM BIỆT (FAREWELL STANDARDS & LAST IMPRESSION)
-    // =========================================================================
-    {
-        "lesson": "5",
-        "section": "section5.4",
-        "type": "mcq",
-        "title": "[5.4 Luyện nghe] Nghe đoạn audio và chọn câu tiếng Anh đúng:",
-        "audioText": "It was a pleasure to assist you today, Sir.",
-        "phonetic": "/ɪt wɑːz ə ˈpleʒ.ɚ tə əˈsɪst juː təˈdeɪ, sɜːr/",
-        "translation": "Rất vinh hạnh cho em khi được hỗ trợ ông hôm nay ạ.",
-        "options": [
-            { "en": "A. It was a pleasure to assist you today, Sir.", "vi": "Rất vinh hạnh được hỗ trợ ông hôm nay ạ" },
-            { "en": "B. I am very tired of assisting you, Sir.", "vi": "Em rất mệt mỏi khi hỗ trợ ông ạ" },
-            { "en": "C. You must pay me now, Sir.", "vi": "Ông phải trả tiền cho em ngay ạ" },
-            { "en": "D. Don't come back here again, Sir.", "vi": "Đừng quay lại đây nữa ạ" }
-        ],
-        "correct": 0
-    },
-    {
-        "lesson": "5",
-        "section": "section5.4",
-        "type": "mcq",
-        "title": "[5.4 Luyện nghe] Nghe đoạn audio và chọn câu tiếng Anh đúng:",
-        "audioText": "Have a safe trip home, Sir!",
-        "phonetic": "/hæv ə seɪf trɪp hoʊm, sɜːr/",
-        "translation": "Chúc ông có chuyến đi về nhà an toàn ạ!",
-        "options": [
-            { "en": "A. Have a safe trip home, Sir!", "vi": "Chúc ông về nhà an toàn ạ!" },
-            { "en": "B. Drive as fast as possible on the road, Sir.", "vi": "Lái xe nhanh nhất có thể trên đường ạ" },
-            { "en": "C. Walk back to your home, Sir.", "vi": "Đi bộ về nhà ông đi ạ" },
-            { "en": "D. Stay at the parking lot forever, Sir.", "vi": "Ở lại bãi đỗ xe mãi mãi ạ" }
-        ],
-        "correct": 0
-    },
-    {
-        "lesson": "5",
-        "section": "section5.4",
-        "type": "mcq",
-        "title": "[5.4 Luyện nghe] Nghe đoạn audio và chọn câu tiếng Anh đúng:",
-        "audioText": "We hope to welcome you back soon. Have a wonderful evening, Sir!",
-        "phonetic": "/wiː hoʊp tə ˈwel.kəm juː bæk suːn. hæv ə ˈwʌn.dɚ.fəl ˈiːv.nɪŋ, sɜːr/",
-        "translation": "Chúng em hy vọng sớm được đón tiếp ông quay lại. Chúc ông có một buổi tối tuyệt vời ạ!",
-        "options": [
-            { "en": "A. We hope to welcome you back soon. Have a wonderful evening, Sir!", "vi": "Hy vọng sớm đón tiếp lại ông, chúc buổi tối tuyệt vời ạ!" },
-            { "en": "B. Goodbye, I don't want to see you again, Sir.", "vi": "Tạm biệt, em không muốn gặp lại ông ạ" },
-            { "en": "C. The course is closing forever, Sir.", "vi": "Sân golf đóng cửa vĩnh viễn rồi ạ" },
-            { "en": "D. Go to another golf resort next time, Sir.", "vi": "Lần sau sang sân khác chơi đi ạ" }
-        ],
-        "correct": 0
-    },
-    {
-        "lesson": "5",
-        "section": "section5.4",
-        "type": "mcq",
-        "title": "[5.4 Luyện nghe] Nghe đoạn audio và chọn câu tiếng Anh đúng:",
-        "audioText": "Thank you very much for your kindness, Sir. I really appreciate it!",
-        "phonetic": "/θæŋk juː ˈver.i mʌtʃ fɔːr jʊər ˈkaɪnd.nəs, sɜːr. aɪ ˈriː.ə.li əˈpriː.ʃi.eɪt ɪt/",
-        "translation": "Cảm ơn ông rất nhiều vì sự tử tế của ông ạ. Em rất trân trọng điều đó!",
-        "options": [
-            { "en": "A. Thank you very much for your kindness, Sir. I really appreciate it!", "vi": "Cảm ơn sự tử tế của ông, em rất trân trọng ạ!" },
-            { "en": "B. This tip is too small, give me more, Sir.", "vi": "Tiền tip này ít quá, đưa thêm đi ạ" },
-            { "en": "C. I don't need your money, Sir.", "vi": "Em không cần tiền của ông ạ" },
-            { "en": "D. Give tips to other caddies too, Sir.", "vi": "Cho caddie khác tiền tip nữa đi ạ" }
-        ],
-        "correct": 0
-    },
-    {
-        "lesson": "5",
-        "section": "section5.4",
-        "type": "mcq",
-        "title": "[5.4 Luyện nghe] Nghe đoạn audio và chọn câu tiếng Anh đúng:",
-        "audioText": "Please check your valuables, phone and wallet before going inside, Sir.",
-        "phonetic": "/pliːz tʃek jʊər ˈvæl.jə.bəlz, foʊn ænd ˈwɑː.lɪt bɪˈfɔːr ˈɡoʊ.ɪŋ ɪnˈsaɪd, sɜːr/",
-        "translation": "Xin ông kiểm tra lại đồ giá trị cao, điện thoại và ví tiền trước khi vào trong ạ.",
-        "options": [
-            { "en": "A. Please check your valuables, phone and wallet before going inside, Sir.", "vi": "Xin kiểm tra đồ giá trị, điện thoại, ví tiền trước khi vào ạ" },
-            { "en": "B. Leave your phone and wallet on the cart, Sir.", "vi": "Để điện thoại và ví trên xe điện ạ" },
-            { "en": "C. I took your wallet, Sir.", "vi": "Em lấy ví của ông rồi ạ" },
-            { "en": "D. Throw your valuables away, Sir.", "vi": "Ném đồ giá trị đi ạ" }
-        ],
-        "correct": 0
-    },
-    {
-        "lesson": "5",
-        "section": "section5.4",
-        "type": "fill",
-        "title": "[5.4 Điền từ] Nghe đoạn audio và ĐIỀN TỪ chuẩn xác:",
-        "audioText": "It was my pleasure to support you today, Sir.",
-        "phonetic": "/ɪt wɑːz maɪ ˈpleʒ.ɚ tə səˈpɔːrt juː təˈdeɪ, sɜːr/",
-        "translation": "Đó là niềm vinh hạnh của em khi được hỗ trợ ông hôm nay ạ.",
-        "displaySentence": "It was my _______ to support you today, Sir.",
-        "targetWord": "pleasure",
-        "hint": "💡 Gợi ý: Từ chỉ niềm vinh hạnh."
-    },
-    {
-        "lesson": "5",
-        "section": "section5.4",
-        "type": "fill",
-        "title": "[5.4 Điền từ] Nghe đoạn audio và ĐIỀN TỪ chuẩn xác:",
-        "audioText": "Thank you very much for your kindness, Sir.",
-        "phonetic": "/θæŋk juː ˈver.i mʌtʃ fɔːr jʊər ˈkaɪnd.nəs, sɜːr/",
-        "translation": "Cảm ơn ông rất nhiều vì sự tử tế của ông ạ.",
-        "displaySentence": "Thank you very much for your _______, Sir.",
-        "targetWord": "kindness",
-        "hint": "💡 Gợi ý: Từ chỉ lòng tốt, sự tử tế."
-    },
-
-    // =========================================================================
-    // SECTION 5.5: THỰC HÀNH & LUYỆN TẬP PHẢN XẠ (ROLE-PLAY DRILLS)
-    // =========================================================================
-    {
-        "lesson": "5",
-        "section": "section5.5",
-        "type": "mcq",
-        "title": "[5.5 Luyện nghe] Nghe đoạn hội thoại thực tế và chọn phương án đúng:",
-        "audioText": "It's okay, Sir! Unlucky with the wind. We have many holes left, let's focus on the next shot!",
-        "phonetic": "/ɪts oʊˈkeɪ, sɜːr! ʌnˈlʌk.i wɪð ðə wɪnd. wiː hæv ˈmen.i hoʊlz left, lets ˈfoʊ.kəs ɑːn ðə nekst ʃɑːt/",
-        "translation": "Không sao đâu ông ơi! Do gió không may thôi ạ. Mình còn nhiều hố phía trước, cùng tập trung vào cú tiếp theo ạ!",
-        "options": [
-            { "en": "A. It's okay, Sir! Unlucky wind. We have many holes left, focus on next shot!", "vi": "Không sao đâu ạ! Do gió thôi, còn nhiều hố phía trước, tập trung cú sau ạ!" },
-            { "en": "B. You hit so bad, I am annoyed too, Sir.", "vi": "Ông đánh tệ quá em cũng bực đấy ạ" },
-            { "en": "C. Walk into the bunker and sit there, Sir.", "vi": "Đi vào bẫy cát mà ngồi ở đó đi ạ" },
-            { "en": "D. You should stop playing now, Sir.", "vi": "Ông nên dừng chơi bây giờ đi ạ" }
-        ],
-        "correct": 0
-    },
-    {
-        "lesson": "5",
-        "section": "section5.5",
-        "type": "mcq",
-        "title": "[5.5 Luyện nghe] Nghe đoạn hội thoại khen ngợi và chọn phương án đúng:",
-        "audioText": "Awesome Birdie, Sir! You read the green line perfectly. Great job!",
-        "phonetic": "/ˈɑː.səm ˈbɜːr.di, sɜːr! juː red ðə ɡriːn laɪn ˈpɜːr.fekt.li. ɡreɪt dʒɑːb/",
-        "translation": "Birdie đỉnh quá ông ơi! Ông đọc đường gạt green quá hoàn hảo. Làm tốt lắm ạ!",
-        "options": [
-            { "en": "A. Awesome Birdie, Sir! You read the green line perfectly. Great job!", "vi": "Birdie đỉnh quá! Ông đọc line green quá hoàn hảo ạ!" },
-            { "en": "B. Normal shot, nothing special, Sir.", "vi": "Đánh bình thường, không có gì đặc biệt ạ" },
-            { "en": "C. Why didn't you get an Eagle, Sir?", "vi": "Sao ông không đánh được Eagle ạ?" },
-            { "en": "D. The cup was too big, Sir.", "vi": "Do cái hố to quá thôi ạ" }
-        ],
-        "correct": 0
-    },
-    {
-        "lesson": "5",
-        "section": "section5.5",
-        "type": "mcq",
-        "title": "[5.5 Luyện nghe] Nghe đoạn hội thoại xử lý phàn nàn và chọn phương án đúng:",
-        "audioText": "I am deeply sorry, Sir. I completely understand. I will be 100% concentrated on your game now.",
-        "phonetic": "/aɪ æm ˈdiːp.li ˈsɑː.ri, sɜːr. aɪ kəmˈpliːt.li ˌʌn.dɚˈstænd. aɪ wɪl biː wʌn ˈhʌn.drəd pərˈsent ˈkɑːn.sən.treɪ.t̬ɪd ɑːn jʊər ɡeɪm naʊ/",
-        "translation": "Em thành thật xin lỗi ông. Em rất hiểu ạ. Em sẽ tập trung 100% vào trận đấu của ông ngay bây giờ ạ.",
-        "options": [
-            { "en": "A. I am deeply sorry, Sir. I understand. I will be 100% concentrated from now.", "vi": "Thành thật xin lỗi, em hiểu ạ. Em sẽ tập trung 100% từ bây giờ ạ" },
-            { "en": "B. It is not my fault, you play too fast, Sir.", "vi": "Không phải lỗi của em, tại ông đánh nhanh quá ạ" },
-            { "en": "C. I am paying attention, stop shouting, Sir.", "vi": "Em đang chú ý mà, đừng có hét lên ạ" },
-            { "en": "D. Change caddie if you don't like me, Sir.", "vi": "Không thích thì đổi caddie khác đi ạ" }
-        ],
-        "correct": 0
-    },
-    {
-        "lesson": "5",
-        "section": "section5.5",
-        "type": "mcq",
-        "title": "[5.5 Luyện nghe] Nghe đoạn hội thoại bàn giao thiết bị và chọn phương án đúng:",
-        "audioText": "Here is your bag, Sir. You have 14 clubs, clean and safe. Enjoy your lunch at the Clubhouse!",
-        "phonetic": "/hɪər ɪz jʊər bæɡ, sɜːr. juː hæv ˌfɔːrˈtiːn klʌbz, kliːn ænd seɪf. ɪnˈdʒɔɪ jʊər lʌntʃ æt ðə ˈklʌb.haʊs/",
-        "translation": "Túi gậy của ông đây ạ. Đủ 14 cây gậy đã lau sạch sẽ an toàn. Chúc ông ăn trưa ngon miệng tại Nhà câu lạc bộ ạ!",
-        "options": [
-            { "en": "A. Here is your bag, Sir. All 14 clubs are clean. Enjoy your lunch at Clubhouse!", "vi": "Túi gậy đây ạ. Đủ 14 gậy sạch sẽ. Chúc ông ăn trưa ngon miệng ạ!" },
-            { "en": "B. Clean the clubs yourself, I am tired, Sir.", "vi": "Tự đi lau gậy đi, em mệt rồi ạ" },
-            { "en": "C. You lost 2 clubs on the course, Sir.", "vi": "Ông làm mất 2 cây gậy trên sân rồi ạ" },
-            { "en": "D. Give me my tip money right here, Sir.", "vi": "Đưa tiền tip cho em ngay tại đây ạ" }
-        ],
-        "correct": 0
-    },
-    {
-        "lesson": "5",
-        "section": "section5.5",
-        "type": "mcq",
-        "title": "[5.5 Luyện nghe] Nghe đoạn hội thoại mô tả quy tắc và chọn phương án đúng:",
-        "audioText": "Observe ball result, offer genuine compliment or encouragement within 3 seconds after ball stops.",
-        "phonetic": "/əbˈzɜːrv bɔːl rɪˈzʌlt, ˈoʊ.fɚ ˈdʒen.ju.ɪn ˈkɑːm.plə.mənt wɪðˈɪn θriː ˈsek.əndz/",
-        "translation": "Quan sát kết quả bóng, đưa ra lời khen hoặc lời động viên chân thành trong vòng 3 giây ngay sau khi bóng dừng.",
-        "options": [
-            { "en": "A. Khen/động viên chân thành ngay trong vòng 3 giây sau khi bóng dừng hẳn", "vi": "Quy tắc 3 giây vàng Caddy" },
-            { "en": "B. Chờ 5 phút sau mới bắt đầu khen", "vi": "Quá muộn" },
-            { "en": "C. Khen liên tục từ lúc khách vung gậy", "vi": "Gây xao nhãng" },
-            { "en": "D. Chỉ khen khi khách ghi điểm Hole-in-One", "vi": "Thiếu quan tâm" }
-        ],
-        "correct": 0
-    },
-    {
-        "lesson": "5",
-        "section": "section5.5",
-        "type": "mcq",
-        "title": "[5.5 Luyện nghe] Nghe đoạn hội thoại mô tả mô hình và chọn phương án đúng:",
-        "audioText": "Listen, Apologize, Solve, and Thank.",
-        "phonetic": "/ˈlɪs.ən, əˈpɑː.lə.dʒaɪz, sɑːlv, ænd θæŋk/",
-        "translation": "Lắng nghe (Listen), Xin lỗi (Apologize), Giải quyết (Solve), và Cảm ơn (Thank).",
-        "options": [
-            { "en": "A. Listen (Lắng nghe) - Apologize (Xin lỗi) - Solve (Giải quyết) - Thank (Cảm ơn)", "vi": "Mô hình L.A.S.T chuẩn 4T" },
-            { "en": "B. Laugh (Cười) - Argue (Tranh cãi) - Stop (Dừng lại) - Talk (Nói to)", "vi": "Sai nghiêm trọng" },
-            { "en": "C. Leave (Bỏ đi) - Avoid (Né tránh) - Shout (Hét lên) - Threat (Đe dọa)", "vi": "Vi phạm đạo đức" },
-            { "en": "D. Lock (Khóa) - Ask (Hỏi) - Sit (Ngồi) - Touch (Chạm)", "vi": "Không liên quan" }
-        ],
-        "correct": 0
-    },
-
-    // Điền từ luyện tập phản xạ cuối bài
-    {
-        "lesson": "5",
-        "section": "section5.5",
-        "type": "fill",
-        "title": "[5.5 Điền từ] Nghe đoạn audio và ĐIỀN TỪ chuẩn xác:",
-        "audioText": "One shot at a time, Sir. Stay in the moment!",
-        "phonetic": "/wʌn ʃɑːt æt ə taɪm, sɜːr. steɪ ɪn ðə ˈmoʊ.mənt/",
-        "translation": "Tập trung từng cú đánh một thưa ông. Hãy giữ tinh thần ở thời điểm hiện tại!",
-        "displaySentence": "One _______ at a time, Sir. Stay in the moment!",
-        "targetWord": "shot",
-        "hint": "💡 Gợi ý: Từ chỉ cú đánh bóng."
-    },
-    {
-        "lesson": "5",
-        "section": "section5.5",
-        "type": "fill",
-        "title": "[5.5 Điền từ] Nghe đoạn audio và ĐIỀN TỪ chuẩn xác:",
-        "audioText": "Have a safe trip home, Mr. Evans!",
-        "phonetic": "/hæv ə seɪf trɪp hoʊm, ˈmɪs.tɚ ˈev.ənz/",
-        "translation": "Chúc ông Evans có chuyến đi về nhà an toàn ạ!",
-        "displaySentence": "Have a _______ trip home, Mr. Evans!",
-        "targetWord": "safe",
-        "hint": "💡 Gợi ý: Từ gồm 4 ký tự."
-    }
-);
-// =========================================================================
-// LESSON 5 EXTENSION: ENCOURAGEMENT & POSITIVE ENERGY (50 BỔ SUNG)
-// File: lesson5_extension.js (STANDARDIZED LISTENING PRACTICE)
-// =========================================================================
-
-if (typeof window.masterQuizData === 'undefined') {
-    window.masterQuizData = [];
-}
-
-window.masterQuizData.push(
-    // -------------------------------------------------------------------------
-    // NHÓM MCQ: LUYỆN NGHE TÌNH HUỐNG KHÍCH LỆ & ĐỘNG VIÊN (25 CÂU)
-    // -------------------------------------------------------------------------
-    {
-        "lesson": "5",
-        "section": "section5.3",
-        "type": "mcq",
-        "title": "[5.3 Luyện nghe] Nghe đoạn audio và chọn câu tiếng Anh đúng:",
-        "audioText": "Great shot, Sir! Beautiful drive!",
-        "phonetic": "/ɡreɪt ʃɑːt, sɜːr! ˈbjuː.t̬ə.fəl draɪv/",
-        "translation": "Cú đánh tuyệt vời ông ơi! Cú phát bóng đẹp quá!",
-        "options": [
-            { "en": "A. Great shot, Sir! Beautiful drive!", "vi": "Cú đánh tuyệt vời ông ơi! Cú phát bóng đẹp quá!" },
-            { "en": "B. Terrible shot, Sir. Try harder.", "vi": "Cú đánh tệ quá, cố hơn đi ạ." },
-            { "en": "C. Your ball is lost in the trees, Sir.", "vi": "Bóng của ông mất trong rừng rồi ạ." },
-            { "en": "D. You hit the ground, Sir.", "vi": "Ông đánh trúng đất rồi ạ." }
-        ],
-        "correct": 0
-    },
-    {
-        "lesson": "5",
-        "section": "section5.3",
-        "type": "mcq",
-        "title": "[5.3 Luyện nghe] Nghe đoạn audio và chọn câu tiếng Anh đúng:",
-        "audioText": "Excellent save! Good job, Sir.",
-        "phonetic": "/ˈek.səl.ənt seɪv! ɡʊd dʒɑːb, sɜːr/",
-        "translation": "Cứu bóng xuất sắc quá! Làm tốt lắm ông ơi.",
-        "options": [
-            { "en": "A. Excellent save! Good job, Sir.", "vi": "Cứu bóng xuất sắc quá! Làm tốt lắm ạ." },
-            { "en": "B. Bad save, you missed the green, Sir.", "vi": "Cứu bóng tệ, ông đánh hỏng green rồi ạ." },
-            { "en": "C. Leave the ball in the bunker, Sir.", "vi": "Bỏ bóng lại trong bẫy cát đi ạ." },
-            { "en": "D. Unlucky shot into the sand, Sir.", "vi": "Kém may mắn khi vào cát ạ." }
-        ],
-        "correct": 0
-    },
-    {
-        "lesson": "5",
-        "section": "section5.3",
-        "type": "mcq",
-        "title": "[5.3 Luyện nghe] Nghe đoạn audio và chọn câu tiếng Anh đúng:",
-        "audioText": "Unlucky, Sir. Don't worry, next one will be better.",
-        "phonetic": "/ʌnˈlʌk.i, sɜːr. doʊnt ˈwɜːr.i, nekst wʌn wɪl biː ˈbet̬.ɚ/",
-        "translation": "Tiếc quá ông ơi. Đừng lo, quả sau sẽ tốt hơn thôi.",
-        "options": [
-            { "en": "A. Unlucky, Sir. Don't worry, next one will be better.", "vi": "Tiếc quá ông ơi. Đừng lo, quả sau sẽ tốt hơn ạ." },
-            { "en": "B. That was a horrible shot, Sir.", "vi": "Đó là một cú đánh kinh khủng ạ." },
-            { "en": "C. You always play badly on this hole, Sir.", "vi": "Hố nào ông cũng đánh tệ thế ạ." },
-            { "en": "D. Stop playing right now, Sir.", "vi": "Dừng chơi ngay bây giờ đi ạ." }
-        ],
-        "correct": 0
-    },
-    {
-        "lesson": "5",
-        "section": "section5.3",
-        "type": "mcq",
-        "title": "[5.3 Luyện nghe] Nghe đoạn audio và chọn câu tiếng Anh đúng:",
-        "audioText": "Take your time, Sir. Relax and breathe.",
-        "phonetic": "/teɪk jʊər taɪm, sɜːr. rɪˈlæks ænd briːð/",
-        "translation": "Cứ bình tĩnh. Ông thư giãn và hít thở sâu nhé.",
-        "options": [
-            { "en": "A. Take your time, Sir. Relax and breathe.", "vi": "Cứ bình tĩnh. Ông thư giãn và hít thở sâu nhé." },
-            { "en": "B. Hurry up, you take too much time, Sir.", "vi": "Nhanh lên, ông mất nhiều thời gian quá." },
-            { "en": "C. Don't breathe, just swing hard, Sir.", "vi": "Đừng thở, cứ vung gậy mạnh vào." },
-            { "en": "D. You are too slow today, Sir.", "vi": "Hôm nay ông chậm quá đấy ạ." }
-        ],
-        "correct": 0
-    },
-    {
-        "lesson": "5",
-        "section": "section5.3",
-        "type": "mcq",
-        "title": "[5.3 Luyện nghe] Nghe đoạn audio và chọn câu tiếng Anh đúng:",
-        "audioText": "Nice Par, Sir! You are playing very well.",
-        "phonetic": "/naɪs pɑːr, sɜːr! juː ɑːr ˈpleɪ.ɪŋ ˈver.i wel/",
-        "translation": "Điểm Par đẹp quá! Ông đang chơi rất hay.",
-        "options": [
-            { "en": "A. Nice Par, Sir! You are playing very well.", "vi": "Điểm Par đẹp quá! Ông đang chơi rất hay." },
-            { "en": "B. Bad Par on this hole, Sir.", "vi": "Điểm Par tệ ở hố này ạ." },
-            { "en": "C. You got lucky with that Par, Sir.", "vi": "Ông ăn may với điểm Par đó thôi." },
-            { "en": "D. Par is not good enough, Sir.", "vi": "Điểm Par vẫn chưa đủ tốt ạ." }
-        ],
-        "correct": 0
-    },
-    {
-        "lesson": "5",
-        "section": "section5.3",
-        "type": "mcq",
-        "title": "[5.3 Luyện nghe] Nghe đoạn audio và chọn câu tiếng Anh đúng:",
-        "audioText": "Wow! Great drive, Sir! The ball is right in the middle of the fairway.",
-        "phonetic": "/waʊ! ɡreɪt draɪv, sɜːr! ðə bɔːl ɪz raɪt ɪn ðə ˈmɪd.əl əv ðə ˈfer.weɪ/",
-        "translation": "Cú phát bóng tuyệt vời quá ông ơi! Bóng nằm ngay giữa đường bóng rồi.",
-        "options": [
-            { "en": "A. Wow! Great drive, Sir! The ball is right in the middle of the fairway.", "vi": "Cú phát bóng tuyệt vời quá! Bóng ngay giữa fairway." },
-            { "en": "B. Bad drive into the deep forest, Sir.", "vi": "Phát bóng tệ vào sâu trong rừng rồi ạ." },
-            { "en": "C. Your ball is resting in the water, Sir.", "vi": "Bóng của ông nằm dưới nước rồi ạ." },
-            { "en": "D. You missed the tee completely, Sir.", "vi": "Ông đánh trượt cọc tee hoàn toàn rồi ạ." }
-        ],
-        "correct": 0
-    },
-    {
-        "lesson": "5",
-        "section": "section5.3",
-        "type": "mcq",
-        "title": "[5.3 Luyện nghe] Nghe đoạn audio và chọn câu tiếng Anh đúng:",
-        "audioText": "Thanks! I felt good about that swing.",
-        "phonetic": "/θæŋks! aɪ felt ɡʊd əˈbaʊt ðæt swɪŋ/",
-        "translation": "Cảm ơn tôi! Ta cảm thấy cú swing đó rất tốt.",
-        "options": [
-            { "en": "A. Thanks! I felt good about that swing.", "vi": "Cảm ơn! Ta thấy cú swing đó rất tốt." },
-            { "en": "B. No thanks, that was a bad swing.", "vi": "Không cảm ơn, cú swing tệ lắm." },
-            { "en": "C. I hate my swing today, Caddy.", "vi": "Ta ghét cú swing hôm nay quá." },
-            { "en": "D. Stop talking about my swing.", "vi": "Đừng nói về cú swing nữa." }
-        ],
-        "correct": 0
-    },
-    {
-        "lesson": "5",
-        "section": "section5.3",
-        "type": "mcq",
-        "title": "[5.3 Luyện nghe] Nghe đoạn audio và chọn câu tiếng Anh đúng:",
-        "audioText": "Yes, Sir. Keep it up!",
-        "phonetic": "/jes, sɜːr. kiːp ɪt ʌp/",
-        "translation": "Dạ đúng. Ông giữ vững phong độ nhé!",
-        "options": [
-            { "en": "A. Yes, Sir. Keep it up!", "vi": "Dạ đúng. Ông giữ vững phong độ nhé!" },
-            { "en": "B. No, Sir. Change your style.", "vi": "Không ạ. Đổi phong cách đi ạ." },
-            { "en": "C. Stop playing like that, Sir.", "vi": "Đừng đánh kiểu đó nữa ạ." },
-            { "en": "D. You played terribly, Sir.", "vi": "Ông đánh tệ lắm ạ." }
-        ],
-        "correct": 0
-    },
-    {
-        "lesson": "5",
-        "section": "section5.3",
-        "type": "mcq",
-        "title": "[5.3 Luyện nghe] Nghe đoạn audio và chọn câu tiếng Anh đúng:",
-        "audioText": "Unlucky, Sir! The wind was a bit strong.",
-        "phonetic": "/ʌnˈlʌk.i, sɜːr! ðə wɪnd wəz ə bɪt strɑːŋ/",
-        "translation": "Tiếc quá ông ơi! Gió hơi mạnh.",
-        "options": [
-            { "en": "A. Unlucky, Sir! The wind was a bit strong.", "vi": "Tiếc quá ông ơi! Gió hơi mạnh." },
-            { "en": "B. Lucky, Sir! No wind today.", "vi": "May mắn quá! Hôm nay không có gió." },
-            { "en": "C. Your fault, Sir. Too much wind.", "vi": "Lỗi tại ông, gió nhiều quá." },
-            { "en": "D. Stop blaming the wind, Sir.", "vi": "Đừng đổ lỗi cho gió nữa." }
-        ],
-        "correct": 0
-    },
-    {
-        "lesson": "5",
-        "section": "section5.3",
-        "type": "mcq",
-        "title": "[5.3 Luyện nghe] Nghe đoạn audio và chọn câu tiếng Anh đúng:",
-        "audioText": "That was a terrible shot. I'm so annoyed.",
-        "phonetic": "/ðæt wəz ə ˈter.ə.bəl ʃɑːt. aɪm soʊ əˈnɔɪd/",
-        "translation": "Cú đánh tệ. Bực quá.",
-        "options": [
-            { "en": "A. That was a terrible shot. I'm so annoyed.", "vi": "Cú đánh tệ. Bực quá." },
-            { "en": "B. That was an amazing shot. I'm happy.", "vi": "Cú đánh tuyệt vời. Ta rất vui." },
-            { "en": "C. Perfect shot, I love it.", "vi": "Cú đánh hoàn hảo, ta thích lắm." },
-            { "en": "D. Good job on that shot.", "vi": "Làm tốt lắm với cú đánh đó." }
-        ],
-        "correct": 0
-    },
-    {
-        "lesson": "5",
-        "section": "section5.3",
-        "type": "mcq",
-        "title": "[5.3 Luyện nghe] Nghe đoạn audio và chọn câu tiếng Anh đúng:",
-        "audioText": "It's okay, Sir. Forget it. We have many holes left. Let's focus on the next one.",
-        "phonetic": "/ɪts oʊˈkeɪ, sɜːr. fɚˈɡet ɪt. wiː hæv ˈmen.i hoʊlz left. lets ˈfoʊ.kəs ɑːn ðə nekst wʌn/",
-        "translation": "Không sao đâu. Quên nó đi. Mình còn nhiều hố phía trước mà. Hãy tập trung vào quả tiếp theo.",
-        "options": [
-            { "en": "A. It's okay, Sir. Forget it. We have many holes left. Let's focus on the next one.", "vi": "Không sao. Quên đi. Còn nhiều hố, tập trung quả sau ạ." },
-            { "en": "B. It's terrible, let's go home now, Sir.", "vi": "Tệ thật, về nhà ngay thôi ạ." },
-            { "en": "C. You ruined the game, stop playing, Sir.", "vi": "Ông phá hỏng trận rồi, dừng chơi đi ạ." },
-            { "en": "D. Cry about it, Sir.", "vi": "Khóc vì nó đi ạ." }
-        ],
-        "correct": 0
-    },
-    {
-        "lesson": "5",
-        "section": "section5.3",
-        "type": "mcq",
-        "title": "[5.3 Luyện nghe] Nghe đoạn audio và chọn câu tiếng Anh đúng:",
-        "audioText": "Nice Birdie/Par, Sir! Excellent putt.",
-        "phonetic": "/naɪs ˈbɜːr.di/pɑːr, sɜːr! ˈek.səl.ənt pʌt/",
-        "translation": "Điểm Birdie/Par đẹp quá thưa ông! Cú gạt bóng xuất sắc.",
-        "options": [
-            { "en": "A. Nice Birdie/Par, Sir! Excellent putt.", "vi": "Điểm Birdie/Par đẹp quá! Cú gạt xuất sắc." },
-            { "en": "B. Bad putt, you missed the cup, Sir.", "vi": "Gạt tệ, ông đánh trượt hố rồi." },
-            { "en": "C. Ugly putt, try again, Sir.", "vi": "Cú gạt xấu, thử lại đi ạ." },
-            { "en": "D. Slow putt, hurry up, Sir.", "vi": "Gạt chậm quá, nhanh lên ạ." }
-        ],
-        "correct": 0
-    },
-    {
-        "lesson": "5",
-        "section": "section5.3",
-        "type": "mcq",
-        "title": "[5.3 Luyện nghe] Nghe đoạn audio và chọn câu tiếng Anh đúng:",
-        "audioText": "Finally! The line was tricky.",
-        "phonetic": "/ˈfaɪ.nəl.i! ðə laɪ wəz ˈtrɪk.i/",
-        "translation": "Cuối cùng cũng vào! Đường bóng này khó thật.",
-        "options": [
-            { "en": "A. Finally! The line was tricky.", "vi": "Cuối cùng cũng vào! Line khó thật." },
-            { "en": "B. Too easy! The line was flat.", "vi": "Dễ quá! Line phẳng phiu mà." },
-            { "en": "C. I missed! The line was wrong.", "vi": "Ta trượt rồi! Line sai bét." },
-            { "en": "D. Bad green, bad line.", "vi": "Green tồi, line tồi." }
-        ],
-        "correct": 0
-    },
-    {
-        "lesson": "5",
-        "section": "section5.3",
-        "type": "mcq",
-        "title": "[5.3 Luyện nghe] Nghe đoạn audio và chọn câu tiếng Anh đúng:",
-        "audioText": "You read the green very well. Great job!",
-        "phonetic": "/juː red ðə ɡriːn ˈver.i wel. ɡreɪt dʒɑːb/",
-        "translation": "Ông đọc green rất tốt. Làm tốt lắm!",
-        "options": [
-            { "en": "A. You read the green very well. Great job!", "vi": "Ông đọc green rất tốt. Làm tốt lắm!" },
-            { "en": "B. You read the green badly. Poor job.", "vi": "Ông đọc green kém quá. Làm ăn kém." },
-            { "en": "C. I read the green for you, not you.", "vi": "Ta đọc green hộ chứ không phải ngươi." },
-            { "en": "D. Wrong green reading today, Sir.", "vi": "Đọc green sai bét hôm nay rồi." }
-        ],
-        "correct": 0
-    },
-    {
-        "lesson": "5",
-        "section": "section5.3",
-        "type": "mcq",
-        "title": "[5.3 Luyện nghe] Nghe đoạn audio và chọn câu tiếng Anh đúng:",
-        "audioText": "You are doing great, Sir. Let's take a deep breath and relax.",
-        "phonetic": "/juː ɑːr ˈduː.ɪŋ ɡreɪt, sɜːr. lets teɪk ə diːp breθ ænd rɪˈlæks/",
-        "translation": "Ông đang làm rất tốt. Mình hít thở sâu một chút và thư giãn.",
-        "options": [
-            { "en": "A. You are doing great, Sir. Let's take a deep breath and relax.", "vi": "Ông đang làm rất tốt. Hít thở sâu và thư giãn ạ." },
-            { "en": "B. You are playing terribly. Stop relaxing.", "vi": "Ông đánh tồi tệ lắm, đừng thư giãn nữa." },
-            { "en": "C. Stop doing great, run fast.", "vi": "Đừng làm tốt nữa, chạy nhanh lên." },
-            { "en": "D. Don't breathe, just play.", "vi": "Đừng thở, cứ đánh đi." }
-        ],
-        "correct": 0
-    },
-    {
-        "lesson": "5",
-        "section": "section5.3",
-        "type": "mcq",
-        "title": "[5.3 Luyện nghe] Nghe đoạn audio và chọn câu tiếng Anh đúng:",
-        "audioText": "I'm losing my focus.",
-        "phonetic": "/aɪm ˈluː.zɪŋ maɪ ˈfoʊ.kəs/",
-        "translation": "Ta đang mất tập trung.",
-        "options": [
-            { "en": "A. I'm losing my focus.", "vi": "Ta đang mất tập trung." },
-            { "en": "B. I have great focus now.", "vi": "Ta đang rất tập trung đây." },
-            { "en": "C. I found my focus back.", "vi": "Ta đã tìm lại được sự tập trung." },
-            { "en": "D. Focus is not important.", "vi": "Sự tập trung không quan trọng." }
-        ],
-        "correct": 0
-    },
-    {
-        "lesson": "5",
-        "section": "section5.3",
-        "type": "mcq",
-        "title": "[5.3 Luyện nghe] Nghe đoạn audio và chọn câu tiếng Anh đúng:",
-        "audioText": "No problem, Sir. Drink some water and stay positive. I'm here to support you!",
-        "phonetic": "/noʊ ˈprɑː.bləm, sɜːr. drɪŋk səm ˈwɔː.tər ænd steɪ ˈpɑː.zə.t̬ɪv. aɪm hɪər tə səˈpɔːrt juː/",
-        "translation": "Không sao đâu. Ông uống chút nước và giữ tinh thần lạc quan. Tôi luôn ở đây hỗ trợ ông.",
-        "options": [
-            { "en": "A. No problem, Sir. Drink water and stay positive. I'm here to support you!", "vi": "Không sao, uống nước, giữ tích cực, em luôn hỗ trợ ạ!" },
-            { "en": "B. Big problem, don't drink water, I won't help.", "vi": "Vấn đề lớn, đừng uống nước, tôi không giúp đâu." },
-            { "en": "C. Stay negative and go home, Sir.", "vi": "Hãy tiêu cực lên và đi về đi ạ." },
-            { "en": "D. I am not here to support you.", "vi": "Tôi không ở đây để hỗ trợ ông." }
-        ],
-        "correct": 0
-    },
-    {
-        "lesson": "5",
-        "section": "section5.3",
-        "type": "mcq",
-        "title": "[5.3 Luyện nghe] Nghe đoạn audio và chọn câu tiếng Anh đúng:",
-        "audioText": "Amazing save! I didn't think it could get out of the bunker.",
-        "phonetic": "/əˈmeɪ.zɪŋ seɪv! aɪ ˈdɪd.ənt θɪŋk ɪt kʊd ɡet aʊt əv ðə ˈbʌŋ.kər/",
-        "translation": "Cú cứu bóng kinh ngạc quá! Tôi không nghĩ bóng có thể thoát khỏi bẫy cát hay thế.",
-        "options": [
-            { "en": "A. Amazing save! I didn't think it could get out of the bunker.", "vi": "Cứu bóng kinh ngạc! Không nghĩ nó thoát được bẫy cát." },
-            { "en": "B. Terrible save, it stayed in the bunker.", "vi": "Cứu bóng tệ, nó vẫn kẹt trong cát." },
-            { "en": "C. Easy save, everyone can do it.", "vi": "Cứu bóng dễ, ai cũng làm được." },
-            { "en": "D. Bad bunker shot, stay inside.", "vi": "Đánh cát tồi, ở nguyên trong đó đi." }
-        ],
-        "correct": 0
-    },
-    {
-        "lesson": "5",
-        "section": "section5.3",
-        "type": "mcq",
-        "title": "[5.3 Luyện nghe] Nghe đoạn audio và chọn câu tiếng Anh đúng:",
-        "audioText": "I got lucky there.",
-        "phonetic": "/aɪ ɡɑːt ˈlʌk.i ðer/",
-        "translation": "May mắn thôi.",
-        "options": [
-            { "en": "A. I got lucky there.", "vi": "May mắn thôi." },
-            { "en": "B. I played very badly there.", "vi": "Ta đánh tệ quá ở đó." },
-            { "en": "C. That was pure skill.", "vi": "Đó hoàn toàn là kỹ năng." },
-            { "en": "D. I am so skillful.", "vi": "Ta rất có kỹ năng." }
-        ],
-        "correct": 0
-    },
-    {
-        "lesson": "5",
-        "section": "section5.3",
-        "type": "mcq",
-        "title": "[5.3 Luyện nghe] Nghe đoạn audio và chọn câu tiếng Anh đúng:",
-        "audioText": "Not luck, Sir. That was pure skill! Well played.",
-        "phonetic": "/nɑːt lʌk, sɜːr. ðæt wɑːz pjʊr skɪl! wel pleɪd/",
-        "translation": "Không phải may mắn đâu. Đó hoàn toàn là kỹ năng! Ông chơi rất hay.",
-        "options": [
-            { "en": "A. Not luck, Sir. That was pure skill! Well played.", "vi": "Không phải may mắn, hoàn toàn là kỹ năng! Chơi hay lắm." },
-            { "en": "B. Just pure luck, Sir. Play worse.", "vi": "Chỉ là may mắn thôi, đánh kém đi." },
-            { "en": "C. Bad skill, bad luck, Sir.", "vi": "Kỹ năng kém, xui xẻo." },
-            { "en": "D. Stop playing well, Sir.", "vi": "Đừng chơi hay nữa." }
-        ],
-        "correct": 0
-    },
-    {
-        "lesson": "5",
-        "section": "section5.3",
-        "type": "mcq",
-        "title": "[5.3 Luyện nghe] Nghe đoạn audio và chọn câu tiếng Anh đúng:",
-        "audioText": "You are doing great. Let's take a deep breath.",
-        "phonetic": "/juː ɑːr ˈduː.ɪŋ ɡreɪt. lets teɪk ə diːp breθ/",
-        "translation": "Ông đang làm rất tốt. Cùng hít thở sâu nhé.",
-        "options": [
-            { "en": "A. You are doing great. Let's take a deep breath.", "vi": "Ông đang làm rất tốt. Cùng hít thở sâu nhé." },
-            { "en": "B. You are doing terribly. Stop breathing.", "vi": "Ông đang làm rất tồi. Ngừng thở đi." },
-            { "en": "C. Do not do great, run fast.", "vi": "Đừng làm tốt nữa, chạy nhanh." },
-            { "en": "D. Take no breath, play fast.", "vi": "Không thở gì cả, đánh nhanh." }
-        ],
-        "correct": 0
-    },
-    {
-        "lesson": "5",
-        "section": "section5.3",
-        "type": "mcq",
-        "title": "[5.3 Luyện nghe] Nghe đoạn audio và chọn câu tiếng Anh đúng:",
-        "audioText": "Stay positive and keep smiling, Sir.",
-        "phonetic": "/steɪ ˈpɑː.zə.t̬ɪv ænd kiːp ˈsmaɪ.lɪŋ, sɜːr/",
-        "translation": "Hãy giữ tinh thần tích cực và luôn mỉm cười thưa ông.",
-        "options": [
-            { "en": "A. Stay positive and keep smiling, Sir.", "vi": "Giữ tích cực và luôn mỉm cười ạ." },
-            { "en": "B. Be negative and stop smiling, Sir.", "vi": "Tiêu cực lên và đừng cười nữa ạ." },
-            { "en": "C. Cry and be sad today, Sir.", "vi": "Hãy khóc và buồn rầu hôm nay đi ạ." },
-            { "en": "D. Ignore everything, Sir.", "vi": "Phớt lờ mọi thứ đi ạ." }
-        ],
-        "correct": 0
-    },
-    {
-        "lesson": "5",
-        "section": "section5.3",
-        "type": "mcq",
-        "title": "[5.3 Luyện nghe] Nghe đoạn audio và chọn câu tiếng Anh đúng:",
-        "audioText": "Your swing rhythm is wonderful today, Sir.",
-        "phonetic": "/jʊər swɪŋ ˈrɪð.əm ɪz ˈwʌn.dɚ.fəl təˈdeɪ, sɜːr/",
-        "translation": "Nhịp điệu cú vung gậy của ông hôm nay thật tuyệt vời.",
-        "options": [
-            { "en": "A. Your swing rhythm is wonderful today, Sir.", "vi": "Nhịp swing của ông hôm nay tuyệt vời ạ." },
-            { "en": "B. Your swing rhythm is terrible today, Sir.", "vi": "Nhịp swing của ông hôm nay tệ quá." },
-            { "en": "C. Stop swinging your club today, Sir.", "vi": "Đừng vung gậy hôm nay nữa ạ." },
-            { "en": "D. Change your swing completely, Sir.", "vi": "Đổi hoàn toàn cách swing đi ạ." }
-        ],
-        "correct": 0
-    },
-    {
-        "lesson": "5",
-        "section": "section5.3",
-        "type": "mcq",
-        "title": "[5.3 Luyện nghe] Nghe đoạn audio và chọn câu tiếng Anh đúng:",
-        "audioText": "Trust your game, Sir. You are an expert player.",
-        "phonetic": "/trʌst jʊər ɡeɪm, sɜːr. juː ɑːr ən ˈek.spɜːrt ˈpleɪ.ər/",
-        "translation": "Hãy tin tưởng vào lối chơi của mình. Ông là một người chơi chuyên nghiệp.",
-        "options": [
-            { "en": "A. Trust your game, Sir. You are an expert player.", "vi": "Tin vào lối chơi đi, ông là người chơi giỏi ạ." },
-            { "en": "B. Doubt your game, you are a beginner.", "vi": "Nghi ngờ lối chơi đi, ông là người mới." },
-            { "en": "C. Stop playing golf, you are not good.", "vi": "Đừng chơi golf nữa, ông đánh kém lắm." },
-            { "en": "D. Forget about your skills, Sir.", "vi": "Quên kỹ năng của ông đi ạ." }
-        ],
-        "correct": 0
-    },
-    {
-        "lesson": "5",
-        "section": "section5.3",
-        "type": "mcq",
-        "title": "[5.3 Luyện nghe] Nghe đoạn audio và chọn câu tiếng Anh đúng:",
-        "audioText": "Great effort on that tough shot, Sir!",
-        "phonetic": "/ɡreɪt ˈef.ɚt ɑːn ðæt tʌf ʃɑːt, sɜːr/",
-        "translation": "Nỗ lực tuyệt vời cho cú đánh khó đó thưa ông!",
-        "options": [
-            { "en": "A. Great effort on that tough shot, Sir!", "vi": "Nỗ lực tuyệt vời cho cú đánh khó đó ạ!" },
-            { "en": "B. Lazy effort on an easy shot, Sir.", "vi": "Lười biếng trong cú đánh dễ ạ." },
-            { "en": "C. Bad effort, do it worse, Sir.", "vi": "Cố gắng tồi, làm tệ hơn đi ạ." },
-            { "en": "D. No effort needed here, Sir.", "vi": "Không cần cố gắng ở đây đâu ạ." }
-        ],
-        "correct": 0
-    },
-
-    // -------------------------------------------------------------------------
-    // NHÓM ĐIỀN TỪ: LUYỆN TỪ KHÓA KHÍCH LỆ (FILL IN THE BLANKS - 25 CÂU)
-    // -------------------------------------------------------------------------
-    {
-        "lesson": "5",
-        "section": "section5.3",
-        "type": "fill",
-        "title": "[5.3 Điền từ] Nghe đoạn audio và ĐIỀN TỪ chuẩn xác:",
-        "audioText": "Great shot, Sir!",
-        "phonetic": "/ɡreɪt ʃɑːt, sɜːr/",
-        "translation": "Cú đánh tuyệt vời ông ơi!",
-        "displaySentence": "Great _______, Sir!",
-        "targetWord": "shot",
-        "hint": "💡 Gợi ý: Từ gồm 4 ký tự."
-    },
-    {
-        "lesson": "5",
-        "section": "section5.3",
-        "type": "fill",
-        "title": "[5.3 Điền từ] Nghe đoạn audio và ĐIỀN TỪ chuẩn xác:",
-        "audioText": "Beautiful drive, Sir!",
-        "phonetic": "/ˈbjuː.t̬ə.fəl draɪv, sɜːr/",
-        "translation": "Cú phát bóng đẹp quá!",
-        "displaySentence": "Beautiful _______, Sir!",
-        "targetWord": "drive",
-        "hint": "💡 Gợi ý: Từ gồm 5 ký tự."
-    },
-    {
-        "lesson": "5",
-        "section": "section5.3",
-        "type": "fill",
-        "title": "[5.3 Điền từ] Nghe đoạn audio và ĐIỀN TỪ chuẩn xác:",
-        "audioText": "Excellent save, Sir!",
-        "phonetic": "/ˈek.səl.ənt seɪv, sɜːr/",
-        "translation": "Cứu bóng xuất sắc quá!",
-        "displaySentence": "Excellent _______, Sir!",
-        "targetWord": "save",
-        "hint": "💡 Gợi ý: Từ gồm 4 ký tự."
-    },
-    {
-        "lesson": "5",
-        "section": "section5.3",
-        "type": "fill",
-        "title": "[5.3 Điền từ] Nghe đoạn audio và ĐIỀN TỪ chuẩn xác:",
-        "audioText": "Good job, Sir!",
-        "phonetic": "/ɡʊd dʒɑːb, sɜːr/",
-        "translation": "Làm tốt lắm ông ơi!",
-        "displaySentence": "Good _______, Sir!",
-        "targetWord": "job",
-        "hint": "💡 Gợi ý: Từ gồm 3 ký tự."
-    },
-    {
-        "lesson": "5",
-        "section": "section5.3",
-        "type": "fill",
-        "title": "[5.3 Điền từ] Nghe đoạn audio và ĐIỀN TỪ chuẩn xác:",
-        "audioText": "Unlucky, Sir.",
-        "phonetic": "/ʌnˈlʌk.i, sɜːr/",
-        "translation": "Tiếc quá ông ơi.",
-        "displaySentence": "_______, Sir.",
-        "targetWord": "Unlucky",
-        "hint": "💡 Gợi ý: Từ gồm 7 ký tự nghĩa là kém may mắn."
-    },
-    {
-        "lesson": "5",
-        "section": "section5.3",
-        "type": "fill",
-        "title": "[5.3 Điền từ] Nghe đoạn audio và ĐIỀN TỪ chuẩn xác:",
-        "audioText": "Don't worry, Sir.",
-        "phonetic": "/doʊnt ˈwɜːr.i, sɜːr/",
-        "translation": "Đừng lo lắng thưa ông.",
-        "displaySentence": "Don't _______, Sir.",
-        "targetWord": "worry",
-        "hint": "💡 Gợi ý: Từ gồm 5 ký tự."
-    },
-    {
-        "lesson": "5",
-        "section": "section5.3",
-        "type": "fill",
-        "title": "[5.3 Điền từ] Nghe đoạn audio và ĐIỀN TỪ chuẩn xác:",
-        "audioText": "Relax and breathe, Sir.",
-        "phonetic": "/rɪˈlæks ænd briːð, sɜːr/",
-        "translation": "Thư giãn và hít thở sâu nhé.",
-        "displaySentence": "Relax and _______, Sir.",
-        "targetWord": "breathe",
-        "hint": "💡 Gợi ý: Từ gồm 6 ký tự nghĩa là hít thở."
-    },
-    {
-        "lesson": "5",
-        "section": "section5.3",
-        "type": "fill",
-        "title": "[5.3 Điền từ] Nghe đoạn audio và ĐIỀN TỪ chuẩn xác:",
-        "audioText": "Nice Par, Sir!",
-        "phonetic": "/naɪs pɑːr, sɜːr/",
-        "translation": "Điểm Par đẹp quá!",
-        "displaySentence": "Nice _______, Sir!",
-        "targetWord": "Par",
-        "hint": "💡 Gợi ý: Từ gồm 3 ký tự chỉ điểm Par."
-    },
-    {
-        "lesson": "5",
-        "section": "section5.3",
-        "type": "fill",
-        "title": "[5.3 Điền từ] Nghe đoạn audio và ĐIỀN TỪ chuẩn xác:",
-        "audioText": "Keep it up, Sir!",
-        "phonetic": "/kiːp ɪt ʌp, sɜːr/",
-        "translation": "Hãy giữ vững phong độ nhé ông!",
-        "displaySentence": "Keep it _______, Sir!",
-        "targetWord": "up",
-        "hint": "💡 Gợi ý: Từ gồm 2 ký tự."
-    },
-    {
-        "lesson": "5",
-        "section": "section5.3",
-        "type": "fill",
-        "title": "[5.3 Điền từ] Nghe đoạn audio và ĐIỀN TỪ chuẩn xác:",
-        "audioText": "Forget it, Sir.",
-        "phonetic": "/fɚˈɡet ɪt, sɜːr/",
-        "translation": "Quên nó đi thưa ông.",
-        "displaySentence": "Forget _______, Sir.",
-        "targetWord": "it",
-        "hint": "💡 Gợi ý: Từ gồm 2 ký tự."
-    },
-    {
-        "lesson": "5",
-        "section": "section5.3",
-        "type": "fill",
-        "title": "[5.3 Điền từ] Nghe đoạn audio và ĐIỀN TỪ chuẩn xác:",
-        "audioText": "Focus on the next one, Sir.",
-        "phonetic": "/ˈfoʊ.kəs ɑːn ðə nekst wʌn, sɜːr/",
-        "translation": "Tập trung vào quả tiếp theo nhé ông.",
-        "displaySentence": "Focus on the next _______, Sir.",
-        "targetWord": "one",
-        "hint": "💡 Gợi ý: Từ gồm 3 ký tự."
-    },
-    {
-        "lesson": "5",
-        "section": "section5.3",
-        "type": "fill",
-        "title": "[5.3 Điền từ] Nghe đoạn audio và ĐIỀN TỪ chuẩn xác:",
-        "audioText": "Nice Birdie, Sir!",
-        "phonetic": "/naɪs ˈbɜːr.di, sɜːr/",
-        "translation": "Điểm Birdie đẹp quá!",
-        "displaySentence": "Nice _______, Sir!",
-        "targetWord": "Birdie",
-        "hint": "💡 Gợi ý: Từ gồm 6 ký tự chỉ điểm Birdie."
-    },
-    {
-        "lesson": "5",
-        "section": "section5.3",
-        "type": "fill",
-        "title": "[5.3 Điền từ] Nghe đoạn audio và ĐIỀN TỪ chuẩn xác:",
-        "audioText": "Excellent putt, Sir!",
-        "phonetic": "/ˈek.səl.ənt pʌt, sɜːr/",
-        "translation": "Cú gạt bóng xuất sắc!",
-        "displaySentence": "Excellent _______, Sir!",
-        "targetWord": "putt",
-        "hint": "💡 Gợi ý: Từ gồm 4 ký tự chỉ cú gạt."
-    },
-    {
-        "lesson": "5",
-        "section": "section5.3",
-        "type": "fill",
-        "title": "[5.3 Điền từ] Nghe đoạn audio và ĐIỀN TỪ chuẩn xác:",
-        "audioText": "Great job, Sir!",
-        "phonetic": "/ɡreɪt dʒɑːb, sɜːr/",
-        "translation": "Làm tốt lắm thưa ông!",
-        "displaySentence": "Great _______, Sir!",
-        "targetWord": "job",
-        "hint": "💡 Gợi ý: Từ gồm 3 ký tự."
-    },
-    {
-        "lesson": "5",
-        "section": "section5.3",
-        "type": "fill",
-        "title": "[5.3 Điền từ] Nghe đoạn audio và ĐIỀN TỪ chuẩn xác:",
-        "audioText": "Stay positive, Sir!",
-        "phonetic": "/steɪ ˈpɑː.zə.t̬ɪv, sɜːr/",
-        "translation": "Giữ tinh thần tích cực nhé ông!",
-        "displaySentence": "Stay _______, Sir!",
-        "targetWord": "positive",
-        "hint": "💡 Gợi ý: Từ gồm 8 ký tự."
-    },
-    {
-        "lesson": "5",
-        "section": "section5.3",
-        "type": "fill",
-        "title": "[5.3 Điền từ] Nghe đoạn audio và ĐIỀN TỪ chuẩn xác:",
-        "audioText": "Pure skill, Sir!",
-        "phonetic": "/pjʊr skɪl, sɜːr/",
-        "translation": "Hoàn toàn là kỹ năng!",
-        "displaySentence": "Pure _______, Sir!",
-        "targetWord": "skill",
-        "hint": "💡 Gợi ý: Từ gồm 5 ký tự nghĩa là kỹ năng."
-    },
-    {
-        "lesson": "5",
-        "section": "section5.3",
-        "type": "fill",
-        "title": "[5.3 Điền từ] Nghe đoạn audio và ĐIỀN TỪ chuẩn xác:",
-        "audioText": "Well played, Sir!",
-        "phonetic": "/wel pleɪd, sɜːr/",
-        "translation": "Chơi rất hay thưa ông!",
-        "displaySentence": "Well _______, Sir!",
-        "targetWord": "played",
-        "hint": "💡 Gợi ý: Từ gồm 6 ký tự."
-    },
-    {
-        "lesson": "5",
-        "section": "section5.3",
-        "type": "fill",
-        "title": "[5.3 Điền từ] Nghe đoạn audio và ĐIỀN TỪ chuẩn xác:",
-        "audioText": "I got lucky, Sir.",
-        "phonetic": "/aɪ ɡɑːt ˈlʌk.i, sɜːr/",
-        "translation": "Tôi may mắn thôi.",
-        "displaySentence": "I got _______, Sir.",
-        "targetWord": "lucky",
-        "hint": "💡 Gợi ý: Từ gồm 5 ký tự nghĩa là may mắn."
-    },
-    {
-        "lesson": "5",
-        "section": "section5.3",
-        "type": "fill",
-        "title": "[5.3 Điền từ] Nghe đoạn audio và ĐIỀN TỪ chuẩn xác:",
-        "audioText": "Stay patient, Sir.",
-        "phonetic": "/steɪ ˈpeɪ.ʃənt, sɜːr/",
-        "translation": "Hãy giữ kiên nhẫn thưa ông.",
-        "displaySentence": "Stay _______, Sir.",
-        "targetWord": "patient",
-        "hint": "💡 Gợi ý: Từ gồm 7 ký tự."
-    },
-    {
-        "lesson": "5",
-        "section": "section5.3",
-        "type": "fill",
-        "title": "[5.3 Điền từ] Nghe đoạn audio và ĐIỀN TỪ chuẩn xác:",
-        "audioText": "Good try, Sir!",
-        "phonetic": "/ɡʊd traɪ, sɜːr/",
-        "translation": "Cố gắng rất tốt thưa ông!",
-        "displaySentence": "Good _______, Sir!",
-        "targetWord": "try",
-        "hint": "💡 Gợi ý: Từ gồm 3 ký tự."
-    },
-    {
-        "lesson": "5",
-        "section": "section5.3",
-        "type": "fill",
-        "title": "[5.3 Điền từ] Nghe đoạn audio và ĐIỀN TỪ chuẩn xác:",
-        "audioText": "Perfect rhythm, Sir!",
-        "phonetic": "/ˈpɜːr.fekt ˈrɪð.əm, sɜːr/",
-        "translation": "Nhịp điệu hoàn hảo thưa ông!",
-        "displaySentence": "Perfect _______, Sir!",
-        "targetWord": "rhythm",
-        "hint": "💡 Gợi ý: Từ gồm 6 ký tự."
-    },
-    {
-        "lesson": "5",
-        "section": "section5.3",
-        "type": "fill",
-        "title": "[5.3 Điền từ] Nghe đoạn audio và ĐIỀN TỪ chuẩn xác:",
-        "audioText": "Take your time, Sir.",
-        "phonetic": "/teɪk jʊər taɪm, sɜːr/",
-        "translation": "Cứ từ tốn thưa ông.",
-        "displaySentence": "Take your _______, Sir.",
-        "targetWord": "time",
-        "hint": "💡 Gợi ý: Từ gồm 4 ký tự."
-    },
-    {
-        "lesson": "5",
-        "section": "section5.3",
-        "type": "fill",
-        "title": "[5.3 Điền từ] Nghe đoạn audio và ĐIỀN TỪ chuẩn xác:",
-        "audioText": "Trust your game, Sir.",
-        "phonetic": "/trʌst jʊər ɡeɪm, sɜːr/",
-        "translation": "Tin tưởng vào lối chơi đi ông.",
-        "displaySentence": "Trust your _______, Sir.",
-        "targetWord": "game",
-        "hint": "💡 Gợi ý: Từ gồm 4 ký tự."
-    },
-    {
-        "lesson": "5",
-        "section": "section5.3",
-        "type": "fill",
-        "title": "[5.3 Điền zừ] Nghe đoạn audio và ĐIỀN TỪ chuẩn xác:",
-        "audioText": "Great effort, Sir!",
-        "phonetic": "/ɡreɪt ˈef.ɚt, sɜːr/",
-        "translation": "Nỗ lực tuyệt vời thưa ông!",
-        "displaySentence": "Great _______, Sir!",
-        "targetWord": "effort",
-        "hint": "💡 Gợi ý: Từ gồm 6 ký tự."
-    },
-    {
-        "lesson": "5",
-        "section": "section5.3",
-        "type": "fill",
-        "title": "[5.3 Điền từ] Nghe đoạn audio và ĐIỀN TỪ chuẩn xác:",
-        "audioText": "Amazing save, Sir!",
-        "phonetic": "/əˈmeɪ.zɪŋ seɪv, sɜːr/",
-        "translation": "Cứu bóng kinh ngạc thưa ông!",
-        "displaySentence": "Amazing _______, Sir!",
-        "targetWord": "save",
-        "hint": "💡 Gợi ý: Từ gồm 4 ký tự."
-    }
-);
-// =========================================================================
-// LESSON 5 EXTENSION: BỔ SUNG 60 CÂU CHO MỖI SECTION (5.1 ĐẾN 5.5)
-// File: lesson5_extension_60per_section.js
-// =========================================================================
-
-if (typeof window.masterQuizData === 'undefined') {
-    window.masterQuizData = [];
-}
-
-window.masterQuizData.push(
-    // =========================================================================
-    // SECTION 5.1: LỜI THAN PHIỀN (COMPLAINTS & APOLOGIES) - BỔ SUNG 60 CÂU
-    // =========================================================================
-    {
-        "lesson": "5", "section": "section5.1", "type": "mcq",
-        "title": "[5.1 Luyện nghe] Nghe đoạn audio và chọn câu tiếng Anh đúng:",
-        "audioText": "I sincerely apologize for the delayed service today, Sir.",
-        "phonetic": "/aɪ sɪnˈsɪr.li əˈpɑː.lə.dʒaɪz fɔːr ðə dɪˈleɪd ˈsɜːr.vɪs təˈdeɪ, sɜːr/",
-        "translation": "Em thành thật xin lỗi vì dịch vụ bị chậm trễ ngày hôm nay thưa anh.",
-        "options": [
-            { "en": "A. I sincerely apologize for the delayed service today, Sir.", "vi": "Thành thật xin lỗi vì dịch vụ chậm trễ hôm nay ạ" },
-            { "en": "B. It is your fault that you are late, Sir.", "vi": "Do anh đến muộn chứ không phải lỗi em ạ" },
-            { "en": "C. I don't care about the delay, Sir.", "vi": "Em không quan tâm việc chậm trễ đâu ạ" },
-            { "en": "D. Wait for another hour if you want, Sir.", "vi": "Thích thì đợi thêm một tiếng nữa đi ạ" }
-        ], "correct": 0
-    },
-    {
-        "lesson": "5", "section": "section5.1", "type": "mcq",
-        "title": "[5.1 Luyện nghe] Nghe đoạn audio và chọn câu tiếng Anh đúng:",
-        "audioText": "I am so sorry for the mistake on your scorecard, Sir.",
-        "phonetic": "/aɪ æm soʊ ˈsɑː.ri fɔːr ðə mɪsˈteɪk ɑːn jʊər ˈskɔːr.kɑːrd, sɜːr/",
-        "translation": "Em rất xin lỗi vì có sự nhầm lẫn trên phiếu ghi điểm của anh ạ.",
-        "options": [
-            { "en": "A. I am so sorry for the mistake on your scorecard, Sir.", "vi": "Rất xin lỗi vì nhầm lẫn trên phiếu điểm ạ" },
-            { "en": "B. Your score is wrong because you played poorly, Sir.", "vi": "Điểm của anh sai vì anh đánh kém ạ" },
-            { "en": "C. Count your score by yourself, Sir.", "vi": "Tự đếm điểm lấy đi ạ" },
-            { "en": "D. The scorecard is always correct, Sir.", "vi": "Phiếu điểm lúc nào cũng chuẩn ạ" }
-        ], "correct": 0
-    },
-    {
-        "lesson": "5", "section": "section5.1", "type": "mcq",
-        "title": "[5.1 Luyện nghe] Nghe đoạn audio và chọn câu tiếng Anh đúng:",
-        "audioText": "Please accept my deepest apologies for the course condition, Sir.",
-        "phonetic": "/pliːz əkˈsept maɪ ˈdiː.pɪst əˈpɑː.lə.dʒiz fɔːr ðə kɔːrs kənˈdɪʃ.ən, sɜːr/",
-        "translation": "Xin anh hãy nhận lời xin lỗi chân thành nhất của em về tình trạng sân ạ.",
-        "options": [
-            { "en": "A. Please accept my deepest apologies for the course condition, Sir.", "vi": "Xin nhận lời xin lỗi chân thành về tình trạng sân ạ" },
-            { "en": "B. The course condition is your problem, Sir.", "vi": "Tình trạng sân là việc của anh ạ" },
-            { "en": "C. Don't complain about the grass, Sir.", "vi": "Đừng phàn nàn về cỏ sân ạ" },
-            { "en": "D. Play golf somewhere else if you don't like it, Sir.", "vi": "Không thích thì sang sân khác mà chơi ạ" }
-        ], "correct": 0
-    },
-    {
-        "lesson": "5", "section": "section5.1", "type": "mcq",
-        "title": "[5.1 Luyện nghe] Nghe đoạn audio và chọn câu tiếng Anh đúng:",
-        "audioText": "I am terribly sorry for losing your golf ball, Sir.",
-        "phonetic": "/aɪ æm ˈter.ə.bli ˈsɑː.ri fɔːr ˈluː.zɪŋ jʊər ɡɑːlf bɔːl, sɜːr/",
-        "translation": "Em vô cùng xin lỗi vì đã làm mất bóng của anh ạ.",
-        "options": [
-            { "en": "A. I am terribly sorry for losing your golf ball, Sir.", "vi": "Vô cùng xin lỗi vì đã làm mất bóng của anh ạ" },
-            { "en": "B. You hit the ball too badly to find, Sir.", "vi": "Tại anh đánh tệ quá nên mới mất bóng ạ" },
-            { "en": "C. Find your own ball next time, Sir.", "vi": "Lần sau tự đi mà tìm bóng ạ" },
-            { "en": "D. Losing balls is normal here, Sir.", "vi": "Mất bóng ở đây là bình thường ạ" }
-        ], "correct": 0
-    },
-    {
-        "lesson": "5", "section": "section5.1", "type": "mcq",
-        "title": "[5.1 Luyện nghe] Nghe đoạn audio và chọn câu tiếng Anh đúng:",
-        "audioText": "I apologize for the wet grip on your club, Sir.",
-        "phonetic": "/aɪ əˈpɑː.lə.dʒaɪz fɔːr ðə wet ɡrɪp ɑːn jʊər klʌb, sɜːr/",
-        "translation": "Em xin lỗi vì tay cầm gậy của anh bị ướt ạ.",
-        "options": [
-            { "en": "A. I apologize for the wet grip on your club, Sir.", "vi": "Xin lỗi vì tay cầm gậy bị ướt ạ" },
-            { "en": "B. It's raining, your grips will always get wet, Sir.", "vi": "Trời mưa thì gậy ướt là đương nhiên ạ" },
-            { "en": "C. Dry your own club with a towel, Sir.", "vi": "Tự lấy khăn mà lau gậy đi ạ" },
-            { "en": "D. A wet grip helps you swing better, Sir.", "vi": "Tay cầm ướt giúp swing tốt hơn ạ" }
-        ], "correct": 0
-    },
-    {
-        "lesson": "5", "section": "section5.1", "type": "mcq",
-        "title": "[5.1 Luyện nghe] Nghe đoạn audio và chọn câu tiếng Anh đúng:",
-        "audioText": "I am so sorry for keeping you waiting so long, Sir.",
-        "phonetic": "/aɪ æm soʊ ˈsɑː.ri fɔːr ˈkiː.pɪŋ juː ˈweɪ.tɪŋ soʊ lɑːŋ, sɜːr/",
-        "translation": "Em rất xin lỗi vì để anh phải chờ đợi lâu ạ.",
-        "options": [
-            { "en": "A. I am so sorry for keeping you waiting so long, Sir.", "vi": "Rất xin lỗi vì để anh phải đợi lâu ạ" },
-            { "en": "B. Waiting is good for you, Sir.", "vi": "Chờ đợi tốt cho anh đấy ạ" },
-            { "en": "C. Why are you impatient today, Sir?", "vi": "Sao hôm nay anh mất kiên nhẫn thế ạ?" },
-            { "en": "D. Go wait in the car, Sir.", "vi": "Ra xe mà đợi đi ạ" }
-        ], "correct": 0
-    },
-    {
-        "lesson": "5", "section": "section5.1", "type": "mcq",
-        "title": "[5.1 Luyện nghe] Nghe đoạn audio và chọn câu tiếng Anh đúng:",
-        "audioText": "I am truly sorry that my cleaning wasn't good enough, Sir.",
-        "phonetic": "/aɪ æm ˈtruː.li ˈsɑː.ri ðæt maɪ ˈkliː.nɪŋ ˈwɑːz.ənt ɡʊd ɪˈnʌf, sɜːr/",
-        "translation": "Em thực sự xin lỗi vì việc lau dọn gậy của em chưa được tốt ạ.",
-        "options": [
-            { "en": "A. I am truly sorry that my cleaning wasn't good enough, Sir.", "vi": "Thực sự xin lỗi vì việc lau gậy chưa tốt ạ" },
-            { "en": "B. Your clubs were already dirty, Sir.", "vi": "Gậy của anh bẩn sẵn rồi ạ" },
-            { "en": "C. Clean the clubs yourself next time, Sir.", "vi": "Lần sau tự đi mà lau gậy ạ" },
-            { "en": "D. My cleaning is always perfect, Sir.", "vi": "Việc lau dọn của em lúc nào cũng hoàn hảo ạ" }
-        ], "correct": 0
-    },
-    {
-        "lesson": "5", "section": "section5.1", "type": "mcq",
-        "title": "[5.1 Luyện nghe] Nghe đoạn audio và chọn câu tiếng Anh đúng:",
-        "audioText": "I apologize for the sudden noise on the course, Sir.",
-        "phonetic": "/aɪ əˈpɑː.lə.dʒaɪz fɔːr ðə ˈsʌd.ən nɔɪz ɑːn ðə kɔːrs, sɜːr/",
-        "translation": "Em xin lỗi vì tiếng ồn bất ngờ trên sân ạ.",
-        "options": [
-            { "en": "A. I apologize for the sudden noise on the course, Sir.", "vi": "Xin lỗi vì tiếng ồn bất ngờ trên sân ạ" },
-            { "en": "B. Stop making noise yourself, Sir.", "vi": "Chính anh mới đang làm ồn đấy ạ" },
-            { "en": "C. Noise is a part of golf, get used to it, Sir.", "vi": "Tiếng ồn là một phần của golf, chịu đi ạ" },
-            { "en": "D. I didn't make any noise, Sir.", "vi": "Em có làm ồn gì đâu ạ" }
-        ], "correct": 0
-    },
-    {
-        "lesson": "5", "section": "section5.1", "type": "mcq",
-        "title": "[5.1 Luyện nghe] Nghe đoạn audio và chọn câu tiếng Anh đúng:",
-        "audioText": "I am very sorry for dropping your club, Sir.",
-        "phonetic": "/aɪ æm ˈver.i ˈsɑː.ri fɔːr ˈdrɑː.pɪŋ jʊər klʌb, sɜːr/",
-        "translation": "Em rất xin lỗi vì đã làm rơi gậy của anh ạ.",
-        "options": [
-            { "en": "A. I am very sorry for dropping your club, Sir.", "vi": "Rất xin lỗi vì đã làm rơi gậy của anh ạ" },
-            { "en": "B. The club is not broken, so don't cry, Sir.", "vi": "Gậy có gãy đâu mà phải khóc ạ" },
-            { "en": "C. You dropped the club yourself, Sir.", "vi": "Chính anh làm rơi gậy đấy chứ ạ" },
-            { "en": "D. Buy a new club if it's damaged, Sir.", "vi": "Hỏng thì mua gậy mới đi ạ" }
-        ], "correct": 0
-    },
-    {
-        "lesson": "5", "section": "section5.1", "type": "mcq",
-        "title": "[5.1 Luyện nghe] Nghe đoạn audio và chọn câu tiếng Anh đúng:",
-        "audioText": "I sincerely apologize for the broken umbrella, Sir.",
-        "phonetic": "/aɪ sɪnˈsɪr.li əˈpɑː.lə.dʒaɪz fɔːr ðə ˈbroʊ.kən ʌmˈbrel.ə, sɜːr/",
-        "translation": "Em thành thật xin lỗi vì chiếc ô bị hỏng ạ.",
-        "options": [
-            { "en": "A. I sincerely apologize for the broken umbrella, Sir.", "vi": "Thành thật xin lỗi vì chiếc ô bị hỏng ạ" },
-            { "en": "B. The wind broke it, it's not my fault, Sir.", "vi": "Gió làm gãy chứ không phải lỗi em ạ" },
-            { "en": "C. You brought a cheap umbrella, Sir.", "vi": "Tại anh mang ô kém chất lượng đấy ạ" },
-            { "en": "D. Pay for the broken umbrella, Sir.", "vi": "Phải đền tiền ô bị hỏng đi ạ" }
-        ], "correct": 0
-    },
-    {
-        "lesson": "5", "section": "section5.1", "type": "fill",
-        "title": "[5.1 Điền từ] Nghe đoạn audio và ĐIỀN TỪ chuẩn xác:",
-        "audioText": "I sincerely apologize for the delay, Sir.",
-        "phonetic": "/aɪ sɪnˈsɪr.li əˈpɑː.lə.dʒaɪz fɔːr ðə dɪˈleɪ, sɜːr/",
-        "translation": "Em thành thật xin lỗi vì sự chậm trễ ạ.",
-        "displaySentence": "I sincerely apologize for the _______, Sir.",
-        "targetWord": "delay",
-        "hint": "💡 Gợi ý: Từ gồm 5 ký tự chỉ sự chậm trễ."
-    },
-    {
-        "lesson": "5", "section": "section5.1", "type": "fill",
-        "title": "[5.1 Điền từ] Nghe đoạn audio và ĐIỀN TỪ chuẩn xác:",
-        "audioText": "I completely understand your anger, Sir.",
-        "phonetic": "/aɪ kəmˈpliːt.li ˌʌn.dɚˈstænd jʊər ˈæŋ.ɡɚ, sɜːr/",
-        "translation": "Em hoàn toàn hiểu sự tức giận của anh ạ.",
-        "displaySentence": "I completely understand your _______, Sir.",
-        "targetWord": "anger",
-        "hint": "💡 Gợi ý: Từ gồm 5 ký tự chỉ cơn giận."
-    },
-    {
-        "lesson": "5", "section": "section5.1", "type": "fill",
-        "title": "[5.1 Điền từ] Nghe đoạn audio và ĐIỀN TỪ chuẩn xác:",
-        "audioText": "Please accept my apology, Sir.",
-        "phonetic": "/pliːz əkˈsept maɪ əˈpɑː.lə.dʒi, sɜːr/",
-        "translation": "Xin hãy nhận lời xin lỗi của em ạ.",
-        "displaySentence": "Please accept my _______, Sir.",
-        "targetWord": "apology",
-        "hint": "💡 Gợi ý: Từ gồm 7 ký tự nghĩa là lời xin lỗi."
-    },
-    {
-        "lesson": "5", "section": "section5.1", "type": "fill",
-        "title": "[5.1 Điền từ] Nghe đoạn audio và ĐIỀN TỪ chuẩn xác:",
-        "audioText": "It was my mistake, Sir.",
-        "phonetic": "/ɪt wəz maɪ mɪsˈteɪk, sɜːr/",
-        "translation": "Đó là lỗi của em thưa anh.",
-        "displaySentence": "It was my _______, Sir.",
-        "targetWord": "mistake",
-        "hint": "💡 Gợi ý: Từ gồm 7 ký tự nghĩa là lỗi lầm."
-    },
-    {
-        "lesson": "5", "section": "section5.1", "type": "fill",
-        "title": "[5.1 Điền từ] Nghe đoạn audio và ĐIỀN TỪ chuẩn xác:",
-        "audioText": "I will fix this right away, Sir.",
-        "phonetic": "/aɪ wɪl fɪks ðɪs raɪt əˈweɪ, sɜːr/",
-        "translation": "Em sẽ khắc phục việc này ngay lập tức ạ.",
-        "displaySentence": "I will fix this right _______, Sir.",
-        "targetWord": "away",
-        "hint": "💡 Gợi ý: Từ gồm 4 ký tự đi sau right."
-    },
-    // (Thêm các câu 16 đến 60 cho Section 5.1 theo cấu trúc tương tự...)
-    {
-        "lesson": "5", "section": "section5.1", "type": "mcq",
-        "title": "[5.1 Luyện nghe] Nghe đoạn audio và chọn câu tiếng Anh đúng:",
-        "audioText": "I am so sorry for the wrong club selection, Sir.",
-        "phonetic": "/aɪ æm soʊ ˈsɑː.ri fɔːr ðə rɔːŋ klʌb səˈlek.ʃən, sɜːr/",
-        "translation": "Em rất xin lỗi vì đã chọn nhầm gậy cho anh ạ.",
-        "options": [
-            { "en": "A. I am so sorry for the wrong club selection, Sir.", "vi": "Rất xin lỗi vì đã chọn nhầm gậy ạ" },
-            { "en": "B. You chose the wrong club yourself, Sir.", "vi": "Chính anh tự chọn nhầm gậy đấy chứ" },
-            { "en": "C. The club is right, your swing is wrong, Sir.", "vi": "Gậy đúng mà do swing anh sai" },
-            { "en": "D. Don't blame me for the club choice, Sir.", "vi": "Đừng đổ lỗi cho em việc chọn gậy" }
-        ], "correct": 0
-    },
-    {
-        "lesson": "5", "section": "section5.1", "type": "mcq",
-        "title": "[5.1 Luyện nghe] Nghe đoạn audio và chọn câu tiếng Anh đúng:",
-        "audioText": "I apologize for stepping on your putting line, Sir.",
-        "phonetic": "/aɪ əˈpɑː.lə.dʒaɪz fɔːr ˈstep.ɪŋ ɑːn jʊər ˈpʊt.ɪŋ laɪn, sɜːr/",
-        "translation": "Em xin lỗi vì đã dẫm vào đường gạt bóng của anh ạ.",
-        "options": [
-            { "en": "A. I apologize for stepping on your putting line, Sir.", "vi": "Xin lỗi vì đã dẫm lên đường gạt bóng ạ" },
-            { "en": "B. Stepping on the line is fine, Sir.", "vi": "Dẫm lên line có sao đâu ạ" },
-            { "en": "C. You didn't have a putting line, Sir.", "vi": "Anh làm gì có line gạt nào đâu ạ" },
-            { "en": "D. Fix the line yourself, Sir.", "vi": "Tự đi mà sửa line đi ạ" }
-        ], "correct": 0
-    },
-    {
-        "lesson": "5", "section": "section5.1", "type": "mcq",
-        title: "[5.1 Luyện nghe] Nghe đoạn audio và chọn câu tiếng Anh đúng:",
-        audioText": "I am deeply sorry for the delay at the tee box, Sir.",
-        "phonetic": "/aɪ æm ˈdiːp.li ˈsɑː.ri fɔːr ðə dɪˈleɪ ət ðə tiː bɑːks, sɜːr/",
-        "translation": "Em vô cùng xin lỗi vì sự chậm trễ tại khu phát bóng ạ.",
-        "options": [
-            { "en": "A. I am deeply sorry for the delay at the tee box, Sir.", "vi": "Vô cùng xin lỗi vì sự chậm trễ ở tee box ạ" },
-            { "en": "B. The tee box delay is normal, Sir.", "vi": "Chậm ở tee box là bình thường ạ" },
-            { "en": "C. Go complain to the starter, not me, Sir.", "vi": "Ra mà phàn nàn với starter ấy" },
-            { "en": "D. We are playing fast enough, Sir.", "vi": "Chúng ta đánh đủ nhanh rồi ạ" }
-        ], "correct": 0
-    },
-    {
-        "lesson": "5", "section": "section5.1", "type": "mcq",
-        "title": "[5.1 Luyện nghe] Nghe đoạn audio và chọn câu tiếng Anh đúng:",
-        "audioText": "I am sorry for making noise during your swing, Sir.",
-        "phonetic": "/aɪ æm ˈsɑː.ri fɔːr ˈmeɪ.kɪŋ nɔɪz ˈdʊr.ɪŋ jʊər swɪŋ, sɜːr/",
-        "translation": "Em xin lỗi vì đã gây tiếng ồn trong lúc anh vung gậy ạ.",
-        "options": [
-            { "en": "A. I am sorry for making noise during your swing, Sir.", "vi": "Xin lỗi vì gây tiếng ồn lúc anh vung gậy ạ" },
-            { "en": "B. You are too sensitive to noise, Sir.", "vi": "Anh nhạy cảm với tiếng ồn quá đấy" },
-            { "en": "C. I didn't make any sound, Sir.", "vi": "Em có phát ra tiếng nào đâu ạ" },
-            { "en": "D. Swing in silence by yourself, Sir.", "vi": "Tự mà im lặng mà swing đi ạ" }
-        ], "correct": 0
-    },
-    {
-        "lesson": "5", "section": "section5.1", "type": "mcq",
-        "title": "[5.1 Luyện nghe] Nghe đoạn audio và chọn câu tiếng Anh đúng:",
-        "audioText": "I apologize for the poor condition of the bunker, Sir.",
-        "phonetic": "/aɪ əˈpɑː.lə.dʒaɪz fɔːr ðə pʊr kənˈdɪʃ.ən əv ðə ˈbʌŋ.kər, sɜːr/",
-        "translation": "Em xin lỗi vì tình trạng tồi tệ của bẫy cát ạ.",
-        "options": [
-            { "en": "A. I apologize for the poor condition of the bunker, Sir.", "vi": "Xin lỗi vì tình trạng bẫy cát kém ạ" },
-            { "en": "B. The bunker is fine, your shot was bad, Sir.", "vi": "Bẫy cát tốt, tại anh đánh kém" },
-            { "en": "C. Rake the sand yourself, Sir.", "vi": "Tự cào cát lấy đi ạ" },
-            { "en": "D. Don't hit into bunkers, Sir.", "vi": "Đừng đánh vào bẫy cát nữa ạ" }
-        ], "correct": 0
-    },
-
-    // =========================================================================
-    // SECTION 5.2: LỜI ĐỀ NGHỊ (OFFERS & SUGGESTIONS) - BỔ SUNG 60 CÂU
-    // =========================================================================
-    {
-        "lesson": "5", "section": "section5.2", "type": "mcq",
-        "title": "[5.2 Luyện nghe] Nghe đoạn audio và chọn câu tiếng Anh đúng:",
-        "audioText": "Would you like me to hold your club while you walk, Sir?",
-        "phonetic": "/wʊd juː laɪk miː tə hoʊld jʊər klʌb waɪl juː wɔːk, sɜːr/",
-        "translation": "Ông có muốn em cầm gậy giúp trong lúc ông đi bộ không ạ?",
-        "options": [
-            { "en": "A. Would you like me to hold your club while you walk, Sir?", "vi": "Ông có muốn em cầm gậy giúp khi đi bộ không ạ?" },
-            { "en": "B. Hold your own club, Sir.", "vi": "Tự cầm gậy lấy đi ạ." },
-            { "en": "C. Give me your club right now, Sir.", "vi": "Đưa gậy cho em ngay lập tức ạ." },
-            { "en": "D. Leave your club on the grass, Sir.", "vi": "Bỏ gậy xuống cỏ đi ạ." }
-        ], "correct": 0
-    },
-    {
-        "lesson": "5", "section": "section5.2", "type": "mcq",
-        "title": "[5.2 Luyện nghe] Nghe đoạn audio và chọn câu tiếng Anh đúng:",
-        "audioText": "Shall I check the distance to the pin for you, Sir?",
-        "phonetic": "/ʃæl aɪ tʃek ðə ˈdɪs.təns tə ðə pɪn fɔːr juː, sɜːr/",
-        "translation": "Để em kiểm tra khoảng cách đến cờ giúp anh nhé ạ?",
-        "options": [
-            { "en": "A. Shall I check the distance to the pin for you, Sir?", "vi": "Để em kiểm tra khoảng cách đến cờ giúp anh nhé ạ?" },
-            { "en": "B. Check the distance yourself, Sir.", "vi": "Tự đi mà kiểm tra khoảng cách ạ." },
-            { "en": "C. I don't know the distance, Sir.", "vi": "Em không biết khoảng cách đâu ạ." },
-            { "en": "D. Guess the distance by yourself, Sir.", "vi": "Tự mà đoán khoảng cách đi ạ." }
-        ], "correct": 0
-    },
-    {
-        "lesson": "5", "section": "section5.2", "type": "mcq",
-        title": "[5.2 Luyện nghe] Nghe đoạn audio và chọn câu tiếng Anh đúng:",
-        "audioText": "Would you like me to wipe your sunglasses, Sir?",
-        "phonetic": "/wʊd juː laɪk miː tə waɪp jʊər ˈsʌnˌɡlæs.ɪz, sɜːr/",
-        "translation": "Ông có muốn em lau kính râm giúp không ạ?",
-        "options": [
-            { "en": "A. Would you like me to wipe your sunglasses, Sir?", "vi": "Ông có muốn em lau kính râm giúp không ạ?" },
-            { "en": "B. Clean your own glasses, Sir.", "vi": "Tự đi mà lau kính của ông đi." },
-            { "en": "C. Give me your sunglasses, Sir.", "vi": "Đưa kính râm đây cho em." },
-            { "en": "D. Throw away your sunglasses, Sir.", "vi": "Vứt kính râm đi ạ." }
-        ], "correct": 0
-    },
-    {
-        "lesson": "5", "section": "section5.2", "type": "mcq",
-        "title": "[5.2 Luyện nghe] Nghe đoạn audio và chọn câu tiếng Anh đúng:",
-        "audioText": "May I offer you a fresh cold towel, Sir?",
-        "phonetic": "/meɪ aɪ ˈɑː.fɚ juː ə freʃ koʊld ˈtaʊ.əl, sɜːr/",
-        "translation": "Em xin phép gửi ông một chiếc khăn lạnh mới nhé ạ?",
-        "options": [
-            { "en": "A. May I offer you a fresh cold towel, Sir?", "vi": "Em xin phép gửi ông khăn lạnh mới nhé ạ?" },
-            { "en": "B. Take this dirty towel, Sir.", "vi": "Cầm lấy chiếc khăn bẩn này đi ạ." },
-            { "en": "C. We have no towels left, Sir.", "vi": "Chúng em hết khăn mất rồi ạ." },
-            { "en": "D. Buy a towel at the clubhouse, Sir.", "vi": "Ra clubhouse mà mua khăn ạ." }
-        ], "correct": 0
-    },
-    {
-        "lesson": "5", "section": "section5.2", "type": "mcq",
-        "title": "[5.2 Luyện nghe] Nghe đoạn audio và chọn câu tiếng Anh đúng:",
-        "audioText": "Shall I help you read the green line, Sir?",
-        "phonetic": "/ʃæl aɪ help juː riːd ðə ɡriːn laɪn, sɜːr/",
-        "translation": "Để em hỗ trợ đọc đường line trên green giúp anh nhé ạ?",
-        "options": [
-            { "en": "A. Shall I help you read the green line, Sir?", "vi": "Để em hỗ trợ đọc line green giúp anh nhé ạ?" },
-            { "en": "B. Read the green yourself, Sir.", "vi": "Tự đi mà đọc line green đi ạ." },
-            { "en": "C. I cannot read lines, Sir.", "vi": "Em không biết đọc line đâu ạ." },
-            { "en": "D. Put the ball anywhere, Sir.", "vi": "Đặt bóng đại vào đâu cũng được ạ." }
-        ], "correct": 0
-    },
-    {
-        "lesson": "5", "section": "section5.2", "type": "fill",
-        "title": "[5.2 Điền từ] Nghe đoạn audio và ĐIỀN TỪ chuẩn xác:",
-        "audioText": "May I help you with your bag, Sir?",
-        "phonetic": "/meɪ aɪ help juː wɪð jʊər bæɡ, sɜːr/",
-        "translation": "Em giúp anh xách túi nhé ạ?",
-        "displaySentence": "May I help you with your _______, Sir?",
-        "targetWord": "bag",
-        "hint": "💡 Gợi ý: Từ gồm 3 ký tự chỉ túi gậy."
-    },
-    {
-        "lesson": "5", "section": "section5.2",
+        "section": "section5.2",
         "type": "fill",
         "title": "[5.2 Điền từ] Nghe đoạn audio và ĐIỀN TỪ chuẩn xác:",
-        "audioText": "Would you like some hot tea, Sir?",
-        "phonetic": "/wʊd juː laɪk səm hɑːt tiː, sɜːr/",
-        "translation": "Ông có muốn dùng chút trà nóng không ạ?",
-        "displaySentence": "Would you like some hot _______, Sir?",
-        "targetWord": "tea",
-        "hint": "💡 Gợi ý: Từ gồm 3 ký tự chỉ trà."
-    },
-
-    // =========================================================================
-    // SECTION 5.3: ĐỘNG VIÊN, KHÍCH LỆ (ENCOURAGEMENT) - BỔ SUNG 60 CÂU
-    // =========================================================================
-    {
-        "lesson": "5", "section": "section5.3", "type": "mcq",
-        "title": "[5.3 Luyện nghe] Nghe đoạn audio và chọn câu tiếng Anh đúng:",
-        "audioText": "Fantastic swing, Sir! You are on fire today!",
-        "phonetic": "/fænˈtæs.tɪk swɪŋ, sɜːr! juː ɑːr ɑːn ˈfaɪər təˈdeɪ/",
-        "translation": "Cú swing tuyệt vời quá ông ơi! Hôm nay ông đánh rất bốc lửa!",
-        "options": [
-            { "en": "A. Fantastic swing, Sir! You are on fire today!", "vi": "Cú swing tuyệt vời! Hôm nay ông đánh cực kỳ bốc!" },
-            { "en": "B. Terrible swing, Sir. You are freezing.", "vi": "Cú swing tồi, ông đang bị cóng ạ." },
-            { "en": "C. Stop swinging like that, Sir.", "vi": "Đừng swing kiểu đó nữa ạ." },
-            { "en": "D. Your swing is broken, Sir.", "vi": "Cú swing của ông hỏng rồi ạ." }
-        ], "correct": 0
+        "audioText": "May I clean your ball on the green, Sir?",
+        "phonetic": "/meɪ aɪ kliːn jʊər bɔːl ɑːn ðə ɡriːn, sɜːr/",
+        "translation": "Em xin phép lau bóng cho ông trên green ạ?",
+        "displaySentence": "May I _______ your ball on the green, Sir?",
+        "targetWord": "clean",
+        "hint": "💡 Gợi ý: Từ 5 ký tự."
     },
     {
-        "lesson": "5", "section": "section5.3", "type": "mcq",
-        "title": "[5.3 Luyện nghe] Nghe đoạn audio và chọn câu tiếng Anh đúng:",
-        "audioText": "Brilliant putt, Sir! That rolled right into the center!",
-        "phonetic": "/ˈbrɪl.jənt pʌt, sɜːr! ðæt roʊld raɪt ˈɪn.tuː ðə ˈsen.tər/",
-        "translation": "Cú gạt quá rực rỡ ông ơi! Bóng lăn thẳng vào giữa lỗ luôn!",
-        "options": [
-            { "en": "A. Brilliant putt, Sir! That rolled right into the center!", "vi": "Cú gạt rực rỡ! Bóng lăn thẳng vào giữa lỗ ạ!" },
-            { "en": "B. Bad putt, it missed the cup completely.", "vi": "Cú gạt tồi, trượt hố hoàn toàn ạ." },
-            { "en": "C. Slow putt, it stopped early.", "vi": "Gạt chậm quá, dừng lại sớm rồi." },
-            { "en": "D. Wrong direction putt, Sir.", "vi": "Gạt sai hướng mất rồi ạ." }
-        ], "correct": 0
-    },
-    {
-        "lesson": "5", "section": "section5.3", "type": "mcq",
-        "title": "[5.3 Luyện nghe] Nghe đoạn audio và chọn câu tiếng Anh đúng:",
-        "audioText": "Keep your chin up, Sir. The best is yet to come!",
-        "phonetic": "/kiːp jʊər tʃɪn ʌp, sɜːr! ðə best ɪz jet tuː kʌm/",
-        "translation": "Hãy ngẩng cao đầu lên ông nhé. Những điều tuyệt vời nhất vẫn ở phía trước!",
-        "options": [
-            { "en": "A. Keep your chin up, Sir. The best is yet to come!", "vi": "Ngẩng cao đầu lên nào! Điều tuyệt vời nhất vẫn ở phía trước!" },
-            { "en": "B. Look down and be sad, Sir.", "vi": "Cúi đầu xuống và buồn rầu đi ạ." },
-            { "en": "C. Give up now, the worst is coming.", "vi": "Bỏ cuộc đi, điều tồi tệ sắp tới." },
-            { "en": "D. Stop playing and go home, Sir.", "vi": "Dừng chơi và về nhà đi ạ." }
-        ], "correct": 0
-    },
-    {
-        "lesson": "5", "section": "section5.3", "type": "fill",
-        "title": "[5.3 Điền từ] Nghe đoạn audio và ĐIỀN TỪ chuẩn xác:",
-        "audioText": "Brilliant putt, Sir!",
-        "phonetic": "/ˈbrɪl.jənt pʌt, sɜːr/",
-        "translation": "Cú gạt quá rực rỡ thưa ông!",
-        "displaySentence": "Brilliant _______, Sir!",
-        "targetWord": "putt",
-        "hint": "💡 Gợi ý: Từ gồm 4 ký tự chỉ cú gạt bóng."
-    },
-    {
-        "lesson": "5", "section": "section5.3",
+        "lesson": "5",
+        "section": "section5.2",
         "type": "fill",
-        "title": "[5.3 Điền từ] Nghe đoạn audio và ĐIỀN TỪ chuẩn xác:",
-        "audioText": "Fantastic shot, Sir!",
-        "phonetic": "/fænˈtæs.tɪk ʃɑːt, sɜːr/",
-        "translation": "Cú đánh tuyệt vời thưa ông!",
-        "displaySentence": "Fantastic _______, Sir!",
-        "targetWord": "shot",
-        "hint": "💡 Gợi ý: Từ gồm 4 ký tự."
-    },
-
-    // =========================================================================
-    // SECTION 5.4: LỜI CHÀO TẠM BIỆT (FAREWELL) - BỔ SUNG 60 CÂU
-    // =========================================================================
-    {
-        "lesson": "5", "section": "section5.4", "type": "mcq",
-        "title": "[5.4 Luyện nghe] Nghe đoạn audio và chọn câu tiếng Anh đúng:",
-        "audioText": "It has been an absolute honor to serve you today, Sir.",
-        "phonetic": "/ɪt hæz biːn ən ˈæb.sə.luːt ˈɑː.nɚ tuː sɜːrv juː təˈdeɪ, sɜːr/",
-        "translation": "Quả là một vinh hạnh lớn cho em khi được phục vụ ông hôm nay ạ.",
-        "options": [
-            { "en": "A. It has been an absolute honor to serve you today, Sir.", "vi": "Vinh hạnh lớn khi được phục vụ ông hôm nay ạ" },
-            { "en": "B. It was a terrible time serving you, Sir.", "vi": "Phục vụ ông là một ác mộng ạ" },
-            { "en": "C. I am glad to finish working with you, Sir.", "vi": "Rất mừng vì đã làm xong việc với ông" },
-            { "en": "D. Don't ever hire me again, Sir.", "vi": "Đừng bao giờ thuê tôi nữa nhé" }
-        ], "correct": 0
+        "title": "[5.2 Điền từ] Nghe đoạn audio và ĐIỀN TỪ chuẩn xác:",
+        "audioText": "Shall I open the umbrella for shade, Sir?",
+        "phonetic": "/ʃæl aɪ ˈoʊ.pən ðə ʌmˈbrel.ə fɔːr ʃeɪd, sɜːr/",
+        "translation": "Em mở ô tạo bóng râm cho ông nhé ạ?",
+        "displaySentence": "Shall I open the _______ for shade, Sir?",
+        "targetWord": "umbrella",
+        "hint": "💡 Gợi ý: Từ 8 ký tự."
     },
     {
-        "lesson": "5", "section": "section5.4", "type": "mcq",
-        title": "[5.4 Luyện nghe] Nghe đoạn audio và chọn câu tiếng Anh đúng:",
-        "audioText": "Wishing you a wonderful evening and a great week ahead, Sir.",
-        "phonetic": "/ˈwɪʃ.ɪŋ juː a ˈwʌn.dɚ.fəl ˈiːv.nɪŋ ænd ə ɡreɪt wiːk əˈhed, sɜːr/",
-        "translation": "Chúc ông có một buổi tối tuyệt vời và một tuần mới thật rực rỡ phía trước ạ.",
-        "options": [
-            { "en": "A. Wishing you a wonderful evening and a great week ahead, Sir.", "vi": "Chúc buổi tối tuyệt vời và tuần mới rực rỡ ạ" },
-            { "en": "B. Have a bad evening and a terrible week, Sir.", "vi": "Chúc buổi tối tồi tệ và tuần mới tồi tệ ạ" },
-            { "en": "C. Go straight home and sleep, Sir.", "vi": "Về thẳng nhà mà đi ngủ đi ạ" },
-            { "en": "D. See you in a bad mood next week, Sir.", "vi": "Hẹn gặp lại tuần sau với tâm trạng tệ ạ" }
-        ], "correct": 0
-    },
-    {
-        "lesson": "5", "section": "section5.4", "type": "fill",
-        "title": "[5.4 Điền từ] Nghe đoạn audio và ĐIỀN TỪ chuẩn xác:",
-        "audioText": "Have a wonderful evening, Sir!",
-        "phonetic": "/hæv ə ˈwʌn.dɚ.fəl ˈiːv.nɪŋ, sɜːr/",
-        "translation": "Chúc ông có một buổi tối tuyệt vời thưa ông!",
-        "displaySentence": "Have a wonderful _______, Sir!",
-        "targetWord": "evening",
-        "hint": "💡 Gợi ý: Từ gồm 7 ký tự chỉ buổi tối."
-    },
-
-    // =========================================================================
-    // SECTION 5.5: THỰC HÀNH & LUYỆN TẬP (ROLE-PLAY) - BỔ SUNG 60 CÂU
-    // =========================================================================
-    {
-        "lesson": "5", "section": "section5.5", "type": "mcq",
-        "title": "[5.5 Luyện nghe] Nghe đoạn hội thoại thực tế và chọn phương án đúng:",
-        "audioText": "Sir, I completely understand your frustration. Let me check with the management to resolve this right now.",
-        "phonetic": "/sɜːr, aɪ kəmˈpliːt.li ˌʌn.dɚˈstænd jʊər frʌsˈtreɪ.ʃən. let miː tʃek wɪð ðə ˈmæn.ɪdʒ.mənt tə rɪˈzɑːlv ðɪs raɪt naʊ/",
-        "translation": "Thưa ông, em hoàn toàn hiểu sự bực bội của ông. Để em kiểm tra với ban quản lý để giải quyết ngay ạ.",
-        "options": [
-            { "en": "A. I understand your frustration. Let me check with management to resolve this now, Sir.", "vi": "Em hiểu sự bực bội, để em báo quản lý giải quyết ngay ạ" },
-            { "en": "B. Stop being frustrated, it's your own fault, Sir.", "vi": "Đừng bực bội nữa, tại ông đấy chứ" },
-            { "en": "C. Management won't care about your complaint, Sir.", "vi": "Quản lý không quan tâm phàn nàn của ông đâu" },
-            { "en": "D. Leave the golf course right now, Sir.", "vi": "Rời khỏi sân golf ngay lập tức đi ạ" }
-        ], "correct": 0
-    },
-    {
-        "lesson": "5", "section": "section5.5", "type": "mcq",
-        title": "[5.5 Luyện nghe] Nghe đoạn hội thoại thực tế và chọn phương án đúng:",
-        "audioText": "Thank you for being such a wonderful guest today. We look forward to seeing you again soon!",
-        "phonetic": "/θæŋk juː fɔːr ˈbiː.ɪŋ sʌtʃ ə ˈwʌn.dɚ.fəl ɡest təˈdeɪ. wiː lʊk ˈfɔːr.wɚd tʊ ˈsiː.ɪŋ juː əˈɡen suːn/",
-        "translation": "Cảm ơn ông vì đã là một vị khách tuyệt vời ngày hôm nay. Chúng em rất mong sớm được gặp lại ông!",
-        "options": [
-            { "en": "A. Thank you for being a wonderful guest today. We look forward to seeing you again soon!", "vi": "Cảm ơn vị khách tuyệt vời hôm nay, mong sớm gặp lại ạ!" },
-            { "en": "B. You were a difficult guest today, goodbye.", "vi": "Ông là vị khách khó tính ngày hôm nay, tạm biệt." },
-            { "en": "C. Never come back to our resort again, please.", "vi": "Xin đừng bao giờ quay lại resort của chúng tôi nữa." },
-            { "en": "D. Pay your bill and leave quickly, Sir.", "vi": "Thanh toán hóa đơn rồi biến nhanh đi ạ." }
-        ], "correct": 0
-    },
-    {
-        "lesson": "5", "section": "section5.5",
+        "lesson": "5",
+        "section": "section5.2",
         "type": "fill",
-        "title": "[5.5 Điền từ] Nghe đoạn audio và ĐIỀN TỪ chuẩn xác:",
-        "audioText": "We look forward to seeing you again.",
-        "phonetic": "/wiː lʊk ˈfɔːr.wɚd tuː ˈsiː.ɪŋ juː əˈɡen/",
-        "translation": "Chúng tôi rất mong được gặp lại ông.",
-        "displaySentence": "We look forward to _______ you again.",
-        "targetWord": "seeing",
-        "hint": "💡 Gợi ý: Từ gồm 6 ký tự chỉ việc nhìn thấy/gặp."
+        "title": "[5.2 Điền từ] Nghe đoạn audio và ĐIỀN TỪ chuẩn xác:",
+        "audioText": "Would you like to rest for a few minutes, Sir?",
+        "phonetic": "/wʊd juː laɪk tə rest fɔːr ə fjuː ˈmɪn.ɪts, sɜːr/",
+        "translation": "Ông có muốn nghỉ ngơi vài phút không ạ?",
+        "displaySentence": "Would you like to _______ for a few minutes, Sir?",
+        "targetWord": "rest",
+        "hint": "💡 Gợi ý: Từ 4 ký tự."
+    },
+    {
+        "lesson": "5",
+        "section": "section5.2",
+        "type": "fill",
+        "title": "[5.2 Điền từ] Nghe đoạn audio và ĐIỀN TỪ chuẩn xác:",
+        "audioText": "I will contact the Marshal to assist us, Sir.",
+        "phonetic": "/aɪ wɪl ˈkɑːn.tækt ðə ˈmɑːr.ʃəl tə əˈsɪst ʌs, sɜːr/",
+        "translation": "Em sẽ liên hệ Marshal để hỗ trợ chúng ta ạ.",
+        "displaySentence": "I will contact the _______ to assist us, Sir.",
+        "targetWord": "Marshal",
+        "hint": "💡 Gợi ý: Từ 7 ký tự."
+    },
+    {
+        "lesson": "5",
+        "section": "section5.2",
+        "type": "fill",
+        "title": "[5.2 Điền từ] Nghe đoạn audio và ĐIỀN TỪ chuẩn xác:",
+        "audioText": "Here is a cold towel for your hands, Sir.",
+        "phonetic": "/hɪər ɪz ə koʊld ˈtaʊ.əl fɔːr jʊər hændz, sɜːr/",
+        "translation": "Gửi ông chiếc khăn lạnh lau tay ạ.",
+        "displaySentence": "Here is a cold _______ for your hands, Sir.",
+        "targetWord": "towel",
+        "hint": "💡 Gợi ý: Từ 5 ký tự."
+    },
+    {
+        "lesson": "5",
+        "section": "section5.2",
+        "type": "fill",
+        "title": "[5.2 Điền từ] Nghe đoạn audio và ĐIỀN TỪ chuẩn xác:",
+        "audioText": "Let me fetch another club for this distance, Sir.",
+        "phonetic": "/let miː fetʃ əˈnʌð.ɚ klʌb fɔːr ðɪs ˈdɪs.təns, sɜːr/",
+        "translation": "Để em đi lấy cây gậy khác cho khoảng cách này ạ.",
+        "displaySentence": "Let me _______ another club for this distance, Sir.",
+        "targetWord": "fetch",
+        "hint": "💡 Gợi ý: Động từ 5 ký tự"
+    },
+    {
+        "lesson": "5",
+        "section": "section5.2",
+        "type": "fill",
+        "title": "[5.2 Điền từ] Nghe đoạn audio và ĐIỀN TỪ chuẩn xác:",
+        "audioText": "May I check your score for this hole, Sir?",
+        "phonetic": "/meɪ aɪ tʃek jʊər skɔːr fɔːr ðɪs hoʊl, sɜːr/",
+        "translation": "Em xin phép xác nhận lại điểm hố này của ông nhé ạ?",
+        "displaySentence": "May I check your _______ for this hole, Sir?",
+        "targetWord": "score",
+        "hint": "💡 Gợi ý: Từ 5 ký tự."
+    },
+    {
+        "lesson": "5",
+        "section": "section5.2",
+        "type": "fill",
+        "title": "[5.2 Điền từ] Nghe đoạn audio và ĐIỀN TỪ chuẩn xác:",
+        "audioText": "Please follow the 150-yard marker line, Sir.",
+        "phonetic": "/pliːz ˈfɑː.loʊ ðə wʌn ˈhʌn.drəd ˈfɪf.ti jɑːrd ˈmɑːr.kɚ laɪn, sɜːr/",
+        "translation": "Xin mời ông đi theo hướng cọc 150 yard ạ.",
+        "displaySentence": "Please follow the 150-yard _______ line, Sir.",
+        "targetWord": "marker",
+        "hint": "💡 Gợi ý: Từ 6 ký tự."
+    },
+    {
+        "lesson": "5",
+        "section": "section5.2",
+        "type": "mcq",
+        "title": "[5.2 Luyện nghe] Nghe đoạn audio và chọn câu tiếng Anh đúng:",
+        "audioText": "May I zip up your golf bag to protect your clubs, Sir?",
+        "phonetic": "/meɪ aɪ zɪp ʌp jʊər ɡɑːlf bæɡ tə prəˈtekt jʊər klʌbz, sɜːr/",
+        "translation": "Em xin phép kéo khóa túi golf để bảo vệ bộ gậy nhé ạ?",
+        "options": [
+            { "en": "A. May I zip up your golf bag to protect your clubs, Sir?", "vi": "Em xin phép kéo khóa túi để bảo vệ gậy ạ?" },
+            { "en": "B. Open all zippers on your bag, Sir.", "vi": "Mở hết các khóa kéo ra đi ạ" },
+            { "en": "C. Leave your bag open under rain, Sir.", "vi": "Mở túi ra hứng mưa đi ạ" },
+            { "en": "D. Don't touch the bag zippers, Sir.", "vi": "Đừng chạm vào khóa kéo túi ạ" }
+        ],
+        "correct": 0
+    },
+    {
+        "lesson": "5",
+        "section": "section5.2",
+        "type": "mcq",
+        "title": "[5.2 Luyện nghe] Nghe đoạn audio và chọn câu tiếng Anh đúng:",
+        "audioText": "Would you like to lay up safely before the creek, Sir?",
+        "phonetic": "/wʊd juː laɪk tə leɪ ʌp ˈseɪf.li bɪˈfɔːr ðə kriːk, sɜːr/",
+        "translation": "Ông có muốn đánh an toàn lay-up trước suối không ạ?",
+        "options": [
+            { "en": "A. Would you like to lay up safely before the creek, Sir?", "vi": "Ông muốn đánh lay-up an toàn trước suối không ạ?" },
+            { "en": "B. Try to hit over 250 yards water, Sir.", "vi": "Cố đánh qua 250 yard nước đi ạ" },
+            { "en": "C. Throw your ball into the creek, Sir.", "vi": "Ném bóng xuống suối đi ạ" },
+            { "en": "D. Lay-up is for weak players, Sir.", "vi": "Đánh lay-up chỉ dành cho người yếu ạ" }
+        ],
+        "correct": 0
+    },
+    {
+        "lesson": "5",
+        "section": "section5.2",
+        "type": "mcq",
+        "title": "[5.2 Luyện nghe] Nghe đoạn audio và chọn câu tiếng Anh đúng:",
+        "audioText": "We have a USB charger on cart. Would you like to charge your phone, Sir?",
+        "phonetic": "/wiː hæv ə ˌjuː.esˈbiː ˈtʃɑːr.dʒɚ ɑːn kɑːrt. wʊd juː laɪk tə tʃɑːrdʒ jʊər foʊn, sɜːr/",
+        "translation": "Xe có cổng sạc USB ạ. Ông có muốn sạc điện thoại không ạ?",
+        "options": [
+            { "en": "A. We have a USB charger on cart. Would you like to charge your phone, Sir?", "vi": "Xe có cổng USB, ông muốn sạc điện thoại không ạ?" },
+            { "en": "B. Turn off your phone completely, Sir.", "vi": "Tắt nguồn điện thoại đi ạ" },
+            { "en": "C. Phone charger is $10 extra, Sir.", "vi": "Sạc điện thoại tốn thêm 10 đô ạ" },
+            { "en": "D. Charging phone damages cart battery, Sir.", "vi": "Sạc điện thoại làm hỏng ắc quy xe đấy ạ" }
+        ],
+        "correct": 0
+    },
+    {
+        "lesson": "5",
+        "section": "section5.2",
+        "type": "mcq",
+        "title": "[5.2 Luyện nghe] Nghe đoạn audio và chọn câu tiếng Anh đúng:",
+        "audioText": "Shall I tee the ball slightly lower to keep it under the wind, Sir?",
+        "phonetic": "/ʃæl aɪ tiː ðə bɔːl ˈslaɪt.li ˈloʊ.ɚ tə kiːp ɪt ˈʌn.dɚ ðə wɪnd, sɜːr/",
+        "translation": "Em cắm tee thấp hơn chút để cản gió nhé thưa ông?",
+        "options": [
+            { "en": "A. Shall I tee the ball slightly lower to keep it under the wind, Sir?", "vi": "Cắm tee thấp hơn chút để cản gió nhé ạ?" },
+            { "en": "B. Tee the ball as high as a tree, Sir.", "vi": "Cắm tee cao như ngọn cây đi ạ" },
+            { "en": "C. Don't use tee into headwind, Sir.", "vi": "Gió ngược thì đừng dùng tee ạ" },
+            { "en": "D. High tee is best for wind, Sir.", "vi": "Tee cao mới tốt khi có gió ạ" }
+        ],
+        "correct": 0
+    },
+    {
+        "lesson": "5",
+        "section": "section5.2",
+        "type": "mcq",
+        "title": "[5.2 Luyện nghe] Nghe đoạn audio và chọn câu tiếng Anh đúng:",
+        "audioText": "Would you like me to clean your golf shoes at the air compressor station, Sir?",
+        "phonetic": "/wʊd juː laɪk miː tə kliːn jʊər ɡɑːlf ʃuːz æt ðə er kəmˈpres.ɚ ˈsteɪ.ʃən, sɜːr/",
+        "translation": "Ông có muốn em xịt sạch giày tại trạm vòi xịt khí nén không ạ?",
+        "options": [
+            { "en": "A. Would you like me to clean your shoes at the air compressor station, Sir?", "vi": "Ông muốn em xịt sạch giày tại trạm vòi xịt khí không ạ?" },
+            { "en": "B. Walk inside clubhouse with muddy shoes, Sir.", "vi": "Đi giày dính bùn vào clubhouse đi ạ" },
+            { "en": "C. Wash shoes with hot tea, Sir.", "vi": "Rửa giày bằng trà nóng đi ạ" },
+            { "en": "D. Air compressor is dangerous, don't use it, Sir.", "vi": "Vòi xịt khí nguy hiểm lắm đừng dùng ạ" }
+        ],
+        "correct": 0
+    },
+    {
+        "lesson": "5",
+        "section": "section5.2",
+        "type": "mcq",
+        "title": "[5.2 Luyện nghe] Nghe đoạn audio và chọn câu tiếng Anh đúng:",
+        "audioText": "May I mark your ball with a ball marker, Sir?",
+        "phonetic": "/meɪ aɪ mɑːrk jʊər bɔːl wɪð ə bɔːl ˈmɑːr.kɚ, sɜːr/",
+        "translation": "Em xin phép đánh dấu vị trí bóng cho ông nhé ạ?",
+        "options": [
+            { "en": "A. May I mark your ball with a ball marker, Sir?", "vi": "Em xin phép đánh dấu bóng cho ông nhé ạ?" },
+            { "en": "B. Pick up your ball without marking, Sir.", "vi": "Nhặt bóng lên không cần đánh dấu đâu ạ" },
+            { "en": "C. Leave your ball right in front of cup, Sir.", "vi": "Cứ để bóng chặn ngay trước hố ạ" },
+            { "en": "D. Use coin to scratch the green, Sir.", "vi": "Dùng đồng xu vạch lên green đi ạ" }
+        ],
+        "correct": 0
+    },
+    {
+        "lesson": "5",
+        "section": "section5.2",
+        "type": "mcq",
+        "title": "[5.2 Luyện nghe] Nghe đoạn audio và chọn câu tiếng Anh đúng:",
+        "audioText": "It's getting warmer. Would you like me to put your jacket in the cart, Sir?",
+        "phonetic": "/ɪts ˈɡet.ɪŋ ˈwɔːr.mɚ. wʊd juː laɪk miː tə pʊt jʊər ˈdʒæk.ɪt ɪn ðə kɑːrt, sɜːr/",
+        "translation": "Trời ấm lên rồi. Để em cất áo khoác vào xe giúp ông nhé ạ?",
+        "options": [
+            { "en": "A. It's getting warmer. Would you like me to put your jacket in cart, Sir?", "vi": "Trời ấm rồi, em cất áo khoác vào xe nhé ạ?" },
+            { "en": "B. Wear jacket to sweat more, Sir.", "vi": "Mặc áo khoác cho ra nhiều mồ hôi ạ" },
+            { "en": "C. Throw jacket on fairway, Sir.", "vi": "Ném áo khoác ra fairway đi ạ" },
+            { "en": "D. I want to wear your jacket, Sir.", "vi": "Em muốn mặc thử áo của ông ạ" }
+        ],
+        "correct": 0
+    },
+    {
+        "lesson": "5",
+        "section": "section5.2",
+        "type": "mcq",
+        "title": "[5.2 Luyện nghe] Nghe đoạn audio và chọn câu tiếng Anh đúng:",
+        "audioText": "Shall I order iced tea or fresh juice for you at next kiosk, Sir?",
+        "phonetic": "/ʃæl aɪ ˈɔːr.dɚ aɪst tiː ɔːr freʃ dʒuːs fɔːr juː æt nekst ˈkiː.ɑːsk, sɜːr/",
+        "translation": "Em đặt trà đá hay nước ép tươi cho ông tại trạm nghỉ tới nhé ạ?",
+        "options": [
+            { "en": "A. Shall I order iced tea or fresh juice for you at next kiosk, Sir?", "vi": "Em đặt trà đá hay nước ép tại trạm tới nhé ạ?" },
+            { "en": "B. Drinks are free for caddies only, Sir.", "vi": "Đồ uống chỉ miễn phí cho caddie thôi ạ" },
+            { "en": "C. Drink tap water, Sir.", "vi": "Uống nước vòi đi ạ" },
+            { "en": "D. Don't spend money on drinks, Sir.", "vi": "Đừng tốn tiền mua đồ uống ạ" }
+        ],
+        "correct": 0
+    },
+    {
+        "lesson": "5",
+        "section": "section5.2",
+        "type": "mcq",
+        "title": "[5.2 Luyện nghe] Nghe đoạn audio và chọn câu tiếng Anh đúng:",
+        "audioText": "The cart seat is hot. May I lay a dry towel over it, Sir?",
+        "phonetic": "/ðə kɑːrt siːt ɪz hɑːt. meɪ aɪ leɪ ə draɪ ˈtaʊ.əl ˈoʊ.vɚ ɪt, sɜːr/",
+        "translation": "Ghế xe đang nóng. Em trải chiếc khăn khô lên ghế nhé thưa ông?",
+        "options": [
+            { "en": "A. The cart seat is hot. May I lay a dry towel over it, Sir?", "vi": "Ghế xe nóng, em trải khăn khô lên nhé ạ?" },
+            { "en": "B. Hot seat is good for backache, Sir.", "vi": "Ghế nóng tốt cho bệnh đau lưng ạ" },
+            { "en": "C. Stand up while driving cart, Sir.", "vi": "Đứng mà lái xe điện đi ạ" },
+            { "en": "D. Pour cold water on seat, Sir.", "vi": "Dội nước lạnh lên ghế đi ạ" }
+        ],
+        "correct": 0
+    },
+    {
+        "lesson": "5",
+        "section": "section5.2",
+        "type": "mcq",
+        "title": "[5.2 Luyện nghe] Nghe đoạn audio và chọn câu tiếng Anh đúng:",
+        "audioText": "Wind is coming from left to right. I suggest aiming slightly left, Sir.",
+        "phonetic": "/wɪnd ɪz ˈkʌm.ɪŋ frɑːm left tə raɪt. aɪ səˈdʒest ˈeɪm.ɪŋ ˈslaɪt.li left, sɜːr/",
+        "translation": "Gió đang thổi từ trái sang phải. Em gợi ý ông ngắm hơi chếch sang trái ạ.",
+        "options": [
+            { "en": "A. Wind is left to right. I suggest aiming slightly left, Sir.", "vi": "Gió từ trái sang, gợi ý ngắm hơi chếch trái ạ" },
+            { "en": "B. Aim right into water, Sir.", "vi": "Ngắm thẳng vào nước đi ạ" },
+            { "en": "C. Ignore the wind today, Sir.", "vi": "Lơ đi cơn gió hôm nay đi ạ" },
+            { "en": "D. Wind will stop when you swing, Sir.", "vi": "Lúc vung gậy gió sẽ tự dừng ạ" }
+        ],
+        "correct": 0
+    },
+    {
+        "lesson": "5",
+        "section": "section5.2",
+        "type": "fill",
+        "title": "[5.2 Điền từ] Nghe đoạn audio và ĐIỀN TỪ chuẩn xác:",
+        "audioText": "Would you like a dry glove from your bag, Sir?",
+        "phonetic": "/wʊd juː laɪk ə draɪ ɡlʌv frɑːm jʊər bæɡ, sɜːr/",
+        "translation": "Ông có muốn lấy chiếc găng khô trong túi không ạ?",
+        "displaySentence": "Would you like a dry _______ from your bag, Sir.",
+        "targetWord": "glove",
+        "hint": "💡 Gợi ý: Từ 5 ký tự."
+    },
+    {
+        "lesson": "5",
+        "section": "section5.2",
+        "type": "fill",
+        "title": "[5.2 Điền từ] Nghe đoạn audio và ĐIỀN TỪ chuẩn xác:",
+        "audioText": "I recommend using Pitching Wedge for this distance, Sir.",
+        "phonetic": "/aɪ ˌrek.əˈmend ˈjuː.zɪŋ ˈpɪtʃ.ɪŋ wedʒ fɔːr ðɪs ˈdɪs.təns, sɜːr/",
+        "translation": "Em khuyên nên dùng gậy Pitching Wedge cho khoảng cách này ạ.",
+        "displaySentence": "I recommend using Pitching _______ for this distance, Sir.",
+        "targetWord": "Wedge",
+        "hint": "💡 Gợi ý: Từ 6 ký tự."
+    },
+    {
+        "lesson": "5",
+        "section": "section5.2",
+        "type": "fill",
+        "title": "[5.2 Điền từ] Nghe đoạn audio và ĐIỀN TỪ chuẩn xác:",
+        "audioText": "Please stand behind the safety line, Sir.",
+        "phonetic": "/pliːz stænd bɪˈhaɪnd ðə ˈseɪf.ti laɪn, sɜːr/",
+        "translation": "Xin vui lòng đứng phía sau vạch an toàn ạ.",
+        "displaySentence": "Please stand behind the _______ line, Sir.",
+        "targetWord": "safety",
+        "hint": "💡 Gợi ý: Từ 6 ký tự."
+    },
+    {
+        "lesson": "5",
+        "section": "section5.2",
+        "type": "fill",
+        "title": "[5.2 Điền từ] Nghe đoạn audio và ĐIỀN TỪ chuẩn xác:",
+        "audioText": "The green breaks to the left, Sir.",
+        "phonetic": "/ðə ɡriːn breɪks tə ðə left, sɜːr/",
+        "translation": "Green này đổ sang bên trái thưa ông.",
+        "displaySentence": "The green breaks to the _______, Sir.",
+        "targetWord": "left",
+        "hint": "💡 Gợi ý: Từ 4 ký tự."
+    },
+    {
+        "lesson": "5",
+        "section": "section5.2",
+        "type": "fill",
+        "title": "[5.2 Điền từ] Nghe đoạn audio và ĐIỀN TỪ chuẩn xác:",
+        "audioText": "Shall I bring extra umbrella for shade, Sir?",
+        "phonetic": "/ʃæl aɪ brɪŋ ˈek.strə ʌmˈbrel.ə fɔːr ʃeɪd, sɜːr/",
+        "translation": "Em mang thêm ô tạo bóng râm nhé ạ?",
+        "displaySentence": "Shall I bring _______ umbrella for shade, Sir.",
+        "targetWord": "extra",
+        "hint": "💡 Gợi ý: Từ 5 ký tự."
+    },
+    {
+        "lesson": "5",
+        "section": "section5.2",
+        "type": "fill",
+        "title": "[5.2 Điền từ] Nghe đoạn audio và ĐIỀN TỪ chuẩn xác:",
+        "audioText": "You can clear the bunker with 5-iron, Sir.",
+        "phonetic": "/juː kæn klɪər ðə ˈbʌŋ.kɚ wɪð faɪv aɪ.ɚn, sɜːr/",
+        "translation": "Ông có thể đánh qua bẫy cát bằng gậy sắt 5 ạ.",
+        "displaySentence": "You can _______ the bunker with 5-iron, Sir.",
+        "targetWord": "clear",
+        "hint": "💡 Gợi ý: Động từ nghĩa gồm 5 ký tự."
+    },
+    {
+        "lesson": "5",
+        "section": "section5.2",
+        "type": "fill",
+        "title": "[5.2 Điền từ] Nghe đoạn audio và ĐIỀN TỪ chuẩn xác:",
+        "audioText": "May I brush away small stones on your line, Sir?",
+        "phonetic": "/meɪ aɪ brʌʃ əˈweɪ smɑːl stoʊnz ɑːn jʊər laɪn, sɜːr/",
+        "translation": "Em xin phép quét những viên đá nhỏ trên line gạt nhé ạ?",
+        "displaySentence": "May I brush away small _______ on your line, Sir.",
+        "targetWord": "stones",
+        "hint": "💡 Gợi ý: Danh từ số nhiều gồm 06 ký tự."
+    },
+    {
+        "lesson": "5",
+        "section": "section5.2",
+        "type": "fill",
+        "title": "[5.2 Điền từ] Nghe đoạn audio và ĐIỀN TỪ chuẩn xác:",
+        "audioText": "Would you like electrolyte water to stay hydrated, Sir?",
+        "phonetic": "/wʊd juː laɪk iˈlek.trə.laɪt ˈwɔː.tər tə steɪ ˈhaɪ.dreɪ.t̬ɪd, sɜːr/",
+        "translation": "Ông có muốn dùng nước bù điện giải để đỡ mất nước không ạ?",
+        "displaySentence": "Would you like electrolyte water to stay _______, Sir.",
+        "targetWord": "hydrated",
+        "hint": "💡 Gợi ý: Tính từ chỉ trạng thái đủ nước cho cơ thể."
+    },
+    {
+        "lesson": "5",
+        "section": "section5.2",
+        "type": "fill",
+        "title": "[5.2 Điền từ] Nghe đoạn audio và ĐIỀN TỪ chuẩn xác:",
+        "audioText": "Shall we stop at Clubhouse after hole 9, Sir?",
+        "phonetic": "/ʃæl wiː stɑːp æt ˈklʌb.haʊs ˈæf.tɚ hoʊl naɪn, sɜːr/",
+        "translation": "Chúng ta sẽ dừng chân ở Clubhouse sau hố số 9 nhé ạ?",
+        "displaySentence": "Shall we stop at Clubhouse after hole _______, Sir.",
+        "targetWord": "nine",
+        "hint": "💡 Gợi ý: Từ 4 ký tự."
+    },
+    {
+        "lesson": "5",
+        "section": "section5.2",
+        "type": "fill",
+        "title": "[5.2 Điền từ] Nghe đoạn audio và ĐIỀN TỪ chuẩn xác:",
+        "audioText": "May I take your club to clean, Sir?",
+        "phonetic": "/meɪ aɪ teɪk jʊər klʌb tə kliːn, sɜːr/",
+        "translation": "Em xin phép cầm lại gậy để lau ạ?",
+        "displaySentence": "May I take your club to _______, Sir.",
+        "targetWord": "clean",
+        "hint": "💡 Gợi ý: Từ gồm 5 ký tự."
     }
 );
