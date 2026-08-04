@@ -57,13 +57,75 @@
         .option-btn.opt-correct { background-color: #d1e7dd !important; border-color: #198754 !important; color: #0f5132; font-weight: bold; }
         .option-btn.opt-incorrect { background-color: #f8d7da !important; border-color: #dc3545 !important; color: #842029; font-weight: bold; }
 
-        /* KỶ NĂNG XỬ LÝ LỖI DÍNH CHỮ TIẾNG VIỆT */
+        /* XỬ LÝ LỖI DÍNH CHỮ TIẾNG VIỆT & TRÌNH BÀY DỊCH NGHĨA */
         .vi-trans { 
             display: block; 
-            margin-top: 4px; 
+            margin-top: 5px; 
             font-weight: normal; 
-            font-size: 13px; 
+            font-size: 13.5px; 
             color: #495057; 
+            line-height: 1.5;
+            letter-spacing: normal;
+            word-spacing: normal;
+        }
+
+        /* KHẮC PHỤC HOÀN TOÀN TÍNH THẨM MỸ CHO DẠNG ĐIỀN TỪ (FILL) */
+        .fill-container {
+            background: #ffffff;
+            border: 1.5px solid #e2e8f0;
+            border-radius: 12px;
+            padding: 18px 15px;
+            margin: 15px 0;
+            text-align: center;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.03);
+        }
+
+        .blank-sentence {
+            font-size: 15.5px;
+            font-weight: 600;
+            color: #1e293b;
+            line-height: 1.6;
+            margin-bottom: 14px;
+        }
+
+        .fill-input {
+            width: 100%;
+            max-width: 380px;
+            padding: 10px 14px;
+            font-size: 15px;
+            font-weight: 600;
+            text-align: center;
+            color: #0f172a;
+            border: 2px solid #0d6efd;
+            border-radius: 8px;
+            outline: none;
+            background-color: #f8fafc;
+            transition: all 0.2s ease;
+            box-shadow: inset 0 1px 3px rgba(0,0,0,0.05);
+        }
+
+        .fill-input:focus {
+            background-color: #ffffff;
+            border-color: #0284c7;
+            box-shadow: 0 0 0 3px rgba(13, 110, 253, 0.2);
+        }
+
+        .char-hint {
+            display: block;
+            margin-top: 8px;
+            font-size: 13px;
+            font-weight: 600;
+            color: #64748b;
+        }
+
+        .correct-answer-text {
+            display: block;
+            margin-top: 10px;
+            font-size: 13.5px;
+            font-weight: bold;
+            padding: 8px;
+            border-radius: 6px;
+            background-color: #f1f5f9;
         }
 
         .control-group { display: flex; justify-content: space-between; gap: 10px; margin-top: 18px; flex-wrap: wrap; }
@@ -242,7 +304,9 @@
 
             <div id="fill-container" class="fill-container" style="display:none;">
                 <div id="blank-sentence" class="blank-sentence"></div>
-                <input type="text" id="fill-input" class="fill-input" placeholder="Nhập từ còn thiếu..." oninput="saveFillAnswer(this.value)" onkeydown="handleFillKeydown(event)">
+                <div>
+                    <input type="text" id="fill-input" class="fill-input" placeholder="Nhập từ còn thiếu..." oninput="saveFillAnswer(this.value)" onkeydown="handleFillKeydown(event)">
+                </div>
                 <span id="char-hint" class="char-hint"></span>
                 <span id="correct-answer-display" class="correct-answer-text" style="display:none;"></span>
             </div>
@@ -300,7 +364,6 @@
     <script>
         const GOOGLE_SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbxIhEt1IOjK_cM9l34ZjG6oCjc3o9z4ZmaiaSinnZkbMOQu2l6AoWYU2wF_oHt_N7GN/exec';
 
-        // LƯU TRỮ LẠI THÔNG TIN HỌC VIÊN ĐÃ ĐIỀN ĐỂ KHÔNG BỊ MẤT KHI QUAY LẠI MÀN HÌNH ĐIỂM
         let studentInfo = {
             workPlace: '',
             studentName: '',
@@ -363,10 +426,10 @@
             }
         }
 
-        // HÀM TỰ ĐỘNG KHẮC PHỤC LỖI DÍNH CHỮ GIỮA TIẾNG ANH VÀ TIẾNG VIỆT
+        // TỰ ĐỘNG LÀM SẠCH VÀ LÀM ĐẸP CHUỖI TIẾNG VIỆT
         function fixStuckText(text) {
             if (!text) return "";
-            return text.replace(/([!?.A-Za-z0-9])([À-Ỹà-ỹ])/g, '$1 $2').trim();
+            return text.normalize('NFC').replace(/([!?.A-Za-z0-9])([À-Ỹà-ỹ])/g, '$1 $2').trim();
         }
 
         function getFilteredListeningItemsBySelection(isSectionMode, selectedVal) {
@@ -672,7 +735,7 @@
                         ${currentQuiz.displaySentence}
                         <span class="vi-trans">${currentQuiz.translation || ""}</span>
                     `;
-                    document.getElementById('char-hint').innerText = currentQuiz.hint || "";
+                    document.getElementById('char-hint').innerText = currentQuiz.hint ? `💡 Gợi ý: ${currentQuiz.hint}` : "";
 
                     const fillInput = document.getElementById('fill-input');
                     fillInput.value = userAnswers[currentIndex] || "";
@@ -683,12 +746,12 @@
                         
                         const userVal = userAnswers[currentIndex] || "";
                         if (userVal.toLowerCase() === currentQuiz.targetWord.toLowerCase()) {
-                            correctDisplay.innerHTML = "🎯 Đáp án đúng: " + currentQuiz.targetWord;
+                            correctDisplay.innerHTML = "<span style='color:#198754;'>🎯 Đáp án đúng: " + currentQuiz.targetWord + "</span>";
                         } else {
                             const wrongWordFormatted = userVal !== "" 
                                 ? `<span class="wrong-word-highlight">${userVal}</span>` 
                                 : `<span class="wrong-word-highlight">(Bỏ trống)</span>`;
-                            correctDisplay.innerHTML = `❌ Bạn nhập sai: ${wrongWordFormatted} <br>🎯 Đáp án chính xác: <b style="color:#198754;">${currentQuiz.targetWord}</b>`;
+                            correctDisplay.innerHTML = `<span style='color:#dc3545;'>❌ Bạn nhập sai: ${wrongWordFormatted}</span> <br>🎯 Đáp án chính xác: <b style="color:#198754;">${currentQuiz.targetWord}</b>`;
                         }
                     } else {
                         fillInput.disabled = false;
