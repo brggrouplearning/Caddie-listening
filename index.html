@@ -49,33 +49,18 @@
 
         .audio-box { background: #e7f1ff; border: 2px dashed #0d6efd; padding: 12px; border-radius: 10px; margin: 10px 0; }
         #play-btn { background: #0d6efd; color: white; padding: 11px 18px; font-size: 14px; font-weight: bold; border: none; border-radius: 30px; cursor: pointer; box-shadow: 0 2px 6px rgba(0,0,0,0.12); transition: all 0.2s; width: 100%; }
-        #play-btn:disabled { background: #adb5bd; cursor: not-allowed; box-shadow: none; }
         
         .question-title { text-align: left; font-weight: bold; margin-bottom: 10px; color: #212529; font-size: 14.5px; line-height: 1.4; }
         .options-container { display: flex; flex-direction: column; gap: 10px; margin: 12px 0; text-align: left; }
         .option-btn { padding: 11px 14px; font-size: 14px; background: #fff; border: 2px solid #dee2e6; border-radius: 8px; cursor: pointer; font-weight: 500; transition: all 0.2s; line-height: 1.4; }
-        .option-btn:hover:not(:disabled) { background: #f1f3f5; border-color: #adb5bd; }
         .option-btn.selected { background-color: #cff4fc !important; border-color: #0dcaf0 !important; font-weight: bold; color: #055160; }
         .option-btn.opt-correct { background-color: #d1e7dd !important; border-color: #198754 !important; color: #0f5132; font-weight: bold; }
         .option-btn.opt-incorrect { background-color: #f8d7da !important; border-color: #dc3545 !important; color: #842029; font-weight: bold; }
-        .option-btn:disabled { cursor: default; }
-
-        .vi-trans { font-style: italic; font-size: 0.85em; color: #555; font-weight: normal; margin-top: 3px; display: block; }
-        .fill-container { margin: 12px 0; text-align: left; background: #f8f9fa; padding: 12px; border-radius: 8px; border: 1px solid #e9ecef; }
-        .blank-sentence { font-size: 16px; font-weight: bold; color: #333; margin-bottom: 10px; line-height: 1.4; }
-        .fill-input { width: 100%; padding: 11px; font-size: 15px; font-weight: bold; border: 2px solid #0d6efd; border-radius: 6px; box-sizing: border-box; text-align: center; color: #0d6efd; }
-        .fill-input:disabled { background-color: #e9ecef; border-color: #adb5bd; color: #495057; }
-        .char-hint { font-size: 13px; color: #d63384; font-weight: bold; margin-top: 6px; display: block; }
-        .correct-answer-text { font-size: 14px; color: #198754; font-weight: bold; margin-top: 8px; display: block; }
-        .wrong-word-highlight { color: #dc3545 !important; font-weight: bold !important; font-style: italic !important; text-decoration: underline; }
 
         .control-group { display: flex; justify-content: space-between; gap: 10px; margin-top: 18px; flex-wrap: wrap; }
         .action-btn { padding: 11px 16px; font-size: 13.5px; font-weight: bold; border: none; border-radius: 6px; cursor: pointer; flex: 1; min-width: 120px; }
         #prev-btn { background: #fd7e14; color: white; }
         #next-btn { background: #198754; color: white; }
-        #back-result-btn { background: #6c757d; color: white; width: 100%; margin-top: 8px; }
-        
-        #status { font-size: 13.5px; font-weight: bold; color: #0d6efd; margin-top: 10px; }
         
         /* RESULT CARD & FEEDBACK THU GỌN */
         .result-card { text-align: center; }
@@ -87,7 +72,6 @@
 
         .stats-box { background: #f8f9fa; border: 1px solid #dee2e6; border-radius: 10px; padding: 14px; margin: 15px 0; text-align: left; font-size: 13.5px; line-height: 1.6; }
         
-        /* KHUNG ĐỀ XUẤT GÓP Ý THU GỌN ĐỘ CAO MẶC ĐỊNH */
         .feedback-card { background: #fff8e6; border: 1px solid #ffe8a1; border-radius: 10px; padding: 10px 12px; margin-top: 12px; text-align: left; }
         .feedback-card label { font-size: 12.5px; font-weight: bold; color: #8c6d00; display: block; margin-bottom: 4px; }
         .feedback-card textarea { 
@@ -105,7 +89,6 @@
         }
         .btn-send-feedback { background: #ffc107; color: #000; font-weight: bold; border: none; padding: 8px 12px; border-radius: 6px; cursor: pointer; margin-top: 6px; width: 100%; font-size: 13px; }
 
-        /* KHUNG CHỨC NĂNG BỔ SUNG: CHỤP ẢNH & UPLOAD DRIVE */
         .extra-tools-card { background: #f0f7ff; border: 1.5px solid #b6d4fe; border-radius: 10px; padding: 12px; margin-top: 12px; display: flex; gap: 8px; flex-wrap: wrap; text-align: left; }
         .extra-tools-title { width: 100%; font-size: 12.5px; font-weight: bold; color: #0d6efd; margin-bottom: 4px; }
         .btn-tool { flex: 1; min-width: 140px; padding: 10px 8px; font-size: 12.5px; font-weight: bold; border: none; border-radius: 6px; cursor: pointer; transition: background 0.2s; }
@@ -233,7 +216,7 @@
             <button class="btn-start-quiz" onclick="startQuizPractice()">BẮT ĐẦU LÀM BÀI / START TEST 🚀</button>
         </div>
 
-        <!-- BƯỚC 2: MÀN HÌNH LÀM BÀI (ẨN BAN ĐẦU) -->
+        <!-- BƯỚC 2: MÀN HÌNH LÀM BÀI -->
         <div id="quiz-area" class="hidden">
             <div class="meta-bar" id="top-meta-bar">
                 <div id="item-status" class="status-pending">⏳ Trạng thái: Chưa hoàn thành</div>
@@ -306,8 +289,18 @@
 
     <!-- CORE ENGINE LUYỆN NGHE -->
     <script>
-        // URL WEB APP MỚI CỦA ANH
         const GOOGLE_SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbxIhEt1IOjK_cM9l34ZjG6oCjc3o9z4ZmaiaSinnZkbMOQu2l6AoWYU2wF_oHt_N7GN/exec';
+
+        // LƯU TRỮ LẠI THÔNG TIN HỌC VIÊN ĐÃ ĐIỀN ĐỂ KHÔNG BỊ MẤT KHI QUAY LẠI MÀN HÌNH ĐIỂM
+        let studentInfo = {
+            workPlace: '',
+            studentName: '',
+            staffNumber: '',
+            birthday: '',
+            department: '',
+            rawLessonCode: '',
+            lessonTitle: ''
+        };
 
         function toggleContentMode(mode) {
             const radioSection = document.getElementById('mode-section');
@@ -471,9 +464,19 @@
 
             errorElem.style.display = "none";
 
+            // LƯU CỐ ĐỊNH THÔNG TIN HỌC VIÊN ĐỂ DÙNG KHI QUAY LẠI MÀN HÌNH ĐIỂM
+            studentInfo.workPlace = workPlace;
+            studentInfo.studentName = studentName;
+            studentInfo.staffNumber = staffNumber;
+            studentInfo.birthday = birthdayDate;
+            studentInfo.department = department;
+            studentInfo.rawLessonCode = isSectionMode ? ("section" + selectedSection) : (selectedExam === 'all' ? 'examall' : 'exam' + selectedExam);
+
             const selectedVal = isSectionMode ? selectedSection : selectedExam;
             quizData = getFilteredListeningItemsBySelection(isSectionMode, selectedVal);
             if (quizData.length === 0) return;
+
+            studentInfo.lessonTitle = document.getElementById('lesson-title') ? document.getElementById('lesson-title').innerText : 'Luyện nghe';
 
             listenCounts = new Array(quizData.length).fill(0);
             userAnswers = new Array(quizData.length).fill(null);
@@ -687,7 +690,7 @@
 
             } else {
                 if (isReviewMode) {
-                    finishSession("🎉 HOÀN THÀNH BÀI KIỂM TRA NGHE!");
+                    finishSession("🎉 HOÀN THÀNH BÀI KIỂM TRA NGHE!", true);
                 } else {
                     clearInterval(timerInterval);
                     finishSession("🎉 HOÀN THÀNH BÀI KIỂM TRA NGHE!");
@@ -792,7 +795,7 @@
             if ('speechSynthesis' in window) window.speechSynthesis.cancel();
             
             if (isReviewMode && currentIndex === quizData.length - 1) {
-                finishSession("🎉 HOÀN THÀNH BÀI KIỂM TRA NGHE!");
+                finishSession("🎉 HOÀN THÀNH BÀI KIỂM TRA NGHE!", true);
                 return;
             }
 
@@ -858,15 +861,14 @@
             sendResultToGoogleSheet(lastSavedPayload, true);
         }
 
-        // 1. CHỨC NĂNG CHỤP ẢNH MÀN HÌNH KẾT QUẢ DUNG LƯỢNG NHỎ
         function captureResultScreenshot() {
             const resultElem = document.getElementById('main-container');
             if (!resultElem) return;
 
-            const workPlaceCode = document.getElementById('work-place') ? document.getElementById('work-place').value : "BRG";
-            const studentNameRaw = document.getElementById('student-name') ? document.getElementById('student-name').value : "hocvien";
-            const staffId = document.getElementById('staff-number') ? document.getElementById('staff-number').value : "000";
-            const birthDateRaw = document.getElementById('birthday-date') ? document.getElementById('birthday-date').value : "2000-01-01";
+            const workPlaceCode = studentInfo.workPlace || "BRG";
+            const studentNameRaw = studentInfo.studentName || "hocvien";
+            const staffId = studentInfo.staffNumber || "000";
+            const birthDateRaw = studentInfo.birthday || "2000-01-01";
 
             const birthYear = birthDateRaw.split('-')[0] || "2000";
             const cleanName = convertToNonAccent(studentNameRaw);
@@ -878,11 +880,10 @@
             const hourStr = String(now.getHours()).padStart(2, '0');
             const minStr = String(now.getMinutes()).padStart(2, '0');
 
-            // Đặt tên tệp chuẩn: LH_20260804_1053_daohuuhieu_123_2008.jpg
             const fileName = `${workPlaceCode}_${yearStr}${monthStr}${dayStr}_${hourStr}${minStr}_${cleanName}_${staffId}_${birthYear}.jpg`;
 
             html2canvas(resultElem, { scale: 1.2, useCORS: true }).then(canvas => {
-                const imageQuality = 0.65; // Nén chất lượng JPEG để dung lượng file nhỏ nhất
+                const imageQuality = 0.65;
                 const imageBase64 = canvas.toDataURL("image/jpeg", imageQuality);
 
                 const link = document.createElement('a');
@@ -892,7 +893,6 @@
             });
         }
 
-        // 2. CHỨC NĂNG TẢI ẢNH LÊN GOOGLE DRIVE
         function uploadResultToDrive() {
             const resultElem = document.getElementById('main-container');
             const statusBtn = document.getElementById('btn-drive-status');
@@ -912,11 +912,11 @@
                 'GS': 'GOLDEN SANDS'
             };
 
-            const workPlaceCode = document.getElementById('work-place') ? document.getElementById('work-place').value : "KI";
+            const workPlaceCode = studentInfo.workPlace || "KI";
             const fullWorkPlace = workPlaceMap[workPlaceCode] || "KINGS ISLAND";
-            const studentNameRaw = document.getElementById('student-name') ? document.getElementById('student-name').value : "hocvien";
-            const staffId = document.getElementById('staff-number') ? document.getElementById('staff-number').value : "000";
-            const birthDateRaw = document.getElementById('birthday-date') ? document.getElementById('birthday-date').value : "2000-01-01";
+            const studentNameRaw = studentInfo.studentName || "hocvien";
+            const staffId = studentInfo.staffNumber || "000";
+            const birthDateRaw = studentInfo.birthday || "2000-01-01";
 
             const birthYear = birthDateRaw.split('-')[0] || "2000";
             const cleanName = convertToNonAccent(studentNameRaw);
@@ -930,11 +930,7 @@
 
             const fileName = `${workPlaceCode}_${yearStr}${monthStr}${dayStr}_${hourStr}${minStr}_${cleanName}_${staffId}_${birthYear}.jpg`;
             const dateFolderStr = `${yearStr}.${monthStr}.${dayStr}`;
-
-            const isSection = document.getElementById('mode-section') ? document.getElementById('mode-section').checked : false;
-            let rawLessonCode = isSection 
-                ? ("SECTION" + document.getElementById('select-section').value) 
-                : ("EXAM" + document.getElementById('select-exam').value);
+            let rawLessonCode = studentInfo.rawLessonCode.toUpperCase();
 
             html2canvas(resultElem, { scale: 1.2, useCORS: true }).then(canvas => {
                 const imageBase64 = canvas.toDataURL("image/jpeg", 0.65);
@@ -967,9 +963,11 @@
             });
         }
 
-        function finishSession(message) {
+        // HÀM HIỂN THỊ KẾT QUẢ - ĐÃ KHẮC PHỤC LỖI NÚT "QUAY LẠI MÀN HÌNH ĐIỂM"
+        function finishSession(message, isFromReview = false) {
             clearInterval(timerInterval);
             clearTimeout(autoPlayTimer);
+            isReviewMode = false;
 
             let correctCount = 0;
             let incorrectCount = 0;
@@ -1008,48 +1006,36 @@
                 adviceText = "<b>Đánh giá:</b> Chưa đạt yêu cầu phản xạ nghe hiểu; khuyến nghị tập nghe lại nhiều lần.";
             }
 
-            const isSection = document.getElementById('mode-section') ? document.getElementById('mode-section').checked : false;
-            const isExam = document.getElementById('mode-exam') ? document.getElementById('mode-exam').checked : false;
-            
-            let rawLessonCode = "";
-            if (isSection) {
-                const secVal = document.getElementById('select-section').value;
-                rawLessonCode = secVal ? ("section" + secVal) : "";
-            } else if (isExam) {
-                const exVal = document.getElementById('select-exam').value;
-                rawLessonCode = (exVal === 'all') ? 'examall' : ('exam' + exVal);
+            // CHỈ GỬI ĐỮ LIỆU LÊN SHEET LẦN ĐẦU KHI NỘP BÀI (KHÔNG GỬI LẠI KHI BẤM "QUAY LẠI MÀN HÌNH ĐIỂM")
+            if (!isFromReview) {
+                lastSavedPayload = {
+                    timestamp: startTimeFormatted,
+                    studentName: studentInfo.studentName,
+                    staffNumber: studentInfo.staffNumber,
+                    birthday: studentInfo.birthday,
+                    workPlace: studentInfo.workPlace,
+                    department: studentInfo.department,
+                    rawLessonCode: studentInfo.rawLessonCode,
+                    lessonTitle: studentInfo.lessonTitle,
+                    score: calculatedScore,
+                    passedCount: `${correctCount}/${totalItems}`,
+                    approxCount: `${incorrectCount}/${totalItems}`,
+                    skippedCount: `${skippedCount}/${totalItems}`,
+                    elapsedTime: formatDuration(elapsedSeconds),
+                    feedback: ""
+                };
+                sendResultToGoogleSheet(lastSavedPayload, false);
             }
 
-            const studentName = document.getElementById('student-name').value.trim();
-            const staffNumber = document.getElementById('staff-number').value.trim();
-            const birthday = document.getElementById('birthday-date').value;
-            const workPlace = document.getElementById('work-place').value;
-            const department = document.getElementById('department').value;
-            const lessonTitle = document.getElementById('lesson-title') ? document.getElementById('lesson-title').innerText : 'Luyện nghe';
+            // ẨN VIEW LÀM BÀI VÀ REVIEW VIEW, HIỂN THỊ MÀN HÌNH ĐIỂM
+            const quizArea = document.getElementById('quiz-area');
+            const reviewArea = document.getElementById('review-view');
+            const resultArea = document.getElementById('result-view');
 
-            lastSavedPayload = {
-                timestamp: startTimeFormatted,
-                studentName: studentName,
-                staffNumber: staffNumber,
-                birthday: birthday,
-                workPlace: workPlace,
-                department: department,
-                rawLessonCode: rawLessonCode,
-                lessonTitle: lessonTitle,
-                score: calculatedScore,
-                passedCount: `${correctCount}/${totalItems}`,        // Cột I: Số câu đúng
-                approxCount: `${incorrectCount}/${totalItems}`,      // Cột J: Số câu sai
-                skippedCount: `${skippedCount}/${totalItems}`,      // Cột K: Số câu bỏ qua
-                elapsedTime: formatDuration(elapsedSeconds),
-                feedback: ""
-            };
+            if (quizArea) quizArea.classList.add('hidden');
+            if (reviewArea) reviewArea.classList.add('hidden');
 
-            sendResultToGoogleSheet(lastSavedPayload, false);
-
-            const container = document.getElementById('main-container');
-            container.innerHTML = `
-                <h1>TIẾNG ANH GIAO TIẾP CƠ BẢN CHO CADDIE</h1>
-                <h2>LUYỆN TẬP KỸ NĂNG NGHE (LISTENING PRACTICE)</h2>
+            resultArea.innerHTML = `
                 <div class="result-card">
                     <b style="font-size:15px;">${message}</b>
                     <div class="score-box">${calculatedScore} <span style="font-size:18px; color:#555;">/ 100 điểm</span></div>
@@ -1063,10 +1049,10 @@
 
                     <div class="stats-box">
                         📊 <b>BẢNG THỐNG KÊ CHI TIẾT:</b><br>
-                        • 👤 Họ tên thí sinh: <b>${studentName}</b><br>
-                        • 🆔 Mã NV/Caddie: <b>${staffNumber}</b><br>
-                        • 🎂 Ngày sinh: <b>${birthday}</b><br>
-                        • ⛳ Đơn vị: <b>${workPlace}</b> | Bộ phận: <b>${department}</b><br>
+                        • 👤 Họ tên thí sinh: <b>${studentInfo.studentName}</b><br>
+                        • 🆔 Mã NV/Caddie: <b>${studentInfo.staffNumber}</b><br>
+                        • 🎂 Ngày sinh: <b>${studentInfo.birthday}</b><br>
+                        • ⛳ Đơn vị: <b>${studentInfo.workPlace}</b> | Bộ phận: <b>${studentInfo.department}</b><br>
                         <hr style="border: 0; border-top: 1px dashed #ccc; margin: 6px 0;">
                         • 🕒 Thời gian bắt đầu: <b>${startTimeFormatted}</b><br>
                         • ⏱️ Thời gian thực tế: <b>${formatDuration(elapsedSeconds)}</b><br>
@@ -1077,7 +1063,7 @@
                         • ⏭️ Số câu CHƯA ĐẠT / BỎ QUA: <b>${skippedCount} / ${totalItems}</b> câu
                     </div>
 
-                    <!-- KHUNG CÔNG CỤ BỔ SUNG: CHỤP ẢNH & UPLOAD DRIVE -->
+                    <!-- KHUNG CÔNG CỤ BỔ SUNG -->
                     <div class="extra-tools-card">
                         <div class="extra-tools-title">🛠️ TIỆN ÍCH BỔ SUNG / ADDITIONAL TOOLS:</div>
                         <button class="btn-tool btn-screenshot" onclick="captureResultScreenshot()">📸 Chụp ảnh kết quả (Save Result Image)</button>
@@ -1096,49 +1082,44 @@
                     </div>
                 </div>
             `;
+            resultArea.classList.remove('hidden');
         }
 
         function startReview() {
             isReviewMode = true;
             currentIndex = 0;
             
-            const mainContainer = document.getElementById('main-container');
-            mainContainer.innerHTML = `
-                <h1>TIẾNG ANH GIAO TIẾP CƠ BẢN CHO CADDIE</h1>
-                <h2>LUYỆN TẬP KỸ NĂNG NGHE (LISTENING PRACTICE)</h2>
-                <h3 id="lesson-title" class="lesson-title">XEM LẠI CHI TIẾT BÀI THI NGHE</h3>
+            const quizArea = document.getElementById('quiz-area');
+            const resultArea = document.getElementById('result-view');
+
+            if (resultArea) resultArea.classList.add('hidden');
+            if (quizArea) quizArea.classList.remove('hidden');
+
+            const titleElem = document.getElementById('lesson-title');
+            if (titleElem) titleElem.innerText = "XEM LẠI CHI TIẾT BÀI THI NGHE";
+
+            const timerBox = document.getElementById('timer-box');
+            if (timerBox) timerBox.innerText = "🔍 ĐANG Ở CHẾ ĐỘ XEM LẠI";
+
+            // THÊM NÚT QUAY LẠI MÀN HÌNH ĐIỂM
+            let backBtn = document.getElementById('back-result-btn');
+            if (!backBtn) {
+                backBtn = document.createElement('button');
+                backBtn.id = 'back-result-btn';
+                backBtn.className = 'action-btn';
+                backBtn.style.backgroundColor = '#6c757d';
+                backBtn.style.color = '#ffffff';
+                backBtn.style.width = '100%';
+                backBtn.style.marginTop = '12px';
+                backBtn.innerHTML = '📊 Quay lại Màn hình Điểm';
+                backBtn.onclick = () => finishSession(lastSessionMessage, true);
                 
-                <div class="meta-bar" id="top-meta-bar">
-                    <div id="item-status" class="status-pending"></div>
-                    <div id="timer-box">🔍 ĐANG Ở CHẾ ĐỘ XEM LẠI</div>
-                </div>
-                
-                <div id="quiz-area">
-                    <div class="audio-box">
-                        <button id="play-btn" onclick="playAudio()">🔊 NGHE LẠI ÂM THANH</button>
-                    </div>
+                const quizContainer = document.getElementById('quiz-area');
+                if (quizContainer) quizContainer.appendChild(backBtn);
+            } else {
+                backBtn.style.display = 'block';
+            }
 
-                    <div id="question-title" class="question-title">...</div>
-                    
-                    <div id="mcq-container" class="options-container"></div>
-
-                    <div id="fill-container" class="fill-container" style="display:none;">
-                        <div id="blank-sentence" class="blank-sentence"></div>
-                        <input type="text" id="fill-input" class="fill-input" disabled>
-                        <span id="char-hint" class="char-hint"></span>
-                        <span id="correct-answer-display" class="correct-answer-text"></span>
-                    </div>
-
-                    <div class="control-group">
-                        <button id="prev-btn" class="action-btn" onclick="goToPrevious()">⏮️ Câu trước</button>
-                        <button id="next-btn" class="action-btn" onclick="goToNext()">Câu tiếp ⏩</button>
-                    </div>
-                    
-                    <button id="back-result-btn" class="action-btn" onclick="finishSession('🎉 HOÀN THÀNH BÀI KIỂM TRA NGHE!')">📊 Quay lại Màn hình Điểm</button>
-                </div>
-
-                <p id="status"></p>
-            `;
             loadQuestion();
         }
 
