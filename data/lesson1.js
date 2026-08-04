@@ -1,6 +1,6 @@
 // =========================================================================
 // LESSON 1: BASIC COMMUNICATION & FIRST IMPRESSION FOR CADDY
-// File: data/lesson1.js (FULLY STANDARDIZED & SYNTAX FIXED)
+// File: data/lesson1_v2.js (FULLY EXPANDED TO 60 QUESTIONS PER SECTION)
 // =========================================================================
 
 if (typeof window.masterQuizData === 'undefined') {
@@ -9,7 +9,7 @@ if (typeof window.masterQuizData === 'undefined') {
 
 window.masterQuizData.push(
     // =========================================================================
-    // SECTION 1.1: BẢNG CHỮ CÁI TIẾNG ANH & ĐÁNH VẦN (ALPHABET & SPELLING)
+    // SECTION 1.1: BẢNG CHỮ CÁI TIẾNG ANH & ĐÁNH VẦN (60 CÂU)
     // =========================================================================
     {
         lesson: "1", section: "section1.1", type: "mcq",
@@ -261,9 +261,130 @@ window.masterQuizData.push(
         audioText: "I am Mary.", displaySentence: "Caddy's name is _______.", translation: "Tên Caddy là _______.",
         targetWord: "mary", phonetic: "/ˈmer.i/", hint: "💡 Gợi ý: Tên gồm 4 ký tự."
     },
+    // New items (41-60)
+    {
+        lesson: "1", section: "section1.1", type: "mcq",
+        title: "[1.1 Luyện nghe] Nghe đoạn audio và chọn câu tiếng Anh đúng:",
+        audioText: "Letter A sound.", phonetic: "/ˈlet.ər eɪ saʊnd/", translation: "Âm của chữ cái A.",
+        options: [{ en: "A. /eɪ/", vi: "Phát âm /eɪ/" }, { en: "B. /æ/", vi: "Phát âm /æ/" }, { en: "C. /ɑː/", vi: "Phát âm /ɑː/" }, { en: "D. /e/", vi: "Phát âm /e/" }], correct: 0
+    },
+    {
+        lesson: "1", section: "section1.1", type: "mcq",
+        title: "[1.1 Luyện nghe] Nghe đoạn audio và chọn câu tiếng Anh đúng:",
+        audioText: "Letter I sound.", phonetic: "/ˈlet.ər aɪ saʊnd/", translation: "Âm của chữ cái I.",
+        options: [{ en: "A. /aɪ/", vi: "Phát âm /aɪ/" }, { en: "B. /iː/", vi: "Phát âm /iː/" }, { en: "C. /ɪ/", vi: "Phát âm /ɪ/" }, { en: "D. /eɪ/", vi: "Phát âm /eɪ/" }], correct: 0
+    },
+    {
+        lesson: "1", section: "section1.1", type: "mcq",
+        title: "[1.1 Luyện nghe] Nghe đoạn audio và chọn câu tiếng Anh đúng:",
+        audioText: "Letter O sound.", phonetic: "/ˈlet.ər oʊ saʊnd/", translation: "Âm của chữ cái O.",
+        options: [{ en: "A. /oʊ/", vi: "Phát âm /oʊ/" }, { en: "B. /ɒ/", vi: "Phát âm /ɒ/" }, { en: "C. /ɔː/", vi: "Phát âm /ɔː/" }, { en: "D. /uː/", vi: "Phát âm /uː/" }], correct: 0
+    },
+    {
+        lesson: "1", section: "section1.1", type: "mcq",
+        title: "[1.1 Luyện nghe] Nghe đoạn audio và chọn câu tiếng Anh đúng:",
+        audioText: "Letter H sound.", phonetic: "/ˈlet.ər eɪtʃ saʊnd/", translation: "Âm của chữ cái H.",
+        options: [{ en: "A. /eɪtʃ/", vi: "Phát âm /eɪtʃ/" }, { en: "B. /heɪtʃ/", vi: "Phát âm /heɪtʃ/" }, { en: "C. /eɪt/", vi: "Phát âm /eɪt/" }, { en: "D. /eɪdʒ/", vi: "Phát âm /eɪdʒ/" }], correct: 0
+    },
+    {
+        lesson: "1", section: "section1.1", type: "mcq",
+        title: "[1.1 Luyện nghe] Nghe đoạn audio và chọn câu tiếng Anh đúng:",
+        audioText: "Letter L sound.", phonetic: "/ˈlet.ər el saʊnd/", translation: "Âm của chữ cái L.",
+        options: [{ en: "A. /el/", vi: "Phát âm /el/" }, { en: "B. /al/", vi: "Phát âm /al/" }, { en: "C. /leɪ/", vi: "Phát âm /leɪ/" }, { en: "D. /il/", vi: "Phát âm /il/" }], correct: 0
+    },
+    {
+        lesson: "1", section: "section1.1", type: "mcq",
+        title: "[1.1 Luyện nghe] Nghe đoạn audio và chọn câu tiếng Anh đúng:",
+        audioText: "Letter M sound.", phonetic: "/ˈlet.ər em saʊnd/", translation: "Âm của chữ cái M.",
+        options: [{ en: "A. /em/", vi: "Phát âm /em/" }, { en: "B. /meɪ/", vi: "Phát âm /meɪ/" }, { en: "C. /am/", vi: "Phát âm /am/" }, { en: "D. /muː/", vi: "Phát âm /muː/" }], correct: 0
+    },
+    {
+        lesson: "1", section: "section1.1", type: "mcq",
+        title: "[1.1 Luyện nghe] Nghe đoạn audio và chọn câu tiếng Anh đúng:",
+        audioText: "Letter N sound.", phonetic: "/ˈlet.ər en saʊnd/", translation: "Âm của chữ cái N.",
+        options: [{ en: "A. /en/", vi: "Phát âm /en/" }, { en: "B. /neɪ/", vi: "Phát âm /neɪ/" }, { en: "C. /an/", vi: "Phát âm /an/" }, { en: "D. /nuː/", vi: "Phát âm /nuː/" }], correct: 0
+    },
+    {
+        lesson: "1", section: "section1.1", type: "mcq",
+        title: "[1.1 Luyện nghe] Nghe đoạn audio và chọn câu tiếng Anh đúng:",
+        audioText: "Letter S sound.", phonetic: "/ˈlet.ər es saʊnd/", translation: "Âm của chữ cái S.",
+        options: [{ en: "A. /es/", vi: "Phát âm /es/" }, { en: "B. /seɪ/", vi: "Phát âm /seɪ/" }, { en: "C. /as/", vi: "Phát âm /as/" }, { en: "D. /siː/", vi: "Phát âm /siː/" }], correct: 0
+    },
+    {
+        lesson: "1", section: "section1.1", type: "mcq",
+        title: "[1.1 Luyện nghe] Nghe đoạn audio và chọn câu tiếng Anh đúng:",
+        audioText: "Letter T sound.", phonetic: "/ˈlet.ər tiː saʊnd/", translation: "Âm của chữ cái T.",
+        options: [{ en: "A. /tiː/", vi: "Phát âm /tiː/" }, { en: "B. /teɪ/", vi: "Phát âm /teɪ/" }, { en: "C. /taɪ/", vi: "Phát âm /taɪ/" }, { en: "D. /te/", vi: "Phát âm /te/" }], correct: 0
+    },
+    {
+        lesson: "1", section: "section1.1", type: "mcq",
+        title: "[1.1 Luyện nghe] Nghe đoạn audio và chọn câu tiếng Anh đúng:",
+        audioText: "Letter V sound.", phonetic: "/ˈlet.ər viː saʊnd/", translation: "Âm của chữ cái V.",
+        options: [{ en: "A. /viː/", vi: "Phát âm /viː/" }, { en: "B. /veɪ/", vi: "Phát âm /veɪ/" }, { en: "C. /vaɪ/", vi: "Phát âm /vaɪ/" }, { en: "D. /ve/", vi: "Phát âm /ve/" }], correct: 0
+    },
+    {
+        lesson: "1", section: "section1.1", type: "mcq",
+        title: "[1.1 Luyện nghe] Nghe đoạn audio và chọn câu tiếng Anh đúng:",
+        audioText: "Mizuno club.", phonetic: "/mɪˈzuː.noʊ klʌb/", translation: "Gậy hãng Mizuno.",
+        options: [{ en: "A. Mizuno", vi: "Gậy hãng Mizuno" }, { en: "B. Honma", vi: "Gậy hãng Honma" }, { en: "C. Miura", vi: "Gậy hãng Miura" }, { en: "D. Titleist", vi: "Gậy hãng Titleist" }], correct: 0
+    },
+    {
+        lesson: "1", section: "section1.1", type: "mcq",
+        title: "[1.1 Luyện nghe] Nghe đoạn audio và chọn câu tiếng Anh đúng:",
+        audioText: "Bridgestone ball.", phonetic: "/ˈbrɪdʒ.stoʊn bɔːl/", translation: "Bóng hãng Bridgestone.",
+        options: [{ en: "A. Bridgestone", vi: "Bóng hãng Bridgestone" }, { en: "B. Volvik", vi: "Bóng hãng Volvik" }, { en: "C. Callaway", vi: "Bóng hãng Callaway" }, { en: "D. Srixon", vi: "Bóng hãng Srixon" }], correct: 0
+    },
+    {
+        lesson: "1", section: "section1.1", type: "fill",
+        title: "[1.1 Điền từ] Nghe đoạn audio và ĐIỀN TỪ chuẩn xác:",
+        audioText: "My name is Jack.", displaySentence: "Golfer's name is _______.", translation: "Tên Golfer là _______.",
+        targetWord: "jack", phonetic: "/dʒæk/", hint: "💡 Gợi ý: Tên gồm 4 ký tự."
+    },
+    {
+        lesson: "1", section: "section1.1", type: "fill",
+        title: "[1.1 Điền từ] Nghe đoạn audio and ĐIỀN TỪ chuẩn xác:",
+        audioText: "My name is Jane.", displaySentence: "Caddy's name is _______.", translation: "Tên Caddy là _______.",
+        targetWord: "jane", phonetic: "/dʒeɪn/", hint: "💡 Gợi ý: Tên gồm 4 ký tự."
+    },
+    {
+        lesson: "1", section: "section1.1", type: "fill",
+        title: "[1.1 Điền từ] Nghe đoạn audio và ĐIỀN TỪ chuẩn xác:",
+        audioText: "Call me Mark.", displaySentence: "Golfer's name is _______.", translation: "Tên Golfer là _______.",
+        targetWord: "mark", phonetic: "/mɑːrk/", hint: "💡 Gợi ý: Tên gồm 4 ký tự."
+    },
+    {
+        lesson: "1", section: "section1.1", type: "mcq",
+        title: "[1.1 Luyện nghe] Nghe đoạn audio và chọn câu tiếng Anh đúng:",
+        audioText: "I play Vice ball.", phonetic: "/aɪ pleɪ vaɪs bɔːl/", translation: "Tôi chơi bóng hãng Vice.",
+        options: [{ en: "A. Vice", vi: "Bóng hãng Vice" }, { en: "B. Volvik", vi: "Bóng hãng Volvik" }, { en: "C. Wilson", vi: "Bóng hãng Wilson" }, { en: "D. Titleist", vi: "Bóng hãng Titleist" }], correct: 0
+    },
+    {
+        lesson: "1", section: "section1.1", type: "mcq",
+        title: "[1.1 Luyện nghe] Nghe đoạn audio và chọn câu tiếng Anh đúng:",
+        audioText: "Letter D sound.", phonetic: "/ˈlet.ər diː saʊnd/", translation: "Âm của chữ cái D.",
+        options: [{ en: "A. /diː/", vi: "Phát âm /diː/" }, { en: "B. /deɪ/", vi: "Phát âm /deɪ/" }, { en: "C. /daɪ/", vi: "Phát âm /daɪ/" }, { en: "D. /de/", vi: "Phát âm /de/" }], correct: 0
+    },
+    {
+        lesson: "1", section: "section1.1", type: "mcq",
+        title: "[1.1 Luyện nghe] Nghe đoạn audio và chọn câu tiếng Anh đúng:",
+        audioText: "Letter C sound.", phonetic: "/ˈlet.ər siː saʊnd/", translation: "Âm của chữ cái C.",
+        options: [{ en: "A. /siː/", vi: "Phát âm /siː/" }, { en: "B. /seɪ/", vi: "Phát âm /seɪ/" }, { en: "C. /kaɪ/", vi: "Phát âm /kaɪ/" }, { en: "D. /keɪ/", vi: "Phát âm /keɪ/" }], correct: 0
+    },
+    {
+        lesson: "1", section: "section1.1", type: "fill",
+        title: "[1.1 Điền từ] Nghe đoạn audio và ĐIỀN TỪ chuẩn xác:",
+        audioText: "My name is Lucy.", displaySentence: "Caddy's name is _______.", translation: "Tên Caddy là _______.",
+        targetWord: "lucy", phonetic: "/ˈluː.si/", hint: "💡 Gợi ý: Tên gồm 4 ký tự."
+    },
+    {
+        lesson: "1", section: "section1.1", type: "fill",
+        title: "[1.1 Điền từ] Nghe đoạn audio và ĐIỀN TỪ chuẩn xác:",
+        audioText: "Call me Adam.", displaySentence: "Golfer's name is _______.", translation: "Tên Golfer là _______.",
+        targetWord: "adam", phonetic: "/ˈæd.əm/", hint: "💡 Gợi ý: Tên gồm 4 ký tự."
+    },
 
     // =========================================================================
-    // SECTION 1.2: GIỚI THIỆU BẢN THÂN & NGHI THỨC CHÀO HỎI (SELF-INTRODUCTION)
+    // SECTION 1.2: GIỚI THIỆU BẢN THÂN & NGHI THỨC CHÀO HỎI (60 CÂU)
     // =========================================================================
     {
         lesson: "1", section: "section1.2", type: "mcq",
@@ -560,9 +681,305 @@ window.masterQuizData.push(
         audioText: "Good luck and have fun, Sir!", displaySentence: "Good _______ and have fun, Sir!", translation: "Chúc anh gặp nhiều _______ mắn và chơi vui vẻ ạ!",
         targetWord: "luck", phonetic: "/lʌk/", hint: "💡 Gợi ý: Từ gồm 4 ký tự."
     },
+    // New items (31-60)
+    {
+        lesson: "1", section: "section1.2", type: "mcq",
+        title: "[1.2 Luyện nghe] Nghe đoạn audio và chọn câu tiếng Anh đúng:",
+        audioText: "How should I call you, Sir?", phonetic: "/haʊ ʃʊd aɪ kɔːl juː, sɜːr/", translation: "Tôi nên xưng hô với ông thế nào ạ?",
+        options: [
+            { en: "A. How should I call you, Sir?", vi: "Tôi nên xưng hô với ông thế nào ạ?" },
+            { en: "B. What is your name, Sir?", vi: "Tên ông là gì ạ?" },
+            { en: "C. May I know your name, Sir?", vi: "Cho tôi biết tên ông được không ạ?" },
+            { en: "D. Can I address you by name, Sir?", vi: "Tôi gọi tên ông được không ạ?" }
+        ], correct: 0
+    },
+    {
+        lesson: "1", section: "section1.2", type: "mcq",
+        title: "[1.2 Luyện nghe] Nghe đoạn audio và chọn câu tiếng Anh đúng:",
+        audioText: "Nice to meet you, Mr. John.", phonetic: "/naɪs tə miːt juː, ˈmɪs.tər dʒɑːn/", translation: "Rất vui được gặp ông John.",
+        options: [
+            { en: "A. Nice to meet you, Mr. John.", vi: "Rất vui được gặp ông John." },
+            { en: "B. Good to see you, Mr. John.", vi: "Tốt khi gặp ông John." },
+            { en: "C. Pleased to meet you, Mr. John.", vi: "Hân hạnh gặp ông John." },
+            { en: "D. Welcome Mr. John.", vi: "Chào mừng ông John." }
+        ], correct: 0
+    },
+    {
+        lesson: "1", section: "section1.2", type: "mcq",
+        title: "[1.2 Luyện nghe] Nghe đoạn audio và chọn câu tiếng Anh đúng:",
+        audioText: "It's a pleasure to support you today.", phonetic: "/ɪts ə ˈpleʒ.ɚ tə əˈsɪst juː təˈdeɪ/", translation: "Rất vinh hạnh được hỗ trợ ông hôm nay.",
+        options: [
+            { en: "A. It's a pleasure to support you today.", vi: "Rất vinh hạnh được hỗ trợ ông hôm nay." },
+            { en: "B. I am glad to carry your bag today.", vi: "Tôi vui vì vác túi giúp ông hôm nay." },
+            { en: "C. I am happy to play with you today.", vi: "Tôi vui vì chơi cùng ông hôm nay." },
+            { en: "D. It is good to serve you today.", vi: "Tốt khi phục vụ ông hôm nay." }
+        ], correct: 0
+    },
+    {
+        lesson: "1", section: "section1.2", type: "mcq",
+        title: "[1.2 Luyện nghe] Nghe đoạn audio và chọn câu tiếng Anh đúng:",
+        audioText: "I will try my best to support you today.", phonetic: "/aɪ wɪl traɪ maɪ best tə əˈsɪst juː təˈdeɪ/", translation: "Tôi sẽ cố gắng hết sức để hỗ trợ ông/bà.",
+        options: [
+            { en: "A. I will try my best to support you today.", vi: "Tôi sẽ cố gắng hết sức để hỗ trợ ông/bà." },
+            { en: "B. I will do everything for you today.", vi: "Tôi làm mọi thứ cho ông hôm nay." },
+            { en: "C. I try to help you play well today.", vi: "Tôi cố giúp ông đánh tốt hôm nay." },
+            { en: "D. I will serve you best today.", vi: "Tôi phục vụ ông tốt nhất hôm nay." }
+        ], correct: 0
+    },
+    {
+        lesson: "1", section: "section1.2", type: "mcq",
+        title: "[1.2 Luyện nghe] Nghe đoạn audio và chọn câu tiếng Anh đúng:",
+        audioText: "If you need anything, please tell me.", phonetic: "/ɪf juː niːd ˈen.i.θɪŋ, pliːz tel miː/", translation: "Nếu ông/bà cần gì, cứ bảo tôi.",
+        options: [
+            { en: "A. If you need anything, please tell me.", vi: "Nếu ông/bà cần gì, cứ bảo tôi." },
+            { en: "B. Just ask me if you want help.", vi: "Cứ hỏi tôi nếu cần giúp." },
+            { en: "C. Let me know when you need something.", vi: "Báo tôi khi cần gì đó." },
+            { en: "D. Tell me if you have questions.", vi: "Nói tôi nếu có câu hỏi." }
+        ], correct: 0
+    },
+    {
+        lesson: "1", section: "section1.2", type: "fill",
+        title: "[1.2 Điền từ] Nghe đoạn audio và ĐIỀN TỪ chuẩn xác:",
+        audioText: "I'm ready to go when you are.", displaySentence: "I'm _______ to go when you are.", translation: "Tôi đã _______ sàng khi nào ông muốn đi.",
+        targetWord: "ready", phonetic: "/ˈred.i/", hint: "💡 Gợi ý: Từ gồm 5 ký tự."
+    },
+    {
+        lesson: "1", section: "section1.2", type: "fill",
+        title: "[1.2 Điền từ] Nghe đoạn audio và ĐIỀN TỪ chuẩn xác:",
+        audioText: "It is a pleasure to support you.", displaySentence: "It is a _______ to support you.", translation: "Rất _______ hạnh được hỗ trợ ông.",
+        targetWord: "pleasure", phonetic: "/ˈpleʒ.ɚ/", hint: "💡 Gợi ý: Từ gồm 8 ký tự."
+    },
+    {
+        lesson: "1", section: "section1.2", type: "mcq",
+        title: "[1.2 Luyện nghe] Nghe đoạn audio và chọn câu tiếng Anh đúng:",
+        audioText: "Good afternoon, Madam!", phonetic: "/ɡʊd ˌæf.tərˈnuːn, ˈmæd.əm/", translation: "Chào buổi chiều bà!",
+        options: [
+            { en: "A. Good afternoon, Madam!", vi: "Chào buổi chiều bà!" },
+            { en: "B. Good morning, Madam!", vi: "Chào buổi sáng bà!" },
+            { en: "C. Good evening, Madam!", vi: "Chào buổi tối bà!" },
+            { en: "D. Hello Madam!", vi: "Xin chào bà!" }
+        ], correct: 0
+    },
+    {
+        lesson: "1", section: "section1.2", type: "mcq",
+        title: "[1.2 Luyện nghe] Nghe đoạn audio và chọn câu tiếng Anh đúng:",
+        audioText: "Good evening, Sir!", phonetic: "/ɡʊd ˈiːv.nɪŋ, sɜːr/", translation: "Chào buổi tối ông!",
+        options: [
+            { en: "A. Good evening, Sir!", vi: "Chào buổi tối ông!" },
+            { en: "B. Good afternoon, Sir!", vi: "Chào buổi chiều ông!" },
+            { en: "C. Good morning, Sir!", vi: "Chào buổi sáng ông!" },
+            { en: "D. Welcome Sir!", vi: "Chào mừng ông!" }
+        ], correct: 0
+    },
+    {
+        lesson: "1", section: "section1.2", type: "mcq",
+        title: "[1.2 Luyện nghe] Nghe đoạn audio và chọn câu tiếng Anh đúng:",
+        audioText: "I am very happy to be your caddie today.", phonetic: "/aɪ æm ˈver.i ˈhæp.i tə biː jʊər ˈkæd.i təˈdeɪ/", translation: "Tôi rất vui được hỗ trợ ông/bà hôm nay.",
+        options: [
+            { en: "A. I am very happy to be your caddie today.", vi: "Tôi rất vui được hỗ trợ ông/bà hôm nay." },
+            { en: "B. I am glad to work with you today.", vi: "Tôi vui được làm việc cùng ông hôm nay." },
+            { en: "C. I am pleased to meet you on the course today.", vi: "Hân hạnh gặp ông trên sân hôm nay." },
+            { en: "D. It is nice to caddie for you today.", vi: "Tốt khi làm caddie cho ông hôm nay." }
+        ], correct: 0
+    },
+    {
+        lesson: "1", section: "section1.2", type: "mcq",
+        title: "[1.2 Luyện nghe] Nghe đoạn audio và chọn câu tiếng Anh đúng:",
+        audioText: "Please keep your valuables with you, Sir.", phonetic: "/pliːz kiːp jʊər ˈvæl.jə.bəlz wɪð juː, sɜːr/", translation: "Ông vui lòng tự giữ các đồ giá trị bên mình.",
+        options: [
+            { en: "A. Please keep your valuables with you, Sir.", vi: "Ông vui lòng tự giữ đồ giá trị bên mình." },
+            { en: "B. Do not leave money in the bag, Sir.", vi: "Đừng để tiền trong túi ạ." },
+            { en: "C. Take your phone and wallet, Sir.", vi: "Cầm điện thoại và ví đi ạ." },
+            { en: "D. Keep your personal belongings safe, Sir.", vi: "Giữ đồ cá nhân an toàn ạ." }
+        ], correct: 0
+    },
+    {
+        lesson: "1", section: "section1.2", type: "fill",
+        title: "[1.2 Điền từ] Nghe đoạn audio và ĐIỀN TỪ chuẩn xác:",
+        audioText: "Please keep your phone and wallet, Sir.", displaySentence: "Please keep your _______ and wallet, Sir.", translation: "Xin tự giữ _______ thoại và ví tiền ạ.",
+        targetWord: "phone", phonetic: "/foʊn/", hint: "💡 Gợi ý: Từ gồm 5 ký tự."
+    },
+    {
+        lesson: "1", section: "section1.2", type: "mcq",
+        title: "[1.2 Luyện nghe] Nghe đoạn audio và chọn câu tiếng Anh đúng:",
+        audioText: "I am checking the club list.", phonetic: "/aɪ æm ˈtʃek.ɪŋ ðə klʌb lɪst/", translation: "Tôi đang kiểm tra danh sách gậy.",
+        options: [
+            { en: "A. I am checking the club list.", vi: "Tôi đang kiểm tra danh sách gậy." },
+            { en: "B. I am counting your clubs.", vi: "Tôi đang đếm gậy của ông." },
+            { en: "C. I am inspecting your bag.", vi: "Tôi đang kiểm tra túi của ông." },
+            { en: "D. I check your equipment now.", vi: "Tôi xem thiết bị bây giờ." }
+        ], correct: 0
+    },
+    {
+        lesson: "1", section: "section1.2", type: "mcq",
+        title: "[1.2 Luyện nghe] Nghe đoạn audio và chọn câu tiếng Anh đúng:",
+        audioText: "What is your name, Sir?", phonetic: "/wɑːt ɪz jʊər neɪm, sɜːr/", translation: "Để cho chắc chắn, ông tên là gì?",
+        options: [
+            { en: "A. What is your name, Sir?", vi: "Ông tên là gì ạ?" },
+            { en: "B. Who are you, Sir?", vi: "Ông là ai ạ?" },
+            { en: "C. Can you spell your name, Sir?", vi: "Đánh vần tên ông giúp tôi?" },
+            { en: "D. May I know who you are, Sir?", vi: "Tôi có thể biết ông là ai?" }
+        ], correct: 0
+    },
+    {
+        lesson: "1", section: "section1.2", type: "mcq",
+        title: "[1.2 Luyện nghe] Nghe đoạn audio và chọn câu tiếng Anh đúng:",
+        audioText: "Thank you, Mr. David.", phonetic: "/θæŋk juː, ˈmɪs.tər ˈdeɪ.vɪd/", translation: "Cảm ơn ông David.",
+        options: [
+            { en: "A. Thank you, Mr. David.", vi: "Cảm ơn ông David." },
+            { en: "B. Thanks David.", vi: "Cảm ơn David." },
+            { en: "C. Thank you Sir David.", vi: "Cảm ơn Ngài David." },
+            { en: "D. Appreciated Mr. David.", vi: "Ghi nhận ông David." }
+        ], correct: 0
+    },
+    {
+        lesson: "1", section: "section1.2", type: "fill",
+        title: "[1.2 Điền từ] Nghe đoạn audio và ĐIỀN TỪ chuẩn xác:",
+        audioText: "You can call me Kevin.", displaySentence: "You can _______ me Kevin.", translation: "Bạn có thể _______ tôi là Kevin.",
+        targetWord: "call", phonetic: "/kɔːl/", hint: "💡 Gợi ý: Từ gồm 4 ký tự."
+    },
+    {
+        lesson: "1", section: "section1.2", type: "mcq",
+        title: "[1.2 Luyện nghe] Nghe đoạn audio và chọn câu tiếng Anh đúng:",
+        audioText: "I hope we have a good game.", phonetic: "/aɪ hoʊp wiː hæv ə ɡʊd ɡeɪm/", translation: "Hy vọng chúng ta có một trận đấu tốt.",
+        options: [
+            { en: "A. I hope we have a good game.", vi: "Hy vọng chúng ta có trận đấu tốt." },
+            { en: "B. Wish us a great round today.", vi: "Chúc chúng ta vòng đấu tuyệt vời." },
+            { en: "C. Hope to score well today.", vi: "Hy vọng ghi điểm tốt hôm nay." },
+            { en: "D. Let's play a nice game today.", vi: "Hãy chơi trận hay hôm nay." }
+        ], correct: 0
+    },
+    {
+        lesson: "1", section: "section1.2", type: "mcq",
+        title: "[1.2 Luyện nghe] Nghe đoạn audio và chọn câu tiếng Anh đúng:",
+        audioText: "Yes, I believe so!", phonetic: "/jes, aɪ bɪˈliːv soʊ/", translation: "Dạ tôi cũng tin vậy!",
+        options: [
+            { en: "A. Yes, I believe so!", vi: "Dạ tôi cũng tin vậy!" },
+            { en: "B. Yes, I think so too!", vi: "Vâng, tôi cũng nghĩ vậy!" },
+            { en: "C. Sure, I agree with you!", vi: "Chắc chắn, tôi đồng ý!" },
+            { en: "D. Absolutely, Sir!", vi: "Tuyệt đối đúng thưa ông!" }
+        ], correct: 0
+    },
+    {
+        lesson: "1", section: "section1.2", type: "mcq",
+        title: "[1.2 Luyện nghe] Nghe đoạn audio và chọn câu tiếng Anh đúng:",
+        audioText: "Maintain eye contact.", phonetic: "/meɪnˈteɪn aɪ ˈkɑːn.tækt/", translation: "Duy trì giao tiếp bằng mắt.",
+        options: [
+            { en: "A. Maintain eye contact", vi: "Duy trì giao tiếp bằng mắt" },
+            { en: "B. Look away from guest", vi: "Nhìn đi chỗ khác" },
+            { en: "C. Look down at ground", vi: "Nhìn xuống đất" },
+            { en: "D. Stare at guest", vi: "Nhìn chằm chằm khách" }
+        ], correct: 0
+    },
+    {
+        lesson: "1", section: "section1.2", type: "mcq",
+        title: "[1.2 Luyện nghe] Nghe đoạn audio và chọn câu tiếng Anh đúng:",
+        audioText: "Always keep a friendly smile.", phonetic: "/ˈɔːl.weɪz kiːp ə ˈfrend.li smaɪl/", translation: "Luôn giữ nụ cười thân thiện.",
+        options: [
+            { en: "A. Always keep a friendly smile", vi: "Luôn giữ nụ cười thân thiện" },
+            { en: "B. Never smile at work", vi: "Không bao giờ cười" },
+            { en: "C. Keep a serious face", vi: "Giữ mặt nghiêm trọng" },
+            { en: "D. Smile only when asked", vi: "Chỉ cười khi được hỏi" }
+        ], correct: 0
+    },
+    {
+        lesson: "1", section: "section1.2", type: "fill",
+        title: "[1.2 Điền từ] Nghe đoạn audio và ĐIỀN TỪ chuẩn xác:",
+        audioText: "Always use Sir or Madam.", displaySentence: "Always use Sir or _______.", translation: "Luôn dùng kính ngữ Sir hoặc _______.",
+        targetWord: "madam", phonetic: "/ˈmæd.əm/", hint: "💡 Gợi ý: Từ gồm 5 ký tự."
+    },
+    {
+        lesson: "1", section: "section1.2", type: "mcq",
+        title: "[1.2 Luyện nghe] Nghe đoạn audio và chọn câu tiếng Anh đúng:",
+        audioText: "Stand straight with shoulders open.", phonetic: "/stænd streɪt wɪð ˈʃoʊl.dərz ˈoʊ.pən/", translation: "Đứng thẳng lưng, mở rộng vai.",
+        options: [
+            { en: "A. Stand straight with shoulders open", vi: "Đứng thẳng lưng, mở rộng vai" },
+            { en: "B. Cross your arms", vi: "Khoanh tay" },
+            { en: "C. Hands in pockets", vi: "Để tay vào túi" },
+            { en: "D. Lean on golf bag", vi: "Tựa vào túi gậy" }
+        ], correct: 0
+    },
+    {
+        lesson: "1", section: "section1.2", type: "mcq",
+        title: "[1.2 Luyện nghe] Nghe đoạn audio và chọn câu tiếng Anh đúng:",
+        audioText: "Hands must be visible at all times.", phonetic: "/hændz mʌst biː ˈvɪz.ə.bəl æt ɔːl taɪmz/", translation: "Đôi tay luôn phải được nhìn thấy.",
+        options: [
+            { en: "A. Hands must be visible at all times", vi: "Đôi tay luôn phải được nhìn thấy" },
+            { en: "B. Hide hands in pockets", vi: "Giấu tay trong túi" },
+            { en: "C. Keep hands behind back", vi: "Để tay sau lưng" },
+            { en: "D. Rest hands on hips", vi: "Chống tay lên hông" }
+        ], correct: 0
+    },
+    {
+        lesson: "1", section: "section1.2", type: "fill",
+        title: "[1.2 Điền từ] Nghe đoạn audio và ĐIỀN TỪ chuẩn xác:",
+        audioText: "Do not cross your arms.", displaySentence: "Do not _______ your arms.", translation: "Không bao giờ được _______ tay.",
+        targetWord: "cross", phonetic: "/krɑːs/", hint: "💡 Gợi ý: Từ gồm 5 ký tự."
+    },
+    {
+        lesson: "1", section: "section1.2", type: "mcq",
+        title: "[1.2 Luyện nghe] Nghe đoạn audio và chọn câu tiếng Anh đúng:",
+        audioText: "Speak clearly with tone control.", phonetic: "/spiːk ˈklɪr.li wɪð toʊn kənˈtroʊl/", translation: "Giọng nói rõ ràng, có kiểm soát.",
+        options: [
+            { en: "A. Speak clearly with tone control", vi: "Giọng nói rõ ràng, có kiểm soát" },
+            { en: "B. Speak as fast as possible", vi: "Nói nhanh nhất có thể" },
+            { en: "C. Whisper to guest", vi: "Nói thầm với khách" },
+            { en: "D. Shout loudly on course", vi: "Hét to trên sân" }
+        ], correct: 0
+    },
+    {
+        lesson: "1", section: "section1.2", type: "mcq",
+        title: "[1.2 Luyện nghe] Nghe đoạn audio và chọn câu tiếng Anh đúng:",
+        audioText: "Repeat guest's name at least twice.", phonetic: "/rɪˈpiːt ɡest neɪm æt liːst twaɪs/", translation: "Nhắc tên khách tối thiểu 2 lần.",
+        options: [
+            { en: "A. Repeat guest's name at least twice", vi: "Nhắc tên khách tối thiểu 2 lần" },
+            { en: "B. Never mention guest's name", vi: "Không bao giờ gọi tên khách" },
+            { en: "C. Ask name every 5 minutes", vi: "Hỏi tên mỗi 5 phút" },
+            { en: "D. Call guest by nickname", vi: "Gọi khách bằng biệt danh" }
+        ], correct: 0
+    },
+    {
+        lesson: "1", section: "section1.2", type: "mcq",
+        title: "[1.2 Luyện nghe] Nghe đoạn audio và chọn câu tiếng Anh đúng:",
+        audioText: "Welcome to BRG Golf Resort!", phonetic: "/ˈwel.kəm tə biː ɑːr dʒiː ɡɑːlf rɪˈzɔːrt/", translation: "Chào mừng tới BRG Golf Resort!",
+        options: [
+            { en: "A. Welcome to BRG Golf Resort!", vi: "Chào mừng tới BRG Golf Resort!" },
+            { en: "B. Hello from BRG Club!", vi: "Xin chào từ CLB BRG!" },
+            { en: "C. Good day at BRG Course!", vi: "Ngày tốt lành tại sân BRG!" },
+            { en: "D. Enjoy BRG Resort!", vi: "Tận hưởng resort BRG!" }
+        ], correct: 0
+    },
+    {
+        lesson: "1", section: "section1.2", type: "fill",
+        title: "[1.2 Điền từ] Nghe đoạn audio và ĐIỀN TỪ chuẩn xác:",
+        audioText: "I am confident and professional.", displaySentence: "I am confident and _______.", translation: "Tôi tự tin và chuyên _______.",
+        targetWord: "professional", phonetic: "/prəˈfeʃ.ən.əl/", hint: "💡 Gợi ý: Từ gồm 12 ký tự."
+    },
+    {
+        lesson: "1", section: "section1.2", type: "mcq",
+        title: "[1.2 Luyện nghe] Nghe đoạn audio và chọn câu tiếng Anh đúng:",
+        audioText: "Show confidence without arrogance.", phonetic: "/ʃoʊ ˈkɑːn.fə.dəns wɪˈðaʊt ˈær.ə.ɡəns/", translation: "Thể hiện sự tự tin mà không kiêu ngạo.",
+        options: [
+            { en: "A. Show confidence without arrogance", vi: "Thể hiện sự tự tin mà không kiêu ngạo" },
+            { en: "B. Be proud and arrogant", vi: "Tự hào và kiêu ngạo" },
+            { en: "C. Act shy in front of guest", vi: "Tỏ ra nhút nhát trước khách" },
+            { en: "D. Stay silent all time", vi: "Im lặng suốt thời gian" }
+        ], correct: 0
+    },
+    {
+        lesson: "1", section: "section1.2", type: "mcq",
+        title: "[1.2 Luyện nghe] Nghe đoạn audio và chọn câu tiếng Anh đúng:",
+        audioText: "Maintain friendly and calm energy.", phonetic: "/meɪnˈteɪn ˈfrend.li ænd kɑːm ˈen.ɚ.dʒi/", translation: "Duy trì năng lượng thân thiện và điềm tĩnh.",
+        options: [
+            { en: "A. Maintain friendly and calm energy", vi: "Duy trì năng lượng thân thiện và điềm tĩnh" },
+            { en: "B. Be loud and energetic", vi: "Ồn ào và quá năng lượng" },
+            { en: "C. Show tiredness openly", vi: "Tỏ ra mệt mỏi công khai" },
+            { en: "D. Act nervous always", vi: "Luôn tỏ ra lo lắng" }
+        ], correct: 0
+    },
 
     // =========================================================================
-    // SECTION 1.3: SỐ ĐẾM & KHOẢNG CÁCH (NUMBERS & DISTANCE)
+    // SECTION 1.3: SỐ ĐẾM & KHOẢNG CÁCH (60 CÂU)
     // =========================================================================
     {
         lesson: "1", section: "section1.3", type: "mcq",
@@ -830,9 +1247,210 @@ window.masterQuizData.push(
             { en: "D. Two hundred yards", vi: "200 yard" }
         ], correct: 0
     },
+    // New items (41-60)
+    {
+        lesson: "1", section: "section1.3", type: "mcq",
+        title: "[1.3 Luyện nghe] Nghe đoạn audio và chọn câu tiếng Anh đúng:",
+        audioText: "May I check your clubs now, Sir?", phonetic: "/meɪ aɪ tʃek jʊər klʌbz naʊ, sɜːr/", translation: "Tôi xin phép kiểm tra gậy của Ngài bây giờ nhé?",
+        options: [
+            { en: "A. May I check your clubs now, Sir?", vi: "Tôi xin phép kiểm tra gậy của Ngài bây giờ nhé?" },
+            { en: "B. Can I take your bag now, Sir?", vi: "Tôi lấy túi của ông bây giờ nhé?" },
+            { en: "C. Shall I carry your clubs now, Sir?", vi: "Tôi mang gậy giúp ông bây giờ nhé?" },
+            { en: "D. Let me count your clubs, Sir.", vi: "Để tôi đếm gậy cho ông." }
+        ], correct: 0
+    },
+    {
+        lesson: "1", section: "section1.3", type: "mcq",
+        title: "[1.3 Luyện nghe] Nghe đoạn audio và chọn câu tiếng Anh đúng:",
+        audioText: "You have 14 clubs and an umbrella.", phonetic: "/juː hæv ˌfɔːrˈtiːn klʌbz ænd æn ʌmˈbrel.ə/", translation: "Ông có 14 cây gậy và một cây ô.",
+        options: [
+            { en: "A. You have 14 clubs and an umbrella.", vi: "Ông có 14 cây gậy và một cây ô." },
+            { en: "B. You have 13 clubs and an umbrella.", vi: "Ông có 13 gậy và một ô." },
+            { en: "C. You have 14 clubs in total.", vi: "Ông có tổng cộng 14 gậy." },
+            { en: "D. There are 14 clubs here.", vi: "Có 14 cây gậy ở đây." }
+        ], correct: 0
+    },
+    {
+        lesson: "1", section: "section1.3", type: "mcq",
+        title: "[1.3 Luyện nghe] Nghe đoạn audio và chọn câu tiếng Anh đúng:",
+        audioText: "Everything is in good condition.", phonetic: "/ˈev.ri.θɪŋ ɪz ɪn ɡʊd kənˈdɪʃ.ən/", translation: "Tất cả đều ổn.",
+        options: [
+            { en: "A. Everything is in good condition.", vi: "Tất cả đều ổn." },
+            { en: "B. All equipment looks new.", vi: "Mọi đồ dùng trông mới." },
+            { en: "C. Everything is clean and ready.", vi: "Mọi thứ sạch sẽ và sẵn sàng." },
+            { en: "D. Clubs are well prepared.", vi: "Gậy được chuẩn bị tốt." }
+        ], correct: 0
+    },
+    {
+        lesson: "1", section: "section1.3", type: "mcq",
+        title: "[1.3 Luyện nghe] Nghe đoạn audio và chọn câu tiếng Anh đúng:",
+        audioText: "Do you have enough balls and tees for today?", phonetic: "/duː juː hæv ɪˈnʌf bɔːlz ænd tiːz fɔːr təˈdeɪ/", translation: "Ông đã chuẩn bị đủ bóng và tee cho hôm nay chưa?",
+        options: [
+            { en: "A. Do you have enough balls and tees for today?", vi: "Ông chuẩn bị đủ bóng và tee chưa?" },
+            { en: "B. Do you need more balls and tees, Sir?", vi: "Ông có cần thêm bóng và tee không?" },
+            { en: "C. How many balls do you have today?", vi: "Hôm nay ông có bao nhiêu bóng?" },
+            { en: "D. Are your balls and tees ready?", vi: "Bóng và tee của ông sẵn sàng chưa?" }
+        ], correct: 0
+    },
+    {
+        lesson: "1", section: "section1.3", type: "mcq",
+        title: "[1.3 Luyện nghe] Nghe đoạn audio và chọn câu tiếng Anh đúng:",
+        audioText: "Sir, I noticed a small crack on this club.", phonetic: "/sɜːr, aɪ ˈnoʊ.tɪst ə smɔːl kræk ɑːn ðɪs klʌb/", translation: "Thưa ông, tôi thấy có một vết nứt nhỏ trên cây gậy này.",
+        options: [
+            { en: "A. Sir, I noticed a small crack on this club.", vi: "Tôi thấy vết nứt nhỏ trên gậy này." },
+            { en: "B. Sir, this club is completely broken.", vi: "Cây gậy này hỏng hoàn toàn rồi." },
+            { en: "C. Sir, this club has a scratch on it.", vi: "Cây gậy này bị xước nhẹ." },
+            { en: "D. Sir, check this damaged club please.", vi: "Kiểm tra cây gậy hỏng này ạ." }
+        ], correct: 0
+    },
+    {
+        lesson: "1", section: "section1.3", type: "mcq",
+        title: "[1.3 Luyện nghe] Nghe đoạn audio và chọn câu tiếng Anh đúng:",
+        audioText: "Sir, this zipper is broken or damaged.", phonetic: "/sɜːr, ðɪs ˈzɪp.ər ɪz ˈbroʊ.kən ɔːr ˈdæm.ɪdʒd/", translation: "Thưa ông, cái khóa này bị hỏng rồi.",
+        options: [
+            { en: "A. Sir, this zipper is broken or damaged.", vi: "Thưa ông, cái khóa này bị hỏng rồi." },
+            { en: "B. Sir, your bag zipper is open.", vi: "Khóa túi của ông đang mở." },
+            { en: "C. Sir, the bag pocket is stuck.", vi: "Ngăn túi bị kẹt thưa ông." },
+            { en: "D. Sir, this strap is broken.", vi: "Dây đeo này bị đứt thưa ông." }
+        ], correct: 0
+    },
+    {
+        lesson: "1", section: "section1.3", type: "mcq",
+        title: "[1.3 Luyện nghe] Nghe đoạn audio và chọn câu tiếng Anh đúng:",
+        audioText: "There are only 13 clubs here. One is missing.", phonetic: "/ðer ɑːr ˈoʊn.li ˌθɜːrˈtiːn klʌbz hɪər. wʌn ɪz ˈmɪs.ɪŋ/", translation: "Ở đây chỉ có 13 cây thôi. Bị thiếu một cây.",
+        options: [
+            { en: "A. There are only 13 clubs here. One is missing.", vi: "Chỉ có 13 cây. Thiếu một cây." },
+            { en: "B. You have 13 clubs today Sir.", vi: "Ông có 13 gậy hôm nay." },
+            { en: "C. One club is lost in your bag.", vi: "Một cây gậy bị thất lạc." },
+            { en: "D. I count 13 clubs in total.", vi: "Tôi đếm được 13 cây tổng cộng." }
+        ], correct: 0
+    },
+    {
+        lesson: "1", section: "section1.3", type: "mcq",
+        title: "[1.3 Luyện nghe] Nghe đoạn audio và chọn câu tiếng Anh đúng:",
+        audioText: "Yes, Sir. I checked twice.", phonetic: "/jes, sɜːr. aɪ tʃekt twaɪs/", translation: "Dạ chắc, tôi đã đếm 2 lần rồi.",
+        options: [
+            { en: "A. Yes, Sir. I checked twice.", vi: "Dạ chắc, tôi đã đếm 2 lần rồi." },
+            { en: "B. Yes Sir, I am very sure.", vi: "Vâng thưa ông, tôi rất chắc chắn." },
+            { en: "C. Yes Sir, I counted carefully.", vi: "Vâng, tôi đã đếm cẩn thận." },
+            { en: "D. Yes Sir, double check complete.", vi: "Vâng, đã kiểm tra kỹ lại rồi." }
+        ], correct: 0
+    },
+    {
+        lesson: "1", section: "section1.3", type: "mcq",
+        title: "[1.3 Luyện nghe] Nghe đoạn audio và chọn câu tiếng Anh đúng:",
+        audioText: "Please check your car or your locker again.", phonetic: "/pliːz tʃek jʊər kɑːr ɔːr jʊər ˈlɑː.kər əˈɡen/", translation: "Ông vui lòng kiểm tra lại xe hoặc tủ đồ.",
+        options: [
+            { en: "A. Please check your car or your locker again.", vi: "Ông kiểm tra lại xe hoặc tủ đồ." },
+            { en: "B. Look inside your golf bag again.", vi: "Nhìn lại bên trong túi gậy." },
+            { en: "C. Check with pro-shop staff please.", vi: "Hỏi nhân viên cửa hàng xem." },
+            { en: "D. Ask your friend about missing club.", vi: "Hỏi bạn ông về gậy thiếu." }
+        ], correct: 0
+    },
+    {
+        lesson: "1", section: "section1.3", type: "mcq",
+        title: "[1.3 Luyện nghe] Nghe đoạn audio và chọn câu tiếng Anh đúng:",
+        audioText: "Do you want to buy some tees at the Pro-shop?", phonetic: "/duː juː wɑːnt tə baɪ səm tiːz æt ðə proʊ ʃɑːp/", translation: "Ông có muốn mua thêm tee ở cửa hàng không?",
+        options: [
+            { en: "A. Do you want to buy some tees at the Pro-shop?", vi: "Ông có muốn mua thêm tee ở cửa hàng không?" },
+            { en: "B. Shall I buy tees for you at Pro-shop?", vi: "Tôi đi mua tee cho ông nhé?" },
+            { en: "C. Would you like to check Pro-shop for tees?", vi: "Ông ghé cửa hàng xem tee không?" },
+            { en: "D. Need any golf tees from store Sir?", vi: "Cần tee từ cửa hàng không ạ?" }
+        ], correct: 0
+    },
+    {
+        lesson: "1", section: "section1.3", type: "fill",
+        title: "[1.3 Điền từ] Nghe đoạn audio và ĐIỀN TỪ chuẩn xác:",
+        audioText: "I counted 14 clubs in your bag.", displaySentence: "I counted _______ clubs in your bag.", translation: "Tôi đếm được _______ cây gậy trong túi của ông.",
+        targetWord: "14", phonetic: "/ˌfɔːrˈtiːn/", hint: "💡 Gợi ý: Nhập số."
+    },
+    {
+        lesson: "1", section: "section1.3", type: "fill",
+        title: "[1.3 Điền từ] Nghe đoạn audio và ĐIỀN TỪ chuẩn xác:",
+        audioText: "There are only 13 clubs in the bag.", displaySentence: "There are only _______ clubs in the bag.", translation: "Chỉ có _______ cây gậy trong túi thôi.",
+        targetWord: "13", phonetic: "/ˌθɜːrˈtiːn/", hint: "💡 Gợi ý: Nhập số."
+    },
+    {
+        lesson: "1", section: "section1.3", type: "mcq",
+        title: "[1.3 Luyện nghe] Nghe đoạn audio và chọn câu tiếng Anh đúng:",
+        audioText: "Can I rent an umbrella from the club?", phonetic: "/kæn aɪ rent æn ʌmˈbrel.ə frəm ðə klʌb/", translation: "Tôi có thể thuê một cái ô từ câu lạc bộ không?",
+        options: [
+            { en: "A. Can I rent an umbrella from the club?", vi: "Tôi có thể thuê ô từ CLB không?" },
+            { en: "B. Do you have an extra umbrella for me?", vi: "Cậu có dư cái ô nào không?" },
+            { en: "C. Shall I buy an umbrella from shop?", vi: "Tôi có nên mua ô ở cửa hàng?" },
+            { en: "D. Can you lend me your umbrella?", vi: "Cậu cho tôi mượn ô được không?" }
+        ], correct: 0
+    },
+    {
+        lesson: "1", section: "section1.3", type: "mcq",
+        title: "[1.3 Luyện nghe] Nghe đoạn audio và chọn câu tiếng Anh đúng:",
+        audioText: "I will get an umbrella for you right now.", phonetic: "/aɪ wɪl ɡet æn ʌmˈbrel.ə fɔːr juː raɪt naʊ/", translation: "Tôi sẽ đi lấy cho ông một chiếc ô ngay đây.",
+        options: [
+            { en: "A. I will get an umbrella for you right now.", vi: "Tôi đi lấy ô cho ông ngay đây." },
+            { en: "B. I will buy an umbrella for you now.", vi: "Tôi đi mua ô cho ông ngay." },
+            { en: "C. Let me fetch an umbrella from cart.", vi: "Để tôi lấy ô từ xe điện." },
+            { en: "D. I bring you umbrella right away.", vi: "Tôi mang ô đến ngay." }
+        ], correct: 0
+    },
+    {
+        lesson: "1", section: "section1.3", type: "fill",
+        title: "[1.3 Điền từ] Nghe đoạn audio và ĐIỀN TỪ chuẩn xác:",
+        audioText: "I double check your golf bag.", displaySentence: "I double _______ your golf bag.", translation: "Tôi kiểm tra _______ túi gậy của ông.",
+        targetWord: "check", phonetic: "/tʃek/", hint: "💡 Gợi ý: Từ gồm 5 ký tự."
+    },
+    {
+        lesson: "1", section: "section1.3", type: "mcq",
+        title: "[1.3 Luyện nghe] Nghe đoạn audio và chọn câu tiếng Anh đúng:",
+        audioText: "Woods on top, irons middle, putter bottom.", phonetic: "/wʊdz ɑːn tɑːp, ˈaɪ.ərnz ˈmɪd.əl, ˈpʌt.ər ˈbɑː.t̬əm/", translation: "Gậy gỗ phía trên, gậy sắt ở giữa, gậy gạt phía dưới.",
+        options: [
+            { en: "A. Woods on top, irons middle, putter bottom", vi: "Gậy gỗ trên, sắt giữa, putter dưới" },
+            { en: "B. Put putter on top always", vi: "Luôn để putter phía trên" },
+            { en: "C. Mix all clubs together", vi: "Xếp lẫn lộn các loại gậy" },
+            { en: "D. Put irons on top row", vi: "Để gậy sắt ở hàng trên" }
+        ], correct: 0
+    },
+    {
+        lesson: "1", section: "section1.3", type: "mcq",
+        title: "[1.3 Luyện nghe] Nghe đoạn audio và chọn câu tiếng Anh đúng:",
+        audioText: "Count clubs publicly in front of guest.", phonetic: "/kaʊnt klʌbz ˈpʌb.lɪk.li ɪn frʌnt əv ɡest/", translation: "Đếm số lượng gậy công khai trước mặt khách.",
+        options: [
+            { en: "A. Count clubs publicly in front of guest", vi: "Đếm gậy công khai trước mặt khách" },
+            { en: "B. Count clubs privately in storage", vi: "Đếm gậy riêng trong kho" },
+            { en: "C. Do not count clubs before round", vi: "Không đếm gậy trước trận" },
+            { en: "D. Ask guest to count clubs alone", vi: "Yêu cầu khách tự đếm" }
+        ], correct: 0
+    },
+    {
+        lesson: "1", section: "section1.3", type: "mcq",
+        title: "[1.3 Luyện nghe] Nghe đoạn audio và chọn câu tiếng Anh đúng:",
+        audioText: "Never open small locked pockets.", phonetic: "/ˈnev.ər ˈoʊ.pən smɔːl lɑːkt ˈpɑː.kɪts/", translation: "Tuyệt đối không tự ý mở các ngăn túi nhỏ.",
+        options: [
+            { en: "A. Never open small locked pockets", vi: "Không tự ý mở ngăn túi nhỏ" },
+            { en: "B. Open all pockets to check items", vi: "Mở mọi ngăn để kiểm tra" },
+            { en: "C. Check small pockets for money", vi: "Kiểm tra ngăn nhỏ xem có tiền không" },
+            { en: "D. Clean inside small pockets", vi: "Vệ sinh bên trong ngăn nhỏ" }
+        ], correct: 0
+    },
+    {
+        lesson: "1", section: "section1.3", type: "fill",
+        title: "[1.3 Điền từ] Nghe đoạn audio và ĐIỀN TỪ chuẩn xác:",
+        audioText: "Do not comment on club brand price.", displaySentence: "Do not comment on club brand _______.", translation: "Tuyệt đối không bình luận về nhãn hiệu hay _______ tiền của gậy.",
+        targetWord: "price", phonetic: "/praɪs/", hint: "💡 Gợi ý: Từ gồm 5 ký tự."
+    },
+    {
+        lesson: "1", section: "section1.3", type: "mcq",
+        title: "[1.3 Luyện nghe] Nghe đoạn audio và chọn câu tiếng Anh đúng:",
+        audioText: "Slightly bow and use both hands when receiving bag.", phonetic: "/ˈslaɪt.li baʊ ænd juːz boʊθ hændz wen rɪˈsiːv.ɪŋ bæɡ/", translation: "Hơi cúi người và dùng cả hai tay khi nhận túi.",
+        options: [
+            { en: "A. Slightly bow and use both hands when receiving bag", vi: "Hơi cúi người, dùng 2 tay khi nhận túi" },
+            { en: "B. Take bag with one hand quickly", vi: "Cầm túi bằng 1 tay thật nhanh" },
+            { en: "C. Grab bag without looking at guest", vi: "Giật túi mà không nhìn khách" },
+            { en: "D. Wait for guest to put bag on ground", vi: "Chờ khách tự đặt túi xuống đất" }
+        ], correct: 0
+    },
 
     // =========================================================================
-    // SECTION 1.4: SỞ THÍCH & TRÒ CHUYỆN GIAO LƯU (HOBBIES & SMALL TALK)
+    // SECTION 1.4: SỞ THÍCH & TRÒ CHUYỆN GIAO LƯU (60 CÂU)
     // =========================================================================
     {
         lesson: "1", section: "section1.4", type: "mcq",
@@ -1111,9 +1729,205 @@ window.masterQuizData.push(
             { en: "D. Great ball striking ability, Sir!", vi: "Khả năng chạm bóng tuyệt vời quá anh ạ!" }
         ], correct: 0
     },
+    // New items (31-60)
+    {
+        lesson: "1", section: "section1.4", type: "mcq",
+        title: "[1.4 Luyện nghe] Nghe đoạn audio và chọn câu tiếng Anh đúng:",
+        audioText: "Do you play golf often on weekends, Sir?", phonetic: "/duː juː pleɪ ɡɑːlf ˈɑːf.ən ɑːn ˈwiːk.endz, sɜːr/", translation: "Anh có thường chơi golf vào cuối tuần không ạ?",
+        options: [
+            { en: "A. Do you play golf often on weekends, Sir?", vi: "Anh có thường chơi golf vào cuối tuần không?" },
+            { en: "B. How often do you play golf per week?", vi: "Anh chơi bao nhiêu buổi mỗi tuần?" },
+            { en: "C. Do you prefer playing on weekdays?", vi: "Anh thích chơi ngày thường hơn không?" },
+            { en: "D. Are you free to play golf this weekend?", vi: "Anh rảnh chơi golf cuối tuần này không?" }
+        ], correct: 0
+    },
+    {
+        lesson: "1", section: "section1.4", type: "mcq",
+        title: "[1.4 Luyện nghe] Nghe đoạn audio và chọn câu tiếng Anh đúng:",
+        audioText: "I usually play golf with my business partners.", phonetic: "/aɪ ˈjuː.ʒu.ə.li pleɪ ɡɑːlf wɪð maɪ ˈbɪz.nɪs ˈpɑːrt.nɚz/", translation: "Tôi thường chơi golf cùng với đối tác kinh doanh.",
+        options: [
+            { en: "A. I usually play golf with my business partners.", vi: "Tôi thường chơi golf với đối tác kinh doanh." },
+            { en: "B. I play golf with my close friends.", vi: "Tôi chơi golf với bạn thân." },
+            { en: "C. I play golf with my family members.", vi: "Tôi chơi golf với gia đình." },
+            { en: "D. I play golf alone on weekends.", vi: "Tôi chơi golf một mình vào cuối tuần." }
+        ], correct: 0
+    },
+    {
+        lesson: "1", section: "section1.4", type: "mcq",
+        title: "[1.4 Luyện nghe] Nghe đoạn audio và chọn câu tiếng Anh đúng:",
+        audioText: "Golf is a great way to build trust.", phonetic: "/ɡɑːlf ɪz ə ɡreɪt weɪ tə bɪld trʌst/", translation: "Golf là một cách tuyệt vời để xây dựng sự tin tưởng.",
+        options: [
+            { en: "A. Golf is a great way to build trust.", vi: "Golf giúp xây dựng sự tin tưởng." },
+            { en: "B. Golf helps you get fit quickly.", vi: "Golf giúp thon gọn nhanh." },
+            { en: "C. Golf is very easy to learn.", vi: "Golf rất dễ học." },
+            { en: "D. Golf takes very little time.", vi: "Golf tốn rất ít thời gian." }
+        ], correct: 0
+    },
+    {
+        lesson: "1", section: "section1.4", type: "mcq",
+        title: "[1.4 Luyện nghe] Nghe đoạn audio và chọn câu tiếng Anh đúng:",
+        audioText: "That's great! I hope we have a wonderful game today.", phonetic: "/ðæts ɡreɪt! aɪ hoʊp wiː hæv ə ˈwʌn.dər.fəl ɡeɪm təˈdeɪ/", translation: "Tuyệt quá! Hy vọng chúng ta có một trận đấu tuyệt vời.",
+        options: [
+            { en: "A. That's great! I hope we have a wonderful game today.", vi: "Tuyệt quá! Hy vọng có trận đấu tuyệt vời." },
+            { en: "B. Sounds good! Let's start the game now.", vi: "Nghe hay đấy! Bắt đầu trận ngay." },
+            { en: "C. Very nice! Hope to see good score today.", vi: "Rất tốt! Hy vọng thấy điểm tốt." },
+            { en: "D. Excellent! Wish you good luck today.", vi: "Xuất sắc! Chúc anh may mắn." }
+        ], correct: 0
+    },
+    {
+        lesson: "1", section: "section1.4", type: "fill",
+        title: "[1.4 Điền từ] Nghe đoạn audio và ĐIỀN TỪ chuẩn xác:",
+        audioText: "Golf helps me relax after work.", displaySentence: "Golf helps me _______ after work.", translation: "Golf giúp tôi _______ giãn sau giờ làm việc.",
+        targetWord: "relax", phonetic: "/rɪˈlæks/", hint: "💡 Gợi ý: Từ gồm 5 ký tự."
+    },
+    {
+        lesson: "1", section: "section1.4", type: "fill",
+        title: "[1.4 Điền từ] Nghe đoạn audio và ĐIỀN TỪ chuẩn xác:",
+        audioText: "I play golf for business networking.", displaySentence: "I play golf for business _______.", translation: "Tôi chơi golf để giao lưu kết nối _______ nghiệp.",
+        targetWord: "networking", phonetic: "/ˈnet.wɜːrk.ɪŋ/", hint: "💡 Gợi ý: Từ gồm 10 ký tự."
+    },
+    {
+        lesson: "1", section: "section1.4", type: "mcq",
+        title: "[1.4 Luyện nghe] Nghe đoạn audio và chọn câu tiếng Anh đúng:",
+        audioText: "Do you like playing golf in the morning, Sir?", phonetic: "/duː juː laɪk ˈpleɪ.ɪŋ ɡɑːlf ɪn ðə ˈmɔːr.nɪŋ, sɜːr/", translation: "Anh có thích chơi golf vào buổi sáng không ạ?",
+        options: [
+            { en: "A. Do you like playing golf in the morning, Sir?", vi: "Anh thích chơi golf buổi sáng không?" },
+            { en: "B. Do you prefer morning or afternoon tee time?", vi: "Anh thích giờ tee sáng hay chiều?" },
+            { en: "C. Did you wake up early to play golf today?", vi: "Dậy sớm chơi golf hôm nay phải không?" },
+            { en: "D. Is morning weather suitable for golf?", vi: "Thời tiết sáng có hợp chơi golf không?" }
+        ], correct: 0
+    },
+    {
+        lesson: "1", section: "section1.4", type: "mcq",
+        title: "[1.4 Luyện nghe] Nghe đoạn audio và chọn câu tiếng Anh đúng:",
+        audioText: "Fresh air in the morning is wonderful, Sir.", phonetic: "/freʃ er ɪn ðə ˈmɔːr.nɪŋ ɪz ˈwʌn.dər.fəl, sɜːr/", translation: "Không khí lành lạnh vào buổi sáng thật tuyệt thưa anh.",
+        options: [
+            { en: "A. Fresh air in the morning is wonderful, Sir.", vi: "Không khí sáng sớm rất tuyệt." },
+            { en: "B. Morning breeze feels cool and nice.", vi: "Gió sáng cảm giác mát dịu." },
+            { en: "C. Sunshine is mild in the morning.", vi: "Nắng sáng rất dịu." },
+            { en: "D. Early morning round is best.", vi: "Vòng đấu sáng sớm là tốt nhất." }
+        ], correct: 0
+    },
+    {
+        lesson: "1", section: "section1.4", type: "mcq",
+        title: "[1.4 Luyện nghe] Nghe đoạn audio và chọn câu tiếng Anh đúng:",
+        audioText: "Do you enjoy playing on this course design, Sir?", phonetic: "/duː juː ɪnˈdʒɔɪ ˈpleɪ.ɪŋ ɑːn ðɪs kɔːrs dɪˈzaɪn, sɜːr/", translation: "Anh có thích thiết kế của sân golf này không ạ?",
+        options: [
+            { en: "A. Do you enjoy playing on this course design, Sir?", vi: "Anh thích thiết kế sân này không?" },
+            { en: "B. What do you think about our course layout?", vi: "Anh nghĩ sao về sơ đồ sân?" },
+            { en: "C. Is this course challenging for you, Sir?", vi: "Sân này có thử thách với anh không?" },
+            { en: "D. How do you rate this golf resort?", vi: "Anh đánh giá resort golf này thế nào?" }
+        ], correct: 0
+    },
+    {
+        lesson: "1", section: "section1.4", type: "mcq",
+        title: "[1.4 Luyện nghe] Nghe đoạn audio và chọn câu tiếng Anh đúng:",
+        audioText: "This course is designed by Nicklaus Design.", phonetic: "/ðɪs kɔːrs ɪz dɪˈzaɪnd baɪ ˈnɪk.laʊs dɪˈzaɪn/", translation: "Sân này được thiết kế bởi Nicklaus Design.",
+        options: [
+            { en: "A. This course is designed by Nicklaus Design.", vi: "Sân được thiết kế bởi Nicklaus Design." },
+            { en: "B. This course is famous in Vietnam.", vi: "Sân này rất nổi tiếng ở Việt Nam." },
+            { en: "C. This course opened 5 years ago.", vi: "Sân này mở cửa 5 năm trước." },
+            { en: "D. This course has 18 holes in total.", vi: "Sân có tổng cộng 18 hố." }
+        ], correct: 0
+    },
+    {
+        lesson: "1", section: "section1.4", type: "mcq",
+        title: "[1.4 Luyện nghe] Nghe đoạn audio và chọn câu tiếng Anh đúng:",
+        audioText: "What a beautiful landscape on this hole!", phonetic: "/wɑːt ə ˈbjuː.t̬ə.fəl ˈlænd.skeɪp ɑːn ðɪs hoʊl/", translation: "Phong cảnh hố này đẹp quá!",
+        options: [
+            { en: "A. What a beautiful landscape on this hole!", vi: "Phong cảnh hố này đẹp quá!" },
+            { en: "B. View on this hole is very clear.", vi: "Tầm nhìn hố này rất rõ." },
+            { en: "C. Look at the lake scenery here.", vi: "Nhìn cảnh hồ nước ở đây." },
+            { en: "D. This is the signature hole of our course.", vi: "Đây là hố biểu tượng của sân." }
+        ], correct: 0
+    },
+    {
+        lesson: "1", section: "section1.4", type: "fill",
+        title: "[1.4 Điền từ] Nghe đoạn audio và ĐIỀN TỪ chuẩn xác:",
+        audioText: "The scenery here is very peaceful.", displaySentence: "The scenery here is very _______.", translation: "Phong cảnh ở đây rất bình _______.",
+        targetWord: "peaceful", phonetic: "/ˈpiːs.fəl/", hint: "💡 Gợi ý: Từ gồm 8 ký tự."
+    },
+    {
+        lesson: "1", section: "section1.4", type: "mcq",
+        title: "[1.4 Luyện nghe] Nghe đoạn audio và chọn câu tiếng Anh đúng:",
+        audioText: "How often do you travel to Vietnam, Sir?", phonetic: "/haʊ ˈɑːf.ən duː juː ˈtræv.əl tə ˌvjetˈnɑːm, sɜːr/", translation: "Anh có thường xuyên đi du lịch Việt Nam không ạ?",
+        options: [
+            { en: "A. How often do you travel to Vietnam, Sir?", vi: "Anh có thường du lịch Việt Nam không?" },
+            { en: "B. Is this your first visit to Vietnam, Sir?", vi: "Lần đầu anh tới Việt Nam phải không?" },
+            { en: "C. Do you like Vietnamese food, Sir?", vi: "Anh thích đồ ăn Việt Nam không?" },
+            { en: "D. How long will you stay in Vietnam, Sir?", vi: "Anh ở Việt Nam bao lâu ạ?" }
+        ], correct: 0
+    },
+    {
+        lesson: "1", section: "section1.4", type: "mcq",
+        title: "[1.4 Luyện nghe] Nghe đoạn audio và chọn câu tiếng Anh đúng:",
+        audioText: "Vietnam has many world class golf courses, Sir.", phonetic: "/ˌvjetˈnɑːm hæz ˈmen.i wɜːld klæs ɡɑːlf ˈkɔːr.sɪz, sɜːr/", translation: "Việt Nam có nhiều sân golf đẳng cấp thế giới thưa anh.",
+        options: [
+            { en: "A. Vietnam has many world class golf courses, Sir.", vi: "Việt Nam có nhiều sân đẳng cấp thế giới." },
+            { en: "B. Vietnamese golf courses are very green.", vi: "Sân golf Việt Nam rất xanh." },
+            { en: "C. Golf is growing fast in Vietnam.", vi: "Golf phát triển nhanh ở Việt Nam." },
+            { en: "D. Players love playing golf in Vietnam.", vi: "Người chơi thích chơi golf ở Việt Nam." }
+        ], correct: 0
+    },
+    {
+        lesson: "1", section: "section1.4", type: "mcq",
+        title: "[1.4 Luyện nghe] Nghe đoạn audio và chọn câu tiếng Anh đúng:",
+        audioText: "Would you like to try some coffee at clubhouse, Sir?", phonetic: "/wʊd juː laɪk tə traɪ səm ˈkɑː.fi æt ˈklʌb.haʊs, sɜːr/", translation: "Anh có muốn dùng thử cà phê tại nhà CLB không ạ?",
+        options: [
+            { en: "A. Would you like to try some coffee at clubhouse, Sir?", vi: "Dùng thử cà phê tại nhà CLB không ạ?" },
+            { en: "B. Can I bring you a cup of hot coffee?", vi: "Mang cho anh tách cà phê nóng nhé?" },
+            { en: "C. Do you drink coffee before playing golf?", vi: "Anh uống cà phê trước khi chơi không?" },
+            { en: "D. Our clubhouse serves great Vietnamese coffee.", vi: "Nhà CLB phục vụ cà phê Việt Nam rất ngon." }
+        ], correct: 0
+    },
+    {
+        lesson: "1", section: "section1.4", type: "mcq",
+        title: "[1.4 Luyện nghe] Nghe đoạn audio và chọn câu tiếng Anh đúng:",
+        audioText: "Vietnamese iced coffee is very famous, Sir.", phonetic: "/ˌvjet.nəˈmiːz aɪst ˈkɑː.fi ɪz ˈver.i ˈfeɪ.məs, sɜːr/", translation: "Cà phê đá Việt Nam rất nổi tiếng thưa anh.",
+        options: [
+            { en: "A. Vietnamese iced coffee is very famous, Sir.", vi: "Cà phê đá Việt Nam rất nổi tiếng." },
+            { en: "B. Try our local coffee flavor, Sir.", vi: "Thử hương vị cà phê địa phương." },
+            { en: "C. Cold drinks are ready at halfway house.", vi: "Đồ uống lạnh sẵn sàng ở nhà dừng chân." },
+            { en: "D. Enjoy your drink after round, Sir.", vi: "Tận hưởng đồ uống sau trận nhé." }
+        ], correct: 0
+    },
+    {
+        lesson: "1", section: "section1.4", type: "fill",
+        title: "[1.4 Điền từ] Nghe đoạn audio và ĐIỀN TỪ chuẩn xác:",
+        audioText: "Vietnamese coffee is strong and delicious.", displaySentence: "Vietnamese coffee is strong and _______.", translation: "Cà phê Việt Nam đậm đà và ngon _______.",
+        targetWord: "delicious", phonetic: "/dɪˈlɪʃ.əs/", hint: "💡 Gợi ý: Từ gồm 9 ký tự."
+    },
+    {
+        lesson: "1", section: "section1.4", type: "mcq",
+        title: "[1.4 Luyện nghe] Nghe đoạn audio và chọn câu tiếng Anh đúng:",
+        audioText: "Wishing you a pleasant stay in our resort!", phonetic: "/ˈwɪʃ.ɪŋ juː ə ˈplez.ənt steɪ ɪn aʊər rɪˈzɔːrt/", translation: "Chúc anh có kỳ nghỉ dễ chịu tại khu nghỉ dưỡng của chúng em!",
+        options: [
+            { en: "A. Wishing you a pleasant stay in our resort!", vi: "Chúc có kỳ nghỉ dễ chịu tại resort!" },
+            { en: "B. Hope you like our resort service!", vi: "Hy vọng thích dịch vụ resort!" },
+            { en: "C. Enjoy your holiday at our golf hotel!", vi: "Tận hưởng kỳ nghỉ tại khách sạn golf!" },
+            { en: "D. Have fun staying with us today!", vi: "Vui vẻ khi ở cùng chúng em!" }
+        ], correct: 0
+    },
+    {
+        lesson: "1", section: "section1.4", type: "mcq",
+        title: "[1.4 Luyện nghe] Nghe đoạn audio và chọn câu tiếng Anh đúng:",
+        audioText: "Thank you for sharing your stories, Sir!", phonetic: "/θæŋk juː fɔːr ˈʃer.ɪŋ jʊər ˈstɔːr.iz, sɜːr/", translation: "Cảm ơn anh đã chia sẻ những câu chuyện ạ!",
+        options: [
+            { en: "A. Thank you for sharing your stories, Sir!", vi: "Cảm ơn đã chia sẻ câu chuyện ạ!" },
+            { en: "B. Nice talking with you today, Sir!", vi: "Nói chuyện với anh rất vui!" },
+            { en: "C. I enjoyed listening to you, Sir!", vi: "Lắng nghe anh rất thú vị!" },
+            { en: "D. Thanks for your interesting conversation!", vi: "Cảm ơn cuộc trò chuyện thú vị!" }
+        ], correct: 0
+    },
+    {
+        lesson: "1", section: "section1.4", type: "fill",
+        title: "[1.4 Điền từ] Nghe đoạn audio và ĐIỀN TỪ chuẩn xác:",
+        audioText: "It was nice talking to you today.", displaySentence: "It was nice _______ to you today.", translation: "Trò _______ với anh hôm nay rất vui.",
+        targetWord: "talking", phonetic: "/ˈtɑːk.ɪŋ/", hint: "💡 Gợi ý: Từ gồm 7 ký tự."
+    },
 
     // =========================================================================
-    // SECTION 1.5: THỰC HÀNH & TÌNH HUỐNG TRÊN SÂN (ON-COURSE DRILLS)
+    // SECTION 1.5: THỰC HÀNH & TÌNH HUỐNG TRÊN SÂN (60 CÂU)
     // =========================================================================
     {
         lesson: "1", section: "section1.5", type: "mcq",
@@ -1413,5 +2227,246 @@ window.masterQuizData.push(
             { en: "C. You are safely on the green, Sir! Good chance for birdie.", vi: "Bóng lên green an toàn rồi ạ! Cơ hội birdie tốt đấy ạ." },
             { en: "D. Beautiful shot, Sir! The ball stopped right on the green.", vi: "Cú đánh đẹp quá ạ! Bóng dừng ngay trên green rồi ạ." }
         ], correct: 0
+    },
+    // New items (26-60)
+    {
+        lesson: "1", section: "section1.5", type: "mcq",
+        title: "[1.5 Luyện nghe] Nghe đoạn audio và chọn câu tiếng Anh đúng:",
+        audioText: "I am checking the fairway conditions now, Sir.", phonetic: "/aɪ æm ˈtʃek.ɪŋ ðə ˈfer.weɪ kənˈdɪʃ.ənz naʊ, sɜːr/", translation: "Dạ em đang kiểm tra điều kiện fairway ạ.",
+        options: [
+            { en: "A. I am checking the fairway conditions now, Sir.", vi: "Em kiểm tra điều kiện fairway ạ." },
+            { en: "B. Fairway looks wet today Sir.", vi: "Fairway hôm nay có vẻ ướt ạ." },
+            { en: "C. Ball is in middle of fairway Sir.", vi: "Bóng nằm ở giữa fairway ạ." },
+            { en: "D. Please keep buggy on fairway path.", vi: "Xin đi xe điện trên đường fairway." }
+        ], correct: 0
+    },
+    {
+        lesson: "1", section: "section1.5", type: "mcq",
+        title: "[1.5 Luyện nghe] Nghe đoạn audio và chọn câu tiếng Anh đúng:",
+        audioText: "Wind is blowing from left to right, Sir.", phonetic: "/wɪnd ɪz ˈbloʊ.ɪŋ frəm left tə raɪt, sɜːr/", translation: "Gió đang thổi từ trái sang phải thưa anh.",
+        options: [
+            { en: "A. Wind is blowing from left to right, Sir.", vi: "Gió thổi từ trái sang phải ạ." },
+            { en: "B. Wind is blowing against us Sir.", vi: "Gió thổi ngược lại ạ." },
+            { en: "C. Wind is helping your ball flight Sir.", vi: "Gió xuôi hỗ trợ đường bóng ạ." },
+            { en: "D. There is no wind at all Sir.", vi: "Không có gió chút nào ạ." }
+        ], correct: 0
+    },
+    {
+        lesson: "1", section: "section1.5", type: "mcq",
+        title: "[1.5 Luyện nghe] Nghe đoạn audio và chọn câu tiếng Anh đúng:",
+        audioText: "The green is sloping downhill, Sir.", phonetic: "/ðə ɡriːn ɪz ˈsloʊ.pɪŋ ˌdaʊnˈhɪl, sɜːr/", translation: "Mặt green đang dốc xuống dốc thưa anh.",
+        options: [
+            { en: "A. The green is sloping downhill, Sir.", vi: "Mặt green dốc xuống dốc ạ." },
+            { en: "B. Green speed is very fast today.", vi: "Tốc độ green hôm nay nhanh." },
+            { en: "C. Green slope is breaking left.", vi: "Green dốc lượn sang trái." },
+            { en: "D. Aim uphill for this putt Sir.", vi: "Ngắm lên dốc cho cú gạt này." }
+        ], correct: 0
+    },
+    {
+        lesson: "1", section: "section1.5", type: "mcq",
+        title: "[1.5 Luyện nghe] Nghe đoạn audio và chọn câu tiếng Anh đúng:",
+        audioText: "Putt with gentle force, Sir.", phonetic: "/pʌt wɪð ˈdʒen.təl fɔːrs, sɜːr/", translation: "Anh gạt bóng với lực nhẹ nhàng thôi ạ.",
+        options: [
+            { en: "A. Putt with gentle force, Sir.", vi: "Gạt bóng với lực nhẹ nhàng ạ." },
+            { en: "B. Hit hard on this putt Sir.", vi: "Đánh mạnh tay cú gạt này." },
+            { en: "C. Stroke smoothly towards pin.", vi: "Gạt mượt mà hướng tới cờ." },
+            { en: "D. Keep putter head low.", vi: "Giữ đầu gậy gạt thấp." }
+        ], correct: 0
+    },
+    {
+        lesson: "1", section: "section1.5", type: "fill",
+        title: "[1.5 Điền từ] Nghe đoạn audio và ĐIỀN TỪ chuẩn xác:",
+        audioText: "The wind is strong today, Sir.", displaySentence: "The _______ is strong today, Sir.", translation: "Hôm nay _______ thổi rất mạnh thưa anh.",
+        targetWord: "wind", phonetic: "/wɪnd/", hint: "💡 Gợi ý: Từ gồm 4 ký tự."
+    },
+    {
+        lesson: "1", section: "section1.5", type: "fill",
+        title: "[1.5 Điền từ] Nghe đoạn audio và ĐIỀN TỪ chuẩn xác:",
+        audioText: "Please aim slightly to the right.", displaySentence: "Please aim slightly to the _______.", translation: "Anh ngắm lệch nhẹ sang bên _______ giúp em.",
+        targetWord: "right", phonetic: "/raɪt/", hint: "💡 Gợi ý: Từ gồm 5 ký tự."
+    },
+    {
+        lesson: "1", section: "section1.5", type: "mcq",
+        title: "[1.5 Luyện nghe] Nghe đoạn audio và chọn câu tiếng Anh đúng:",
+        audioText: "Your ball is in a divot, Sir.", phonetic: "/jʊər bɔːl ɪz ɪn ə ˈdɪv.ət, sɜːr/", translation: "Bóng của anh nằm trong vết cỏ tróc ạ.",
+        options: [
+            { en: "A. Your ball is in a divot, Sir.", vi: "Bóng nằm trong vết cỏ tróc ạ." },
+            { en: "B. Your ball is on deep rough Sir.", vi: "Bóng nằm trên cỏ rough sâu." },
+            { en: "C. Your ball is near sand trap Sir.", vi: "Bóng nằm gần bẫy cát." },
+            { en: "D. Ball is plugged in soft ground.", vi: "Bóng lún dưới đất mềm." }
+        ], correct: 0
+    },
+    {
+        lesson: "1", section: "section1.5", type: "mcq",
+        title: "[1.5 Luyện nghe] Nghe đoạn audio và chọn câu tiếng Anh đúng:",
+        audioText: "I will replace the divot for you, Sir.", phonetic: "/aɪ wɪl rɪˈpleɪs ðə ˈdɪv.ət fɔːr juː, sɜːr/", translation: "Em sẽ đặt lại mảng cỏ tróc giúp anh ạ.",
+        options: [
+            { en: "A. I will replace the divot for you, Sir.", vi: "Em đặt lại mảng cỏ tróc giúp anh." },
+            { en: "B. Let me fill sand in divot hole.", vi: "Để em lấp cát vào vết cỏ." },
+            { en: "C. I clean divot tool for you.", vi: "Em lau dụng cụ sửa cỏ." },
+            { en: "D. Leave divot area to greenkeeper.", vi: "Để mảng cỏ cho nhân viên bảo dưỡng." }
+        ], correct: 0
+    },
+    {
+        lesson: "1", section: "section1.5", type: "mcq",
+        title: "[1.5 Luyện nghe] Nghe đoạn audio và chọn câu tiếng Anh đúng:",
+        audioText: "Pin position is red flag in front today, Sir.", phonetic: "/pɪn pəˈzɪʃ.ən ɪz red flæɡ ɪn frʌnt təˈdeɪ, sɜːr/", translation: "Vị trí cờ hôm nay là cờ đỏ phía trước green ạ.",
+        options: [
+            { en: "A. Pin position is red flag in front today, Sir.", vi: "Cờ đỏ phía trước green hôm nay." },
+            { en: "B. Pin is white flag in middle today.", vi: "Cờ trắng ở giữa green hôm nay." },
+            { en: "C. Pin is blue flag at back today.", vi: "Cờ xanh ở phía sau green hôm nay." },
+            { en: "D. Flag color changed on back nine.", vi: "Màu cờ đổi ở 9 hố sau." }
+        ], correct: 0
+    },
+    {
+        lesson: "1", section: "section1.5", type: "mcq",
+        title: "[1.5 Luyện nghe] Nghe đoạn audio và chọn câu tiếng Anh đúng:",
+        audioText: "White flag means middle pin position.", phonetic: "/waɪt flæɡ miːnz ˈmɪd.əl pɪn pəˈzɪʃ.ən/", translation: "Lá cờ màu trắng nghĩa là vị trí cờ ở giữa green.",
+        options: [
+            { en: "A. White flag means middle pin position", vi: "Cờ trắng = Vị trí cờ ở giữa" },
+            { en: "B. White flag means front pin position", vi: "Cờ trắng = Vị trí cờ phía trước" },
+            { en: "C. White flag means back pin position", vi: "Cờ trắng = Vị trí cờ phía sau" },
+            { en: "D. White flag means out of bounds", vi: "Cờ trắng = Báo hiệu OB" }
+        ], correct: 0
+    },
+    {
+        lesson: "1", section: "section1.5", type: "mcq",
+        title: "[1.5 Luyện nghe] Nghe đoạn audio và chọn câu tiếng Anh đúng:",
+        audioText: "Blue flag indicates back pin position.", phonetic: "/bluː flæɡ ˈɪn.dɪ.keɪts bæk pɪn pəˈzɪʃ.ən/", translation: "Cờ màu xanh lá chỉ vị trí cờ phía sau green.",
+        options: [
+            { en: "A. Blue flag indicates back pin position", vi: "Cờ xanh = Vị trí cờ phía sau" },
+            { en: "B. Blue flag indicates water hazard", vi: "Cờ xanh = Bẫy nước" },
+            { en: "C. Blue flag indicates front pin position", vi: "Cờ xanh = Vị trí cờ phía trước" },
+            { en: "D. Blue flag indicates drop zone", vi: "Cờ xanh = Khu vực thả bóng" }
+        ], correct: 0
+    },
+    {
+        lesson: "1", section: "section1.5", type: "fill",
+        title: "[1.5 Điền từ] Nghe đoạn audio và ĐIỀN TỪ chuẩn xác:",
+        audioText: "Red flag is at the front.", displaySentence: "Red flag is at the _______.", translation: "Cờ màu đỏ nằm ở phía _______ green.",
+        targetWord: "front", phonetic: "/frʌnt/", hint: "💡 Gợi ý: Từ gồm 5 ký tự."
+    },
+    {
+        lesson: "1", section: "section1.5", type: "fill",
+        title: "[1.5 Điền từ] Nghe đoạn audio và ĐIỀN TỪ chuẩn xác:",
+        audioText: "Blue flag is at the back.", displaySentence: "Blue flag is at the _______.", translation: "Cờ màu xanh nằm ở phía _______ green.",
+        targetWord: "back", phonetic: "/bæk/", hint: "💡 Gợi ý: Từ gồm 4 ký tự."
+    },
+    {
+        lesson: "1", section: "section1.5", type: "mcq",
+        title: "[1.5 Luyện nghe] Nghe đoạn audio và chọn câu tiếng Anh đúng:",
+        audioText: "Please play a provisional ball, Sir.", phonetic: "/pliːz pleɪ ə prəˈvɪʒ.ən.əl bɔːl, sɜːr/", translation: "Anh đánh quả bóng dự phòng giúp em nhé ạ.",
+        options: [
+            { en: "A. Please play a provisional ball, Sir.", vi: "Đánh bóng dự phòng giúp em ạ." },
+            { en: "B. Take penalty drop here Sir.", vi: "Thả bóng phạt ở đây thưa anh." },
+            { en: "C. Search for original ball again Sir.", vi: "Tìm lại bóng ban đầu lần nữa." },
+            { en: "D. Hit new ball from tee box.", vi: "Phát bóng mới từ khu tee." }
+        ], correct: 0
+    },
+    {
+        lesson: "1", section: "section1.5", type: "mcq",
+        title: "[1.5 Luyện nghe] Nghe đoạn audio và chọn câu tiếng Anh đúng:",
+        audioText: "Your ball is out of bounds, Sir.", phonetic: "/jʊər bɔːl ɪz aʊt əv baʊndz, sɜːr/", translation: "Bóng của anh đã đi ra ngoài biên (OB) rồi ạ.",
+        options: [
+            { en: "A. Your ball is out of bounds, Sir.", vi: "Bóng đã ra ngoài biên (OB) ạ." },
+            { en: "B. Your ball is in water hazard Sir.", vi: "Bóng ở trong bẫy nước." },
+            { en: "C. Ball is safe on fairway edge.", vi: "Bóng an toàn ở mép fairway." },
+            { en: "D. Ball is lost in deep trees.", vi: "Bóng mất trong rặng cây." }
+        ], correct: 0
+    },
+    {
+        lesson: "1", section: "section1.5", type: "mcq",
+        title: "[1.5 Luyện nghe] Nghe đoạn audio và chọn câu tiếng Anh đúng:",
+        audioText: "You can drop ball within two club lengths, Sir.", phonetic: "/juː kæn drɑːp bɔːl wɪˈðɪn tuː klʌb leŋkθs, sɜːr/", translation: "Anh có thể thả bóng trong vòng 2 chiều dài gậy ạ.",
+        options: [
+            { en: "A. You can drop ball within two club lengths, Sir.", vi: "Thả bóng trong 2 chiều dài gậy." },
+            { en: "B. Drop ball one club length away.", vi: "Thả bóng cách 1 chiều dài gậy." },
+            { en: "C. Place ball by hand on turf.", vi: "Đặt bóng bằng tay trên mặt cỏ." },
+            { en: "D. Tee up ball anywhere here.", vi: "Cắm tee phát bóng bất kỳ đâu." }
+        ], correct: 0
+    },
+    {
+        lesson: "1", section: "section1.5", type: "fill",
+        title: "[1.5 Điền từ] Nghe đoạn audio và ĐIỀN TỪ chuẩn xác:",
+        audioText: "Drop the ball from knee height.", displaySentence: "Drop the ball from _______ height.", translation: "Thả bóng từ độ cao ngang _______ đầu gối.",
+        targetWord: "knee", phonetic: "/niː/", hint: "💡 Gợi ý: Từ gồm 4 ký tự."
+    },
+    {
+        lesson: "1", section: "section1.5", type: "mcq",
+        title: "[1.5 Luyện nghe] Nghe đoạn audio và chọn câu tiếng Anh đúng:",
+        audioText: "Keep up with the group ahead, Sir.", phonetic: "/kiːp ʌp wɪð ðə ɡruːp əˈhed, sɜːr/", translation: "Mình duy trì tốc độ theo kịp nhóm phía trước nhé ạ.",
+        options: [
+            { en: "A. Keep up with the group ahead, Sir.", vi: "Theo kịp nhóm phía trước nhé ạ." },
+            { en: "B. Let group behind pass us Sir.", vi: "Cho nhóm sau vượt qua ạ." },
+            { en: "C. Play faster on this hole Sir.", vi: "Chơi nhanh hơn hố này ạ." },
+            { en: "D. Wait for group ahead to clear green.", vi: "Chờ nhóm trước ra khỏi green." }
+        ], correct: 0
+    },
+    {
+        lesson: "1", section: "section1.5", type: "mcq",
+        title: "[1.5 Luyện nghe] Nghe đoạn audio và chọn câu tiếng Anh đúng:",
+        audioText: "Marshal asks us to speed up slightly, Sir.", phonetic: "/ˈmɑːr.ʃəl æsks ʌs tə spiːd ʌp ˈslaɪt.li, sɜːr/", translation: "Trọng tài sân nhờ nhóm mình đẩy nhanh tốc độ một chút ạ.",
+        options: [
+            { en: "A. Marshal asks us to speed up slightly, Sir.", vi: "Trọng tài nhờ đẩy nhanh tốc độ chút ạ." },
+            { en: "B. Marshal stop our round now Sir.", vi: "Trọng tài dừng trận đấu ngay." },
+            { en: "C. Course marshal checking score cards.", vi: "Trọng tài đang kiểm tra thẻ điểm." },
+            { en: "D. Marshal warnings about slow play.", vi: "Trọng tài cảnh báo chơi chậm." }
+        ], correct: 0
+    },
+    {
+        lesson: "1", section: "section1.5", type: "mcq",
+        title: "[1.5 Luyện nghe] Nghe đoạn audio và chọn câu tiếng Anh đúng:",
+        audioText: "Here is your scorecard and pencil, Sir.", phonetic: "/hɪər ɪz jʊər ˈskɔːr.kɑːrd ænd ˈpen.səl, sɜːr/", translation: "Gửi anh thẻ ghi điểm và bút chì ạ.",
+        options: [
+            { en: "A. Here is your scorecard and pencil, Sir.", vi: "Gửi anh thẻ điểm và bút chì ạ." },
+            { en: "B. Let me mark your score on app.", vi: "Để em ghi điểm trên ứng dụng." },
+            { en: "C. Please sign scorecard at end.", vi: "Xin ký thẻ điểm ở cuối trận." },
+            { en: "D. Scorecard is kept in buggy.", vi: "Thẻ điểm được giữ trong xe điện." }
+        ], correct: 0
+    },
+    {
+        lesson: "1", section: "section1.5", type: "mcq",
+        title: "[1.5 Luyện nghe] Nghe đoạn audio và chọn câu tiếng Anh đúng:",
+        audioText: "You scored Par on hole 18, Sir!", phonetic: "/juː skɔːrd pɑːr ɑːn hoʊl ˌeɪˈtiːn, sɜːr/", translation: "Anh ghi điểm Par ở hố 18 thưa anh!",
+        options: [
+            { en: "A. You scored Par on hole 18, Sir!", vi: "Anh ghi điểm Par hố 18 thưa anh!" },
+            { en: "B. Hole 18 bogey score logged.", vi: "Ghi nhận điểm Bogey hố 18." },
+            { en: "C. Great birdie finish on 18th hole.", vi: "Kết thúc birdie tuyệt vời hố 18." },
+            { en: "D. Total score calculated for round.", vi: "Tổng điểm đã được tính xong." }
+        ], correct: 0
+    },
+    {
+        lesson: "1", section: "section1.5", type: "fill",
+        title: "[1.5 Điền từ] Nghe đoạn audio và ĐIỀN TỪ chuẩn xác:",
+        audioText: "Thank you for an excellent round today!", displaySentence: "Thank you for an _______ round today!", translation: "Cảm ơn anh vì một vòng đấu xuất _______ hôm nay!",
+        targetWord: "excellent", phonetic: "/ˈek.səl.ənt/", hint: "💡 Gợi ý: Từ gồm 9 ký tự."
+    },
+    {
+        lesson: "1", section: "section1.5", type: "mcq",
+        title: "[1.5 Luyện nghe] Nghe đoạn audio và chọn câu tiếng Anh đúng:",
+        audioText: "I will pack your bag carefully now, Sir.", phonetic: "/aɪ wɪl pæk jʊər bæɡ ˈker.fəl.i naʊ, sɜːr/", translation: "Em sẽ thu xếp và bọc túi gậy cẩn thận bây giờ ạ.",
+        options: [
+            { en: "A. I will pack your bag carefully now, Sir.", vi: "Em thu xếp túi cẩn thận bây giờ ạ." },
+            { en: "B. Bag is ready for transport to car.", vi: "Túi sẵn sàng chuyển ra xe ô tô." },
+            { en: "C. Please check bag headcover again.", vi: "Xin kiểm tra lại mút bọc đầu gậy." },
+            { en: "D. Load bag directly to locker room.", vi: "Chuyển túi trực tiếp vào phòng đồ." }
+        ], correct: 0
+    },
+    {
+        lesson: "1", section: "section1.5", type: "mcq",
+        title: "[1.5 Luyện nghe] Nghe đoạn audio và chọn câu tiếng Anh đúng:",
+        audioText: "Have a safe flight back home, Sir!", phonetic: "/hæv ə seɪf flaɪt bæk hoʊm, sɜːr/", translation: "Chúc anh có chuyến bay trở về nhà an toàn ạ!",
+        options: [
+            { en: "A. Have a safe flight back home, Sir!", vi: "Chúc anh chuyến bay trở về an toàn ạ!" },
+            { en: "B. Safe drive home today Sir!", vi: "Lái xe về nhà an toàn hôm nay ạ!" },
+            { en: "C. Enjoy your travel next week!", vi: "Tận hưởng chuyến du lịch tuần tới!" },
+            { en: "D. Hope to see you next season Sir!", vi: "Hy vọng gặp lại anh mùa giải tới!" }
+        ], correct: 0
+    },
+    {
+        lesson: "1", section: "section1.5", type: "fill",
+        title: "[1.5 Điền từ] Nghe đoạn audio và ĐIỀN TỪ chuẩn xác:",
+        audioText: "Have a safe drive home, Sir!", displaySentence: "Have a safe _______ home, Sir!", translation: "Chúc anh lái _______ về nhà an toàn ạ!",
+        targetWord: "drive", phonetic: "/draɪv/", hint: "💡 Gợi ý: Từ gồm 5 ký tự."
     }
 );
