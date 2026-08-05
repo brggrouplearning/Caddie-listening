@@ -57,7 +57,6 @@
         .option-btn.opt-correct { background-color: #d1e7dd !important; border-color: #198754 !important; color: #0f5132; font-weight: bold; }
         .option-btn.opt-incorrect { background-color: #f8d7da !important; border-color: #dc3545 !important; color: #842029; font-weight: bold; }
 
-        /* XỬ LÝ LỖI DÍNH CHỮ TIẾNG VIỆT & TRÌNH BÀY DỊCH NGHĨA */
         .vi-trans { 
             display: block; 
             margin-top: 5px; 
@@ -65,11 +64,8 @@
             font-size: 13.5px; 
             color: #495057; 
             line-height: 1.5;
-            letter-spacing: normal;
-            word-spacing: normal;
         }
 
-        /* KHẮC PHỤC TÍNH THẨM MỸ DẠNG ĐIỀN TỪ (FILL) */
         .fill-container {
             background: #ffffff;
             border: 1.5px solid #e2e8f0;
@@ -133,7 +129,6 @@
         #prev-btn { background: #fd7e14; color: white; }
         #next-btn { background: #198754; color: white; }
         
-        /* RESULT CARD & FEEDBACK THU GỌN VỪA KHÍT KHUNG */
         .result-card { text-align: center; }
         .score-box { font-size: 38px; font-weight: bold; color: #1e7e34; margin: 8px 0 4px 0; }
         .level-badge { display: inline-block; padding: 6px 18px; border-radius: 20px; font-weight: bold; font-size: 14px; margin-bottom: 12px; }
@@ -145,19 +140,7 @@
         
         .feedback-card { background: #fff8e6; border: 1px solid #ffe8a1; border-radius: 10px; padding: 12px 14px; margin-top: 12px; text-align: left; width: 100%; }
         .feedback-card label { font-size: 12.5px; font-weight: bold; color: #8c6d00; display: block; margin-bottom: 6px; }
-        .feedback-card textarea { 
-            width: 100%; 
-            resize: vertical; 
-            min-height: 65px; 
-            max-height: 140px;
-            padding: 8px 10px; 
-            border: 1.5px solid #ffe082; 
-            border-radius: 6px; 
-            font-size: 13px; 
-            font-family: inherit; 
-            outline: none; 
-            background: #ffffff; 
-        }
+        .feedback-card textarea { width: 100%; resize: vertical; min-height: 65px; max-height: 140px; padding: 8px 10px; border: 1.5px solid #ffe082; border-radius: 6px; font-size: 13px; font-family: inherit; outline: none; background: #ffffff; }
         .btn-send-feedback { background: #ffc107; color: #000; font-weight: bold; border: none; padding: 9px 12px; border-radius: 6px; cursor: pointer; margin-top: 8px; width: 100%; font-size: 13px; }
 
         .extra-tools-card { background: #f0f7ff; border: 1.5px solid #b6d4fe; border-radius: 10px; padding: 12px; margin-top: 12px; display: flex; gap: 8px; flex-wrap: wrap; text-align: left; width: 100%; }
@@ -328,7 +311,7 @@
     <!-- KHỞI TẠO MẢNG DỮ LIỆU CHUNG -->
     <script> window.masterQuizData = []; </script>
 
-    <!-- SCRIPT LOADING TỰ ĐỘNG DỮ LIỆU 10 LESSON -->
+    <!-- SCRIPT LOADING TỰ ĐỘNG DỮ LIỆU -->
     <script>
         (function loadAllDataFiles() {
             const filesToLoad = ['data/exams.js'];
@@ -432,7 +415,7 @@
         }
 
         function getFilteredListeningItemsBySelection(isSectionMode, selectedVal) {
-            let rawPool = (window.masterQuizData && window.masterQuizData.length > 0) ? [...window.masterQuizData] : [];
+            let rawPool = (window.masterQuizData && window.masterQuizData.length > 0) ? JSON.parse(JSON.stringify(window.masterQuizData)) : [];
             let filtered = [];
             let targetCount = 30; 
             let titleBanner = "LUYỆN NGHE TỔNG HỢP";
@@ -470,6 +453,14 @@
                         if (opt.en) opt.en = fixStuckText(opt.en);
                         if (opt.vi) opt.vi = fixStuckText(opt.vi);
                     });
+
+                    // XÁO TRỘN ĐÁP ÁN (MCQ) VÀ CẬP NHẬT LẠI CHỈ SỐ ĐÁP ÁN ĐÚNG
+                    if (item.type === "mcq" && typeof item.correct === 'number') {
+                        let correctOptionObj = item.options[item.correct];
+                        shuffleArray(item.options);
+                        // Tìm lại vị trí mới của đáp án đúng sau khi xáo trộn
+                        item.correct = item.options.findIndex(opt => opt === correctOptionObj);
+                    }
                 }
             });
 
@@ -478,6 +469,7 @@
                 return [];
             }
 
+            // Xáo trộn thứ tự các câu hỏi trong đề thi
             shuffleArray(filtered);
             return filtered.slice(0, Math.min(targetCount, filtered.length));
         }
@@ -1153,14 +1145,12 @@
                         • ⏭️ Số câu CHƯA ĐẠT / BỎ QUA: <b>${skippedCount} / ${totalItems}</b> câu
                     </div>
 
-                    <!-- Ô GÓP Ý ĐÃ ĐƯỢC CHỈNH VỪA KHÍT VÀ ĐẶT LÊN TRÊN -->
                     <div class="feedback-card">
                         <label for="user-feedback">✍️ Đề xuất góp ý (nếu có) / Feedbacks & Comments:</label>
                         <textarea id="user-feedback" rows="2" placeholder="Nhập ý kiến đóng góp của bạn về bài học / Enter your comments..."></textarea>
                         <button class="btn-send-feedback" onclick="sendFeedbackOnly()">✉️ Gửi góp ý bổ sung / Submit Feedback</button>
                     </div>
 
-                    <!-- TIỆN ÍCH BỔ SUNG ĐÃ ĐƯỢC CHUYỂN XUỐNG DƯỚI -->
                     <div class="extra-tools-card">
                         <div class="extra-tools-title">🛠️ LƯU KẾT QUẢ & TIỆN ÍCH BỔ SUNG / SAVE RESULT & ADDITIONAL TOOLS:</div>
                         <button class="btn-tool btn-screenshot" onclick="captureResultScreenshot()">📸 Chụp ảnh kết quả (Save Result Image)</button>
