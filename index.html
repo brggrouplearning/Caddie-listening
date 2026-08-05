@@ -47,8 +47,12 @@
         .timer-warning { color: #dc3545 !important; background: #f8d7da !important; border-color: #f5c6cb !important; animation: blink 1s infinite; }
         @keyframes blink { 50% { opacity: 0.5; } }
 
+        /* KHU VỰC PHÁT ÂM THANH & CÀI ĐẶT GIỌNG ĐỌC */
         .audio-box { background: #e7f1ff; border: 2px dashed #0d6efd; padding: 12px; border-radius: 10px; margin: 10px 0; }
         #play-btn { background: #0d6efd; color: white; padding: 11px 18px; font-size: 14px; font-weight: bold; border: none; border-radius: 30px; cursor: pointer; box-shadow: 0 2px 6px rgba(0,0,0,0.12); transition: all 0.2s; width: 100%; }
+        
+        .tts-controls { display: flex; gap: 8px; margin-top: 10px; text-align: left; }
+        .tts-controls select { padding: 6px 10px; font-size: 12px; border-radius: 6px; border: 1px solid #b6d4fe; background: #fff; font-weight: 600; color: #0d6efd; flex: 1; outline: none; }
         
         .question-title { text-align: left; font-weight: bold; margin-bottom: 10px; color: #212529; font-size: 14.5px; line-height: 1.4; }
         .options-container { display: flex; flex-direction: column; gap: 10px; margin: 12px 0; text-align: left; }
@@ -279,6 +283,15 @@
 
             <div class="audio-box">
                 <button id="play-btn" onclick="playAudio()">🔊 NGHE CÂU HỎI</button>
+                <div class="tts-controls">
+                    <select id="speech-voice-select" title="Chọn giọng đọc"></select>
+                    <select id="speech-rate-select" title="Chọn tốc độ đọc">
+                        <option value="0.70">🐢 Rất chậm (0.70x)</option>
+                        <option value="0.78" selected>🚶 Chậm rõ ràng (0.78x)</option>
+                        <option value="0.85">🏃 Vừa phải (0.85x)</option>
+                        <option value="1.00">⚡ Bình thường (1.00x)</option>
+                    </select>
+                </div>
             </div>
 
             <div id="question-title" class="question-title">...</div>
@@ -491,7 +504,51 @@
         let startTimeFormatted = "";
         let lastSavedPayload = null;
 
-        function initApp() {}
+        /* LOAD DANH SÁCH GIỌNG ĐỌC CÓ SẴN TRÊN TRÌNH DUYỆT */
+        function loadVoices() {
+            if (!('speechSynthesis' in window)) return;
+            const voiceSelect = document.getElementById('speech-voice-select');
+            if (!voiceSelect) return;
+
+            const voices = window.speechSynthesis.getVoices();
+            const enVoices = voices.filter(v => v.lang.startsWith('en'));
+
+            voiceSelect.innerHTML = '';
+            if (enVoices.length === 0) {
+                const opt = document.createElement('option');
+                opt.value = "";
+                opt.innerText = "Giọng mặc định hệ thống";
+                voiceSelect.appendChild(opt);
+                return;
+            }
+
+            enVoices.forEach((voice, index) => {
+                const opt = document.createElement('option');
+                opt.value = voice.name;
+                
+                let label = voice.name;
+                if (voice.name.includes('Natural')) label = '🌟 ' + voice.name + ' (Tự nhiên)';
+                else if (voice.name.includes('Google')) label = '🎙️ ' + voice.name;
+                else if (voice.name.includes('Samantha') || voice.name.includes('Karen') || voice.name.includes('Jenny') || voice.name.includes('Guy')) {
+                    label = '🔊 ' + voice.name;
+                }
+                
+                opt.innerText = label;
+                voiceSelect.appendChild(opt);
+            });
+
+            // Ưu tiên tự chọn giọng Natural/Google/Samantha
+            const bestVoiceIndex = enVoices.findIndex(v => 
+                v.name.includes('Natural') || v.name.includes('Google') || v.name.includes('Samantha') || v.name.includes('Jenny')
+            );
+            if (bestVoiceIndex !== -1) {
+                voiceSelect.selectedIndex = bestVoiceIndex;
+            }
+        }
+
+        function initApp() {
+            loadVoices();
+        }
 
         function startQuizPractice() {
             const workPlace = document.getElementById('work-place').value;
@@ -802,6 +859,36 @@
             }
         }
 
+        /* HÀM XỬ LÝ CHUYÊN SÂU PHÁT ÂM TÊN RIÊNG & GIỌNG ĐỌC TỰ NHIÊN RÕ RÀNG */
+        function formatAudioTextForClearPronunciation(text) {
+            if (!text) return "";
+            
+            // 1. Tách chuỗi thành các từ để nhận diện Tên Riêng (Từ viết hoa giữa câu)
+            const words = text.split(' ');
+            const processedWords = words.map((word, idx) => {
+                // Kiểm tra từ có viết hoa chữ cái đầu và không phải từ đầu câu
+                const cleanWord = word.replace(/[^a-zA-Z]/g, '');
+                const isProperName = (idx > 0) && cleanWord.length > 1 && /^[A-Z][a-z]+$/.test(cleanWord);
+                
+                if (isProperName) {
+                    // Chèn dấu phẩy tạo khoảng nghỉ ngắn trước & sau tên riêng giúp máy đọc chậm, to và rõ hơn
+                    return `, ${word}, `;
+                }
+                return word;
+            });
+
+            let formatted = processedWords.join(' ');
+
+            // 2. Tối ưu hóa các tên riêng hoặc danh từ phổ biến trong ngành Golf / Caddie
+            formatted = formatted.replace(/\bMr\./gi, "Mr. ")
+                                 .replace(/\bMrs\./gi, "Mrs. ")
+                                 .replace(/\bMs\./gi, "Ms. ")
+                                 .replace(/\bHole\s+(\d+)/gi, "Hole , $1")
+                                 .replace(/\bPar\s+(\d+)/gi, "Par , $1");
+
+            return formatted;
+        }
+
         function playAudio() {
             clearTimeout(autoPlayTimer); 
 
@@ -814,21 +901,33 @@
                 window.speechSynthesis.cancel();
                 
                 const currentQuiz = quizData[currentIndex];
-                const textToRead = currentQuiz.audioText;
+                // Tối ưu chuỗi âm thanh để tên riêng được nhả chữ chậm và rõ ràng hơn
+                const textToRead = formatAudioTextForClearPronunciation(currentQuiz.audioText);
 
                 const utterance = new SpeechSynthesisUtterance(textToRead);
                 utterance.lang = 'en-US';
-                utterance.rate = 0.82;  
+
+                // Lấy tốc độ người dùng chọn (Mặc định 0.78x để nghe chậm và rõ)
+                const rateElem = document.getElementById('speech-rate-select');
+                utterance.rate = rateElem ? parseFloat(rateElem.value) : 0.78; 
                 utterance.pitch = 1.0; 
+                utterance.volume = 1.0; // Âm lượng tối đa để tiếng to và rõ ràng
 
+                // Lựa chọn giọng đọc người dùng đã chọn hoặc tự chọn giọng Natural/Google
                 const voices = window.speechSynthesis.getVoices();
-                const preferredVoice = voices.find(v => 
-                    (v.lang === 'en-US' || v.lang === 'en_US') && 
-                    (v.name.includes('Natural') || v.name.includes('Google') || v.name.includes('Samantha') || v.name.includes('Karen'))
-                ) || voices.find(v => v.lang.startsWith('en'));
+                const selectedVoiceName = document.getElementById('speech-voice-select')?.value;
+                
+                let chosenVoice = voices.find(v => v.name === selectedVoiceName);
 
-                if (preferredVoice) {
-                    utterance.voice = preferredVoice;
+                if (!chosenVoice) {
+                    chosenVoice = voices.find(v => 
+                        (v.lang === 'en-US' || v.lang === 'en_US') && 
+                        (v.name.includes('Natural') || v.name.includes('Google') || v.name.includes('Samantha') || v.name.includes('Jenny'))
+                    ) || voices.find(v => v.lang.startsWith('en'));
+                }
+
+                if (chosenVoice) {
+                    utterance.voice = chosenVoice;
                 }
 
                 window.speechSynthesis.speak(utterance);
@@ -1204,7 +1303,7 @@
         }
 
         if ('speechSynthesis' in window) {
-            window.speechSynthesis.onvoiceschanged = () => { window.speechSynthesis.getVoices(); };
+            window.speechSynthesis.onvoiceschanged = () => { loadVoices(); };
         }
 
         window.addEventListener('DOMContentLoaded', () => {
