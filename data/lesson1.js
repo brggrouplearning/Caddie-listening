@@ -1,6 +1,6 @@
 // =========================================================================
 // LESSON 1: BASIC COMMUNICATION & FIRST IMPRESSION FOR CADDY
-// File: data/lesson1.js (UPDATED & OPTIMIZED FOR SPELLING, TTS & PHONETICS)
+// File: data/lesson1.js (UNIFIED AUDIO READING SCRIPT FOR TTS)
 // =========================================================================
 
 if (typeof window.masterQuizData === 'undefined') {
@@ -14,37 +14,37 @@ const lesson1Data = [
     {
         lesson: "1", section: "section1.1", type: "mcq",
         title: "[1.1 Luyện nghe] Nghe đoạn audio và chọn câu tiếng Anh đúng:",
-        audioText: "/aɪ/", phonetic: "/aɪ/", translation: "Nguyên âm /aɪ/",
+        audioText: "Sound, I", phonetic: "/aɪ/", translation: Từ I",
         options: [{ en: "A. /aɪ/", vi: "/aɪ/" }, { en: "B. /iː/", vi: "/iː/" }, { en: "C. /eɪ/", vi: "/eɪ/" }, { en: "D. /ɛ/", vi: "/ɛ/" }], correct: 0
     },
     {
         lesson: "1", section: "section1.1", type: "mcq",
         title: "[1.1 Luyện nghe] Nghe đoạn audio và chọn câu tiếng Anh đúng:",
-        audioText: "Papa. P-A-P-A. Bravo. B-R-A-V-O.", phonetic: "/ˈpɑː.pə, ˈbrɑː.voʊ/", translation: "P trong từ Papa, B trong từ Bravo.",
+        audioText: "Papa. P-A-P-A. Bravo. B-R-A-V-O.", phonetic: "/ˈpɑː.pə, ˈbrɑː.voʊ/", translation: "Chữ cái đầu tiên của các từ là gì?",
         options: [{ en: "A. Papa", vi: "Papa" }, { en: "B. Peter", vi: "Peter" }, { en: "C. Paul", vi: "Paul" }, { en: "D. Pink", vi: "Pink" }], correct: 0
     },
     {
         lesson: "1", section: "section1.1", type: "mcq",
         title: "[1.1 Luyện nghe] Nghe đoạn audio và chọn câu tiếng Anh đúng:",
-        audioText: "/eɪtʃ/", phonetic: "/eɪtʃ/", translation: "Chữ cái H (/eɪtʃ/)",
+        audioText: "Letter H", phonetic: "/eɪtʃ/", translation: "Chữ cái H",
         options: [{ en: "A. /eɪtʃ/", vi: "/eɪtʃ/" }, { en: "B. /heɪtʃ/", vi: "/heɪtʃ/" }, { en: "C. /eɪdʒ/", vi: "/eɪdʒ/" }, { en: "D. /ætʃ/", vi: "/ætʃ/" }], correct: 0
     },
     {
         lesson: "1", section: "section1.1", type: "mcq",
         title: "[1.1 Luyện nghe] Nghe đoạn audio và chọn câu tiếng Anh đúng:",
-        audioText: "Bravo and Papa.", phonetic: "/ˈbrɑː.voʊ ænd ˈpɑː.pə/", translation: "B và P.",
+        audioText: "Bravo and Papa", phonetic: "/ˈbrɑː.voʊ ænd ˈpɑː.pə/", translation: "Chữ cái đầu tiên của các từ là gì?",
         options: [{ en: "A. B và P", vi: "B và P" }, { en: "B. A và Z", vi: "A và Z" }, { en: "C. K và L", vi: "K và L" }, { en: "D. H và O", vi: "H và O" }], correct: 0
     },
     {
         lesson: "1", section: "section1.1", type: "mcq",
         title: "[1.1 Luyện nghe] Nghe đoạn audio và chọn câu tiếng Anh đúng:",
-        audioText: "Arthur. A-R-T-H-U-R.", phonetic: "/ˈɑːr.θər/", translation: "Tên là Arthur.",
+        audioText: "Arthur. A-R-T-H-U-R.", phonetic: "/ˈɑːr.θər/", translation: "Tên của Golfer là gì?",
         options: [{ en: "A. ARTHUR", vi: "Arthur" }, { en: "B. AUTHOR", vi: "Author" }, { en: "C. ARCHER", vi: "Archer" }, { en: "D. MARK", vi: "Mark" }], correct: 0
     },
     {
         lesson: "1", section: "section1.1", type: "mcq",
         title: "[1.1 Luyện nghe] Nghe đoạn audio và chọn câu tiếng Anh đúng:",
-        audioText: "Harrison. H-A-R-R-I-S-O-N.", phonetic: "/ˈhær.ə.sən/", translation: "Tên là Harrison.",
+        audioText: "Harrison. H-A-R-R-I-S-O-N.", phonetic: "/ˈhær.ə.sən/", translation: "Tên của Golfer là gì?",
         options: [{ en: "A. HARRISON", vi: "Harrison" }, { en: "B. HARRIS", vi: "Harris" }, { en: "C. HARISON", vi: "Harison" }, { en: "D. HARRYS", vi: "Harrys" }], correct: 0
     },
     {
@@ -56,13 +56,13 @@ const lesson1Data = [
     {
         lesson: "1", section: "section1.1", type: "mcq",
         title: "[1.1 Luyện nghe] Nghe đoạn audio và chọn câu tiếng Anh đúng:",
-        audioText: "Callaway.", phonetic: "/ˈkæl.ə.weɪ/", translation: "Thương hiệu bóng Callaway.",
+        audioText: "Callaway.", phonetic: "/ˈkæl.ə.weɪ/", translation: "Thương hiệu bóng gì?",
         options: [{ en: "A. Callaway", vi: "Bóng hãng Callaway" }, { en: "B. Titleist", vi: "Bóng hãng Titleist" }, { en: "C. Srixon", vi: "Bóng hãng Srixon" }, { en: "D. Honma", vi: "Bóng hãng Honma" }], correct: 0
     },
     {
         lesson: "1", section: "section1.1", type: "mcq",
         title: "[1.1 Luyện nghe] Nghe đoạn audio và chọn câu tiếng Anh đúng:",
-        audioText: "/p/", phonetic: "/p/", translation: "Phụ âm /p/",
+        audioText: "Sound P", phonetic: "/p/", translation: "Từ P",
         options: [
             { en: "A. Mím môi bật hơi mạnh vô thanh", vi: "Không rung thanh quản" },
             { en: "B. Đọc rung dây thanh quản", vi: "Giống âm /b/" },
@@ -73,7 +73,7 @@ const lesson1Data = [
     {
         lesson: "1", section: "section1.1", type: "mcq",
         title: "[1.1 Luyện nghe] Nghe đoạn audio và chọn câu tiếng Anh đúng:",
-        audioText: "Putter.", phonetic: "/ˈpʌt.ər/", translation: "Gậy gạt Putter.",
+        audioText: "Putter.", phonetic: "/ˈpʌt.ər/", translation: "Gậy gạt ...",
         options: [
             { en: "A. Bật hơi mạnh vô thanh ở âm /p/ đầu từ", vi: "Tránh nhầm với Butter" },
             { en: "B. Đọc rung dây thanh quản", vi: "Đọc thành Butter" },
@@ -84,31 +84,31 @@ const lesson1Data = [
     {
         lesson: "1", section: "section1.1", type: "mcq",
         title: "[1.1 Luyện nghe] Nghe đoạn audio và chọn câu tiếng Anh đúng:",
-        audioText: "G-8-0.", phonetic: "/dʒiː eɪt oʊ/", translation: "Mã đặt sân G-8-0.",
+        audioText: "G-8-0.", phonetic: "/dʒiː eɪt oʊ/", translation: "Mã đặt sân ...",
         options: [{ en: "A. Oh /oʊ/", vi: "Đọc là Oh" }, { en: "B. Zero", vi: "Zero" }, { en: "C. Null", vi: "Null" }, { en: "D. Nil", vi: "Nil" }], correct: 0
     },
     {
         lesson: "1", section: "section1.1", type: "mcq",
         title: "[1.1 Luyện nghe] Nghe đoạn audio và chọn câu tiếng Anh đúng:",
-        audioText: "/ɔːr/", phonetic: "/ɔːr/", translation: "Nguyên âm /ɔːr/",
+        audioText: "Sound or", phonetic: "/ɔːr/", translation: "Nguyên âm sau là gì?",
         options: [{ en: "A. /ɔːr/ dài", vi: "Nguyên âm /ɔːr/" }, { en: "B. /ɑːr/", vi: "Nguyên âm /ɑːr/" }, { en: "C. /ʊər/", vi: "Nguyên âm /ʊər/" }, { en: "D. /ɒ/ ngắn", vi: "Nguyên âm /ɒ/" }], correct: 0
     },
     {
         lesson: "1", section: "section1.1", type: "mcq",
         title: "[1.1 Luyện nghe] Nghe đoạn audio và chọn câu tiếng Anh đúng:",
-        audioText: "Tee box.", phonetic: "/tiː bɑːks/", translation: "Khu phát bóng Tee box.",
+        audioText: "Tee box.", phonetic: "/tiː bɑːks/", translation: "Khu phát bóng đọc như thế nào?",
         options: [{ en: "A. /tiː bɑːks/", vi: "/tiː bɑːks/" }, { en: "B. /teɪ bɑːks/", vi: "/teɪ bɑːks/" }, { en: "C. /tɪ bɒks/", vi: "/tɪ bɒks/" }, { en: "D. /tiː bɔːks/", vi: "/tiː bɔːks/" }], correct: 0
     },
     {
         lesson: "1", section: "section1.1", type: "mcq",
         title: "[1.1 Luyện nghe] Nghe đoạn audio và chọn câu tiếng Anh đúng:",
-        audioText: "/dʒ/", phonetic: "/dʒ/", translation: "Phụ âm /dʒ/",
+        audioText: "Sound D J", phonetic: "/dʒ/", translation: "Phụ âm sau đọc ra sao?",
         options: [{ en: "A. /dʒ/", vi: "Phụ âm /dʒ/" }, { en: "B. /ʒ/", vi: "Phụ âm /ʒ/" }, { en: "C. /tʃ/", vi: "Phụ âm /tʃ/" }, { en: "D. /ɡ/", vi: "Phụ âm /ɡ/" }], correct: 0
     },
     {
         lesson: "1", section: "section1.1", type: "mcq",
         title: "[1.1 Luyện nghe] Nghe đoạn audio và chọn câu tiếng Anh đúng:",
-        audioText: "/aɪ/", phonetic: "/aɪ/", translation: "Nguyên âm /aɪ/",
+        audioText: "Sound I", phonetic: "/aɪ/", translation: "Nguyên âm sau đọc ra sao?",
         options: [{ en: "A. /aɪ/", vi: "Nguyên âm đôi /aɪ/" }, { en: "B. /eɪ/", vi: "Nguyên âm đôi /eɪ/" }, { en: "C. /oʊ/", vi: "Nguyên âm đôi /oʊ/" }, { en: "D. /aʊ/", vi: "Nguyên âm đôi /aʊ/" }], correct: 0
     },
     {
@@ -126,7 +126,7 @@ const lesson1Data = [
     {
         lesson: "1", section: "section1.1", type: "mcq",
         title: "[1.1 Luyện nghe] Nghe đoạn audio và chọn câu tiếng Anh đúng:",
-        audioText: "/eɪ/", phonetic: "/eɪ/", translation: "Nguyên âm /eɪ/",
+        audioText: "Sound A", phonetic: "/eɪ/", translation: "Nguyên âm sau đọc ra sao?",
         options: [{ en: "A. /eɪ/", vi: "Phát âm /eɪ/" }, { en: "B. /ɑːr/", vi: "Phát âm /ɑːr/" }, { en: "C. /æ/", vi: "Phát âm /æ/" }, { en: "D. /e/", vi: "Phát âm /e/" }], correct: 0
     },
     {
@@ -138,7 +138,7 @@ const lesson1Data = [
     {
         lesson: "1", section: "section1.1", type: "mcq",
         title: "[1.1 Luyện nghe] Nghe đoạn audio và chọn câu tiếng Anh đúng:",
-        audioText: "/ziː/", phonetic: "/ziː/", translation: "Chữ Z (/ziː/)",
+        audioText: "Letter Z", phonetic: "/ziː/", translation: "Chữ cái sao đọc ra sao?",
         options: [{ en: "A. /ziː/", vi: "Đọc là Zee (/ziː/)" }, { en: "B. /zed/", vi: "Đọc là Zed (/zed/)" }, { en: "C. /zaɪ/", vi: "Đọc là Zai" }, { en: "D. /zoʊ/", vi: "Đọc là Zo" }], correct: 0
     },
     {
@@ -150,55 +150,55 @@ const lesson1Data = [
     {
         lesson: "1", section: "section1.1", type: "mcq",
         title: "[1.1 Luyện nghe] Nghe đoạn audio và chọn câu tiếng Anh đúng:",
-        audioText: "/ɑːr/", phonetic: "/ɑːr/", translation: "Phụ âm /ɑːr/",
+        audioText: "Sound R", phonetic: "/ɑːr/", translation: "Phụ âm sau đọc ra sao?",
         options: [{ en: "A. Uốn cong đầu lưỡi về phía sau", vi: "Phát âm uốn lưỡi /ɑːr/" }, { en: "B. Rung đầu lưỡi mạnh", vi: "Giống tiếng Việt" }, { en: "C. Bật môi vô thanh", vi: "Không uốn lưỡi" }, { en: "D. Đọc giống chữ L", vi: "Đọc là L" }], correct: 0
     },
     {
         lesson: "1", section: "section1.1", type: "mcq",
         title: "[1.1 Luyện nghe] Nghe đoạn audio và chọn câu tiếng Anh đúng:",
-        audioText: "David. D-A-V-I-D.", phonetic: "/ˈdeɪ.vɪd/", translation: "Tên là David.",
+        audioText: "David. D-A-V-I-D.", phonetic: "/ˈdeɪ.vɪd/", translation: "Tên của Golfer là gì?",
         options: [{ en: "A. DAVID", vi: "David" }, { en: "B. DAVIS", vi: "Davis" }, { en: "C. DANIEL", vi: "Daniel" }, { en: "D. DAVIN", vi: "Davin" }], correct: 0
     },
     {
         lesson: "1", section: "section1.1", type: "mcq",
         title: "[1.1 Luyện nghe] Nghe đoạn audio và chọn câu tiếng Anh đúng:",
-        audioText: "/keɪ/", phonetic: "/keɪ/", translation: "Chữ K (/keɪ/)",
+        audioText: "Letter K", phonetic: "/keɪ/", translation: "Chữ K (/keɪ/)",
         options: [{ en: "A. /keɪ/", vi: "Phát âm /keɪ/" }, { en: "B. /kaɪ/", vi: "Phát âm /kaɪ/" }, { en: "C. /kiː/", vi: "Phát âm /kiː/" }, { en: "D. /kɛ/", vi: "Phát âm /kɛ/" }], correct: 0
     },
     {
         lesson: "1", section: "section1.1", type: "mcq",
         title: "[1.1 Luyện nghe] Nghe đoạn audio và chọn câu tiếng Anh đúng:",
-        audioText: "Honma.", phonetic: "/ˈhɒn.mə/", translation: "Gậy hãng Honma.",
+        audioText: "Honma.", phonetic: "/ˈhɒn.mə/", translation: "Gậy hãng nào?",
         options: [{ en: "A. Honma", vi: "Gậy hãng Honma" }, { en: "B. Mizuno", vi: "Gậy hãng Mizuno" }, { en: "C. Miura", vi: "Gậy hãng Miura" }, { en: "D. Majesty", vi: "Gậy hãng Majesty" }], correct: 0
     },
     {
         lesson: "1", section: "section1.1", type: "mcq",
         title: "[1.1 Luyện nghe] Nghe đoạn audio và chọn câu tiếng Anh đúng:",
-        audioText: "/iː/", phonetic: "/iː/", translation: "Nguyên âm /iː/",
+        audioText: "Letter E", phonetic: "/iː/", translation: "Nguyên âm sau đọc là gì?",
         options: [{ en: "A. /iː/", vi: "Phát âm /iː/" }, { en: "B. /eɪ/", vi: "Phát âm /eɪ/" }, { en: "C. /e/", vi: "Phát âm /e/" }, { en: "D. /aɪ/", vi: "Phát âm /aɪ/" }], correct: 0
     },
     {
         lesson: "1", section: "section1.1", type: "mcq",
         title: "[1.1 Luyện nghe] Nghe đoạn audio và chọn câu tiếng Anh đúng:",
-        audioText: "/dʒeɪ/", phonetic: "/dʒeɪ/", translation: "Chữ J (/dʒeɪ/)",
+        audioText: "Letter J", phonetic: "/dʒeɪ/", translation: "Chữ cái sau đọc là gì?",
         options: [{ en: "A. /dʒeɪ/", vi: "Phát âm /dʒeɪ/" }, { en: "B. /ʒeɪ/", vi: "Phát âm /ʒeɪ/" }, { en: "C. /dʒaɪ/", vi: "Phát âm /dʒaɪ/" }, { en: "D. /jeɪ/", vi: "Phát âm /jeɪ/" }], correct: 0
     },
     {
         lesson: "1", section: "section1.1", type: "mcq",
         title: "[1.1 Luyện nghe] Nghe đoạn audio và chọn câu tiếng Anh đúng:",
-        audioText: "/dʒiː/", phonetic: "/dʒiː/", translation: "Chữ G (/dʒiː/)",
+        audioText: "Letter G", phonetic: "/dʒiː/", translation: "Chữ cái sau đọc là gì?",
         options: [{ en: "A. /dʒiː/ (kết thúc bằng âm iː dài)", vi: "Đọc là /dʒiː/" }, { en: "B. /dʒeɪ/", vi: "Đọc giống chữ J" }, { en: "C. /ɡiː/", vi: "Đọc là Gi" }, { en: "D. /dʒe/", vi: "Đọc là Ge" }], correct: 0
     },
     {
         lesson: "1", section: "section1.1", type: "mcq",
         title: "[1.1 Luyện nghe] Nghe đoạn audio và chọn câu tiếng Anh đúng:",
-        audioText: "John. J-O-H-N.", phonetic: "/dʒɑːn/", translation: "Tên là John.",
+        audioText: "John. J-O-H-N.", phonetic: "/dʒɑːn/", translation: "Tên của Golfer là gì",
         options: [{ en: "A. JOHN", vi: "John" }, { en: "B. JACK", vi: "Jack" }, { en: "C. JIM", vi: "Jim" }, { en: "D. JOE", vi: "Joe" }], correct: 0
     },
     {
         lesson: "1", section: "section1.1", type: "mcq",
         title: "[1.1 Luyện nghe] Nghe đoạn audio và chọn câu tiếng Anh đúng:",
-        audioText: "/waɪ/", phonetic: "/waɪ/", translation: "Chữ Y (/waɪ/)",
+        audioText: "Letter Y", phonetic: "/waɪ/", translation: "Chữ cái sau phát âm như thế nào?",
         options: [{ en: "A. /waɪ/", vi: "Phát âm /waɪ/" }, { en: "B. /jaɪ/", vi: "Phát âm /jaɪ/" }, { en: "C. /weɪ/", vi: "Phát âm /weɪ/" }, { en: "D. /yeɪ/", vi: "Phát âm /yeɪ/" }], correct: 0
     },
     {
@@ -216,19 +216,19 @@ const lesson1Data = [
     {
         lesson: "1", section: "section1.1", type: "mcq",
         title: "[1.1 Luyện nghe] Nghe đoạn audio và chọn câu tiếng Anh đúng:",
-        audioText: "Alex. A-L-E-X.", phonetic: "/ˈæl.ɪks/", translation: "Tên là Alex.",
+        audioText: "Alex. A-L-E-X.", phonetic: "/ˈæl.ɪks/", translation: "Tên của golfer là gì?",
         options: [{ en: "A. ALEX", vi: "Alex" }, { en: "B. ALAN", vi: "Alan" }, { en: "C. ADAM", vi: "Adam" }, { en: "D. ALEC", vi: "Alec" }], correct: 0
     },
     {
         lesson: "1", section: "section1.1", type: "mcq",
         title: "[1.1 Luyện nghe] Nghe đoạn audio và chọn câu tiếng Anh đúng:",
-        audioText: "/eks/", phonetic: "/eks/", translation: "Chữ X (/eks/)",
+        audioText: "Letter X", phonetic: "/eks/", translation: "Chữ cái sau đọc như thế nào",
         options: [{ en: "A. /eks/", vi: "Phát âm /eks/" }, { en: "B. /egz/", vi: "Phát âm /egz/" }, { en: "C. /z/", vi: "Phát âm /z/" }, { en: "D. /s/", vi: "Phát âm /s/" }], correct: 0
     },
     {
         lesson: "1", section: "section1.1", type: "mcq",
         title: "[1.1 Luyện nghe] Nghe đoạn audio và chọn câu tiếng Anh đúng:",
-        audioText: "Volvik.", phonetic: "/ˈvɔːl.vɪk/", translation: "Bóng hãng Volvik.",
+        audioText: "Volvik.", phonetic: "/ˈvɔːl.vɪk/", translation: "Bóng hãng nào sau đây?.",
         options: [{ en: "A. Volvik", vi: "Bóng hãng Volvik" }, { en: "B. Vice", vi: "Bóng hãng Vice" }, { en: "C. Wilson", vi: "Bóng hãng Wilson" }, { en: "D. Bridgestone", vi: "Bóng hãng Bridgestone" }], correct: 0
     },
     {
@@ -240,19 +240,19 @@ const lesson1Data = [
     {
         lesson: "1", section: "section1.1", type: "mcq",
         title: "[1.1 Luyện nghe] Nghe đoạn audio và chọn câu tiếng Anh đúng:",
-        audioText: "/juː/", phonetic: "/juː/", translation: "Chữ U (/juː/)",
+        audioText: "Letter U", phonetic: "/juː/", translation: "Chữ cái sau phát âm như thế nào?",
         options: [{ en: "A. /juː/", vi: "Phát âm /juː/" }, { en: "B. /uː/", vi: "/uː/" }, { en: "C. /ʌ/", vi: "Phát âm /ʌ/" }, { en: "D. /aʊ/", vi: "Phát âm /aʊ/" }], correct: 0
     },
     {
         lesson: "1", section: "section1.1", type: "mcq",
         title: "[1.1 Luyện nghe] Nghe đoạn audio và chọn câu tiếng Anh đúng:",
-        audioText: "/kjuː/", phonetic: "/kjuː/", translation: "Chữ Q (/kjuː/)",
+        audioText: "Letter Q", phonetic: "/kjuː/", translation: "Chữ cái sau phát âm như thế nào?",
         options: [{ en: "A. /kjuː/", vi: "Phát âm /kjuː/" }, { en: "B. /kuː/", vi: "Phát âm /kuː/" }, { en: "C. /kwɑː/", vi: "Phát âm /kwɑː/" }, { en: "D. /kju/", vi: "Phát âm /kju/" }], correct: 0
     },
     {
         lesson: "1", section: "section1.1", type: "mcq",
         title: "[1.1 Luyện nghe] Nghe đoạn audio và chọn câu tiếng Anh đúng:",
-        audioText: "Tom. T-O-M.", phonetic: "/tɑːm/", translation: "Tên là Tom.",
+        audioText: "Tom. T-O-M.", phonetic: "/tɑːm/", translation: "Tên của Golfer là gì?.",
         options: [{ en: "A. TOM", vi: "Tom" }, { en: "B. TIM", vi: "Tim" }, { en: "C. TED", vi: "Ted" }, { en: "D. TODD", vi: "Todd" }], correct: 0
     },
     {
@@ -264,73 +264,73 @@ const lesson1Data = [
     {
         lesson: "1", section: "section1.1", type: "mcq",
         title: "[1.1 Luyện nghe] Nghe đoạn audio và chọn câu tiếng Anh đúng:",
-        audioText: "/eɪ/", phonetic: "/eɪ/", translation: "Chữ A (/eɪ/)",
+        audioText: "Letter A", phonetic: "/eɪ/", translation: "Chữ cái sau đọc như thế nào?",
         options: [{ en: "A. /eɪ/", vi: "Phát âm /eɪ/" }, { en: "B. /æ/", vi: "Phát âm /æ/" }, { en: "C. /ɑː/", vi: "Phát âm /ɑː/" }, { en: "D. /e/", vi: "Phát âm /e/" }], correct: 0
     },
     {
         lesson: "1", section: "section1.1", type: "mcq",
         title: "[1.1 Luyện nghe] Nghe đoạn audio và chọn câu tiếng Anh đúng:",
-        audioText: "/aɪ/", phonetic: "/aɪ/", translation: "Chữ I (/aɪ/)",
+        audioText: "Letter I", phonetic: "/aɪ/", translation: "Chữ cái sau đọc như thế nào?",
         options: [{ en: "A. /aɪ/", vi: "Phát âm /aɪ/" }, { en: "B. /iː/", vi: "Phát âm /iː/" }, { en: "C. /ɪ/", vi: "Phát âm /ɪ/" }, { en: "D. /eɪ/", vi: "Phát âm /eɪ/" }], correct: 0
     },
     {
         lesson: "1", section: "section1.1", type: "mcq",
         title: "[1.1 Luyện nghe] Nghe đoạn audio và chọn câu tiếng Anh đúng:",
-        audioText: "/oʊ/", phonetic: "/oʊ/", translation: "Chữ O (/oʊ/)",
+        audioText: "Letter O", phonetic: "/oʊ/", translation: "Chữ cái sau đọc như thế nào?",
         options: [{ en: "A. /oʊ/", vi: "Phát âm /oʊ/" }, { en: "B. /ɒ/", vi: "Phát âm /ɒ/" }, { en: "C. /ɔː/", vi: "Phát âm /ɔː/" }, { en: "D. /uː/", vi: "Phát âm /uː/" }], correct: 0
     },
     {
         lesson: "1", section: "section1.1", type: "mcq",
         title: "[1.1 Luyện nghe] Nghe đoạn audio và chọn câu tiếng Anh đúng:",
-        audioText: "/eɪtʃ/", phonetic: "/eɪtʃ/", translation: "Chữ H (/eɪtʃ/)",
+        audioText: "Letter H", phonetic: "/eɪtʃ/", translation: "Chữ cái sau đọc như thế nào?",
         options: [{ en: "A. /eɪtʃ/", vi: "Phát âm /eɪtʃ/" }, { en: "B. /heɪtʃ/", vi: "Phát âm /heɪtʃ/" }, { en: "C. /eɪt/", vi: "Phát âm /eɪt/" }, { en: "D. /eɪdʒ/", vi: "Phát âm /eɪdʒ/" }], correct: 0
     },
     {
         lesson: "1", section: "section1.1", type: "mcq",
         title: "[1.1 Luyện nghe] Nghe đoạn audio và chọn câu tiếng Anh đúng:",
-        audioText: "/el/", phonetic: "/el/", translation: "Chữ L (/el/)",
+        audioText: "Letter L", phonetic: "/el/", translation: "Chữ cái sau đọc như thế nào?",
         options: [{ en: "A. /el/", vi: "Phát âm /el/" }, { en: "B. /al/", vi: "Phát âm /al/" }, { en: "C. /leɪ/", vi: "Phát âm /leɪ/" }, { en: "D. /il/", vi: "Phát âm /il/" }], correct: 0
     },
     {
         lesson: "1", section: "section1.1", type: "mcq",
         title: "[1.1 Luyện nghe] Nghe đoạn audio và chọn câu tiếng Anh đúng:",
-        audioText: "/em/", phonetic: "/em/", translation: "Chữ M (/em/)",
+        audioText: "Letter M", phonetic: "/em/", translation: "Chữ cái sau đọc như thế nào?",
         options: [{ en: "A. /em/", vi: "Phát âm /em/" }, { en: "B. /meɪ/", vi: "Phát âm /meɪ/" }, { en: "C. /am/", vi: "Phát âm /am/" }, { en: "D. /muː/", vi: "Phát âm /muː/" }], correct: 0
     },
     {
         lesson: "1", section: "section1.1", type: "mcq",
         title: "[1.1 Luyện nghe] Nghe đoạn audio và chọn câu tiếng Anh đúng:",
-        audioText: "/en/", phonetic: "/en/", translation: "Chữ N (/en/)",
+        audioText: "Letter N", phonetic: "/en/", translation: "Chữ cái sau đọc như thế nào?",
         options: [{ en: "A. /en/", vi: "Phát âm /en/" }, { en: "B. /neɪ/", vi: "Phát âm /neɪ/" }, { en: "C. /an/", vi: "Phát âm /an/" }, { en: "D. /nuː/", vi: "Phát âm /nuː/" }], correct: 0
     },
     {
         lesson: "1", section: "section1.1", type: "mcq",
         title: "[1.1 Luyện nghe] Nghe đoạn audio và chọn câu tiếng Anh đúng:",
-        audioText: "/es/", phonetic: "/es/", translation: "Chữ S (/es/)",
+        audioText: "Letter S", phonetic: "/es/", translation: "Chữ cái sau đọc như thế nào?",
         options: [{ en: "A. /es/", vi: "Phát âm /es/" }, { en: "B. /seɪ/", vi: "Phát âm /seɪ/" }, { en: "C. /as/", vi: "Phát âm /as/" }, { en: "D. /siː/", vi: "Phát âm /siː/" }], correct: 0
     },
     {
         lesson: "1", section: "section1.1", type: "mcq",
         title: "[1.1 Luyện nghe] Nghe đoạn audio và chọn câu tiếng Anh đúng:",
-        audioText: "/tiː/", phonetic: "/tiː/", translation: "Chữ T (/tiː/)",
+        audioText: "Letter T", phonetic: "/tiː/", translation: "Chữ cái sau đọc như thế nào?",
         options: [{ en: "A. /tiː/", vi: "Phát âm /tiː/" }, { en: "B. /teɪ/", vi: "Phát âm /teɪ/" }, { en: "C. /taɪ/", vi: "Phát âm /taɪ/" }, { en: "D. /te/", vi: "Phát âm /te/" }], correct: 0
     },
     {
         lesson: "1", section: "section1.1", type: "mcq",
         title: "[1.1 Luyện nghe] Nghe đoạn audio và chọn câu tiếng Anh đúng:",
-        audioText: "/viː/", phonetic: "/viː/", translation: "Chữ V (/viː/)",
+        audioText: "Letter V", phonetic: "/viː/", translation: "Chữ cái sau đọc như thế nào?",
         options: [{ en: "A. /viː/", vi: "Phát âm /viː/" }, { en: "B. /veɪ/", vi: "Phát âm /veɪ/" }, { en: "C. /vaɪ/", vi: "Phát âm /vaɪ/" }, { en: "D. /ve/", vi: "Phát âm /ve/" }], correct: 0
     },
     {
         lesson: "1", section: "section1.1", type: "mcq",
         title: "[1.1 Luyện nghe] Nghe đoạn audio và chọn câu tiếng Anh đúng:",
-        audioText: "Mizuno.", phonetic: "/mɪˈzuː.noʊ/", translation: "Gậy hãng Mizuno.",
+        audioText: "Mizuno.", phonetic: "/mɪˈzuː.noʊ/", translation: "Gậy hãng nào sau đây?",
         options: [{ en: "A. Mizuno", vi: "Gậy hãng Mizuno" }, { en: "B. Honma", vi: "Gậy hãng Honma" }, { en: "C. Miura", vi: "Gậy hãng Miura" }, { en: "D. Titleist", vi: "Bóng hãng Titleist" }], correct: 0
     },
     {
         lesson: "1", section: "section1.1", type: "mcq",
         title: "[1.1 Luyện nghe] Nghe đoạn audio và chọn câu tiếng Anh đúng:",
-        audioText: "Bridgestone.", phonetic: "/ˈbrɪdʒ.stoʊn/", translation: "Bóng hãng Bridgestone.",
+        audioText: "Bridgestone.", phonetic: "/ˈbrɪdʒ.stoʊn/", translation: "Bóng hãng nào sau đây?",
         options: [{ en: "A. Bridgestone", vi: "Bóng hãng Bridgestone" }, { en: "B. Volvik", vi: "Bóng hãng Volvik" }, { en: "C. Callaway", vi: "Bóng hãng Callaway" }, { en: "D. Srixon", vi: "Bóng hãng Srixon" }], correct: 0
     },
     {
@@ -354,19 +354,19 @@ const lesson1Data = [
     {
         lesson: "1", section: "section1.1", type: "mcq",
         title: "[1.1 Luyện nghe] Nghe đoạn audio và chọn câu tiếng Anh đúng:",
-        audioText: "Vice.", phonetic: "/vaɪs/", translation: "Bóng hãng Vice.",
+        audioText: "Vice.", phonetic: "/vaɪs/", translation: "Bóng hãng nào sau đây?",
         options: [{ en: "A. Vice", vi: "Bóng hãng Vice" }, { en: "B. Volvik", vi: "Bóng hãng Volvik" }, { en: "C. Wilson", vi: "Bóng hãng Wilson" }, { en: "D. Titleist", vi: "Bóng hãng Titleist" }], correct: 0
     },
     {
         lesson: "1", section: "section1.1", type: "mcq",
         title: "[1.1 Luyện nghe] Nghe đoạn audio và chọn câu tiếng Anh đúng:",
-        audioText: "/diː/", phonetic: "/diː/", translation: "Chữ D (/diː/)",
+        audioText: "Letter D", phonetic: "/diː/", translation: "Chữ cái sau đọc như thế nào?",
         options: [{ en: "A. /diː/", vi: "Phát âm /diː/" }, { en: "B. /deɪ/", vi: "Phát âm /deɪ/" }, { en: "C. /daɪ/", vi: "Phát âm /daɪ/" }, { en: "D. /de/", vi: "Phát âm /de/" }], correct: 0
     },
     {
         lesson: "1", section: "section1.1", type: "mcq",
         title: "[1.1 Luyện nghe] Nghe đoạn audio và chọn câu tiếng Anh đúng:",
-        audioText: "/siː/", phonetic: "/siː/", translation: "Chữ C (/siː/)",
+        audioText: "Letter C", phonetic: "/siː/", translation: "Chữ cái sau đọc như thế nào?",
         options: [{ en: "A. /siː/", vi: "Phát âm /siː/" }, { en: "B. /seɪ/", vi: "Phát âm /seɪ/" }, { en: "C. /kaɪ/", vi: "Phát âm /kaɪ/" }, { en: "D. /keɪ/", vi: "Phát âm /keɪ/" }], correct: 0
     },
     {
@@ -381,6 +381,29 @@ const lesson1Data = [
         audioText: "Adam. A-D-A-M.", displaySentence: "Golfer's name is _______.", translation: "Tên Golfer là _______.",
         targetWord: "adam", phonetic: "/ˈæd.əm/", hint: "Tên gồm 4 ký tự."
     },
+
+    // =========================================================================
+    // CÁC SECTION KHÁC (1.2 ĐẾN 1.5) GIỮ NGUYÊN HOẶC ĐỒNG BỘ CƠ CHẾ ĐỌC TỰ NHIÊN
+    // =========================================================================
+    // (Các phần kịch bản giao tiếp, số đếm, thực hành sân gôn đã tối ưu ở bước trước)
+];
+
+// CHUẨN HÓA UNICODE NFC TOÀN BỘ CHUỖI TIẾNG VIỆT KHI NẠP DỮ LIỆU
+lesson1Data.forEach(item => {
+    if (item.translation) {
+        item.translation = item.translation.normalize('NFC').replace(/\s+/g, ' ').trim();
+    }
+    if (item.hint) {
+        item.hint = item.hint.normalize('NFC').replace(/\s+/g, ' ').trim();
+    }
+    if (item.options && Array.isArray(item.options)) {
+        item.options.forEach(opt => {
+            if (opt.vi) opt.vi = opt.vi.normalize('NFC').replace(/\s+/g, ' ').trim();
+        });
+    }
+});
+
+window.masterQuizData.push(...lesson1Data);
 
     // =========================================================================
     // SECTION 1.2: GIỚI THIỆU BẢN THÂN & NGHI THỨC CHÀO HỎI (60 CÂU)
