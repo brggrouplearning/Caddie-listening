@@ -159,6 +159,7 @@
 
         .hidden { display: none !important; }
         #save-status-msg { font-size: 12.5px; font-weight: bold; color: #0f5132; margin-top: 8px; background: #d1e7dd; padding: 8px 14px; border-radius: 20px; display: inline-block; border: 1px solid #badbcc; }
+        #drive-link-box { margin-top: 8px; font-size: 12.5px; word-break: break-all; }
     </style>
 </head>
 <body>
@@ -359,7 +360,7 @@
     <!-- CORE ENGINE LUYỆN NGHE -->
     <script>
         // ĐƯỜNG LINK GOOGLE APPS SCRIPT WEB APP MỚI CẬP NHẬT
-        const GOOGLE_SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbyBbzhm4RUbwbFy6sVLX1Xqufzhi8hzEO6UqK_ajp_KNgewbay_ooE5sVtM0jLwSiT4Ew/exec';
+        const GOOGLE_SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbwVTDkJjmmWzkReZFw2uAItjRoXg4qKCQ0ZAdJth1U1QIgfVGw2f_P_NokRL93sL2Iy/exec';
 
         let studentInfo = {
             workPlace: '',
@@ -468,11 +469,9 @@
                         if (opt.vi) opt.vi = fixStuckText(opt.vi);
                     });
 
-                    // XÁO TRỘN ĐÁP ÁN (MCQ) VÀ CẬP NHẬT LẠI CHỈ SỐ ĐÁP ÁN ĐÚNG
                     if (item.type === "mcq" && typeof item.correct === 'number') {
                         let correctOptionObj = item.options[item.correct];
                         shuffleArray(item.options);
-                        // Tìm lại vị trí mới của đáp án đúng sau khi xáo trộn
                         item.correct = item.options.findIndex(opt => opt === correctOptionObj);
                     }
                 }
@@ -483,7 +482,6 @@
                 return [];
             }
 
-            // Xáo trộn thứ tự các câu hỏi trong đề thi
             shuffleArray(filtered);
             return filtered.slice(0, Math.min(targetCount, filtered.length));
         }
@@ -505,7 +503,6 @@
         let startTimeFormatted = "";
         let lastSavedPayload = null;
 
-        /* LOAD DANH SÁCH GIỌNG ĐỌC CÓ SẴN TRÊN TRÌNH DUYỆT */
         function loadVoices() {
             if (!('speechSynthesis' in window)) return;
             const voiceSelect = document.getElementById('speech-voice-select');
@@ -538,7 +535,6 @@
                 voiceSelect.appendChild(opt);
             });
 
-            // Ưu tiên tự chọn giọng Natural/Google/Samantha
             const bestVoiceIndex = enVoices.findIndex(v => 
                 v.name.includes('Natural') || v.name.includes('Google') || v.name.includes('Samantha') || v.name.includes('Jenny')
             );
@@ -860,19 +856,15 @@
             }
         }
 
-        /* HÀM XỬ LÝ CHUYÊN SÂU PHÁT ÂM TÊN RIÊNG & GIỌNG ĐỌC TỰ NHIÊN RÕ RÀNG */
         function formatAudioTextForClearPronunciation(text) {
             if (!text) return "";
             
-            // 1. Tách chuỗi thành các từ để nhận diện Tên Riêng (Từ viết hoa giữa câu)
             const words = text.split(' ');
             const processedWords = words.map((word, idx) => {
-                // Kiểm tra từ có viết hoa chữ cái đầu và không phải từ đầu câu
                 const cleanWord = word.replace(/[^a-zA-Z]/g, '');
                 const isProperName = (idx > 0) && cleanWord.length > 1 && /^[A-Z][a-z]+$/.test(cleanWord);
                 
                 if (isProperName) {
-                    // Chèn dấu phẩy tạo khoảng nghỉ ngắn trước & sau tên riêng giúp máy đọc chậm, to và rõ hơn
                     return `, ${word}, `;
                 }
                 return word;
@@ -880,7 +872,6 @@
 
             let formatted = processedWords.join(' ');
 
-            // 2. Tối ưu hóa các tên riêng hoặc danh từ phổ biến trong ngành Golf / Caddie
             formatted = formatted.replace(/\bMr\./gi, "Mr. ")
                                  .replace(/\bMrs\./gi, "Mrs. ")
                                  .replace(/\bMs\./gi, "Ms. ")
@@ -902,19 +893,16 @@
                 window.speechSynthesis.cancel();
                 
                 const currentQuiz = quizData[currentIndex];
-                // Tối ưu chuỗi âm thanh để tên riêng được nhả chữ chậm và rõ ràng hơn
                 const textToRead = formatAudioTextForClearPronunciation(currentQuiz.audioText);
 
                 const utterance = new SpeechSynthesisUtterance(textToRead);
                 utterance.lang = 'en-US';
 
-                // Lấy tốc độ người dùng chọn (Mặc định 0.78x để nghe chậm và rõ)
                 const rateElem = document.getElementById('speech-rate-select');
                 utterance.rate = rateElem ? parseFloat(rateElem.value) : 0.78; 
                 utterance.pitch = 1.0; 
-                utterance.volume = 1.0; // Âm lượng tối đa để tiếng to và rõ ràng
+                utterance.volume = 1.0;
 
-                // Lựa chọn giọng đọc người dùng đã chọn hoặc tự chọn giọng Natural/Google
                 const voices = window.speechSynthesis.getVoices();
                 const selectedVoiceName = document.getElementById('speech-voice-select')?.value;
                 
@@ -996,6 +984,7 @@
             }
         }
 
+        /* HÀM GỬI KẾT QUẢ THI LÊN GOOGLE SHEET */
         function sendResultToGoogleSheet(payload, isFeedback = false) {
             if (!GOOGLE_SCRIPT_URL) return;
 
@@ -1003,22 +992,31 @@
 
             fetch(GOOGLE_SCRIPT_URL, {
                 method: 'POST',
-                mode: 'no-cors',
-                headers: { 'Content-Type': 'application/json' },
+                headers: { 'Content-Type': 'text/plain;charset=utf-8' },
                 body: JSON.stringify(payload)
-            }).catch(err => console.error("Error sending data:", err));
-
-            if (msgElem) {
-                if (isFeedback) {
-                    msgElem.innerText = "✅ Cảm ơn bạn đã góp ý/đề xuất! / Thank you for your feedback!";
-                    msgElem.style.color = "#0f5132";
-                    msgElem.style.backgroundColor = "#d1e7dd";
-                } else {
-                    msgElem.innerText = "✅ Đã lưu kết quả thi thành công!";
-                    msgElem.style.color = "#0f5132";
-                    msgElem.style.backgroundColor = "#d1e7dd";
+            })
+            .then(res => res.json())
+            .then(data => {
+                if (msgElem) {
+                    if (isFeedback) {
+                        msgElem.innerText = "✅ Cảm ơn bạn đã góp ý/đề xuất! / Thank you for your feedback!";
+                        msgElem.style.color = "#0f5132";
+                        msgElem.style.backgroundColor = "#d1e7dd";
+                    } else {
+                        msgElem.innerText = "✅ Đã lưu kết quả thi thành công vào Google Sheet!";
+                        msgElem.style.color = "#0f5132";
+                        msgElem.style.backgroundColor = "#d1e7dd";
+                    }
                 }
-            }
+            })
+            .catch(err => {
+                console.error("Error sending data:", err);
+                if (msgElem) {
+                    msgElem.innerText = "⚠️ Lỗi khi lưu dữ liệu lên Google Sheet!";
+                    msgElem.style.color = "#842029";
+                    msgElem.style.backgroundColor = "#f8d7da";
+                }
+            });
         }
 
         function sendFeedbackOnly() {
@@ -1077,76 +1075,88 @@
             });
         }
 
-      function uploadResultToDrive() {
-    const resultElem = document.getElementById('main-container');
-    const statusBtn = document.getElementById('btn-drive-status');
-    if (!resultElem) return;
+        /* HÀM UPLOAD ÂNH LÊN DRIVE VÀ GHI LINK VÀO GOOGLE SHEET */
+        function uploadResultToDrive() {
+            const resultElem = document.getElementById('main-container');
+            const statusBtn = document.getElementById('btn-drive-status');
+            const driveLinkBox = document.getElementById('drive-link-box');
+            if (!resultElem) return;
 
-    if (statusBtn) {
-        statusBtn.innerText = "⏳ Đang tải ảnh lên Cloud (Drive)...";
-        statusBtn.disabled = true;
-    }
-
-    const workPlaceMap = {
-        'KI': 'KINGS ISLAND',
-        'LH': 'LEGEND HILL',
-        'RT': 'RUBY TREE',
-        'LV': 'LEGEND VALLEY',
-        'LDN': 'LEGEND DANANG',
-        'GS': 'GOLDEN SANDS'
-    };
-
-    const workPlaceCode = studentInfo.workPlace || "KI";
-    const fullWorkPlace = workPlaceMap[workPlaceCode] || "KINGS ISLAND";
-    const studentNameRaw = studentInfo.studentName || "hocvien";
-    const staffId = studentInfo.staffNumber || "000";
-    const birthDateRaw = studentInfo.birthday || "2000-01-01";
-
-    const birthYear = birthDateRaw.split('-')[0] || "2000";
-    const cleanName = convertToNonAccent(studentNameRaw);
-
-    const now = new Date();
-    const yearStr = now.getFullYear();
-    const monthStr = String(now.getMonth() + 1).padStart(2, '0');
-    const dayStr = String(now.getDate()).padStart(2, '0');
-    const hourStr = String(now.getHours()).padStart(2, '0');
-    const minStr = String(now.getMinutes()).padStart(2, '0');
-
-    const fileName = `${workPlaceCode}_${yearStr}${monthStr}${dayStr}_${hourStr}${minStr}_${cleanName}_${staffId}_${birthYear}.jpg`;
-    const dateFolderStr = `${yearStr}.${monthStr}.${dayStr}`;
-    let rawLessonCode = studentInfo.rawLessonCode.toUpperCase();
-
-    html2canvas(resultElem, { scale: 1.2, useCORS: true }).then(canvas => {
-        const imageBase64 = canvas.toDataURL("image/jpeg", 0.65);
-
-        const payload = {
-            action: "upload_image",
-            imageBase64: imageBase64,
-            fileName: fileName,
-            fullWorkPlace: fullWorkPlace,
-            dateFolderStr: dateFolderStr,
-            rawLessonCode: rawLessonCode,
-            staffNumber: studentInfo.staffNumber // Bổ sung tham số đối chiếu
-        };
-
-        fetch(GOOGLE_SCRIPT_URL, {
-            method: 'POST',
-            mode: 'no-cors',
-            headers: { 'Content-Type': 'application/json' },
-            body: JSON.stringify(payload)
-        }).then(() => {
             if (statusBtn) {
-                statusBtn.innerText = "✅ Đã tải ảnh lên Drive thành công!";
-                statusBtn.style.backgroundColor = "#198754";
+                statusBtn.innerText = "⏳ Đang tải ảnh lên Cloud (Drive)...";
+                statusBtn.disabled = true;
             }
-        }).catch(err => {
-            if (statusBtn) {
-                statusBtn.innerText = "❌ Lỗi tải ảnh lên Drive";
-                statusBtn.disabled = false;
-            }
-        });
-    });
-}
+
+            const workPlaceMap = {
+                'KI': 'KINGS ISLAND',
+                'LH': 'LEGEND HILL',
+                'RT': 'RUBY TREE',
+                'LV': 'LEGEND VALLEY',
+                'LDN': 'LEGEND DANANG',
+                'GS': 'GOLDEN SANDS'
+            };
+
+            const workPlaceCode = studentInfo.workPlace || "KI";
+            const fullWorkPlace = workPlaceMap[workPlaceCode] || "KINGS ISLAND";
+            const studentNameRaw = studentInfo.studentName || "hocvien";
+            const staffId = studentInfo.staffNumber || "000";
+            const birthDateRaw = studentInfo.birthday || "2000-01-01";
+
+            const birthYear = birthDateRaw.split('-')[0] || "2000";
+            const cleanName = convertToNonAccent(studentNameRaw);
+
+            const now = new Date();
+            const yearStr = now.getFullYear();
+            const monthStr = String(now.getMonth() + 1).padStart(2, '0');
+            const dayStr = String(now.getDate()).padStart(2, '0');
+            const hourStr = String(now.getHours()).padStart(2, '0');
+            const minStr = String(now.getMinutes()).padStart(2, '0');
+
+            const fileName = `${workPlaceCode}_${yearStr}${monthStr}${dayStr}_${hourStr}${minStr}_${cleanName}_${staffId}_${birthYear}.jpg`;
+            const dateFolderStr = `${yearStr}.${monthStr}.${dayStr}`;
+            let rawLessonCode = studentInfo.rawLessonCode.toUpperCase();
+
+            html2canvas(resultElem, { scale: 1.2, useCORS: true }).then(canvas => {
+                const imageBase64 = canvas.toDataURL("image/jpeg", 0.65);
+
+                const payload = {
+                    action: "upload_image",
+                    imageBase64: imageBase64,
+                    fileName: fileName,
+                    fullWorkPlace: fullWorkPlace,
+                    dateFolderStr: dateFolderStr,
+                    rawLessonCode: rawLessonCode,
+                    staffNumber: studentInfo.staffNumber
+                };
+
+                fetch(GOOGLE_SCRIPT_URL, {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'text/plain;charset=utf-8' },
+                    body: JSON.stringify(payload)
+                })
+                .then(response => response.json())
+                .then(res => {
+                    if (res.status === "success") {
+                        if (statusBtn) {
+                            statusBtn.innerText = "✅ Đã tải ảnh lên Drive thành công!";
+                            statusBtn.style.backgroundColor = "#198754";
+                        }
+                        if (driveLinkBox && res.fileUrl) {
+                            driveLinkBox.innerHTML = `🔗 Link ảnh Google Drive: <a href="${res.fileUrl}" target="_blank" style="color: #0d6efd; font-weight: bold;">Xem ảnh trên Drive</a>`;
+                        }
+                    } else {
+                        throw new Error(res.message || "Lỗi tải ảnh");
+                    }
+                })
+                .catch(err => {
+                    console.error("Upload error:", err);
+                    if (statusBtn) {
+                        statusBtn.innerText = "❌ Lỗi tải ảnh lên Drive";
+                        statusBtn.disabled = false;
+                    }
+                });
+            });
+        }
 
         function finishSession(message, isFromReview = false) {
             clearInterval(timerInterval);
@@ -1224,7 +1234,7 @@
                     <div class="score-box">${calculatedScore} <span style="font-size:18px; color:#555;">/ 100 điểm</span></div>
                     
                     ${levelBadgeHtml}
-                    <br><div id="save-status-msg">✅ Đã lưu kết quả thi thành công!</div><br>
+                    <br><div id="save-status-msg">✅ Đang lưu kết quả thi lên Google Sheet...</div><br>
                     
                     <p style="font-size:13.5px; line-height:1.5; color:#333; margin: 5px 0 15px 0; background:#e9ecef; padding:10px; border-radius:8px; text-align:left;">
                         ${adviceText}
@@ -1256,6 +1266,7 @@
                         <div class="extra-tools-title">🛠️ LƯU KẾT QUẢ & TIỆN ÍCH BỔ SUNG / SAVE RESULT & ADDITIONAL TOOLS:</div>
                         <button class="btn-tool btn-screenshot" onclick="captureResultScreenshot()">📸 Chụp ảnh kết quả (Save Result Image)</button>
                         <button class="btn-tool btn-upload-drive" id="btn-drive-status" onclick="uploadResultToDrive()">☁️ Tải ảnh lên Cloud (Upload to Drive)</button>
+                        <div id="drive-link-box"></div>
                     </div>
 
                     <div class="action-buttons">
