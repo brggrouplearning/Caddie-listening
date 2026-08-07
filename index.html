@@ -1003,7 +1003,7 @@
                         msgElem.style.color = "#0f5132";
                         msgElem.style.backgroundColor = "#d1e7dd";
                     } else {
-                        msgElem.innerText = "✅ Đã gửi kết quả thi lên Google Sheet!";
+                        msgElem.innerText = "✅ Đã gửi kết quả thi lên hệ thống!";
                         msgElem.style.color = "#0f5132";
                         msgElem.style.backgroundColor = "#d1e7dd";
                     }
@@ -1012,7 +1012,7 @@
             .catch(err => {
                 console.error("Error sending data:", err);
                 if (msgElem) {
-                    msgElem.innerText = "⚠️ Lỗi khi lưu dữ liệu lên Google Sheet!";
+                    msgElem.innerText = "⚠️ Lỗi khi lưu dữ liệu lên hệ thống!";
                     msgElem.style.color = "#842029";
                     msgElem.style.backgroundColor = "#f8d7da";
                 }
@@ -1227,7 +1227,7 @@
                     <div class="score-box">${calculatedScore} <span style="font-size:18px; color:#555;">/ 100 điểm</span></div>
                     
                     ${levelBadgeHtml}
-                    <br><div id="save-status-msg">✅ Đang gửi dữ liệu lên Google Sheet...</div><br>
+                    <br><div id="save-status-msg">✅ Đang gửi dữ liệu lên hệ thống...</div><br>
                     
                     <p style="font-size:13.5px; line-height:1.5; color:#333; margin: 5px 0 15px 0; background:#e9ecef; padding:10px; border-radius:8px; text-align:left;">
                         ${adviceText}
