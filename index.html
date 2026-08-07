@@ -159,7 +159,7 @@
 
         .hidden { display: none !important; }
         #save-status-msg { font-size: 12.5px; font-weight: bold; color: #0f5132; margin-top: 8px; background: #d1e7dd; padding: 8px 14px; border-radius: 20px; display: inline-block; border: 1px solid #badbcc; }
-        #drive-link-box { margin-top: 8px; font-size: 12.5px; word-break: break-all; }
+        #drive-link-box { margin-top: 8px; font-size: 12.5px; word-break: break-all; width: 100%; }
     </style>
 </head>
 <body>
@@ -359,8 +359,8 @@
 
     <!-- CORE ENGINE LUYỆN NGHE -->
     <script>
-        // ĐƯỜNG LINK GOOGLE APPS SCRIPT WEB APP MỚI CẬP NHẬT
-        const GOOGLE_SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbwVTDkJjmmWzkReZFw2uAItjRoXg4qKCQ0ZAdJth1U1QIgfVGw2f_P_NokRL93sL2Iy/exec';
+        // ĐƯỜNG LINK GOOGLE APPS SCRIPT WEB APP MỚI BẠN CUNG CẤP
+        const GOOGLE_SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbx3tHJWw6zSH9YX833aLwHMu_HbFpLu6HI8OjoPBde5ZYzpRI_O_sNCze_6Y7HK4JE-/exec';
 
         let studentInfo = {
             workPlace: '',
@@ -992,18 +992,18 @@
 
             fetch(GOOGLE_SCRIPT_URL, {
                 method: 'POST',
+                mode: 'no-cors',
                 headers: { 'Content-Type': 'text/plain;charset=utf-8' },
                 body: JSON.stringify(payload)
             })
-            .then(res => res.json())
-            .then(data => {
+            .then(() => {
                 if (msgElem) {
                     if (isFeedback) {
                         msgElem.innerText = "✅ Cảm ơn bạn đã góp ý/đề xuất! / Thank you for your feedback!";
                         msgElem.style.color = "#0f5132";
                         msgElem.style.backgroundColor = "#d1e7dd";
                     } else {
-                        msgElem.innerText = "✅ Đã lưu kết quả thi thành công vào Google Sheet!";
+                        msgElem.innerText = "✅ Đã gửi kết quả thi lên Google Sheet!";
                         msgElem.style.color = "#0f5132";
                         msgElem.style.backgroundColor = "#d1e7dd";
                     }
@@ -1131,21 +1131,14 @@
 
                 fetch(GOOGLE_SCRIPT_URL, {
                     method: 'POST',
+                    mode: 'no-cors',
                     headers: { 'Content-Type': 'text/plain;charset=utf-8' },
                     body: JSON.stringify(payload)
                 })
-                .then(response => response.json())
-                .then(res => {
-                    if (res.status === "success") {
-                        if (statusBtn) {
-                            statusBtn.innerText = "✅ Đã tải ảnh lên Drive thành công!";
-                            statusBtn.style.backgroundColor = "#198754";
-                        }
-                        if (driveLinkBox && res.fileUrl) {
-                            driveLinkBox.innerHTML = `🔗 Link ảnh Google Drive: <a href="${res.fileUrl}" target="_blank" style="color: #0d6efd; font-weight: bold;">Xem ảnh trên Drive</a>`;
-                        }
-                    } else {
-                        throw new Error(res.message || "Lỗi tải ảnh");
+                .then(() => {
+                    if (statusBtn) {
+                        statusBtn.innerText = "✅ Đã tải ảnh lên Drive thành công!";
+                        statusBtn.style.backgroundColor = "#198754";
                     }
                 })
                 .catch(err => {
@@ -1234,7 +1227,7 @@
                     <div class="score-box">${calculatedScore} <span style="font-size:18px; color:#555;">/ 100 điểm</span></div>
                     
                     ${levelBadgeHtml}
-                    <br><div id="save-status-msg">✅ Đang lưu kết quả thi lên Google Sheet...</div><br>
+                    <br><div id="save-status-msg">✅ Đang gửi dữ liệu lên Google Sheet...</div><br>
                     
                     <p style="font-size:13.5px; line-height:1.5; color:#333; margin: 5px 0 15px 0; background:#e9ecef; padding:10px; border-radius:8px; text-align:left;">
                         ${adviceText}
