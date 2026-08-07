@@ -135,30 +135,29 @@
         
         .result-card { text-align: center; }
         .score-box { font-size: 38px; font-weight: bold; color: #1e7e34; margin: 8px 0 4px 0; }
-        .level-badge { display: inline-block; padding: 6px 18px; border-radius: 20px; font-weight: bold; font-size: 14px; margin-bottom: 12px; }
+        .level-badge { display: inline-block; padding: 6px 18px; border-radius: 20px; font-weight: bold; font-size: 14px; margin-bottom: 8px; }
         .level-excellent { background-color: #d1e7dd; color: #0f5132; border: 1px solid #badbcc; }
         .level-passed { background-color: #cff4fc; color: #055160; border: 1px solid #b6effb; }
         .level-needs-improvement { background-color: #f8d7da; color: #721c24; border: 1px solid #f5c6cb; }
 
-        .stats-box { background: #f8f9fa; border: 1px solid #dee2e6; border-radius: 10px; padding: 14px; margin: 15px 0; text-align: left; font-size: 13.5px; line-height: 1.6; }
+        .stats-box { background: #f8f9fa; border: 1px solid #dee2e6; border-radius: 10px; padding: 14px; margin: 12px 0; text-align: left; font-size: 13.5px; line-height: 1.6; }
         
-        .feedback-card { background: #fff8e6; border: 1px solid #ffe8a1; border-radius: 10px; padding: 12px 14px; margin-top: 12px; text-align: left; width: 100%; }
+        .feedback-card { background: #fff8e6; border: 1px solid #ffe8a1; border-radius: 10px; padding: 12px 14px; margin-top: 10px; text-align: left; width: 100%; }
         .feedback-card label { font-size: 12.5px; font-weight: bold; color: #8c6d00; display: block; margin-bottom: 6px; }
-        .feedback-card textarea { width: 100%; resize: vertical; min-height: 65px; max-height: 140px; padding: 8px 10px; border: 1.5px solid #ffe082; border-radius: 6px; font-size: 13px; font-family: inherit; outline: none; background: #ffffff; }
+        .feedback-card textarea { width: 100%; resize: vertical; min-height: 60px; max-height: 120px; padding: 8px 10px; border: 1.5px solid #ffe082; border-radius: 6px; font-size: 13px; font-family: inherit; outline: none; background: #ffffff; }
         .btn-send-feedback { background: #ffc107; color: #000; font-weight: bold; border: none; padding: 9px 12px; border-radius: 6px; cursor: pointer; margin-top: 8px; width: 100%; font-size: 13px; }
 
-        .extra-tools-card { background: #f0f7ff; border: 1.5px solid #b6d4fe; border-radius: 10px; padding: 12px; margin-top: 12px; display: flex; gap: 8px; flex-wrap: wrap; text-align: left; width: 100%; }
+        .extra-tools-card { background: #f0f7ff; border: 1.5px solid #b6d4fe; border-radius: 10px; padding: 12px; margin-top: 10px; display: flex; gap: 8px; flex-wrap: wrap; text-align: left; width: 100%; }
         .extra-tools-title { width: 100%; font-size: 12.5px; font-weight: bold; color: #0d6efd; margin-bottom: 6px; }
         .btn-tool { flex: 1; min-width: 140px; padding: 10px 8px; font-size: 12.5px; font-weight: bold; border: none; border-radius: 6px; cursor: pointer; transition: background 0.2s; }
         .btn-screenshot { background: #0d6efd; color: white; }
         .btn-upload-drive { background: #198754; color: white; }
 
-        .action-buttons { display: flex; gap: 10px; justify-content: center; margin-top: 15px; flex-wrap: wrap; }
+        .action-buttons { display: flex; gap: 10px; justify-content: center; margin-top: 12px; flex-wrap: wrap; }
         .btn-review { background: #17a2b8; color: white; flex: 1; padding: 11px; border-radius: 8px; font-weight: bold; border: none; cursor: pointer; min-width: 130px; }
         .btn-retry { background: #6c757d; color: white; flex: 1; padding: 11px; border-radius: 8px; font-weight: bold; border: none; cursor: pointer; min-width: 130px; }
 
         .hidden { display: none !important; }
-        #save-status-msg { font-size: 12.5px; font-weight: bold; color: #0f5132; margin-top: 8px; background: #d1e7dd; padding: 8px 14px; border-radius: 20px; display: inline-block; border: 1px solid #badbcc; }
         #drive-link-box { margin-top: 8px; font-size: 12.5px; word-break: break-all; width: 100%; }
     </style>
 </head>
@@ -191,7 +190,7 @@
 
                 <div class="form-group full-width">
                     <label for="student-name">2. Họ Và Tên / Full name (*):</label>
-                    <input type="text" id="student-name" placeholder="Nhập họ và tên đầy đủ (có dấu) / Enter your full name">
+                    <input type="text" id="student-name" placeholder="Nhập họ và tên đầy đủ (không nhập số) / Full name">
                 </div>
 
                 <div class="form-group">
@@ -201,7 +200,7 @@
 
                 <div class="form-group">
                     <label for="birthday-date">4. Ngày sinh / Date of birth (*):</label>
-                    <input type="date" id="birthday-date" max="2008-08-03" min="1926-01-01">
+                    <input type="date" id="birthday-date">
                 </div>
 
                 <div class="form-group full-width">
@@ -360,7 +359,7 @@
     <!-- CORE ENGINE LUYỆN NGHE -->
     <script>
         // ĐƯỜNG LINK GOOGLE APPS SCRIPT WEB APP MỚI BẠN CUNG CẤP
-        const GOOGLE_SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbzDyRs85n5Y5iALdf6nqjq-Dwa7MUpWbFp-xBnsDpKZeLcjs3-irV8EFAdBgeCHXv29/exec';
+        const GOOGLE_SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbxUlJnYkRz2OYH6bEvpFs3pJJ9QOCzk9mZ8DKWh4st3MAaxM4bNUnlA1ebsR0vWL3gz/exec';
 
         let studentInfo = {
             workPlace: '',
@@ -503,6 +502,7 @@
         let startTimeFormatted = "";
         let lastSavedPayload = null;
 
+        /* BỔ SUNG CÁC GIỌNG ĐỌC TỰ NHIÊN VÀ CHUYÊN NGHIỆP HƠN */
         function loadVoices() {
             if (!('speechSynthesis' in window)) return;
             const voiceSelect = document.getElementById('speech-voice-select');
@@ -520,15 +520,24 @@
                 return;
             }
 
-            enVoices.forEach((voice, index) => {
+            // Sắp xếp ưu tiên các giọng đọc chuẩn Tự Nhiên (Natural / Premium / Google / Studio)
+            enVoices.sort((a, b) => {
+                const isANatural = a.name.includes('Natural') || a.name.includes('Online') || a.name.includes('Google') || a.name.includes('Premium');
+                const isBNatural = b.name.includes('Natural') || b.name.includes('Online') || b.name.includes('Google') || b.name.includes('Premium');
+                return (isBNatural ? 1 : 0) - (isANatural ? 1 : 0);
+            });
+
+            enVoices.forEach((voice) => {
                 const opt = document.createElement('option');
                 opt.value = voice.name;
                 
                 let label = voice.name;
-                if (voice.name.includes('Natural')) label = '🌟 ' + voice.name + ' (Tự nhiên)';
-                else if (voice.name.includes('Google')) label = '🎙️ ' + voice.name;
-                else if (voice.name.includes('Samantha') || voice.name.includes('Karen') || voice.name.includes('Jenny') || voice.name.includes('Guy')) {
-                    label = '🔊 ' + voice.name;
+                if (voice.name.includes('Natural') || voice.name.includes('Online')) {
+                    label = '🌟 ' + voice.name + ' (Tự nhiên cao cấp)';
+                } else if (voice.name.includes('Google')) {
+                    label = '🎙️ ' + voice.name + ' (Giọng Google rõ ràng)';
+                } else if (voice.name.includes('Samantha') || voice.name.includes('Karen') || voice.name.includes('Jenny') || voice.name.includes('Guy') || voice.name.includes('Aria')) {
+                    label = '🔊 ' + voice.name + ' (Chuyên nghiệp)';
                 }
                 
                 opt.innerText = label;
@@ -536,7 +545,7 @@
             });
 
             const bestVoiceIndex = enVoices.findIndex(v => 
-                v.name.includes('Natural') || v.name.includes('Google') || v.name.includes('Samantha') || v.name.includes('Jenny')
+                v.name.includes('Natural') || v.name.includes('Online') || v.name.includes('Google') || v.name.includes('Aria') || v.name.includes('Jenny')
             );
             if (bestVoiceIndex !== -1) {
                 voiceSelect.selectedIndex = bestVoiceIndex;
@@ -545,6 +554,19 @@
 
         function initApp() {
             loadVoices();
+            
+            // Thiết lập giới hạn ngày sinh chính xác (18 đến 60 tuổi tính đến thời điểm hiện tại)
+            const today = new Date();
+            const minYear = today.getFullYear() - 60;
+            const maxYear = today.getFullYear() - 18;
+            const monthStr = String(today.getMonth() + 1).padStart(2, '0');
+            const dayStr = String(today.getDate()).padStart(2, '0');
+
+            const birthdayElem = document.getElementById('birthday-date');
+            if (birthdayElem) {
+                birthdayElem.min = `${minYear}-${monthStr}-${dayStr}`;
+                birthdayElem.max = `${maxYear}-${monthStr}-${dayStr}`;
+            }
         }
 
         function startQuizPractice() {
@@ -566,12 +588,32 @@
                 return;
             }
 
+            /* YÊU CẦU 2: HỌ VÀ TÊN KHÔNG ĐƯỢC CHỨA SỐ */
+            if (/\d/.test(studentName)) {
+                errorElem.innerText = "⚠️ Họ và Tên không được điền ký tự số! Vui lòng nhập đúng họ tên của bạn.";
+                errorElem.style.display = "block";
+                return;
+            }
+
+            /* YÊU CẦU 1: RÀNG BUỘC NGÀY SINH KHÔNG VƯỢT QUÁ 60 TUỔI VÀ ĐỦ 18 TUỔI */
             if (birthdayDate) {
-                const birthYear = new Date(birthdayDate).getFullYear();
-                const currentYear = new Date().getFullYear();
-                const age = currentYear - birthYear;
-                if (isNaN(age) || age < 18 || birthYear > currentYear) {
+                const birthDateObj = new Date(birthdayDate);
+                const today = new Date();
+                
+                let age = today.getFullYear() - birthDateObj.getFullYear();
+                const monthDiff = today.getMonth() - birthDateObj.getMonth();
+                if (monthDiff < 0 || (monthDiff === 0 && today.getDate() < birthDateObj.getDate())) {
+                    age--;
+                }
+
+                if (isNaN(age) || age < 18) {
                     errorElem.innerText = "⚠️ Ngày sinh không hợp lệ! Học viên phải từ 18 tuổi trở lên.";
+                    errorElem.style.display = "block";
+                    return;
+                }
+                
+                if (age > 60) {
+                    errorElem.innerText = "⚠️ Ngày sinh không hợp lệ! Độ tuổi học viên không vượt quá 60 tuổi.";
                     errorElem.style.display = "block";
                     return;
                 }
@@ -911,7 +953,7 @@
                 if (!chosenVoice) {
                     chosenVoice = voices.find(v => 
                         (v.lang === 'en-US' || v.lang === 'en_US') && 
-                        (v.name.includes('Natural') || v.name.includes('Google') || v.name.includes('Samantha') || v.name.includes('Jenny'))
+                        (v.name.includes('Natural') || v.name.includes('Online') || v.name.includes('Google') || v.name.includes('Aria') || v.name.includes('Jenny'))
                     ) || voices.find(v => v.lang.startsWith('en'));
                 }
 
@@ -988,34 +1030,14 @@
         function sendResultToGoogleSheet(payload, isFeedback = false) {
             if (!GOOGLE_SCRIPT_URL) return;
 
-            const msgElem = document.getElementById('save-status-msg');
-
             fetch(GOOGLE_SCRIPT_URL, {
                 method: 'POST',
                 mode: 'no-cors',
                 headers: { 'Content-Type': 'text/plain;charset=utf-8' },
                 body: JSON.stringify(payload)
             })
-            .then(() => {
-                if (msgElem) {
-                    if (isFeedback) {
-                        msgElem.innerText = "✅ Cảm ơn bạn đã góp ý/đề xuất! / Thank you for your feedback!";
-                        msgElem.style.color = "#0f5132";
-                        msgElem.style.backgroundColor = "#d1e7dd";
-                    } else {
-                        msgElem.innerText = "✅ Đã gửi kết quả thi lên hệ thống!";
-                        msgElem.style.color = "#0f5132";
-                        msgElem.style.backgroundColor = "#d1e7dd";
-                    }
-                }
-            })
             .catch(err => {
                 console.error("Error sending data:", err);
-                if (msgElem) {
-                    msgElem.innerText = "⚠️ Lỗi khi lưu dữ liệu lên hệ thống!";
-                    msgElem.style.color = "#842029";
-                    msgElem.style.backgroundColor = "#f8d7da";
-                }
             });
         }
 
@@ -1079,7 +1101,6 @@
         function uploadResultToDrive() {
             const resultElem = document.getElementById('main-container');
             const statusBtn = document.getElementById('btn-drive-status');
-            const driveLinkBox = document.getElementById('drive-link-box');
             if (!resultElem) return;
 
             if (statusBtn) {
@@ -1184,13 +1205,13 @@
             let adviceText = "";
 
             if (calculatedScore >= 90) {
-                levelBadgeHtml = `<div class="level-badge level-excellent">🌟 MỐC NĂNG LỰC: Xuất sắc (${calculatedScore}/100)</div>`;
+                levelBadgeHtml = `<div class="level-badge level-excellent">🌟 MỐC NĂNG LỰC: XUẤT SẮC (${calculatedScore}/100)</div>`;
                 adviceText = "<b>Đánh giá:</b> Kỹ năng nghe hiểu đạt trình độ phản xạ tự nhiên, nắm bắt hoàn hảo ngữ điệu và từ vựng.";
             } else if (calculatedScore >= 70) {
-                levelBadgeHtml = `<div class="level-badge level-passed">✅ MỐC NĂNG LỰC: Đạt (${calculatedScore}/100)</div>`;
+                levelBadgeHtml = `<div class="level-badge level-passed">✅ MỐC NĂNG LỰC: ĐẠT (${calculatedScore}/100)</div>`;
                 adviceText = "<b>Đánh giá:</b> Nghe hiểu tốt ý chính và thông tin chi tiết; cần chú ý phân biệt các từ dễ nhầm (số đếm, tên riêng).";
             } else {
-                levelBadgeHtml = `<div class="level-badge level-needs-improvement">⚠️ MỐC NĂNG LỰC: Chưa đạt (${calculatedScore}/100)</div>`;
+                levelBadgeHtml = `<div class="level-badge level-needs-improvement">⚠️ MỐC NĂNG LỰC: CẦN CẢI THIỆN (${calculatedScore}/100)</div>`;
                 adviceText = "<b>Đánh giá:</b> Chưa đạt yêu cầu phản xạ nghe hiểu; khuyến nghị tập nghe lại nhiều lần.";
             }
 
@@ -1221,15 +1242,15 @@
             if (quizArea) quizArea.classList.add('hidden');
             if (reviewArea) reviewArea.classList.add('hidden');
 
+            /* LOẠI BỎ THẺ ĐANG GỬI DỮ LIỆU LÊN HỆ THỐNG ĐỂ TỐI ƯU CHIỀU CAO GIAO DIỆN */
             resultArea.innerHTML = `
                 <div class="result-card">
                     <b style="font-size:15px;">${message}</b>
                     <div class="score-box">${calculatedScore} <span style="font-size:18px; color:#555;">/ 100 điểm</span></div>
                     
                     ${levelBadgeHtml}
-                    <br><div id="save-status-msg">✅ Đang gửi dữ liệu lên hệ thống...</div><br>
                     
-                    <p style="font-size:13.5px; line-height:1.5; color:#333; margin: 5px 0 15px 0; background:#e9ecef; padding:10px; border-radius:8px; text-align:left;">
+                    <p style="font-size:13px; line-height:1.4; color:#333; margin: 8px 0 10px 0; background:#e9ecef; padding:8px; border-radius:8px; text-align:left;">
                         ${adviceText}
                     </p>
 
