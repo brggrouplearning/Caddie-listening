@@ -107,7 +107,8 @@
     <div class="container" id="main-container">
         <h1>TIẾNG ANH GIAO TIẾP CƠ BẢN CHO CADDIE</h1>
         <h2>LUYỆN TẬP KỸ NĂNG NGHE (LISTENING PRACTICE)</h2>
-        <h3 id="lesson-title" class="lesson-title">ĐANG TẢI BÀI HỌC...</h3>
+        <!-- CHUẨN HÓA TIÊU ĐỀ HƯỚNG DẪN BAN ĐẦU -->
+        <h3 id="lesson-title" class="lesson-title">VUI LÒNG CHỌN NỘI DUNG LUYỆN TẬP VÀ BẮT ĐẦU</h3>
         
         <!-- BƯỚC 1: THÔNG TIN HỌC VIÊN -->
         <div id="user-info-view" class="user-card">
@@ -454,11 +455,10 @@
                 return;
             }
 
-            // Hàm tính thứ tự ưu tiên cho từng giọng đọc
             function getVoicePriority(voice) {
                 const name = voice.name;
-                if (name.includes('Zira')) return 100; // Ưu tiên số 1: Zira
-                if (name.includes('David')) return 90;  // Ưu tiên số 2: David
+                if (name.includes('Zira')) return 100;
+                if (name.includes('David')) return 90;
                 if (name.includes('Natural') || name.includes('Online')) return 80;
                 if (name.includes('Neural') || name.includes('Studio') || name.includes('Premium')) return 70;
                 if (name.includes('Google')) return 60;
@@ -489,7 +489,6 @@
                 voiceSelect.appendChild(opt);
             });
 
-            // Chọn mặc định giọng Zira nếu có
             const ziraIndex = enVoices.findIndex(v => v.name.includes('Zira'));
             if (ziraIndex !== -1) {
                 voiceSelect.selectedIndex = ziraIndex;
