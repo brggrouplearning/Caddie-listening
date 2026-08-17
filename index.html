@@ -84,7 +84,7 @@
         .level-badge { display: inline-block; padding: 3px 10px; border-radius: 14px; font-weight: bold; font-size: 11.5px; }
         .level-excellent { background-color: #d1e7dd; color: #0f5132; border: 1px solid #badbcc; }
         .level-passed { background-color: #cff4fc; color: #055160; border: 1px solid #b6effb; }
-        .level-needs-improvement { background-color: #f8d7da; color: #721c24; border: 1px solid #f5c6cb; }
+        .level-failed { background-color: #f8d7da; color: #721c24; border: 1px solid #f5c6cb; }
 
         .advice-box { font-size: 11.5px; line-height: 1.35; color: #333; margin: 4px 0 5px 0; background: #e9ecef; padding: 6px 8px; border-radius: 6px; text-align: left; }
         .stats-box { background: #f8f9fa; border: 1px solid #dee2e6; border-radius: 8px; padding: 7px 10px; margin: 5px 0; text-align: left; font-size: 11.5px; line-height: 1.45; }
@@ -109,7 +109,7 @@
         .btn-screenshot { background: #0d6efd; color: white; }
         .btn-upload-drive { background: #198754; color: white; }
 
-        /* TÁI CẤU TRÚC HÀNH ĐỘNG SONG NGỮ (LƯỢC BỎ CHỮ NHÓM A, B) */
+        /* TÁI CẤU TRÚC HÀNH ĐỘNG SONG NGỮ */
         .action-container { margin-top: 6px; display: flex; flex-direction: column; gap: 5px; }
         .group-title { font-size: 11px; font-weight: bold; color: #495057; text-transform: uppercase; letter-spacing: 0.4px; text-align: left; margin-bottom: -2px; }
         .action-row-a { display: flex; gap: 6px; justify-content: center; }
@@ -1260,13 +1260,13 @@
 
             if (calculatedScore >= 90) {
                 levelBadgeHtml = `<div class="level-badge level-excellent">🌟 Xuất sắc / Excellent (${calculatedScore}/100)</div>`;
-                adviceText = "<b>Đánh giá / Evaluation:</b> Kỹ năng nghe hiểu đạt phản xạ tự nhiên, nắm bắt hoàn hảo ngữ điệu và từ vựng / Excellent listening reflex and natural intonation comprehension.";
+                adviceText = "<b>Đánh giá / Evaluation:</b> Kỹ năng nghe hiểu xuất sắc! Phản xạ tốt, nhận biết chính xác từ vựng và ngữ cảnh / Excellent listening comprehension and quick reflex.";
             } else if (calculatedScore >= 70) {
                 levelBadgeHtml = `<div class="level-badge level-passed">✅ Đạt / Passed (${calculatedScore}/100)</div>`;
-                adviceText = "<b>Đánh giá / Evaluation:</b> Nghe hiểu tốt ý chính và thông tin chi tiết; cần chú ý phân biệt số đếm và tên riêng / Good comprehension; pay attention to numbers & proper names.";
+                adviceText = "<b>Đánh giá / Evaluation:</b> Đạt yêu cầu! Nghe hiểu tốt các ý chính và thông tin quan trọng / Good comprehension of key messages and core details.";
             } else {
-                levelBadgeHtml = `<div class="level-badge level-needs-improvement">⚠️ Chưa đạt / Needs Improvement (${calculatedScore}/100)</div>`;
-                adviceText = "<b>Đánh giá / Evaluation:</b> Chưa đạt yêu cầu phản xạ nghe hiểu; khuyến nghị nghe lại bài nhiều lần / Listening reflex needs improvement; please practice listening repeatedly.";
+                levelBadgeHtml = `<div class="level-badge level-failed">❌ Chưa đạt / Failed (${calculatedScore}/100)</div>`;
+                adviceText = "<b>Đánh giá / Evaluation:</b> Chưa đạt yêu cầu; Khuyến nghị luyện nghe lại để cải thiện phản xạ từ vựng / Listening reflex needs practice; please retake and review.";
             }
 
             if (!isFromReview) {
