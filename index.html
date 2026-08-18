@@ -3,14 +3,66 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>TIẾNG ANH GIAO TIẾP CƠ BẢN CHO CADDIE - LUYỆN TẬP NGHE / BASIC ENGLISH FOR CADDIES - LISTENING PRACTICE</title>
+    <!-- 1. TIÊU ĐỀ TAB TRÌNH DUYỆT & FAVICON ICON TAI NGHE -->
+    <title>Listening Test - BRG Learning</title>
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🎧</text></svg>">
+    
     <!-- THƯ VIỆN CHỤP ẢNH MÀN HÌNH HTML2CANVAS -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
     <style>
         * { box-sizing: border-box; }
         body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; text-align: center; padding: 10px 8px; background-color: #f0f2f5; margin: 0; color: #333; }
         .brand-header { font-size: 18px; font-weight: 800; color: #B21818; letter-spacing: 1.5px; margin-bottom: 6px; text-transform: uppercase; }
-        .container { max-width: 630px; margin: 0 auto; background: white; padding: 14px 16px; border-radius: 14px; box-shadow: 0 4px 16px rgba(0,0,0,0.06); }
+        
+        /* 2. CONTAINER ĐƯỢC BỔ SUNG POSITION RELATIVE ĐỂ ĐẶT BADGE GÓC TRÁI */
+        .container { 
+            position: relative; 
+            max-width: 630px; 
+            margin: 0 auto; 
+            background: white; 
+            padding: 14px 16px; 
+            border-radius: 14px; 
+            box-shadow: 0 4px 16px rgba(0,0,0,0.06); 
+        }
+
+        /* 2. STYLE BADGE ICON NGHE GÓC TRÊN TRÁI */
+        .listening-badge-corner {
+            position: absolute;
+            top: 12px;
+            left: 14px;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            background: #e7f1ff;
+            border: 1.5px solid #b6d4fe;
+            color: #0d6efd;
+            padding: 4px 8px;
+            border-radius: 8px;
+            font-size: 11px;
+            font-weight: 800;
+            letter-spacing: 0.5px;
+            box-shadow: 0 2px 5px rgba(13, 110, 253, 0.08);
+            user-select: none;
+        }
+        .listening-badge-corner .icon {
+            font-size: 17px;
+            line-height: 1;
+        }
+        .listening-badge-corner .text {
+            display: flex;
+            flex-direction: column;
+            text-align: left;
+            line-height: 1.1;
+        }
+        .listening-badge-corner .text span:first-child {
+            font-size: 10.5px;
+            color: #0d6efd;
+        }
+        .listening-badge-corner .text span:last-child {
+            font-size: 8px;
+            color: #6c757d;
+            font-weight: 600;
+        }
         
         h1 { color: #1e7e34; font-size: 15.5px; margin: 0 0 2px 0; font-weight: bold; text-transform: uppercase; line-height: 1.25; }
         h2 { color: #666; font-size: 11px; margin: 0 0 4px 0; font-weight: bold; text-transform: uppercase; letter-spacing: 0.5px; }
@@ -130,6 +182,15 @@
     <div class="brand-header">BRG LEARNING</div>
 
     <div class="container" id="main-container">
+        <!-- 2. LOGO / BADGE BIỂU TƯỢNG NGHE GÓC TRÊN BÊN TRÁI -->
+        <div class="listening-badge-corner" title="Kỹ năng Nghe / Listening Skill">
+            <span class="icon">🎧</span>
+            <div class="text">
+                <span>LISTENING</span>
+                <span>LUYỆN NGHE</span>
+            </div>
+        </div>
+
         <h1>TIẾNG ANH GIAO TIẾP CƠ BẢN CHO CADDIE</h1>
         <h2>LUYỆN TẬP KỸ NĂNG NGHE / LISTENING PRACTICE</h2>
         <h3 id="lesson-title" class="lesson-title">VUI LÒNG CHỌN NỘI DUNG VÀ BẮT ĐẦU / PLEASE SELECT CONTENT & START</h3>
@@ -503,7 +564,6 @@
                 return [];
             }
 
-            // Xáo trộn toàn bộ pool và cắt lấy đúng số lượng bài test mới
             shuffleArray(filtered);
             return filtered.slice(0, Math.min(targetCount, filtered.length));
         }
@@ -664,7 +724,6 @@
         }
 
         function runQuizEngine(isSectionMode, selectedVal) {
-            // Tải và xáo trộn ngẫu nhiên một đề nghe hoàn toàn mới
             quizData = getFilteredListeningItemsBySelection(isSectionMode, selectedVal);
             if (quizData.length === 0) return;
 
@@ -699,7 +758,6 @@
                 goToChooseExercise();
                 return;
             }
-            // Tạo mới bộ câu hỏi và bắt đầu làm lại
             runQuizEngine(studentInfo.isSectionMode, studentInfo.selectedVal);
         }
 
@@ -1335,6 +1393,7 @@
                         <button class="btn-tool btn-upload-drive" id="btn-drive-status" onclick="uploadResultToDrive()">☁️ Tải lên Cloud / Save to Drive</button>
                     </div>
 
+                    <!-- TÁI CẤU TRÚC: SONG NGỮ 100% TOÀN BỘ CỤM NÚT VÀ GHI CHÚ -->
                     <div class="action-container">
                         <div class="group-title">🎯 ÔN TẬP LẠI & CẢI THIỆN KẾT QUẢ / REVIEW & IMPROVE</div>
                         <div class="action-row-a">
