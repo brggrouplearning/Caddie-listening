@@ -363,7 +363,7 @@
 
                     <div class="form-group">
                         <label for="staff-number">3. Mã Nhân viên / Staff ID (*):</label>
-                        <input type="text" id="staff-number" placeholder="Ví dụ / e.g. 123, 435" autocomplete="off">
+                        <input type="text" id="staff-number" placeholder="Ví dụ / e.g. 123, 435" inputmode="numeric" oninput="this.value = this.value.replace(/[^0-9]/g, '')" autocomplete="off">
                     </div>
 
                     <div class="form-group">
@@ -613,7 +613,7 @@
                     const data = JSON.parse(saved);
                     if (data.workPlace) document.getElementById('work-place').value = data.workPlace;
                     if (data.studentName) document.getElementById('student-name').value = data.studentName;
-                    if (data.staffNumber) document.getElementById('staff-number').value = data.staffNumber;
+                    if (data.staffNumber) document.getElementById('staff-number').value = data.staffNumber.replace(/[^0-9]/g, '');
                     if (data.birthday) document.getElementById('birthday-date').value = data.birthday;
                     if (data.department) document.getElementById('department').value = data.department;
                 }
@@ -720,7 +720,6 @@
             const subTitleElem = document.getElementById('lesson-title');
             if (subTitleElem) subTitleElem.innerText = titleBanner;
             
-            // Cập nhật tiêu đề song ngữ vào studentInfo
             studentInfo.lessonTitle = titleBanner;
 
             filtered.forEach(item => {
@@ -855,6 +854,12 @@
                 return;
             }
 
+            if (!/^\d+$/.test(staffNumber)) {
+                errorElem.innerText = "⚠️ Mã nhân viên chỉ được chứa số, không được chứa chữ hoặc ký tự khác / Staff ID must contain numbers only!";
+                errorElem.style.display = "block";
+                return;
+            }
+
             if (birthdayDate) {
                 const birthDateObj = new Date(birthdayDate);
                 const today = new Date();
@@ -900,7 +905,6 @@
             studentInfo.selectedVal = isSectionMode ? selectedSection : selectedExam;
             studentInfo.rawLessonCode = isSectionMode ? ("section" + selectedSection) : (selectedExam === 'all' ? 'examall' : 'exam' + selectedExam);
             
-            // Gán tiêu đề song ngữ chính xác
             if (isSectionMode) {
                 studentInfo.lessonTitle = SECTION_TITLES[selectedSection] || `Section ${selectedSection}`;
             } else {
