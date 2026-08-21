@@ -2,58 +2,79 @@
 <html lang="vi">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <title>Listening Test - BRG Learning</title>
     <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🎧</text></svg>">
     
     <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
     <style>
         * { box-sizing: border-box; }
-        body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; text-align: center; padding: 10px 6px; background-color: #f0f2f5; margin: 0; color: #333; }
-        .brand-header { font-size: 17px; font-weight: 800; color: #0d6efd; letter-spacing: 1.5px; margin-bottom: 5px; text-transform: uppercase; }
+        body { 
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif; 
+            text-align: center; 
+            padding: 8px 6px; 
+            background-color: #f0f2f5; 
+            margin: 0; 
+            color: #333; 
+            -webkit-tap-highlight-color: transparent;
+        }
+        .brand-header { 
+            font-size: 16px; 
+            font-weight: 800; 
+            color: #0d6efd; 
+            letter-spacing: 1.2px; 
+            margin-bottom: 6px; 
+            text-transform: uppercase; 
+        }
         
         .container { 
             position: relative; 
             max-width: 650px; 
             margin: 0 auto; 
             background: white; 
-            padding: 14px 16px; 
-            border-radius: 14px; 
-            box-shadow: 0 4px 16px rgba(0,0,0,0.06); 
+            padding: 12px 10px; 
+            border-radius: 12px; 
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05); 
         }
 
-        .listening-badge-corner {
-            position: absolute;
-            top: 10px;
-            left: 12px;
+        /* HEADER & BADGE TỰ CO GIÃN THEO DÒNG */
+        .header-section {
             display: flex;
+            flex-direction: column;
             align-items: center;
-            gap: 5px;
+            gap: 4px;
+            margin-bottom: 8px;
+        }
+        .listening-badge-corner {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
             background: #e7f1ff;
             border: 1.2px solid #b6d4fe;
             color: #0d6efd;
-            padding: 3px 7px;
-            border-radius: 8px;
-            font-size: 10px;
+            padding: 4px 10px;
+            border-radius: 20px;
+            font-size: 10.5px;
             font-weight: 800;
             user-select: none;
+            margin-bottom: 4px;
         }
         .listening-badge-corner .icon { font-size: 15px; line-height: 1; }
-        .listening-badge-corner .text { display: flex; flex-direction: column; text-align: left; line-height: 1.1; }
-        .listening-badge-corner .text span:first-child { font-size: 10px; color: #0d6efd; }
-        .listening-badge-corner .text span:last-child { font-size: 7.5px; color: #6c757d; font-weight: 600; }
+        .listening-badge-corner .text { display: flex; align-items: center; gap: 4px; line-height: 1; }
+        .listening-badge-corner .text span:first-child { font-size: 10.5px; color: #0d6efd; }
+        .listening-badge-corner .text span:last-child { font-size: 9px; color: #6c757d; font-weight: 600; }
         
-        h1 { color: #1e7e34; font-size: 15px; margin: 0 0 2px 0; font-weight: bold; text-transform: uppercase; line-height: 1.25; }
-        .sub-type { color: #666; font-size: 10.5px; margin: 0 0 3px 0; font-weight: bold; text-transform: uppercase; letter-spacing: 0.5px; }
-        #lesson-subtitle { color: #0d6efd; font-size: 11.5px; margin: 0 0 8px 0; font-weight: bold; text-transform: uppercase; }
+        h1 { color: #1e7e34; font-size: 15px; margin: 0 0 3px 0; font-weight: bold; text-transform: uppercase; line-height: 1.3; }
+        .sub-type { color: #666; font-size: 10px; margin: 0 0 4px 0; font-weight: bold; text-transform: uppercase; letter-spacing: 0.3px; }
+        #lesson-subtitle { color: #0d6efd; font-size: 11px; margin: 0 0 8px 0; font-weight: bold; text-transform: uppercase; line-height: 1.3; }
 
         .portal-section-title {
             font-size: 10.5px;
             font-weight: bold;
             color: #495057;
             text-transform: uppercase;
-            letter-spacing: 0.5px;
-            margin: 10px 0 5px 0;
+            letter-spacing: 0.3px;
+            margin: 8px 0 5px 0;
             text-align: left;
             display: flex;
             align-items: center;
@@ -63,7 +84,7 @@
         .resource-grid {
             display: grid;
             grid-template-columns: repeat(3, 1fr);
-            gap: 6px;
+            gap: 5px;
             margin-bottom: 6px;
         }
 
@@ -71,7 +92,7 @@
             background: #ffffff;
             border: 1.2px solid #e2e8f0;
             border-radius: 7px;
-            padding: 6px 4px;
+            padding: 6px 3px;
             text-decoration: none;
             color: #333;
             display: flex;
@@ -79,57 +100,70 @@
             align-items: center;
             justify-content: center;
             text-align: center;
-            transition: all 0.2s ease;
         }
-        .resource-card:hover { transform: translateY(-2px); border-color: #0d6efd; background: #f8fbff; }
-        .resource-icon { font-size: 16px; margin-bottom: 2px; }
-        .resource-name { font-size: 10.5px; font-weight: 700; color: #1a202c; line-height: 1.2; }
-        .resource-sub { font-size: 8.5px; color: #718096; margin-top: 1px; }
+        .resource-icon { font-size: 15px; margin-bottom: 2px; }
+        .resource-name { font-size: 10px; font-weight: 700; color: #1a202c; line-height: 1.2; }
+        .resource-sub { font-size: 8px; color: #718096; margin-top: 1px; }
 
         /* BANNER CHUYỂN SANG PHẦN NÓI */
         .speaking-switch-banner {
             background: linear-gradient(135deg, #B21818 0%, #fd7e14 100%);
             border-radius: 8px;
             padding: 8px 10px;
-            margin: 5px 0;
+            margin: 4px 0;
             display: flex;
             align-items: center;
             justify-content: space-between;
             text-decoration: none;
             color: #ffffff;
-            box-shadow: 0 2px 6px rgba(178, 24, 24, 0.15);
-            transition: transform 0.2s ease;
+            box-shadow: 0 2px 5px rgba(178, 24, 24, 0.15);
         }
-        .speaking-switch-banner:hover { transform: scale(0.99); color: #ffffff; }
         .banner-left { display: flex; align-items: center; gap: 8px; text-align: left; }
-        .banner-icon { font-size: 20px; line-height: 1; }
-        .banner-title { font-size: 11.5px; font-weight: bold; text-transform: uppercase; }
-        .banner-desc { font-size: 9px; opacity: 0.9; }
-        .banner-btn-tag { background: #ffffff; color: #B21818; font-weight: 800; font-size: 10.5px; padding: 4px 8px; border-radius: 5px; }
+        .banner-icon { font-size: 18px; line-height: 1; }
+        .banner-title { font-size: 11px; font-weight: bold; text-transform: uppercase; line-height: 1.2; }
+        .banner-desc { font-size: 8.5px; opacity: 0.9; }
+        .banner-btn-tag { background: #ffffff; color: #B21818; font-weight: 800; font-size: 10px; padding: 4px 6px; border-radius: 5px; white-space: nowrap; }
 
         /* FORM THÔNG TIN HỌC VIÊN */
-        .user-card { background: #ffffff; border: 1.5px solid #e7f1ff; border-radius: 9px; padding: 12px; text-align: left; }
-        .user-card-header { font-size: 12.5px; font-weight: bold; color: #0d6efd; border-bottom: 1.5px solid #e7f1ff; padding-bottom: 5px; margin-bottom: 8px; text-align: center; text-transform: uppercase; }
-        .form-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 6px 8px; }
-        .form-group { margin-bottom: 3px; }
-        .form-group.full-width { grid-column: span 2; }
-        .form-group label { display: block; font-weight: 600; font-size: 11px; color: #495057; margin-bottom: 2px; }
-        .form-group input, .form-group select { width: 100%; padding: 6px 8px; border: 1.2px solid #ced4da; border-radius: 5px; font-size: 11.5px; outline: none; background-color: #fff; }
-        .form-group input:focus, .form-group select:focus { border-color: #0d6efd; box-shadow: 0 0 0 2px rgba(13, 110, 253, 0.15); }
+        .user-card { background: #ffffff; border: 1.2px solid #e7f1ff; border-radius: 8px; padding: 10px; text-align: left; }
+        .user-card-header { font-size: 11.5px; font-weight: bold; color: #0d6efd; border-bottom: 1.2px solid #e7f1ff; padding-bottom: 4px; margin-bottom: 8px; text-align: center; text-transform: uppercase; }
+        .form-grid { display: flex; flex-direction: column; gap: 6px; }
+        .form-group { margin-bottom: 1px; width: 100%; }
+        .form-group label { display: block; font-weight: 600; font-size: 10.5px; color: #495057; margin-bottom: 2px; }
         
-        .btn-check-progress { width: 100%; padding: 9px; font-size: 12.5px; font-weight: bold; color: white; background: #0d6efd; border: none; border-radius: 6px; cursor: pointer; margin-top: 6px; }
-        .btn-check-progress:hover { background: #0b5ed7; }
+        .form-group input, .form-group select { 
+            width: 100%; 
+            min-height: 36px;
+            padding: 6px 8px; 
+            border: 1.2px solid #ced4da; 
+            border-radius: 6px; 
+            font-size: 12px; 
+            outline: none; 
+            background-color: #fff; 
+            -webkit-appearance: none;
+            appearance: none;
+        }
+        .form-group select {
+            background-image: url("data:image/svg+xml;charset=US-ASCII,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%22292.4%22%20height%3D%22292.4%22%3E%3Cpath%20fill%3D%22%236c757d%22%20d%3D%22M287%2069.4a17.6%2017.6%200%200%200-13-5.4H18.4c-5%200-9.3%201.8-12.9%205.4A17.6%2017.6%200%200%200%200%2082.2c0%205%201.8%209.3%205.4%2012.9l128%20127.9c3.6%203.6%207.8%205.4%2012.8%205.4s9.2-1.8%2012.8-5.4L287%2095c3.5-3.5%205.4-7.8%205.4-12.8%200-5-1.9-9.2-5.4-12.8z%22%2F%3E%3C%2Fsvg%3E");
+            background-repeat: no-repeat;
+            background-position: right 9px top 50%;
+            background-size: 9px auto;
+            padding-right: 24px;
+        }
+        .form-group input:focus, .form-group select:focus { border-color: #0d6efd; }
+        
+        .btn-check-progress { width: 100%; min-height: 38px; padding: 8px; font-size: 11.5px; font-weight: bold; color: white; background: #0d6efd; border: none; border-radius: 6px; cursor: pointer; margin-top: 6px; }
 
-        /* MA TRẬN TIẾN ĐỘ 29 Ô THU GỌN */
-        .roadmap-container { background: #f8fbff; border: 1.5px solid #b6d4fe; border-radius: 9px; padding: 10px; margin-top: 10px; text-align: left; }
-        .roadmap-title { font-size: 12px; font-weight: bold; color: #0d6efd; margin-bottom: 4px; text-transform: uppercase; display: flex; justify-content: space-between; align-items: center; }
+        /* MA TRẬN TIẾN ĐỘ TỰ THÍCH ỨNG MOBILE */
+        .roadmap-container { background: #f8fbff; border: 1.2px solid #b6d4fe; border-radius: 8px; padding: 8px; margin-top: 8px; text-align: left; }
+        .roadmap-title { font-size: 11px; font-weight: bold; color: #0d6efd; margin-bottom: 4px; text-transform: uppercase; display: flex; justify-content: space-between; align-items: center; }
         
         .progress-remark-box {
-            font-size: 11.5px;
+            font-size: 10.5px;
             font-weight: 600;
-            padding: 6px 8px;
+            padding: 5px 8px;
             border-radius: 6px;
-            margin-bottom: 8px;
+            margin-bottom: 6px;
             display: flex;
             align-items: center;
             gap: 6px;
@@ -139,131 +173,141 @@
         .remark-warning { background: #fff3cd; color: #664d03; border: 1px solid #ffecb5; }
         .remark-danger { background: #f8d7da; color: #721c24; border: 1px solid #f5c6cb; }
 
-        .matrix-grid { display: grid; grid-template-columns: repeat(6, 1fr); gap: 4px; margin-bottom: 8px; }
+        /* 4 cột trên điện thoại nhỏ, 5-6 cột trên màn hình rộng */
+        .matrix-grid { 
+            display: grid; 
+            grid-template-columns: repeat(4, 1fr); 
+            gap: 4px; 
+            margin-bottom: 6px; 
+        }
+        @media (min-width: 480px) {
+            .matrix-grid { grid-template-columns: repeat(5, 1fr); }
+        }
+        @media (min-width: 600px) {
+            .matrix-grid { grid-template-columns: repeat(6, 1fr); }
+            .form-grid { display: grid; grid-template-columns: 1fr 1fr; }
+            .form-group.full-width { grid-column: span 2; }
+        }
         
         .matrix-item { 
             border: 1.2px solid #ddd; 
             border-radius: 5px; 
-            padding: 3px 2px; 
+            padding: 4px 2px; 
             text-align: center; 
             cursor: pointer; 
-            transition: all 0.15s ease; 
             background: #fff; 
             display: flex; 
             flex-direction: column; 
             justify-content: center; 
             align-items: center; 
-            min-height: 40px; 
+            min-height: 42px; 
         }
-        .matrix-item:hover { transform: scale(1.04); box-shadow: 0 2px 5px rgba(0,0,0,0.08); }
         
-        .matrix-row-top { display: flex; align-items: center; justify-content: center; gap: 3px; width: 100%; }
-        .matrix-icon { font-size: 10.5px; line-height: 1; }
-        .matrix-code { font-size: 10px; font-weight: bold; line-height: 1; }
-        .matrix-row-sub { font-size: 8px; opacity: 0.85; margin-top: 2px; white-space: nowrap; letter-spacing: -0.2px; }
+        .matrix-row-top { display: flex; align-items: center; justify-content: center; gap: 2px; width: 100%; }
+        .matrix-icon { font-size: 10px; line-height: 1; }
+        .matrix-code { font-size: 9.5px; font-weight: bold; line-height: 1; }
+        .matrix-row-sub { font-size: 8px; opacity: 0.9; margin-top: 2px; white-space: nowrap; }
 
         .matrix-item.excellent { background: #d1e7dd; border-color: #0f5132; color: #0f5132; }
         .matrix-item.passed { background: #e8f5e9; border-color: #2e7d32; color: #1b5e20; }
         .matrix-item.failed { background: #ffebee; border-color: #c62828; color: #b71c1c; }
         .matrix-item.pending { background: #fffde7; border-color: #ffe082; color: #664d03; }
-        .matrix-item.active-selected { outline: 2px solid #0d6efd; box-shadow: 0 0 0 2px rgba(13, 110, 253, 0.25); }
+        .matrix-item.active-selected { outline: 2px solid #0d6efd; }
         
-        .progress-bar-wrap { width: 100%; background: #e9ecef; border-radius: 6px; height: 9px; margin-bottom: 8px; overflow: hidden; }
+        .progress-bar-wrap { width: 100%; background: #e9ecef; border-radius: 6px; height: 8px; margin-bottom: 6px; overflow: hidden; }
         .progress-bar-fill { background: #198754; height: 100%; width: 0%; transition: width 0.4s ease; }
 
-        .btn-start-quiz { width: 100%; padding: 9px; font-size: 12.5px; font-weight: bold; color: white; background: #198754; border: none; border-radius: 6px; cursor: pointer; margin-top: 5px; }
-        .btn-start-quiz:hover { background: #146c43; }
+        .btn-start-quiz { width: 100%; min-height: 38px; padding: 8px; font-size: 12px; font-weight: bold; color: white; background: #198754; border: none; border-radius: 6px; cursor: pointer; margin-top: 4px; }
 
-        /* VIEW LÀM BÀI NGHE */
-        .meta-bar { display: flex; justify-content: space-between; align-items: center; margin-bottom: 8px; gap: 5px; flex-wrap: wrap; }
-        #item-status { font-size: 11px; font-weight: bold; padding: 3px 8px; border-radius: 12px; }
+        /* VIEW LÀM BÀI */
+        .meta-bar { display: flex; justify-content: space-between; align-items: center; margin-bottom: 6px; gap: 4px; }
+        #item-status { font-size: 10px; font-weight: bold; padding: 3px 6px; border-radius: 10px; }
         .status-answered { background-color: #d1e7dd; color: #0f5132; border: 1px solid #badbcc; }
         .status-skipped { background-color: #e2e3e5; color: #383d41; border: 1px solid #d6d8db; }
         .status-pending { background-color: #fff3cd; color: #664d03; border: 1px solid #ffecb5; }
         .status-correct { background-color: #d1e7dd; color: #0f5132; border: 1px solid #badbcc; }
         .status-incorrect { background-color: #f8d7da; color: #842029; border: 1px solid #f5c6cb; }
 
-        #timer-box { font-size: 11px; font-weight: bold; color: #0d6efd; background: #e7f1ff; padding: 3px 8px; border-radius: 12px; border: 1px solid #b6d4fe; white-space: nowrap; }
+        #timer-box { font-size: 10.5px; font-weight: bold; color: #0d6efd; background: #e7f1ff; padding: 3px 6px; border-radius: 10px; border: 1px solid #b6d4fe; white-space: nowrap; }
         .timer-warning { color: #dc3545 !important; background: #f8d7da !important; border-color: #f5c6cb !important; animation: blink 1s infinite; }
         @keyframes blink { 50% { opacity: 0.5; } }
 
-        .progress-box { font-size: 11.5px; color: #333; font-weight: bold; background: #f8f9fa; padding: 5px 10px; border-radius: 5px; display: inline-block; margin-bottom: 6px; border: 1px solid #dee2e6; }
-        .progress-box span { color: #0d6efd; font-size: 12.5px; }
-        .section-tag { font-size: 11px; color: #1e7e34; font-weight: 600; }
+        .progress-box { font-size: 11px; color: #333; font-weight: bold; background: #f8f9fa; padding: 4px 8px; border-radius: 5px; display: inline-block; margin-bottom: 4px; border: 1px solid #dee2e6; }
+        .progress-box span { color: #0d6efd; }
+        .section-tag { font-size: 10px; color: #1e7e34; font-weight: 600; }
 
-        .audio-box { background: #e7f1ff; border: 1.2px dashed #0d6efd; padding: 6px 8px; border-radius: 7px; margin: 6px 0; }
-        #play-btn { background: #0d6efd; color: white; padding: 8px 12px; font-size: 12px; font-weight: bold; border: none; border-radius: 18px; cursor: pointer; transition: all 0.2s; width: 100%; }
+        .audio-box { background: #e7f1ff; border: 1.2px dashed #0d6efd; padding: 6px 8px; border-radius: 7px; margin: 4px 0; }
+        #play-btn { background: #0d6efd; color: white; min-height: 38px; padding: 6px 10px; font-size: 11.5px; font-weight: bold; border: none; border-radius: 18px; cursor: pointer; width: 100%; }
         
-        .tts-controls { display: flex; gap: 5px; margin-top: 5px; text-align: left; }
-        .tts-controls select { padding: 4px 6px; font-size: 11px; border-radius: 5px; border: 1px solid #b6d4fe; background: #fff; font-weight: 600; color: #0d6efd; flex: 1; outline: none; }
+        .tts-controls { display: flex; gap: 4px; margin-top: 4px; text-align: left; }
+        .tts-controls select { padding: 4px; font-size: 10px; border-radius: 5px; border: 1px solid #b6d4fe; background: #fff; font-weight: 600; color: #0d6efd; flex: 1; outline: none; }
         
-        .question-title { text-align: left; font-weight: bold; margin-bottom: 6px; color: #212529; font-size: 12.5px; line-height: 1.35; }
+        .question-title { text-align: left; font-weight: bold; margin-bottom: 6px; color: #212529; font-size: 12px; line-height: 1.35; }
         .options-container { display: flex; flex-direction: column; gap: 5px; margin: 6px 0; text-align: left; }
-        .option-btn { padding: 7px 10px; font-size: 12px; background: #fff; border: 1.2px solid #dee2e6; border-radius: 5px; cursor: pointer; font-weight: 500; transition: all 0.2s; line-height: 1.3; }
+        .option-btn { min-height: 40px; padding: 6px 8px; font-size: 11.5px; background: #fff; border: 1.2px solid #dee2e6; border-radius: 5px; cursor: pointer; font-weight: 500; text-align: left; line-height: 1.3; }
         .option-btn.selected { background-color: #cff4fc !important; border-color: #0dcaf0 !important; font-weight: bold; color: #055160; }
         .option-btn.opt-correct { background-color: #d1e7dd !important; border-color: #198754 !important; color: #0f5132; font-weight: bold; }
         .option-btn.opt-incorrect { background-color: #f8d7da !important; border-color: #dc3545 !important; color: #842029; font-weight: bold; }
 
-        .vi-trans { display: block; margin-top: 2px; font-weight: normal; font-size: 11px; color: #495057; line-height: 1.3; }
+        .vi-trans { display: block; margin-top: 2px; font-weight: normal; font-size: 10px; color: #495057; line-height: 1.25; }
 
-        .fill-container { background: #ffffff; border: 1.2px solid #e2e8f0; border-radius: 7px; padding: 10px 8px; margin: 8px 0; text-align: center; }
-        .blank-sentence { font-size: 13px; font-weight: 600; color: #1e293b; line-height: 1.4; margin-bottom: 6px; }
-        .fill-input { width: 100%; max-width: 300px; padding: 6px 10px; font-size: 12.5px; font-weight: 600; text-align: center; color: #0f172a; border: 1.5px solid #0d6efd; border-radius: 5px; outline: none; background-color: #f8fafc; }
-        .fill-input:focus { background-color: #ffffff; border-color: #0284c7; box-shadow: 0 0 0 2px rgba(13, 110, 253, 0.2); }
+        .fill-container { background: #ffffff; border: 1.2px solid #e2e8f0; border-radius: 7px; padding: 8px 6px; margin: 6px 0; text-align: center; }
+        .blank-sentence { font-size: 12.5px; font-weight: 600; color: #1e293b; line-height: 1.4; margin-bottom: 4px; }
+        .fill-input { width: 100%; max-width: 280px; min-height: 36px; padding: 6px 8px; font-size: 12px; font-weight: 600; text-align: center; color: #0f172a; border: 1.5px solid #0d6efd; border-radius: 5px; outline: none; background-color: #f8fafc; }
 
-        .char-hint { display: block; margin-top: 4px; font-size: 11px; font-weight: 600; color: #64748b; }
-        .correct-answer-text { display: block; margin-top: 5px; font-size: 11.5px; font-weight: bold; padding: 5px; border-radius: 5px; background-color: #f1f5f9; }
+        .char-hint { display: block; margin-top: 3px; font-size: 10.5px; font-weight: 600; color: #64748b; }
+        .correct-answer-text { display: block; margin-top: 4px; font-size: 11px; font-weight: bold; padding: 4px; border-radius: 5px; background-color: #f1f5f9; }
 
-        .control-group { display: flex; justify-content: space-between; gap: 5px; margin-top: 8px; flex-wrap: wrap; }
-        .action-btn { padding: 8px 10px; font-size: 11.5px; font-weight: bold; border: none; border-radius: 5px; cursor: pointer; flex: 1; }
+        .control-group { display: flex; justify-content: space-between; gap: 6px; margin-top: 6px; }
+        .action-btn { min-height: 38px; padding: 6px 8px; font-size: 11px; font-weight: bold; border: none; border-radius: 5px; cursor: pointer; flex: 1; }
         #prev-btn { background: #fd7e14; color: white; }
         #next-btn { background: #198754; color: white; }
         
         /* RESULT CARD */
         .result-card { text-align: center; }
-        .result-title-banner { font-size: 12.5px; font-weight: bold; color: #1e7e34; margin-bottom: 3px; }
+        .result-title-banner { font-size: 12px; font-weight: bold; color: #1e7e34; margin-bottom: 2px; }
         .score-row { display: flex; align-items: center; justify-content: center; gap: 6px; margin: 2px 0 4px 0; }
-        .score-box { font-size: 24px; font-weight: bold; color: #1e7e34; line-height: 1; }
-        .level-badge { display: inline-block; padding: 3px 10px; border-radius: 14px; font-weight: bold; font-size: 11px; }
+        .score-box { font-size: 22px; font-weight: bold; color: #1e7e34; line-height: 1; }
+        .level-badge { display: inline-block; padding: 2px 8px; border-radius: 12px; font-weight: bold; font-size: 10px; }
         .level-excellent { background-color: #d1e7dd; color: #0f5132; border: 1px solid #badbcc; }
         .level-passed { background-color: #cff4fc; color: #055160; border: 1px solid #b6effb; }
         .level-failed { background-color: #f8d7da; color: #721c24; border: 1px solid #f5c6cb; }
 
-        .advice-box { font-size: 11px; line-height: 1.35; color: #333; margin: 4px 0 5px 0; background: #e9ecef; padding: 6px 8px; border-radius: 6px; text-align: left; }
-        .stats-box { background: #f8f9fa; border: 1px solid #dee2e6; border-radius: 7px; padding: 6px 8px; margin: 4px 0; text-align: left; font-size: 11px; line-height: 1.4; }
+        .advice-box { font-size: 10.5px; line-height: 1.3; color: #333; margin: 3px 0 4px 0; background: #e9ecef; padding: 5px 6px; border-radius: 5px; text-align: left; }
+        .stats-box { background: #f8f9fa; border: 1px solid #dee2e6; border-radius: 6px; padding: 5px 6px; margin: 3px 0; text-align: left; font-size: 10px; line-height: 1.35; }
 
-        .feedback-card { background: #fff8e6; border: 1px solid #ffe8a1; border-radius: 6px; padding: 5px 8px; margin-top: 5px; text-align: left; }
-        .feedback-card label { font-size: 10.5px; font-weight: bold; color: #8c6d00; display: block; margin-bottom: 2px; }
-        .feedback-input-group { display: flex; gap: 6px; }
-        .feedback-card input[type="text"] { flex: 1; padding: 5px 8px; border: 1.2px solid #ffe082; border-radius: 5px; font-size: 11px; outline: none; background: #ffffff; }
-        .btn-send-feedback { background: #ffc107; color: #000; font-weight: bold; border: none; padding: 5px 10px; border-radius: 5px; cursor: pointer; font-size: 10.5px; white-space: nowrap; }
+        .feedback-card { background: #fff8e6; border: 1px solid #ffe8a1; border-radius: 5px; padding: 4px 6px; margin-top: 4px; text-align: left; }
+        .feedback-card label { font-size: 10px; font-weight: bold; color: #8c6d00; display: block; margin-bottom: 2px; }
+        .feedback-input-group { display: flex; gap: 4px; }
+        .feedback-card input[type="text"] { flex: 1; min-height: 32px; padding: 4px 6px; border: 1.2px solid #ffe082; border-radius: 4px; font-size: 10.5px; outline: none; background: #ffffff; }
+        .btn-send-feedback { background: #ffc107; color: #000; font-weight: bold; border: none; padding: 4px 8px; border-radius: 4px; cursor: pointer; font-size: 10px; white-space: nowrap; }
 
-        .extra-tools-card { background: #f0f7ff; border: 1px solid #b6d4fe; border-radius: 6px; padding: 5px 8px; margin-top: 5px; display: flex; gap: 6px; flex-wrap: wrap; text-align: left; align-items: center; }
-        .extra-tools-title { width: 100%; font-size: 10.5px; font-weight: bold; color: #0d6efd; margin-bottom: 2px; }
-        .btn-tool { flex: 1; min-width: 120px; padding: 6px; font-size: 10.5px; font-weight: bold; border: none; border-radius: 5px; cursor: pointer; }
+        .extra-tools-card { background: #f0f7ff; border: 1px solid #b6d4fe; border-radius: 5px; padding: 4px 6px; margin-top: 4px; display: flex; gap: 4px; flex-wrap: wrap; text-align: left; align-items: center; }
+        .extra-tools-title { width: 100%; font-size: 10px; font-weight: bold; color: #0d6efd; margin-bottom: 2px; }
+        .btn-tool { flex: 1; min-width: 110px; min-height: 34px; padding: 4px; font-size: 10px; font-weight: bold; border: none; border-radius: 4px; cursor: pointer; }
         .btn-screenshot { background: #0d6efd; color: white; }
         .btn-upload-drive { background: #198754; color: white; }
 
         /* ĐIỀU HƯỚNG TRANG KẾT QUẢ */
-        .action-container { margin-top: 6px; display: flex; flex-direction: column; gap: 5px; }
-        .group-title { font-size: 10.5px; font-weight: bold; color: #495057; text-transform: uppercase; letter-spacing: 0.4px; text-align: left; margin-bottom: -2px; }
-        .action-row-a { display: flex; gap: 6px; justify-content: center; }
-        .btn-review { background: #17a2b8; color: white; flex: 1; padding: 7px 6px; border-radius: 5px; font-weight: bold; font-size: 11px; }
-        .btn-retry-same { background: #0d6efd; color: white; flex: 1; padding: 7px 6px; border-radius: 5px; font-weight: bold; font-size: 11px; }
-        .btn-next-exercise { width: 100%; background: #198754; color: white; padding: 8px; border-radius: 5px; font-weight: bold; font-size: 11.5px; }
+        .action-container { margin-top: 4px; display: flex; flex-direction: column; gap: 4px; }
+        .group-title { font-size: 10px; font-weight: bold; color: #495057; text-transform: uppercase; letter-spacing: 0.3px; text-align: left; margin-bottom: -1px; }
+        .action-row-a { display: flex; gap: 4px; justify-content: center; }
+        .btn-review { background: #17a2b8; color: white; flex: 1; min-height: 34px; padding: 5px; border-radius: 4px; font-weight: bold; font-size: 10.5px; border: none; }
+        .btn-retry-same { background: #0d6efd; color: white; flex: 1; min-height: 34px; padding: 5px; border-radius: 4px; font-weight: bold; font-size: 10.5px; border: none; }
+        .btn-next-exercise { width: 100%; min-height: 36px; background: #198754; color: white; padding: 6px; border-radius: 4px; font-weight: bold; font-size: 11px; border: none; }
 
-        .user-switch-note { font-size: 10.5px; color: #6c757d; margin-top: 3px; }
-        .user-switch-link { color: #dc3545; font-weight: bold; text-decoration: underline; cursor: pointer; margin-left: 4px; }
+        .user-switch-note { font-size: 10px; color: #6c757d; margin-top: 2px; }
+        .user-switch-link { color: #dc3545; font-weight: bold; text-decoration: underline; cursor: pointer; margin-left: 2px; }
 
         .hidden { display: none !important; }
-        #save-status-msg { font-size: 10.5px; font-weight: bold; color: #0f5132; margin: 1px 0 3px 0; background: #d1e7dd; padding: 2px 8px; border-radius: 10px; display: inline-block; border: 1px solid #badbcc; }
+        #save-status-msg { font-size: 10px; font-weight: bold; color: #0f5132; margin: 1px 0 2px 0; background: #d1e7dd; padding: 2px 6px; border-radius: 8px; display: inline-block; border: 1px solid #badbcc; }
 
-        /* MODAL HỌC VIÊN MỚI */
+        /* MODAL */
         .modal-overlay { position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.5); display: flex; align-items: center; justify-content: center; z-index: 999; }
-        .modal-box { background: white; border-radius: 9px; max-width: 400px; width: 90%; padding: 16px; text-align: left; }
-        .modal-title { font-size: 13.5px; font-weight: bold; color: #0d6efd; margin-bottom: 6px; }
-        .modal-btn-group { display: flex; flex-direction: column; gap: 6px; margin-top: 12px; }
-        .btn-modal { padding: 8px 10px; border-radius: 5px; font-size: 11.5px; font-weight: bold; border: none; cursor: pointer; text-align: center; }
+        .modal-box { background: white; border-radius: 8px; max-width: 360px; width: 90%; padding: 12px; text-align: left; }
+        .modal-title { font-size: 12px; font-weight: bold; color: #0d6efd; margin-bottom: 4px; }
+        .modal-btn-group { display: flex; flex-direction: column; gap: 5px; margin-top: 8px; }
+        .btn-modal { padding: 6px 8px; border-radius: 4px; font-size: 10.5px; font-weight: bold; border: none; cursor: pointer; text-align: center; }
         .btn-modal-new { background: #198754; color: white; }
         .btn-modal-recheck { background: #6c757d; color: white; }
     </style>
@@ -273,20 +317,21 @@
     <div class="brand-header">BRG LEARNING</div>
 
     <div class="container" id="main-container">
-        <!-- LOGO BADGE GÓC TRÊN TRÁI -->
-        <div class="listening-badge-corner" title="Kỹ năng Nghe / Listening Skill">
-            <span class="icon">🎧</span>
-            <div class="text">
-                <span>LISTENING</span>
-                <span>LUYỆN NGHE</span>
+        <!-- HEADER TRUNG TÂM -->
+        <div class="header-section">
+            <div class="listening-badge-corner" title="Kỹ năng Nghe / Listening Skill">
+                <span class="icon">🎧</span>
+                <div class="text">
+                    <span>LISTENING</span>
+                    <span>• LUYỆN NGHE</span>
+                </div>
             </div>
+            <h1>TIẾNG ANH GIAO TIẾP CƠ BẢN</h1>
+            <div class="sub-type">LUYỆN TẬP KỸ NĂNG NGHE & LỘ TRÌNH 29 CHUYÊN ĐỀ</div>
+            <div id="lesson-subtitle">VUI LÒNG CHỌN NỘI DUNG VÀ BẮT ĐẦU / PLEASE SELECT CONTENT & START</div>
         </div>
-
-        <h1>TIẾNG ANH GIAO TIẾP CƠ BẢN</h1>
-        <div class="sub-type">LUYỆN TẬP KỸ NĂNG NGHE & LỘ TRÌNH 29 CHUYÊN ĐỀ</div>
-        <div id="lesson-subtitle">VUI LÒNG CHỌN NỘI DUNG VÀ BẮT ĐẦU / PLEASE SELECT CONTENT & START</div>
         
-        <!-- ==================== VIEW 1: FORM & MA TRẬN TIẾN ĐỘ ==================== -->
+        <!-- VIEW 1: FORM & MA TRẬN TIẾN ĐỘ -->
         <div id="user-info-view">
             <!-- BANNER NÓI -->
             <a href="https://brggrouplearning.github.io/Caddie-pronunciation/" target="_blank" class="speaking-switch-banner" title="Chuyển sang làm bài Phát âm / Speaking">
@@ -321,7 +366,7 @@
             </div>
 
             <!-- FORM NHẬP LIỆU -->
-            <div class="user-card" style="margin-top: 8px;">
+            <div class="user-card" style="margin-top: 6px;">
                 <div class="user-card-header">📋 THÔNG TIN HỌC VIÊN / STUDENT INFORMATION</div>
                 
                 <div class="form-grid">
@@ -366,11 +411,11 @@
                     </div>
                 </div>
 
-                <p id="user-info-error" style="color: #dc3545; font-size: 11.5px; font-weight: bold; margin: 4px 0 0 0; display: none;"></p>
+                <p id="user-info-error" style="color: #dc3545; font-size: 11px; font-weight: bold; margin: 4px 0 0 0; display: none;"></p>
                 <button class="btn-check-progress" onclick="fetchProgressFromSheet()">🔍 KIỂM TRA THÔNG TIN & QUÁ TRÌNH LÀM BÀI</button>
             </div>
 
-            <!-- MA TRẬN TIẾN ĐỘ 29 Ô VUÔNG -->
+            <!-- MA TRẬN TIẾN ĐỘ -->
             <div id="roadmap-box" class="roadmap-container hidden">
                 <div class="roadmap-title">
                     <span>📊 TIẾN ĐỘ 29 CHUYÊN ĐỀ CỦA BẠN (LISTENING)</span>
@@ -381,16 +426,14 @@
                     <div class="progress-bar-fill" id="progress-bar-fill"></div>
                 </div>
 
-                <!-- NHẬN XÉT TIẾN ĐỘ TỰ ĐỘNG -->
                 <div id="progress-remark" class="progress-remark-box remark-warning">
                     ⏳ Đang tính toán mức độ bám sát kế hoạch đào tạo...
                 </div>
                 
-                <!-- LƯỚI 29 Ô VUÔNG -->
                 <div class="matrix-grid" id="matrix-grid-view"></div>
 
-                <div class="form-group" style="margin-top: 6px;">
-                    <label style="font-weight: bold; color: #0d6efd; font-size: 11px;">Bài học đang chọn:</label>
+                <div class="form-group" style="margin-top: 4px;">
+                    <label style="font-weight: bold; color: #0d6efd; font-size: 10.5px;">Bài học đang chọn:</label>
                     <input type="text" id="selected-lesson-display" readonly style="background:#f8f9fa; font-weight:bold; color:#198754;" value="Chưa chọn bài học">
                 </div>
 
@@ -398,10 +441,10 @@
             </div>
         </div>
 
-        <!-- ==================== VIEW 2: LÀM BÀI ==================== -->
+        <!-- VIEW 2: LÀM BÀI -->
         <div id="quiz-area" class="hidden">
             <div class="meta-bar" id="top-meta-bar">
-                <div id="item-status" class="status-pending">⏳ Trạng thái: Chưa hoàn thành</div>
+                <div id="item-status" class="status-pending">⏳ Chưa hoàn thành</div>
                 <div id="timer-box">⏳ Thời gian: <span id="time-left">00:00</span></div>
             </div>
 
@@ -433,21 +476,21 @@
             </div>
 
             <div class="control-group">
-                <button id="prev-btn" class="action-btn" onclick="goToPrevious()">⏮️ Câu trước</button>
-                <button id="next-btn" class="action-btn" onclick="goToNext()">Câu tiếp ⏩</button>
+                <button id="prev-btn" class="action-btn" onclick="goToPrevious()">⏮️ Trước</button>
+                <button id="next-btn" class="action-btn" onclick="goToNext()">Tiếp ⏩</button>
             </div>
-            <p id="status" style="font-size: 11.5px; font-weight: bold; color: #0d6efd; margin-top: 6px;"></p>
+            <p id="status" style="font-size: 11px; font-weight: bold; color: #0d6efd; margin-top: 4px;"></p>
         </div>
 
-        <!-- ==================== VIEW 3: KẾT QUẢ ==================== -->
+        <!-- VIEW 3: KẾT QUẢ -->
         <div id="result-view" class="hidden"></div>
     </div>
 
-    <!-- MODAL HỌC VIÊN MỚI -->
+    <!-- MODAL -->
     <div id="new-user-modal" class="modal-overlay hidden">
         <div class="modal-box">
             <div class="modal-title">🔍 KHÔNG TÌM THẤY LỊCH SỬ HỌC TẬP</div>
-            <div style="font-size:11px; color:#444; line-height:1.4;">
+            <div style="font-size:10.5px; color:#444; line-height:1.4;">
                 Hệ thống chưa tìm thấy hồ sơ đào tạo khớp với thông tin vừa nhập. Vui lòng xác nhận:
             </div>
             <div class="modal-btn-group">
@@ -457,8 +500,8 @@
         </div>
     </div>
 
+    <!-- Giữ nguyên toàn bộ scripts xử lý logic -->
     <script> window.masterQuizData = []; </script>
-
     <script>
         (function loadAllDataFiles() {
             const filesToLoad = ['data/exams.js'];
@@ -476,11 +519,9 @@
             });
         })();
     </script>
-
     <script>
         const GOOGLE_SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbwro5Muu7fzx7ibeBtGoOXhMVBkt_Wy6CpVnewxbfnDUHdWuZRZXoBtoLJy2RoSU8px/exec';
 
-        // 29 CHUYÊN ĐỀ GẮN CHUẨN THỜI HẠN KẾ HOẠCH
         const LESSON_ROADMAP = [
             { code: "1.1", title: "Section 1.1: Bảng chữ cái tiếng Anh / English Alphabet", planDate: "2026-08-18", planDisplay: "18/08" },
             { code: "1.2", title: "Section 1.2: Giới thiệu bản thân / Self-Introduction", planDate: "2026-08-19", planDisplay: "19/08" },
@@ -622,41 +663,32 @@
             return `${mins.toString().padStart(2, '0')}:${secs.toString().padStart(2, '0')}`;
         }
 
-        // =========================================================================
-        // THUẬT TOÁN TRỘN ĐỀ THÔNG MINH CHO PHẦN NGHE:
-        // - Chuyên đề (Section): 30 câu
-        // - Bài kiểm tra / Tổng hợp (Exam / Final): 50 câu
-        // - Khi làm lại: Ưu tiên rút 100% câu hỏi mới từ ngân hàng đề trước
-        // =========================================================================
         function getFilteredListeningItemsBySelection(isSectionMode, selectedVal) {
             let rawPool = (window.masterQuizData && window.masterQuizData.length > 0) ? JSON.parse(JSON.stringify(window.masterQuizData)) : [];
             let filtered = [];
-            let targetCount = 30; // Mặc định 30 câu cho Section
+            let targetCount = 30;
 
             if (isSectionMode && selectedVal) {
                 let cleanTarget = cleanSectionCode(selectedVal);
                 filtered = rawPool.filter(q => q.section && cleanSectionCode(q.section) === cleanTarget);
-                targetCount = 30; // Chuyên đề: 30 câu
+                targetCount = 30;
             } else if (!isSectionMode && selectedVal) {
                 if (selectedVal === 'all') {
                     filtered = [...rawPool];
-                    targetCount = 50; // Final Exam: 50 câu
+                    targetCount = 50;
                 } else {
                     let examLessons = selectedVal.replace('exam','').split('-').map(n => n.trim());
                     filtered = rawPool.filter(q => {
                         let qLes = (q.lesson || "").toString().replace(/[^\d]/g, '');
                         return examLessons.includes(qLes);
                     });
-                    targetCount = 50; // Exam giai đoạn: 50 câu
+                    targetCount = 50;
                 }
             }
 
             if (filtered.length === 0) return [];
-
-            // Xáo trộn sơ bộ ngân hàng câu hỏi
             shuffleArray(filtered);
 
-            // Ghi nhớ và ưu tiên lấy câu hỏi mới chưa từng làm
             let lastUsedKey = `pool_history_lis_${isSectionMode ? 'sec_' : 'ex_'}${selectedVal}`;
             let historyTexts = [];
             try {
@@ -667,33 +699,24 @@
             let usedItems = filtered.filter(item => historyTexts.includes(normalizeText(item.audioText || item.text || item.title || "")));
 
             let selectedSet = [];
-
-            // Nếu ngân hàng chưa dùng còn đủ số lượng câu hỏi mong muốn
             if (unusedItems.length >= targetCount) {
                 selectedSet = unusedItems.slice(0, targetCount);
             } else {
-                // Nếu không đủ, lấy hết câu mới rồi lấy bù câu cũ và xáo trộn lại
                 shuffleArray(usedItems);
                 selectedSet = [...unusedItems, ...usedItems].slice(0, Math.min(targetCount, filtered.length));
-                // Khi đã dùng gần hết ngân hàng, reset lại lịch sử
                 historyTexts = [];
             }
 
-            // Cập nhật lại lịch sử các câu đã dùng vào bộ nhớ session
             const currentSelectedKeys = selectedSet.map(i => normalizeText(i.audioText || i.text || i.title || ""));
             const updatedHistory = Array.from(new Set([...historyTexts, ...currentSelectedKeys]));
             try {
                 sessionStorage.setItem(lastUsedKey, JSON.stringify(updatedHistory));
             } catch(e) {}
 
-            // Xáo trộn thứ tự các câu hỏi trong đề thi
             shuffleArray(selectedSet);
             return selectedSet;
         }
 
-        // =========================================================================
-        // TRA CỨU TIẾN ĐỘ QUA GET/FETCH (CHỐNG LỖI CORS)
-        // =========================================================================
         function fetchProgressFromSheet() {
             const workPlace = document.getElementById('work-place').value;
             const department = document.getElementById('department').value;
@@ -723,7 +746,7 @@
             studentInfo.staffNumber = staffNumber;
 
             const checkBtn = document.querySelector('.btn-check-progress');
-            checkBtn.innerText = "⏳ Đang tra cứu thông tin & tiến độ...";
+            checkBtn.innerText = "⏳ Đang tra cứu thông tin...";
             checkBtn.disabled = true;
 
             const url = `${GOOGLE_SCRIPT_URL}?action=get_student_progress` +
@@ -755,9 +778,6 @@
             });
         }
 
-        // =========================================================================
-        // RENDER MA TRẬN 29 Ô TIẾN ĐỘ: CHỈ HIỆN ĐIỂM CAO NHẤT KÈM NGÀY LÀM
-        // =========================================================================
         function renderRoadmapMatrix() {
             const grid = document.getElementById('matrix-grid-view');
             grid.innerHTML = "";
@@ -796,7 +816,7 @@
                 }
 
                 const subText = score !== null 
-                    ? `${score}đ${examDate ? ` • ${examDate}` : ''}` 
+                    ? `${score}đ` 
                     : item.planDisplay;
 
                 const box = document.createElement('div');
@@ -816,22 +836,22 @@
             });
 
             const percent = Math.round((passedCount / LESSON_ROADMAP.length) * 100);
-            document.getElementById('progress-percent').innerText = `${percent}% (${passedCount}/29 Bài)`;
+            document.getElementById('progress-percent').innerText = `${percent}% (${passedCount}/29)`;
             document.getElementById('progress-bar-fill').style.width = `${percent}%`;
 
             const remarkElem = document.getElementById('progress-remark');
             if (passedCount === LESSON_ROADMAP.length) {
                 remarkElem.className = "progress-remark-box remark-good";
-                remarkElem.innerHTML = "🏆 <b>Xuất sắc!</b> Bạn đã hoàn thành trọn vẹn lộ trình 29 chuyên đề Nghe!";
+                remarkElem.innerHTML = "🏆 <b>Xuất sắc!</b> Đã hoàn thành trọn vẹn 29 chuyên đề Nghe!";
             } else if (overdueCount === 0) {
                 remarkElem.className = "progress-remark-box remark-good";
-                remarkElem.innerHTML = "🟢 <b>Tiến độ rất tốt:</b> Bạn đang hoàn thành đúng theo kế hoạch đào tạo!";
+                remarkElem.innerHTML = "🟢 <b>Tiến độ tốt:</b> Bạn đang hoàn thành đúng kế hoạch đào tạo!";
             } else if (overdueCount <= 2) {
                 remarkElem.className = "progress-remark-box remark-warning";
-                remarkElem.innerHTML = `⚠️ <b>Cần tăng tốc:</b> Bạn đang chậm <b>${overdueCount} bài</b> so với kế hoạch, hãy hoàn thành bổ sung nhé!`;
+                remarkElem.innerHTML = `⚠️ <b>Cần tăng tốc:</b> Chậm <b>${overdueCount} bài</b> so với kế hoạch!`;
             } else {
                 remarkElem.className = "progress-remark-box remark-danger";
-                remarkElem.innerHTML = `🔴 <b>Dưới kế hoạch:</b> Bạn đang trễ <b>${overdueCount} bài</b>. Vui lòng ưu tiên làm bài để theo kịp lớp!`;
+                remarkElem.innerHTML = `🔴 <b>Dưới kế hoạch:</b> Trễ <b>${overdueCount} bài</b>. Hãy hoàn thành ngay!`;
             }
 
             document.getElementById('roadmap-box').classList.remove('hidden');
@@ -860,9 +880,6 @@
             selectLessonFromMatrix(LESSON_ROADMAP[0]);
         }
 
-        // =========================================================================
-        // ENGINE LÀM BÀI LUYỆN NGHE
-        // =========================================================================
         let quizData = [];
         const MAX_LISTEN_PER_QUESTION = 3; 
         const DELAY_BEFORE_AUDIO_MS = 1000; 
@@ -892,7 +909,7 @@
             if (enVoices.length === 0) {
                 const opt = document.createElement('option');
                 opt.value = "";
-                opt.innerText = "Giọng mặc định / Default voice";
+                opt.innerText = "Giọng mặc định";
                 voiceSelect.appendChild(opt);
                 return;
             }
@@ -913,11 +930,10 @@
                 const opt = document.createElement('option');
                 opt.value = voice.name;
                 let label = voice.name;
-                if (voice.name.includes('Zira')) label = '👩‍💼 Microsoft Zira (Mặc định chuẩn)';
-                else if (voice.name.includes('David')) label = '👨‍💼 Microsoft David (Nam chuẩn)';
-                else if (voice.name.includes('Natural') || voice.name.includes('Online') || voice.name.includes('Neural')) label = '🌟 ' + voice.name + ' (Tự nhiên)';
-                else if (voice.name.includes('Google')) label = '🎙️ ' + voice.name + ' (Google)';
-                else label = '🔊 ' + voice.name;
+                if (voice.name.includes('Zira')) label = '👩‍💼 Zira (Mặc định)';
+                else if (voice.name.includes('David')) label = '👨‍💼 David (Nam)';
+                else if (voice.name.includes('Natural') || voice.name.includes('Online') || voice.name.includes('Neural')) label = '🌟 ' + voice.name.substring(0, 15);
+                else label = '🔊 ' + voice.name.substring(0, 15);
                 
                 opt.innerText = label;
                 voiceSelect.appendChild(opt);
@@ -1007,15 +1023,15 @@
             if (!isReviewMode) {
                 if (userAns !== null && userAns !== "") {
                     statusTag.className = "status-answered";
-                    statusTag.innerText = "🔒 Trạng thái: Đã trả lời";
+                    statusTag.innerText = "🔒 Đã trả lời";
                 } else {
                     statusTag.className = "status-pending";
-                    statusTag.innerText = "⏳ Trạng thái: Chưa hoàn thành";
+                    statusTag.innerText = "⏳ Chưa hoàn thành";
                 }
             } else {
                 if (userAns === null || userAns === "") {
                     statusTag.className = "status-skipped";
-                    statusTag.innerText = "⏭️ Trạng thái: Đã bỏ qua";
+                    statusTag.innerText = "⏭️ Đã bỏ qua";
                 } else {
                     let isCorrect = false;
                     if (currentQuiz.type === 'mcq' || !currentQuiz.type) {
@@ -1026,10 +1042,10 @@
 
                     if (isCorrect) {
                         statusTag.className = "status-correct";
-                        statusTag.innerText = "✅ Trạng thái: Đúng";
+                        statusTag.innerText = "✅ Đúng";
                     } else {
                         statusTag.className = "status-incorrect";
-                        statusTag.innerText = "❌ Trạng thái: Sai";
+                        statusTag.innerText = "❌ Sai";
                     }
                 }
                 updatePlayButtonState();
@@ -1098,9 +1114,9 @@
                         correctDisplay.style.display = "block";
                         const userVal = userAnswers[currentIndex] || "";
                         if (userVal.toLowerCase() === (currentQuiz.targetWord || "").toLowerCase()) {
-                            correctDisplay.innerHTML = "<span style='color:#198754;'>🎯 Đáp án đúng: " + currentQuiz.targetWord + "</span>";
+                            correctDisplay.innerHTML = "<span style='color:#198754;'>🎯 Đúng: " + currentQuiz.targetWord + "</span>";
                         } else {
-                            correctDisplay.innerHTML = `<span style='color:#dc3545;'>❌ Bạn nhập: ${userVal || "(Bỏ trống)"}</span> | 🎯 Đúng: <b style="color:#198754;">${currentQuiz.targetWord}</b>`;
+                            correctDisplay.innerHTML = `<span style='color:#dc3545;'>❌ Nhập: ${userVal || "(Trống)"}</span> | 🎯 Đúng: <b style="color:#198754;">${currentQuiz.targetWord}</b>`;
                         }
                     } else {
                         fillInput.disabled = false;
@@ -1113,9 +1129,9 @@
 
                 const nextBtn = document.getElementById('next-btn');
                 if (currentIndex === quizData.length - 1) {
-                    nextBtn.innerText = isReviewMode ? "Hoàn tất xem lại 🏁" : "Nộp bài 🏆";
+                    nextBtn.innerText = isReviewMode ? "Hoàn tất 🏁" : "Nộp bài 🏆";
                 } else {
-                    nextBtn.innerText = "Câu tiếp ⏩";
+                    nextBtn.innerText = "Tiếp ⏩";
                 }
 
                 updatePlayButtonState();
@@ -1137,11 +1153,11 @@
 
             if (isReviewMode) {
                 playBtn.disabled = false;
-                playBtn.innerText = `🔊 NGHE LẠI (CÂU ${currentIndex + 1}/${quizData.length})`;
+                playBtn.innerText = `🔊 NGHE LẠI (${currentIndex + 1}/${quizData.length})`;
             } else {
                 if (remaining > 0) {
                     playBtn.disabled = false;
-                    playBtn.innerText = `🔊 NGHE CÂU HỎI (${currentIndex + 1}/${quizData.length} - Còn ${remaining} lượt)`;
+                    playBtn.innerText = `🔊 NGHE (${currentIndex + 1}/${quizData.length} - Còn ${remaining} lượt)`;
                 } else {
                     playBtn.disabled = true;
                     playBtn.innerText = `🚫 HẾT LƯỢT NGHE (${currentIndex + 1}/${quizData.length})`;
@@ -1189,7 +1205,7 @@
                     updatePlayButtonState();
                 }
                 
-                document.getElementById('status').innerText = "🔊 Đang phát âm thanh...";
+                document.getElementById('status').innerText = "🔊 Đang phát...";
             }
         }
 
@@ -1203,7 +1219,7 @@
                 if (idx === selectedIndex) btn.classList.add('selected');
                 else btn.classList.remove('selected');
             });
-            document.getElementById('status').innerText = "Đã chọn. Bấm 'Câu tiếp' để tiếp tục.";
+            document.getElementById('status').innerText = "Đã chọn. Bấm 'Tiếp' để qua câu.";
         }
 
         function saveFillAnswer(val) {
@@ -1243,9 +1259,6 @@
             }
         }
 
-        // =========================================================================
-        // KẾT THÚC BÀI THI & BỐ CỤC TRANG KẾT QUẢ ĐẦY ĐỦ
-        // =========================================================================
         function finishSession(msg, isFromReview = false) {
             clearInterval(timerInterval);
             clearTimeout(autoPlayTimer);
@@ -1272,7 +1285,6 @@
             const now = new Date();
             const dateShort = `${String(now.getDate()).padStart(2,'0')}/${String(now.getMonth()+1).padStart(2,'0')}/${now.getFullYear()}`;
 
-            // CHỈ CẬP NHẬT KẾT QUẢ CAO NHẤT
             const oldRecord = studentProgressMap[studentInfo.selectedVal] || null;
             const oldScore = (oldRecord && oldRecord.score !== undefined) ? oldRecord.score : -1;
 
@@ -1291,15 +1303,15 @@
             if (finalScore >= 90) {
                 evalText = "Xuất sắc";
                 levelBadgeHtml = `<div class="level-badge level-excellent">🌟 Xuất sắc (${finalScore}/100)</div>`;
-                adviceText = "<b>Đánh giá:</b> Kỹ năng nghe hiểu xuất sắc! Phản xạ tốt và nhận diện chính xác từ vựng.";
+                adviceText = "<b>Đánh giá:</b> Kỹ năng nghe hiểu xuất sắc! Phản xạ rất tốt.";
             } else if (finalScore >= 70) {
                 evalText = "Đạt";
                 levelBadgeHtml = `<div class="level-badge level-passed">✅ Đạt (${finalScore}/100)</div>`;
-                adviceText = "<b>Đánh giá:</b> Đạt yêu cầu! Nghe hiểu tốt các thông tin trọng tâm.";
+                adviceText = "<b>Đánh giá:</b> Đạt yêu cầu! Cố gắng duy trì phong độ.";
             } else {
                 evalText = "Chưa đạt";
                 levelBadgeHtml = `<div class="level-badge level-failed">❌ Chưa đạt (${finalScore}/100)</div>`;
-                adviceText = "<b>Đánh giá:</b> Chưa đạt yêu cầu. Hãy luyện nghe lại để cải thiện phản xạ từ vựng.";
+                adviceText = "<b>Đánh giá:</b> Chưa đạt yêu cầu. Hãy luyện nghe lại chuyên đề này.";
             }
 
             if (!isFromReview) {
@@ -1336,81 +1348,59 @@
                     <div class="result-title-banner">${msg}</div>
                     
                     <div class="score-row">
-                        <div class="score-box">${finalScore} <span style="font-size:12px; color:#666;">/ 100đ</span></div>
+                        <div class="score-box">${finalScore} <span style="font-size:11px; color:#666;">/ 100đ</span></div>
                         ${levelBadgeHtml}
                     </div>
                     
-                    <div id="save-status-msg">✅ Đã lưu kết quả thành công!</div>
+                    <div id="save-status-msg">✅ Đã lưu kết quả</div>
                     <div class="advice-box">${adviceText}</div>
 
                     <div class="stats-box">
-                        <b>📊 BẢNG THỐNG KÊ CHI TIẾT:</b><br>
-                        • 👤 Học viên: <b>${studentInfo.studentName}</b> | Mã: <b>${studentInfo.staffNumber}</b> | Đơn vị: <b>${studentInfo.workPlace} - ${studentInfo.department}</b><br>
+                        <b>📊 CHI TIẾT:</b><br>
+                        • 👤 Học viên: <b>${studentInfo.studentName}</b> (${studentInfo.staffNumber}) - <b>${studentInfo.workPlace}</b><br>
                         • 📚 Chuyên đề: <b>${studentInfo.lessonTitle}</b><br>
                         • ⏱️ Thời gian: <b>${formatDuration(elapsedSeconds)}</b> | 🕒 Bắt đầu: <b>${startTimeFormatted}</b><br>
-                        • 📊 Thống kê: ✅ Đúng: <b>${correctCount}/${totalItems}</b> | ❌ Sai: <b>${incorrectCount}/${totalItems}</b> | ⏭️ Bỏ qua: <b>${skippedCount}/${totalItems}</b>
+                        • 📊 Kết quả: ✅ Đúng: <b>${correctCount}/${totalItems}</b> | ❌ Sai: <b>${incorrectCount}/${totalItems}</b> | ⏭️ Bỏ qua: <b>${skippedCount}/${totalItems}</b>
                     </div>
 
                     <div class="feedback-card">
-                        <label for="user-feedback">✍️ Đề xuất góp ý (nếu có):</label>
+                        <label for="user-feedback">✍️ Đề xuất góp ý:</label>
                         <div class="feedback-input-group">
-                            <input type="text" id="user-feedback" placeholder="Nhập ý kiến đóng góp...">
-                            <button class="btn-send-feedback" onclick="sendFeedbackOnly()">✉️ Gửi góp ý</button>
+                            <input type="text" id="user-feedback" placeholder="Nhập ý kiến...">
+                            <button class="btn-send-feedback" onclick="sendFeedbackOnly()">✉️ Gửi</button>
                         </div>
                     </div>
 
                     <div class="extra-tools-card">
                         <div class="extra-tools-title">🛠️ LƯU KẾT QUẢ & TIỆN ÍCH:</div>
-                        <button class="btn-tool btn-screenshot" onclick="captureResultScreenshot()">📸 Chụp ảnh kết quả</button>
+                        <button class="btn-tool btn-screenshot" onclick="captureResultScreenshot()">📸 Chụp ảnh</button>
                         <button class="btn-tool btn-upload-drive" id="btn-drive-status" onclick="uploadResultToDrive()">☁️ Tải lên Cloud</button>
                     </div>
 
-                    <!-- KHUNG ĐIỀU HƯỚNG VÀ CHUYỂN TIẾP ĐẦY ĐỦ -->
                     <div class="action-container">
-                        <div class="group-title">🎯 ÔN TẬP LẠI & CẢI THIỆN KẾT QUẢ</div>
+                        <div class="group-title">🎯 ÔN TẬP LẠI</div>
                         <div class="action-row-a">
-                            <button class="btn-review" onclick="startReview()">🔍 Xem lại chi tiết</button>
-                            <button class="btn-retry-same" onclick="runQuizEngine(studentInfo.isSectionMode, studentInfo.selectedVal)">🔄 Làm lại bài này</button>
+                            <button class="btn-review" onclick="startReview()">🔍 Xem lại bài</button>
+                            <button class="btn-retry-same" onclick="runQuizEngine(studentInfo.isSectionMode, studentInfo.selectedVal)">🔄 Làm lại</button>
                         </div>
 
-                        <div class="group-title" style="margin-top: 6px;">🚀 CHUYỂN TIẾP LỘ TRÌNH</div>
-                        <button class="btn-next-exercise" onclick="returnToRoadmapView()">📊 Chọn chuyên đề khác & Xem tiến độ 29 bài</button>
+                        <div class="group-title" style="margin-top: 4px;">🚀 CHUYỂN TIẾP</div>
+                        <button class="btn-next-exercise" onclick="returnToRoadmapView()">📊 Xem tiến độ 29 bài</button>
 
-                        <!-- CHUYỂN SANG PHẦN PHÁT ÂM TẠI TRANG KẾT QUẢ -->
                         <a href="https://brggrouplearning.github.io/Caddie-pronunciation/" target="_blank" class="speaking-switch-banner" style="margin-top: 4px;">
                             <div class="banner-left">
                                 <div class="banner-icon">🎤</div>
                                 <div>
-                                    <div class="banner-title">Luyện tập Kỹ năng Phát âm / Speaking</div>
-                                    <div class="banner-desc">Chuyển sang kiểm tra phát âm & nhận diện giọng nói</div>
+                                    <div class="banner-title">Luyện tập Kỹ năng Phát âm</div>
+                                    <div class="banner-desc">Chuyển sang kiểm tra nhận diện giọng nói</div>
                                 </div>
                             </div>
                             <div class="banner-btn-tag">Học ngay ➔</div>
                         </a>
 
-                        <!-- CỤM TÀI LIỆU ĐÀO TẠO TẠI TRANG KẾT QUẢ -->
-                        <div class="portal-section-title" style="margin-top: 6px;">📚 TÀI LIỆU THAM KHẢO & ĐÀO TẠO:</div>
-                        <div class="resource-grid">
-                            <a href="https://brggrouplearning.github.io/caddie-videoenglish/" target="_blank" class="resource-card">
-                                <div class="resource-icon">🎬</div>
-                                <div class="resource-name">CLIPS Đào tạo</div>
-                                <div class="resource-sub">Video bài giảng</div>
-                            </a>
-                            <a href="https://drive.google.com/drive/folders/16FQ87gRXF1Zb9Bwpl6ynju3QPMdeJk-V" target="_blank" class="resource-card">
-                                <div class="resource-icon">📂</div>
-                                <div class="resource-name">Tài liệu Đào tạo</div>
-                                <div class="resource-sub">Google Drive</div>
-                            </a>
-                            <a href="https://docs.google.com/document/d/15oweLWJ0qDmIiOLuzTAC8pw3NEH63SWQtx_NMtLPAtk/edit?tab=t.0" target="_blank" class="resource-card">
-                                <div class="resource-icon">📖</div>
-                                <div class="resource-name">Hướng dẫn</div>
-                                <div class="resource-sub">Quy trình làm bài</div>
-                            </a>
-                        </div>
-
                         <div class="user-switch-note">
-                            Đang lưu thông tin: <b>${studentInfo.studentName} (${studentInfo.staffNumber})</b>
-                            <span class="user-switch-link" onclick="clearStudentProfile()">[Đổi thí sinh / Switch]</span>
+                            Đang lưu: <b>${studentInfo.studentName} (${studentInfo.staffNumber})</b>
+                            <span class="user-switch-link" onclick="clearStudentProfile()">[Đổi thí sinh]</span>
                         </div>
                     </div>
                 </div>
