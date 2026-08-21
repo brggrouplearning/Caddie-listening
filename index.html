@@ -340,11 +340,11 @@
             background: #fff8e6;
             border: 1px solid #ffe8a1;
             border-radius: 6px;
-            padding: 6px 8px;
-            font-size: 10px;
+            padding: 7px 10px;
+            font-size: 10.5px;
             color: #8c6d00;
             margin-bottom: 8px;
-            line-height: 1.35;
+            line-height: 1.4;
         }
         .review-item-card {
             background: #ffffff;
@@ -1290,7 +1290,10 @@
                         <span class="vi-trans">${currentQuiz.translation || ""}</span>
                     `;
 
-                    document.getElementById('char-hint').innerText = currentQuiz.hint ? `💡 Gợi ý: ${currentQuiz.hint}` : "";
+                    // XỬ LÝ TRIỆT ĐỂ LỖI LẶP TỪ GỢI Ý
+                    let rawHint = currentQuiz.hint || "";
+                    let cleanHint = rawHint.replace(/^💡\s*Gợi ý:?\s*/i, '').replace(/^💡\s*Gợi ý:?\s*/i, '').trim();
+                    document.getElementById('char-hint').innerText = cleanHint ? `💡 Gợi ý: ${cleanHint}` : "";
 
                     const fillInput = document.getElementById('fill-input');
                     fillInput.value = userAnswers[currentIndex] || "";
@@ -1598,36 +1601,51 @@
             resultArea.classList.remove('hidden');
         }
 
-        /* HÀM TRÍCH XUẤT CÁC TỪ TRỌNG ÂM / TỪ KHÓA CHÍNH */
+        /* HÀM TRÍCH XUẤT TỪ KHÓA TRỌNG TÂM THÔNG MINH - ƯU TIÊN DANH TỪ, ĐỘNG TỪ, CỤM CHUYÊN NGHÀNH GOLF VÀ HƯỚNG DẪN */
         function extractCoreKeywords(fullText, specificTarget = null) {
-            if (specificTarget && specificTarget.trim().length > 0) {
-                return [specificTarget.trim()];
-            }
             if (!fullText) return [];
 
             const cleanText = fullText.replace(/^[A-D]\.\s*/i, '').trim();
             
-            const golfPhrases = [
+            // Danh sách cụm từ chuyên môn và hướng dẫn thường gặp
+            const specialPhrases = [
+                'stay on the cart path', 'cart path', 'stay on', 'stay',
+                'hidden lake', 'left side', 'right side', 'aim right', 'aim left', 'aim to',
                 'unplayable lie', 'straight ahead', 'out of bounds', 'hazard', 'bunker', 
                 'fairway', 'green', 'rough', 'tee box', 'water hazard', 'fore', 'penalty', 
-                'take your stance', 'stance carefully', 'ground is sloping', 'sloping',
-                'divot', 'ball mark', 'cart path', 'pitch mark', 'flagstick'
+                'take your stance', 'stance carefully', 'ground is sloping', 'sloping ground', 'sloping',
+                'divot', 'ball mark', 'pitch mark', 'flagstick', 'stop here', 'turn left', 'turn right'
             ];
 
-            let matchedPhrases = [];
-            for (let phrase of golfPhrases) {
+            let matched = [];
+            for (let phrase of specialPhrases) {
                 if (new RegExp(`\\b${phrase}\\b`, 'i').test(cleanText)) {
-                    matchedPhrases.push(phrase);
+                    // Tránh thêm từ con nếu đã có cụm từ lớn hơn bao hàm nó
+                    if (!matched.some(m => m.includes(phrase))) {
+                        matched.push(phrase);
+                    }
                 }
             }
-            if (matchedPhrases.length > 0) return matchedPhrases;
 
+            if (specificTarget && specificTarget.trim().length > 0) {
+                const cleanTar = specificTarget.trim();
+                if (!matched.some(m => m.toLowerCase().includes(cleanTar.toLowerCase()))) {
+                    matched.unshift(cleanTar);
+                }
+            }
+
+            if (matched.length > 0) {
+                // Lấy tối đa 3 cụm từ tiêu biểu nhất
+                return Array.from(new Set(matched)).slice(0, 3);
+            }
+
+            // Bộ lọc từ đệm, từ chỉ định, đại từ không mang trọng âm chính
             const stopWords = new Set([
-                'the', 'a', 'an', 'is', 'am', 'are', 'was', 'were', 'be', 'been', 'being',
+                'there', 'their', 'the', 'a', 'an', 'is', 'am', 'are', 'was', 'were', 'be', 'been', 'being',
                 'to', 'for', 'in', 'on', 'at', 'by', 'with', 'from', 'about', 'of', 'off',
                 'it', 'its', 'you', 'your', 'yours', 'i', 'my', 'mine', 'me', 'we', 'our',
-                'he', 'his', 'him', 'she', 'her', 'they', 'them', 'their', 'this', 'that',
-                'these', 'those', 'sir', 'madam', 'please', 'can', 'could', 'would', 'should',
+                'he', 'his', 'him', 'she', 'her', 'they', 'them', 'this', 'that', 'these', 'those',
+                'sir', 'madam', 'please', 'here', 'there', 'can', 'could', 'would', 'should',
                 'will', 'do', 'does', 'did', 'have', 'has', 'had', 'and', 'or', 'but', 'so'
             ]);
 
@@ -1641,10 +1659,12 @@
         function highlightKeyWords(sentence, keywords) {
             if (!sentence || !keywords || keywords.length === 0) return sentence || "";
             let res = sentence;
-            keywords.forEach(kw => {
+            // Sắp xếp keyword dài hơn lên trước để tránh regex match đè
+            const sortedKeywords = [...keywords].sort((a, b) => b.length - a.length);
+            sortedKeywords.forEach(kw => {
                 if (!kw) return;
                 const safeKw = kw.replace(/[-[\]{}()*+?.,\\^$|#\s]/g, '\\$&');
-                const regex = new RegExp(`(${safeKw})`, 'gi');
+                const regex = new RegExp(`\\b(${safeKw})\\b`, 'gi');
                 res = res.replace(regex, `<span class="key-highlight">$1</span>`);
             });
             return res;
@@ -1663,7 +1683,7 @@
                 </div>
                 
                 <div class="review-tip-box">
-                    💡 <b>Bí quyết nghe giao tiếp:</b> Tập trung nhận diện các <b>từ khóa chính (bôi đỏ)</b>. Quan sát các phương án bên dưới để thấy rõ sự khác biệt giữa đáp án chuẩn và phương án gây nhiễu. Nhấn <b>🔊 Nghe</b> để luyện phản xạ nghe nhiều lần!
+                    💡 <b>Bí quyết giao tiếp:</b> Nghe - phát âm và đọc lại. Nếu có thể hãy viết ra để ghi nhớ. Nhấn nút 🔊 <b>Nghe</b> để luyện phản xạ nghe nhiều lần!
                 </div>
             `;
 
