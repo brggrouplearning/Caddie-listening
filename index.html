@@ -97,7 +97,10 @@
             justify-content: space-between;
             text-decoration: none;
             color: #ffffff;
+            box-shadow: 0 2px 6px rgba(178, 24, 24, 0.15);
+            transition: transform 0.2s ease;
         }
+        .speaking-switch-banner:hover { transform: scale(0.99); color: #ffffff; }
         .banner-left { display: flex; align-items: center; gap: 8px; text-align: left; }
         .banner-icon { font-size: 20px; line-height: 1; }
         .banner-title { font-size: 11.5px; font-weight: bold; text-transform: uppercase; }
@@ -154,22 +157,10 @@
         }
         .matrix-item:hover { transform: scale(1.04); box-shadow: 0 2px 5px rgba(0,0,0,0.08); }
         
-        .matrix-row-top {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            gap: 3px;
-            width: 100%;
-        }
+        .matrix-row-top { display: flex; align-items: center; justify-content: center; gap: 3px; width: 100%; }
         .matrix-icon { font-size: 10.5px; line-height: 1; }
         .matrix-code { font-size: 10px; font-weight: bold; line-height: 1; }
-        .matrix-row-sub {
-            font-size: 8px;
-            opacity: 0.85;
-            margin-top: 2px;
-            white-space: nowrap;
-            letter-spacing: -0.2px;
-        }
+        .matrix-row-sub { font-size: 8px; opacity: 0.85; margin-top: 2px; white-space: nowrap; letter-spacing: -0.2px; }
 
         .matrix-item.excellent { background: #d1e7dd; border-color: #0f5132; color: #0f5132; }
         .matrix-item.passed { background: #e8f5e9; border-color: #2e7d32; color: #1b5e20; }
@@ -195,6 +186,10 @@
         #timer-box { font-size: 11px; font-weight: bold; color: #0d6efd; background: #e7f1ff; padding: 3px 8px; border-radius: 12px; border: 1px solid #b6d4fe; white-space: nowrap; }
         .timer-warning { color: #dc3545 !important; background: #f8d7da !important; border-color: #f5c6cb !important; animation: blink 1s infinite; }
         @keyframes blink { 50% { opacity: 0.5; } }
+
+        .progress-box { font-size: 11.5px; color: #333; font-weight: bold; background: #f8f9fa; padding: 5px 10px; border-radius: 5px; display: inline-block; margin-bottom: 6px; border: 1px solid #dee2e6; }
+        .progress-box span { color: #0d6efd; font-size: 12.5px; }
+        .section-tag { font-size: 11px; color: #1e7e34; font-weight: 600; }
 
         .audio-box { background: #e7f1ff; border: 1.2px dashed #0d6efd; padding: 6px 8px; border-radius: 7px; margin: 6px 0; }
         #play-btn { background: #0d6efd; color: white; padding: 8px 12px; font-size: 12px; font-weight: bold; border: none; border-radius: 18px; cursor: pointer; transition: all 0.2s; width: 100%; }
@@ -258,6 +253,9 @@
         .btn-retry-same { background: #0d6efd; color: white; flex: 1; padding: 7px 6px; border-radius: 5px; font-weight: bold; font-size: 11px; }
         .btn-next-exercise { width: 100%; background: #198754; color: white; padding: 8px; border-radius: 5px; font-weight: bold; font-size: 11.5px; }
 
+        .user-switch-note { font-size: 10.5px; color: #6c757d; margin-top: 3px; }
+        .user-switch-link { color: #dc3545; font-weight: bold; text-decoration: underline; cursor: pointer; margin-left: 4px; }
+
         .hidden { display: none !important; }
         #save-status-msg { font-size: 10.5px; font-weight: bold; color: #0f5132; margin: 1px 0 3px 0; background: #d1e7dd; padding: 2px 8px; border-radius: 10px; display: inline-block; border: 1px solid #badbcc; }
 
@@ -287,7 +285,7 @@
 
         <h1>TIẾNG ANH GIAO TIẾP CƠ BẢN</h1>
         <div class="sub-type">LUYỆN TẬP KỸ NĂNG NGHE & LỘ TRÌNH 29 CHUYÊN ĐỀ</div>
-        <div id="lesson-subtitle">VUI LÒNG ĐIỀN THÔNG TIN ĐỂ TRA CỨU TIẾN ĐỘ & LÀM BÀI</div>
+        <div id="lesson-subtitle">VUI LÒNG CHỌN NỘI DUNG VÀ BẮT ĐẦU / PLEASE SELECT CONTENT & START</div>
         
         <!-- ==================== VIEW 1: FORM & MA TRẬN TIẾN ĐỘ ==================== -->
         <div id="user-info-view">
@@ -365,7 +363,7 @@
 
                     <div class="form-group">
                         <label for="staff-number">5. Mã Nhân viên / Staff ID (*):</label>
-                        <input type="text" id="staff-number" placeholder="Ví dụ: 123, 435" inputmode="numeric" oninput="this.value = this.value.replace(/[^0-9]/g, '')" autocomplete="off">
+                        <input type="text" id="staff-number" placeholder="Ví dụ: 123, 435, 0" inputmode="numeric" oninput="this.value = this.value.replace(/[^0-9]/g, '')" autocomplete="off">
                     </div>
                 </div>
 
@@ -404,7 +402,7 @@
         <!-- ==================== VIEW 2: LÀM BÀI ==================== -->
         <div id="quiz-area" class="hidden">
             <div class="meta-bar" id="top-meta-bar">
-                <div id="item-status" class="status-pending">⏳ Trạng thái: Đang làm bài</div>
+                <div id="item-status" class="status-pending">⏳ Trạng thái: Chưa hoàn thành</div>
                 <div id="timer-box">⏳ Thời gian: <span id="time-left">00:00</span></div>
             </div>
 
@@ -421,6 +419,7 @@
                 </div>
             </div>
 
+            <div id="progress" class="progress-box"></div>
             <div id="question-title" class="question-title">...</div>
             
             <div id="mcq-container" class="options-container"></div>
@@ -484,35 +483,35 @@
 
         // 29 CHUYÊN ĐỀ GẮN CHUẨN THỜI HẠN KẾ HOẠCH
         const LESSON_ROADMAP = [
-            { code: "1.1", title: "Section 1.1: Bảng chữ cái tiếng Anh", planDate: "2026-08-18", planDisplay: "18/08" },
-            { code: "1.2", title: "Section 1.2: Giới thiệu bản thân", planDate: "2026-08-19", planDisplay: "19/08" },
-            { code: "1.3", title: "Section 1.3: Số đếm", planDate: "2026-08-20", planDisplay: "20/08" },
-            { code: "1.4", title: "Section 1.4: Sở thích", planDate: "2026-08-21", planDisplay: "21/08" },
-            { code: "1.5", title: "Section 1.5: Thực hành L1", planDate: "2026-08-22", planDisplay: "22/08" },
-            { code: "exam1", title: "Exam 1: Giai đoạn 1 (L1)", planDate: "2026-08-23", planDisplay: "23/08" },
-            { code: "2.1", title: "Section 2.1: Thời tiết", planDate: "2026-08-25", planDisplay: "25/08" },
-            { code: "2.2", title: "Section 2.2: Các mùa trong năm", planDate: "2026-08-26", planDisplay: "26/08" },
-            { code: "2.3", title: "Section 2.3: Thực hành L2", planDate: "2026-08-27", planDisplay: "27/08" },
-            { code: "3.1", title: "Section 3.1: Mô tả vị trí", planDate: "2026-08-28", planDisplay: "28/08" },
-            { code: "3.2", title: "Section 3.2: Mô tả hướng", planDate: "2026-08-29", planDisplay: "29/08" },
-            { code: "3.3", title: "Section 3.3: Giới thiệu trên sân", planDate: "2026-08-30", planDisplay: "30/08" },
-            { code: "3.4", title: "Section 3.4: Thực hành L3", planDate: "2026-08-31", planDisplay: "31/08" },
-            { code: "exam2", title: "Exam 2: Giai đoạn 2 (L2-3)", planDate: "2026-09-02", planDisplay: "02/09" },
-            { code: "4.1", title: "Section 4.1: Màu sắc", planDate: "2026-09-03", planDisplay: "03/09" },
-            { code: "4.2", title: "Section 4.2: Giao tiếp cơ bản", planDate: "2026-09-04", planDisplay: "04/09" },
-            { code: "4.3", title: "Section 4.3: Thực hành L4", planDate: "2026-09-05", planDisplay: "05/09" },
-            { code: "5.1", title: "Section 5.1: Xử lý than phiền", planDate: "2026-09-06", planDisplay: "06/09" },
-            { code: "5.2", title: "Section 5.2: Lời đề nghị", planDate: "2026-09-07", planDisplay: "07/09" },
-            { code: "5.3", title: "Section 5.3: Động viên khích lệ", planDate: "2026-09-08", planDisplay: "08/09" },
-            { code: "5.4", title: "Section 5.4: Lời chào tạm biệt", planDate: "2026-09-09", planDisplay: "09/09" },
-            { code: "5.5", title: "Section 5.5: Thực hành L5", planDate: "2026-09-10", planDisplay: "10/09" },
-            { code: "exam3", title: "Exam 3: Giai đoạn 3 (L4-5)", planDate: "2026-09-12", planDisplay: "12/09" },
-            { code: "6.1", title: "Section 6.1: Tình trạng sức khoẻ", planDate: "2026-09-13", planDisplay: "13/09" },
-            { code: "6.2", title: "Section 6.2: Biểu đạt cảm xúc", planDate: "2026-09-14", planDisplay: "14/09" },
-            { code: "6.3", title: "Section 6.3: Tình huống khẩn cấp", planDate: "2026-09-15", planDisplay: "15/09" },
-            { code: "6.4", title: "Section 6.4: Thực hành L6", planDate: "2026-09-17", planDisplay: "17/09" },
-            { code: "exam4", title: "Exam 4: Giai đoạn 4 (L5-6)", planDate: "2026-09-19", planDisplay: "19/09" },
-            { code: "all", title: "Final Exam: Cuối khóa", planDate: "2026-09-22", planDisplay: "22/09" }
+            { code: "1.1", title: "Section 1.1: Bảng chữ cái tiếng Anh / English Alphabet", planDate: "2026-08-18", planDisplay: "18/08" },
+            { code: "1.2", title: "Section 1.2: Giới thiệu bản thân / Self-Introduction", planDate: "2026-08-19", planDisplay: "19/08" },
+            { code: "1.3", title: "Section 1.3: Số đếm / Numbers & Counting", planDate: "2026-08-20", planDisplay: "20/08" },
+            { code: "1.4", title: "Section 1.4: Sở thích / Hobbies & Interests", planDate: "2026-08-21", planDisplay: "21/08" },
+            { code: "1.5", title: "Section 1.5: Thực hành L1 / Review & Practice", planDate: "2026-08-22", planDisplay: "22/08" },
+            { code: "exam1", title: "Exam 1: Giai đoạn 1 (L1) / Stage 1 Test", planDate: "2026-08-23", planDisplay: "23/08" },
+            { code: "2.1", title: "Section 2.1: Thời tiết / Weather Conditions", planDate: "2026-08-25", planDisplay: "25/08" },
+            { code: "2.2", title: "Section 2.2: Các mùa trong năm / Seasons", planDate: "2026-08-26", planDisplay: "26/08" },
+            { code: "2.3", title: "Section 2.3: Thực hành L2 / Review & Practice", planDate: "2026-08-27", planDisplay: "27/08" },
+            { code: "3.1", title: "Section 3.1: Mô tả vị trí / Describing Positions", planDate: "2026-08-28", planDisplay: "28/08" },
+            { code: "3.2", title: "Section 3.2: Mô tả hướng / Describing Directions", planDate: "2026-08-29", planDisplay: "29/08" },
+            { code: "3.3", title: "Section 3.3: Giới thiệu trên sân / On-Course Intro", planDate: "2026-08-30", planDisplay: "30/08" },
+            { code: "3.4", title: "Section 3.4: Thực hành L3 / Review & Practice", planDate: "2026-08-31", planDisplay: "31/08" },
+            { code: "exam2", title: "Exam 2: Giai đoạn 2 (L2-3) / Stage 2 Test", planDate: "2026-09-02", planDisplay: "02/09" },
+            { code: "4.1", title: "Section 4.1: Màu sắc / Colors", planDate: "2026-09-03", planDisplay: "03/09" },
+            { code: "4.2", title: "Section 4.2: Giao tiếp cơ bản / Basic Communication", planDate: "2026-09-04", planDisplay: "04/09" },
+            { code: "4.3", title: "Section 4.3: Thực hành L4 / Review & Practice", planDate: "2026-09-05", planDisplay: "05/09" },
+            { code: "5.1", title: "Section 5.1: Xử lý than phiền / Handling Complaints", planDate: "2026-09-06", planDisplay: "06/09" },
+            { code: "5.2", title: "Section 5.2: Lời đề nghị & Giúp đỡ / Offering Assistance", planDate: "2026-09-07", planDisplay: "07/09" },
+            { code: "5.3", title: "Section 5.3: Động viên, khích lệ / Encouragement", planDate: "2026-09-08", planDisplay: "08/09" },
+            { code: "5.4", title: "Section 5.4: Lời chào tạm biệt / Farewell Greetings", planDate: "2026-09-09", planDisplay: "09/09" },
+            { code: "5.5", title: "Section 5.5: Thực hành L5 / Review & Practice", planDate: "2026-09-10", planDisplay: "10/09" },
+            { code: "exam3", title: "Exam 3: Giai đoạn 3 (L4-5) / Stage 3 Test", planDate: "2026-09-12", planDisplay: "12/09" },
+            { code: "6.1", title: "Section 6.1: Tình trạng sức khoẻ / Health & Well-being", planDate: "2026-09-13", planDisplay: "13/09" },
+            { code: "6.2", title: "Section 6.2: Biểu đạt cảm xúc / Expressing Emotions", planDate: "2026-09-14", planDisplay: "14/09" },
+            { code: "6.3", title: "Section 6.3: Tình huống khẩn cấp / Emergency Situations", planDate: "2026-09-15", planDisplay: "15/09" },
+            { code: "6.4", title: "Section 6.4: Thực hành L6 / Review & Practice", planDate: "2026-09-17", planDisplay: "17/09" },
+            { code: "exam4", title: "Exam 4: Giai đoạn 4 (L5-6) / Stage 4 Test", planDate: "2026-09-19", planDisplay: "19/09" },
+            { code: "all", title: "Final Exam: Cuối khóa / Comprehensive Test (All Lessons)", planDate: "2026-09-22", planDisplay: "22/09" }
         ];
 
         let studentProgressMap = {}; 
@@ -528,9 +527,74 @@
             selectedVal: '1.1'
         };
 
-        function cleanString(str) {
+        document.addEventListener("DOMContentLoaded", function() {
+            const dateInput = document.getElementById('birthday-date');
+            if (dateInput) {
+                const today = new Date();
+                const currentYear = today.getFullYear();
+                const minYear = currentYear - 60;
+                const maxYear = currentYear - 18;
+                const month = String(today.getMonth() + 1).padStart(2, '0');
+                const day = String(today.getDate()).padStart(2, '0');
+                dateInput.min = `${minYear}-${month}-${day}`;
+                dateInput.max = `${maxYear}-${month}-${day}`;
+            }
+            loadSavedStudentProfile();
+        });
+
+        function saveStudentProfileToStorage(info) {
+            try {
+                const profile = {
+                    workPlace: info.workPlace,
+                    studentName: info.studentName,
+                    staffNumber: info.staffNumber,
+                    birthday: info.birthday,
+                    department: info.department
+                };
+                localStorage.setItem('caddie_student_profile', JSON.stringify(profile));
+            } catch (e) {}
+        }
+
+        function loadSavedStudentProfile() {
+            try {
+                const saved = localStorage.getItem('caddie_student_profile');
+                if (saved) {
+                    const data = JSON.parse(saved);
+                    if (data.workPlace) document.getElementById('work-place').value = data.workPlace;
+                    if (data.studentName) document.getElementById('student-name').value = data.studentName;
+                    if (data.staffNumber) document.getElementById('staff-number').value = data.staffNumber.replace(/[^0-9]/g, '');
+                    if (data.birthday) document.getElementById('birthday-date').value = data.birthday;
+                    if (data.department) document.getElementById('department').value = data.department;
+                }
+            } catch (e) {}
+        }
+
+        function clearStudentProfile() {
+            if (confirm("Bạn có muốn đổi sang thông tin thí sinh khác không? / Switch student?")) {
+                try {
+                    localStorage.removeItem('caddie_student_profile');
+                } catch(e) {}
+                document.getElementById('work-place').value = "";
+                document.getElementById('student-name').value = "";
+                document.getElementById('staff-number').value = "";
+                document.getElementById('birthday-date').value = "";
+                document.getElementById('department').value = "";
+                returnToRoadmapView();
+            }
+        }
+
+        function initApp() {
+            loadVoices();
+        }
+
+        function cleanSectionCode(secStr) {
+            if (!secStr) return "";
+            return secStr.toString().toLowerCase().replace(/section/gi, '').replace(/\s+/g, '').trim();
+        }
+
+        function normalizeText(str) {
             if (!str) return "";
-            return str.toString().toLowerCase().replace(/[\s\-_]/g, '').trim();
+            return str.toLowerCase().replace(/[^a-z0-9\s]/g, "").replace(/\s+/g, " ").trim();
         }
 
         function convertToNonAccent(str) {
@@ -538,11 +602,6 @@
             return str.normalize("NFD").replace(/[\u0300-\u036f]/g, "")
                       .replace(/đ/g, "d").replace(/Đ/g, "D")
                       .replace(/[^a-zA-Z0-9]/g, "").toLowerCase();
-        }
-
-        function cleanSectionCode(secStr) {
-            if (!secStr) return "";
-            return secStr.toString().toLowerCase().replace(/section/gi, '').replace(/\s+/g, '').trim();
         }
 
         function shuffleArray(array) {
@@ -564,7 +623,64 @@
             return `${mins.toString().padStart(2, '0')}:${secs.toString().padStart(2, '0')}`;
         }
 
+        // =========================================================================
+        // THUẬT TOÁN TRỘN ĐỀ THÔNG MINH CHO PHẦN NGHE (SESSION STORAGE MEMORY)
+        // =========================================================================
+        function getFilteredListeningItemsBySelection(isSectionMode, selectedVal) {
+            let rawPool = (window.masterQuizData && window.masterQuizData.length > 0) ? JSON.parse(JSON.stringify(window.masterQuizData)) : [];
+            let filtered = [];
+            let targetCount = 20;
+
+            if (isSectionMode && selectedVal) {
+                let cleanTarget = cleanSectionCode(selectedVal);
+                filtered = rawPool.filter(q => q.section && cleanSectionCode(q.section) === cleanTarget);
+                targetCount = 20;
+            } else if (!isSectionMode && selectedVal) {
+                if (selectedVal === 'all') {
+                    filtered = [...rawPool];
+                    targetCount = 30;
+                } else {
+                    let examLessons = selectedVal.replace('exam','').split('-').map(n => n.trim());
+                    filtered = rawPool.filter(q => {
+                        let qLes = (q.lesson || "").toString().replace(/[^\d]/g, '');
+                        return examLessons.includes(qLes);
+                    });
+                    targetCount = 30;
+                }
+            }
+
+            if (filtered.length === 0) return [];
+
+            shuffleArray(filtered);
+
+            // Ghi nhớ lịch sử đã làm để lần retake tiếp theo rút câu mới
+            let lastUsedKey = `last_used_lis_${isSectionMode ? 'sec_' : 'ex_'}${selectedVal}`;
+            let lastUsedTexts = [];
+            try {
+                lastUsedTexts = JSON.parse(sessionStorage.getItem(lastUsedKey) || '[]');
+            } catch(e) {}
+
+            let unusedItems = filtered.filter(item => !lastUsedTexts.includes(normalizeText(item.audioText || item.text || item.title || "")));
+            let usedItems = filtered.filter(item => lastUsedTexts.includes(normalizeText(item.audioText || item.text || item.title || "")));
+
+            let selectedSet = [];
+            if (unusedItems.length >= targetCount) {
+                selectedSet = unusedItems.slice(0, targetCount);
+            } else {
+                selectedSet = [...unusedItems, ...usedItems].slice(0, Math.min(targetCount, filtered.length));
+            }
+
+            try {
+                sessionStorage.setItem(lastUsedKey, JSON.stringify(selectedSet.map(i => normalizeText(i.audioText || i.text || i.title || ""))));
+            } catch(e) {}
+
+            shuffleArray(selectedSet);
+            return selectedSet;
+        }
+
+        // =========================================================================
         // TRA CỨU TIẾN ĐỘ QUA GET/FETCH (CHỐNG LỖI CORS)
+        // =========================================================================
         function fetchProgressFromSheet() {
             const workPlace = document.getElementById('work-place').value;
             const department = document.getElementById('department').value;
@@ -626,7 +742,9 @@
             });
         }
 
-        // RENDER 29 Ô MATRIX: HIỂN THỊ ĐIỂM CAO NHẤT KÈM NGÀY
+        // =========================================================================
+        // RENDER MA TRẬN 29 Ô TIẾN ĐỘ: CHỈ HIỆN ĐIỂM CAO NHẤT KÈM NGÀY LÀM
+        // =========================================================================
         function renderRoadmapMatrix() {
             const grid = document.getElementById('matrix-grid-view');
             grid.innerHTML = "";
@@ -729,7 +847,9 @@
             selectLessonFromMatrix(LESSON_ROADMAP[0]);
         }
 
-        // ENGINE LÀM BÀI NGHE
+        // =========================================================================
+        // ENGINE LÀM BÀI LUYỆN NGHE
+        // =========================================================================
         let quizData = [];
         const MAX_LISTEN_PER_QUESTION = 3; 
         const DELAY_BEFORE_AUDIO_MS = 1000; 
@@ -794,48 +914,22 @@
             voiceSelect.selectedIndex = (ziraIndex !== -1) ? ziraIndex : 0;
         }
 
-        function initApp() {
-            loadVoices();
-        }
-
         function startQuizPractice() {
             if (!studentInfo.selectedVal) {
                 alert("Vui lòng chọn 1 bài học từ bảng 29 chuyên đề!");
                 return;
             }
+            saveStudentProfileToStorage(studentInfo);
             runQuizEngine(studentInfo.isSectionMode, studentInfo.selectedVal);
         }
 
         function runQuizEngine(isSectionMode, selectedVal) {
-            let rawPool = (window.masterQuizData && window.masterQuizData.length > 0) ? JSON.parse(JSON.stringify(window.masterQuizData)) : [];
-            let filtered = [];
-            let targetCount = 20;
+            quizData = getFilteredListeningItemsBySelection(isSectionMode, selectedVal);
 
-            if (isSectionMode) {
-                let cleanTarget = cleanSectionCode(selectedVal);
-                filtered = rawPool.filter(q => q.section && cleanSectionCode(q.section) === cleanTarget);
-                targetCount = 20;
-            } else {
-                if (selectedVal === 'all') {
-                    filtered = [...rawPool];
-                    targetCount = 30;
-                } else {
-                    let examLessons = selectedVal.replace('exam','').split('-').map(n => n.trim());
-                    filtered = rawPool.filter(q => {
-                        let qLes = (q.lesson || "").toString().replace(/[^\d]/g, '');
-                        return examLessons.includes(qLes);
-                    });
-                    targetCount = 30;
-                }
-            }
-
-            if (filtered.length === 0) {
+            if (quizData.length === 0) {
                 alert("Bài học đang cập nhật câu hỏi nghe!");
                 return;
             }
-
-            shuffleArray(filtered);
-            quizData = filtered.slice(0, Math.min(targetCount, filtered.length));
 
             listenCounts = new Array(quizData.length).fill(0);
             userAnswers = new Array(quizData.length).fill(null);
@@ -850,6 +944,12 @@
             const timeStr = now.toLocaleTimeString('en-US', { hour: '2-digit', minute: '2-digit', hour12: true });
             const dateStr = now.toLocaleDateString('vi-VN', { day: '2-digit', month: '2-digit', year: 'numeric' });
             startTimeFormatted = `${timeStr}, ${dateStr}`;
+
+            // Cập nhật tiêu đề hiển thị tên chuyên đề
+            const subTitleElem = document.getElementById('lesson-subtitle');
+            if (subTitleElem) {
+                subTitleElem.innerText = studentInfo.lessonTitle.toUpperCase();
+            }
 
             document.getElementById('user-info-view').classList.add('hidden');
             document.getElementById('result-view').classList.add('hidden');
@@ -898,7 +998,7 @@
                     statusTag.innerText = "🔒 Trạng thái: Đã trả lời";
                 } else {
                     statusTag.className = "status-pending";
-                    statusTag.innerText = "⏳ Trạng thái: Đang làm bài";
+                    statusTag.innerText = "⏳ Trạng thái: Chưa hoàn thành";
                 }
             } else {
                 if (userAns === null || userAns === "") {
@@ -906,7 +1006,7 @@
                     statusTag.innerText = "⏭️ Trạng thái: Đã bỏ qua";
                 } else {
                     let isCorrect = false;
-                    if (currentQuiz.type === 'mcq') {
+                    if (currentQuiz.type === 'mcq' || !currentQuiz.type) {
                         isCorrect = (userAns === currentQuiz.correct);
                     } else if (currentQuiz.type === 'fill') {
                         isCorrect = (userAns.toLowerCase() === (currentQuiz.targetWord || "").toLowerCase());
@@ -933,8 +1033,13 @@
                 
                 updateItemStatusTag();
 
+                // HIỂN THỊ CHUYÊN ĐỀ RÕ RÀNG TRONG KHI LÀM BÀI
+                let cleanSecDisplay = studentInfo.selectedVal.toUpperCase();
+                let sectionText = ` &nbsp;|&nbsp; <span class="section-tag">[${cleanSecDisplay}] ${studentInfo.lessonTitle.split(':')[1] || studentInfo.lessonTitle}</span>`;
+                document.getElementById('progress').innerHTML = `Câu <span>${currentIndex + 1}</span> / ${quizData.length}${sectionText}`;
+
                 const currentQuiz = quizData[currentIndex];
-                document.getElementById('question-title').innerText = `Câu ${currentIndex + 1}/${quizData.length}: ${currentQuiz.title || "Nghe và chọn đáp án chính xác:"}`;
+                document.getElementById('question-title').innerText = currentQuiz.title || "Nghe và chọn đáp án chính xác:";
 
                 const mcqContainer = document.getElementById('mcq-container');
                 const fillContainer = document.getElementById('fill-container');
@@ -1127,6 +1232,9 @@
             }
         }
 
+        // =========================================================================
+        // KẾT THÚC BÀI THI & BỐ CỤC TRANG KẾT QUẢ ĐẦY ĐỦ
+        // =========================================================================
         function finishSession(msg, isFromReview = false) {
             clearInterval(timerInterval);
             clearTimeout(autoPlayTimer);
@@ -1225,9 +1333,10 @@
                     <div class="advice-box">${adviceText}</div>
 
                     <div class="stats-box">
-                        • 👤 Học viên: <b>${studentInfo.studentName}</b> | <b>${studentInfo.workPlace} - ${studentInfo.department}</b><br>
+                        <b>📊 BẢNG THỐNG KÊ CHI TIẾT:</b><br>
+                        • 👤 Học viên: <b>${studentInfo.studentName}</b> | Mã: <b>${studentInfo.staffNumber}</b> | Đơn vị: <b>${studentInfo.workPlace} - ${studentInfo.department}</b><br>
                         • 📚 Chuyên đề: <b>${studentInfo.lessonTitle}</b><br>
-                        • ⏱️ Thời gian: <b>${formatDuration(elapsedSeconds)}</b><br>
+                        • ⏱️ Thời gian: <b>${formatDuration(elapsedSeconds)}</b> | 🕒 Bắt đầu: <b>${startTimeFormatted}</b><br>
                         • 📊 Thống kê: ✅ Đúng: <b>${correctCount}/${totalItems}</b> | ❌ Sai: <b>${incorrectCount}/${totalItems}</b> | ⏭️ Bỏ qua: <b>${skippedCount}/${totalItems}</b>
                     </div>
 
@@ -1245,6 +1354,7 @@
                         <button class="btn-tool btn-upload-drive" id="btn-drive-status" onclick="uploadResultToDrive()">☁️ Tải lên Cloud</button>
                     </div>
 
+                    <!-- KHUNG ĐIỀU HƯỚNG VÀ CHUYỂN TIẾP ĐẦY ĐỦ -->
                     <div class="action-container">
                         <div class="group-title">🎯 ÔN TẬP LẠI & CẢI THIỆN KẾT QUẢ</div>
                         <div class="action-row-a">
@@ -1253,7 +1363,44 @@
                         </div>
 
                         <div class="group-title" style="margin-top: 6px;">🚀 CHUYỂN TIẾP LỘ TRÌNH</div>
-                        <button class="btn-next-exercise" onclick="returnToRoadmapView()">📊 Xem lại bảng tiến độ 29 chuyên đề & Học tiếp</button>
+                        <button class="btn-next-exercise" onclick="returnToRoadmapView()">📊 Chọn chuyên đề khác & Xem tiến độ 29 bài</button>
+
+                        <!-- CHUYỂN SANG PHẦN PHÁT ÂM TẠI TRANG KẾT QUẢ -->
+                        <a href="https://brggrouplearning.github.io/Caddie-pronunciation/" target="_blank" class="speaking-switch-banner" style="margin-top: 4px;">
+                            <div class="banner-left">
+                                <div class="banner-icon">🎤</div>
+                                <div>
+                                    <div class="banner-title">Luyện tập Kỹ năng Phát âm / Speaking</div>
+                                    <div class="banner-desc">Chuyển sang kiểm tra phát âm & nhận diện giọng nói</div>
+                                </div>
+                            </div>
+                            <div class="banner-btn-tag">Học ngay ➔</div>
+                        </a>
+
+                        <!-- CỤM TÀI LIỆU ĐÀO TẠO TẠI TRANG KẾT QUẢ -->
+                        <div class="portal-section-title" style="margin-top: 6px;">📚 TÀI LIỆU THAM KHẢO & ĐÀO TẠO:</div>
+                        <div class="resource-grid">
+                            <a href="https://brggrouplearning.github.io/caddie-videoenglish/" target="_blank" class="resource-card">
+                                <div class="resource-icon">🎬</div>
+                                <div class="resource-name">CLIPS Đào tạo</div>
+                                <div class="resource-sub">Video bài giảng</div>
+                            </a>
+                            <a href="https://drive.google.com/drive/folders/16FQ87gRXF1Zb9Bwpl6ynju3QPMdeJk-V" target="_blank" class="resource-card">
+                                <div class="resource-icon">📂</div>
+                                <div class="resource-name">Tài liệu Đào tạo</div>
+                                <div class="resource-sub">Google Drive</div>
+                            </a>
+                            <a href="https://docs.google.com/document/d/15oweLWJ0qDmIiOLuzTAC8pw3NEH63SWQtx_NMtLPAtk/edit?tab=t.0" target="_blank" class="resource-card">
+                                <div class="resource-icon">📖</div>
+                                <div class="resource-name">Hướng dẫn</div>
+                                <div class="resource-sub">Quy trình làm bài</div>
+                            </a>
+                        </div>
+
+                        <div class="user-switch-note">
+                            Đang lưu thông tin: <b>${studentInfo.studentName} (${studentInfo.staffNumber})</b>
+                            <span class="user-switch-link" onclick="clearStudentProfile()">[Đổi thí sinh / Switch]</span>
+                        </div>
                     </div>
                 </div>
             `;
@@ -1278,6 +1425,10 @@
             document.getElementById('result-view').classList.add('hidden');
             document.getElementById('quiz-area').classList.add('hidden');
             document.getElementById('user-info-view').classList.remove('hidden');
+            
+            const subTitleElem = document.getElementById('lesson-subtitle');
+            if (subTitleElem) subTitleElem.innerText = "VUI LÒNG CHỌN NỘI DUNG VÀ BẮT ĐẦU / PLEASE SELECT CONTENT & START";
+            
             renderRoadmapMatrix();
         }
 
