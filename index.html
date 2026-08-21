@@ -147,13 +147,13 @@
             padding: 3px 2px; 
             text-align: center; 
             cursor: pointer; 
-            transition: all 0.15s ease;
-            background: #fff;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            min-height: 40px;
+            transition: all 0.15s ease; 
+            background: #fff; 
+            display: flex; 
+            flex-direction: column; 
+            justify-content: center; 
+            align-items: center; 
+            min-height: 40px; 
         }
         .matrix-item:hover { transform: scale(1.04); box-shadow: 0 2px 5px rgba(0,0,0,0.08); }
         
@@ -203,7 +203,6 @@
         .option-btn.selected { background-color: #cff4fc !important; border-color: #0dcaf0 !important; font-weight: bold; color: #055160; }
         .option-btn.opt-correct { background-color: #d1e7dd !important; border-color: #198754 !important; color: #0f5132; font-weight: bold; }
         .option-btn.opt-incorrect { background-color: #f8d7da !important; border-color: #dc3545 !important; color: #842029; font-weight: bold; }
-        .wrong-word-highlight { color: #dc3545; text-decoration: underline; font-weight: bold; }
 
         .vi-trans { display: block; margin-top: 2px; font-weight: normal; font-size: 11px; color: #495057; line-height: 1.3; }
 
@@ -624,56 +623,70 @@
         }
 
         // =========================================================================
-        // THUẬT TOÁN TRỘN ĐỀ THÔNG MINH CHO PHẦN NGHE (SESSION STORAGE MEMORY)
+        // THUẬT TOÁN TRỘN ĐỀ THÔNG MINH CHO PHẦN NGHE:
+        // - Chuyên đề (Section): 30 câu
+        // - Bài kiểm tra / Tổng hợp (Exam / Final): 50 câu
+        // - Khi làm lại: Ưu tiên rút 100% câu hỏi mới từ ngân hàng đề trước
         // =========================================================================
         function getFilteredListeningItemsBySelection(isSectionMode, selectedVal) {
             let rawPool = (window.masterQuizData && window.masterQuizData.length > 0) ? JSON.parse(JSON.stringify(window.masterQuizData)) : [];
             let filtered = [];
-            let targetCount = 20;
+            let targetCount = 30; // Mặc định 30 câu cho Section
 
             if (isSectionMode && selectedVal) {
                 let cleanTarget = cleanSectionCode(selectedVal);
                 filtered = rawPool.filter(q => q.section && cleanSectionCode(q.section) === cleanTarget);
-                targetCount = 20;
+                targetCount = 30; // Chuyên đề: 30 câu
             } else if (!isSectionMode && selectedVal) {
                 if (selectedVal === 'all') {
                     filtered = [...rawPool];
-                    targetCount = 30;
+                    targetCount = 50; // Final Exam: 50 câu
                 } else {
                     let examLessons = selectedVal.replace('exam','').split('-').map(n => n.trim());
                     filtered = rawPool.filter(q => {
                         let qLes = (q.lesson || "").toString().replace(/[^\d]/g, '');
                         return examLessons.includes(qLes);
                     });
-                    targetCount = 30;
+                    targetCount = 50; // Exam giai đoạn: 50 câu
                 }
             }
 
             if (filtered.length === 0) return [];
 
+            // Xáo trộn sơ bộ ngân hàng câu hỏi
             shuffleArray(filtered);
 
-            // Ghi nhớ lịch sử đã làm để lần retake tiếp theo rút câu mới
-            let lastUsedKey = `last_used_lis_${isSectionMode ? 'sec_' : 'ex_'}${selectedVal}`;
-            let lastUsedTexts = [];
+            // Ghi nhớ và ưu tiên lấy câu hỏi mới chưa từng làm
+            let lastUsedKey = `pool_history_lis_${isSectionMode ? 'sec_' : 'ex_'}${selectedVal}`;
+            let historyTexts = [];
             try {
-                lastUsedTexts = JSON.parse(sessionStorage.getItem(lastUsedKey) || '[]');
+                historyTexts = JSON.parse(sessionStorage.getItem(lastUsedKey) || '[]');
             } catch(e) {}
 
-            let unusedItems = filtered.filter(item => !lastUsedTexts.includes(normalizeText(item.audioText || item.text || item.title || "")));
-            let usedItems = filtered.filter(item => lastUsedTexts.includes(normalizeText(item.audioText || item.text || item.title || "")));
+            let unusedItems = filtered.filter(item => !historyTexts.includes(normalizeText(item.audioText || item.text || item.title || "")));
+            let usedItems = filtered.filter(item => historyTexts.includes(normalizeText(item.audioText || item.text || item.title || "")));
 
             let selectedSet = [];
+
+            // Nếu ngân hàng chưa dùng còn đủ số lượng câu hỏi mong muốn
             if (unusedItems.length >= targetCount) {
                 selectedSet = unusedItems.slice(0, targetCount);
             } else {
+                // Nếu không đủ, lấy hết câu mới rồi lấy bù câu cũ và xáo trộn lại
+                shuffleArray(usedItems);
                 selectedSet = [...unusedItems, ...usedItems].slice(0, Math.min(targetCount, filtered.length));
+                // Khi đã dùng gần hết ngân hàng, reset lại lịch sử
+                historyTexts = [];
             }
 
+            // Cập nhật lại lịch sử các câu đã dùng vào bộ nhớ session
+            const currentSelectedKeys = selectedSet.map(i => normalizeText(i.audioText || i.text || i.title || ""));
+            const updatedHistory = Array.from(new Set([...historyTexts, ...currentSelectedKeys]));
             try {
-                sessionStorage.setItem(lastUsedKey, JSON.stringify(selectedSet.map(i => normalizeText(i.audioText || i.text || i.title || ""))));
+                sessionStorage.setItem(lastUsedKey, JSON.stringify(updatedHistory));
             } catch(e) {}
 
+            // Xáo trộn thứ tự các câu hỏi trong đề thi
             shuffleArray(selectedSet);
             return selectedSet;
         }
@@ -945,7 +958,6 @@
             const dateStr = now.toLocaleDateString('vi-VN', { day: '2-digit', month: '2-digit', year: 'numeric' });
             startTimeFormatted = `${timeStr}, ${dateStr}`;
 
-            // Cập nhật tiêu đề hiển thị tên chuyên đề
             const subTitleElem = document.getElementById('lesson-subtitle');
             if (subTitleElem) {
                 subTitleElem.innerText = studentInfo.lessonTitle.toUpperCase();
@@ -1033,7 +1045,6 @@
                 
                 updateItemStatusTag();
 
-                // HIỂN THỊ CHUYÊN ĐỀ RÕ RÀNG TRONG KHI LÀM BÀI
                 let cleanSecDisplay = studentInfo.selectedVal.toUpperCase();
                 let sectionText = ` &nbsp;|&nbsp; <span class="section-tag">[${cleanSecDisplay}] ${studentInfo.lessonTitle.split(':')[1] || studentInfo.lessonTitle}</span>`;
                 document.getElementById('progress').innerHTML = `Câu <span>${currentIndex + 1}</span> / ${quizData.length}${sectionText}`;
@@ -1259,7 +1270,7 @@
 
             let finalScore = totalItems > 0 ? Math.round((correctCount / totalItems) * 100) : 0;
             const now = new Date();
-            const dateShort = `${String(now.getDate()).padStart(2,'0')}/${String(now.getMonth()+1).padStart(2,'0')}`;
+            const dateShort = `${String(now.getDate()).padStart(2,'0')}/${String(now.getMonth()+1).padStart(2,'0')}/${now.getFullYear()}`;
 
             // CHỈ CẬP NHẬT KẾT QUẢ CAO NHẤT
             const oldRecord = studentProgressMap[studentInfo.selectedVal] || null;
