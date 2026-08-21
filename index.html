@@ -3,79 +3,57 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <!-- 1. TIÊU ĐỀ TAB TRÌNH DUYỆT & FAVICON ICON TAI NGHE -->
     <title>Listening Test - BRG Learning</title>
     <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🎧</text></svg>">
     
-    <!-- THƯ VIỆN CHỤP ẢNH MÀN HÌNH HTML2CANVAS -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
     <style>
         * { box-sizing: border-box; }
-        body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; text-align: center; padding: 12px 8px; background-color: #f0f2f5; margin: 0; color: #333; }
-        .brand-header { font-size: 18px; font-weight: 800; color: #B21818; letter-spacing: 1.5px; margin-bottom: 6px; text-transform: uppercase; }
+        body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; text-align: center; padding: 10px 6px; background-color: #f0f2f5; margin: 0; color: #333; }
+        .brand-header { font-size: 17px; font-weight: 800; color: #0d6efd; letter-spacing: 1.5px; margin-bottom: 5px; text-transform: uppercase; }
         
-        /* CONTAINER THÊM POSITION RELATIVE ĐỂ ĐẶT BADGE GÓC TRÁI */
         .container { 
             position: relative; 
-            max-width: 630px; 
+            max-width: 650px; 
             margin: 0 auto; 
             background: white; 
-            padding: 16px 18px; 
+            padding: 14px 16px; 
             border-radius: 14px; 
             box-shadow: 0 4px 16px rgba(0,0,0,0.06); 
         }
 
-        /* STYLE BADGE ICON NGHE GÓC TRÊN TRÁI */
         .listening-badge-corner {
             position: absolute;
-            top: 12px;
-            left: 14px;
+            top: 10px;
+            left: 12px;
             display: flex;
             align-items: center;
-            gap: 6px;
+            gap: 5px;
             background: #e7f1ff;
-            border: 1.5px solid #b6d4fe;
+            border: 1.2px solid #b6d4fe;
             color: #0d6efd;
-            padding: 4px 8px;
+            padding: 3px 7px;
             border-radius: 8px;
-            font-size: 11px;
+            font-size: 10px;
             font-weight: 800;
-            letter-spacing: 0.5px;
-            box-shadow: 0 2px 5px rgba(13, 110, 253, 0.08);
             user-select: none;
         }
-        .listening-badge-corner .icon {
-            font-size: 17px;
-            line-height: 1;
-        }
-        .listening-badge-corner .text {
-            display: flex;
-            flex-direction: column;
-            text-align: left;
-            line-height: 1.1;
-        }
-        .listening-badge-corner .text span:first-child {
-            font-size: 10.5px;
-            color: #0d6efd;
-        }
-        .listening-badge-corner .text span:last-child {
-            font-size: 8px;
-            color: #6c757d;
-            font-weight: 600;
-        }
+        .listening-badge-corner .icon { font-size: 15px; line-height: 1; }
+        .listening-badge-corner .text { display: flex; flex-direction: column; text-align: left; line-height: 1.1; }
+        .listening-badge-corner .text span:first-child { font-size: 10px; color: #0d6efd; }
+        .listening-badge-corner .text span:last-child { font-size: 7.5px; color: #6c757d; font-weight: 600; }
         
-        h1 { color: #1e7e34; font-size: 15.5px; margin: 0 0 2px 0; font-weight: bold; text-transform: uppercase; line-height: 1.25; }
-        h2 { color: #666; font-size: 11px; margin: 0 0 4px 0; font-weight: bold; text-transform: uppercase; letter-spacing: 0.5px; }
-        .lesson-title { color: #0d6efd; font-size: 12px; margin: 0 0 10px 0; font-weight: bold; text-transform: uppercase; letter-spacing: 0.5px; }
+        h1 { color: #1e7e34; font-size: 15px; margin: 0 0 2px 0; font-weight: bold; text-transform: uppercase; line-height: 1.25; }
+        .sub-type { color: #666; font-size: 10.5px; margin: 0 0 3px 0; font-weight: bold; text-transform: uppercase; letter-spacing: 0.5px; }
+        #lesson-subtitle { color: #0d6efd; font-size: 11.5px; margin: 0 0 8px 0; font-weight: bold; text-transform: uppercase; }
 
-        /* GIAO DIỆN KHUNG CHỈ DẪN VÀ TÀI LIỆU (RESOURCE LINKS & NAV) */
         .portal-section-title {
-            font-size: 11px;
+            font-size: 10.5px;
             font-weight: bold;
             color: #495057;
             text-transform: uppercase;
             letter-spacing: 0.5px;
-            margin: 12px 0 6px 0;
+            margin: 10px 0 5px 0;
             text-align: left;
             display: flex;
             align-items: center;
@@ -85,15 +63,15 @@
         .resource-grid {
             display: grid;
             grid-template-columns: repeat(3, 1fr);
-            gap: 8px;
-            margin-bottom: 8px;
+            gap: 6px;
+            margin-bottom: 6px;
         }
 
         .resource-card {
             background: #ffffff;
             border: 1.2px solid #e2e8f0;
-            border-radius: 8px;
-            padding: 8px 6px;
+            border-radius: 7px;
+            padding: 6px 4px;
             text-decoration: none;
             color: #333;
             display: flex;
@@ -102,188 +80,195 @@
             justify-content: center;
             text-align: center;
             transition: all 0.2s ease;
-            box-shadow: 0 1px 4px rgba(0,0,0,0.03);
         }
-        .resource-card:hover {
-            transform: translateY(-2px);
-            border-color: #0d6efd;
-            box-shadow: 0 4px 10px rgba(13, 110, 253, 0.12);
-            background: #f8fbff;
-        }
-        .resource-icon {
-            font-size: 18px;
-            margin-bottom: 3px;
-        }
-        .resource-name {
-            font-size: 11px;
-            font-weight: 700;
-            color: #1a202c;
-            line-height: 1.2;
-        }
-        .resource-sub {
-            font-size: 9px;
-            color: #718096;
-            margin-top: 1px;
-        }
+        .resource-card:hover { transform: translateY(-2px); border-color: #0d6efd; background: #f8fbff; }
+        .resource-icon { font-size: 16px; margin-bottom: 2px; }
+        .resource-name { font-size: 10.5px; font-weight: 700; color: #1a202c; line-height: 1.2; }
+        .resource-sub { font-size: 8.5px; color: #718096; margin-top: 1px; }
 
-        /* BANNER CHUYỂN SANG PHẦN PHÁT ÂM / SPEAKING */
+        /* BANNER CHUYỂN SANG PHẦN NÓI */
         .speaking-switch-banner {
-            background: linear-gradient(135deg, #0d6efd 0%, #198754 100%);
-            border-radius: 9px;
-            padding: 9px 12px;
-            margin-top: 6px;
-            margin-bottom: 6px;
+            background: linear-gradient(135deg, #B21818 0%, #fd7e14 100%);
+            border-radius: 8px;
+            padding: 8px 10px;
+            margin: 5px 0;
             display: flex;
             align-items: center;
             justify-content: space-between;
             text-decoration: none;
             color: #ffffff;
-            box-shadow: 0 3px 8px rgba(13, 110, 253, 0.2);
-            transition: all 0.2s ease;
         }
-        .speaking-switch-banner:hover {
-            opacity: 0.95;
-            transform: scale(0.99);
-            color: #ffffff;
-        }
-        .banner-left {
+        .banner-left { display: flex; align-items: center; gap: 8px; text-align: left; }
+        .banner-icon { font-size: 20px; line-height: 1; }
+        .banner-title { font-size: 11.5px; font-weight: bold; text-transform: uppercase; }
+        .banner-desc { font-size: 9px; opacity: 0.9; }
+        .banner-btn-tag { background: #ffffff; color: #B21818; font-weight: 800; font-size: 10.5px; padding: 4px 8px; border-radius: 5px; }
+
+        /* FORM THÔNG TIN HỌC VIÊN */
+        .user-card { background: #ffffff; border: 1.5px solid #e7f1ff; border-radius: 9px; padding: 12px; text-align: left; }
+        .user-card-header { font-size: 12.5px; font-weight: bold; color: #0d6efd; border-bottom: 1.5px solid #e7f1ff; padding-bottom: 5px; margin-bottom: 8px; text-align: center; text-transform: uppercase; }
+        .form-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 6px 8px; }
+        .form-group { margin-bottom: 3px; }
+        .form-group.full-width { grid-column: span 2; }
+        .form-group label { display: block; font-weight: 600; font-size: 11px; color: #495057; margin-bottom: 2px; }
+        .form-group input, .form-group select { width: 100%; padding: 6px 8px; border: 1.2px solid #ced4da; border-radius: 5px; font-size: 11.5px; outline: none; background-color: #fff; }
+        .form-group input:focus, .form-group select:focus { border-color: #0d6efd; box-shadow: 0 0 0 2px rgba(13, 110, 253, 0.15); }
+        
+        .btn-check-progress { width: 100%; padding: 9px; font-size: 12.5px; font-weight: bold; color: white; background: #0d6efd; border: none; border-radius: 6px; cursor: pointer; margin-top: 6px; }
+        .btn-check-progress:hover { background: #0b5ed7; }
+
+        /* MA TRẬN TIẾN ĐỘ 29 Ô THU GỌN */
+        .roadmap-container { background: #f8fbff; border: 1.5px solid #b6d4fe; border-radius: 9px; padding: 10px; margin-top: 10px; text-align: left; }
+        .roadmap-title { font-size: 12px; font-weight: bold; color: #0d6efd; margin-bottom: 4px; text-transform: uppercase; display: flex; justify-content: space-between; align-items: center; }
+        
+        .progress-remark-box {
+            font-size: 11.5px;
+            font-weight: 600;
+            padding: 6px 8px;
+            border-radius: 6px;
+            margin-bottom: 8px;
             display: flex;
             align-items: center;
-            gap: 9px;
-            text-align: left;
+            gap: 6px;
+            line-height: 1.3;
         }
-        .banner-icon {
-            font-size: 22px;
-            line-height: 1;
+        .remark-good { background: #d1e7dd; color: #0f5132; border: 1px solid #badbcc; }
+        .remark-warning { background: #fff3cd; color: #664d03; border: 1px solid #ffecb5; }
+        .remark-danger { background: #f8d7da; color: #721c24; border: 1px solid #f5c6cb; }
+
+        .matrix-grid { display: grid; grid-template-columns: repeat(6, 1fr); gap: 4px; margin-bottom: 8px; }
+        
+        .matrix-item { 
+            border: 1.2px solid #ddd; 
+            border-radius: 5px; 
+            padding: 3px 2px; 
+            text-align: center; 
+            cursor: pointer; 
+            transition: all 0.15s ease;
+            background: #fff;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            min-height: 40px;
         }
-        .banner-title {
-            font-size: 12px;
-            font-weight: bold;
-            text-transform: uppercase;
-            letter-spacing: 0.4px;
+        .matrix-item:hover { transform: scale(1.04); box-shadow: 0 2px 5px rgba(0,0,0,0.08); }
+        
+        .matrix-row-top {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 3px;
+            width: 100%;
         }
-        .banner-desc {
-            font-size: 9.5px;
-            opacity: 0.9;
-        }
-        .banner-btn-tag {
-            background: #ffffff;
-            color: #0d6efd;
-            font-weight: 800;
-            font-size: 11px;
-            padding: 5px 10px;
-            border-radius: 6px;
+        .matrix-icon { font-size: 10.5px; line-height: 1; }
+        .matrix-code { font-size: 10px; font-weight: bold; line-height: 1; }
+        .matrix-row-sub {
+            font-size: 8px;
+            opacity: 0.85;
+            margin-top: 2px;
             white-space: nowrap;
-            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            letter-spacing: -0.2px;
         }
 
-        /* GIAO DIỆN THÔNG TIN HỌC VIÊN SONG NGỮ */
-        .user-card { background: #ffffff; border: 1.5px solid #e7f1ff; border-radius: 10px; padding: 14px; text-align: left; box-shadow: 0 2px 8px rgba(13, 110, 253, 0.05); }
-        .user-card-header { font-size: 13px; font-weight: bold; color: #0d6efd; border-bottom: 1.5px solid #e7f1ff; padding-bottom: 6px; margin-bottom: 10px; text-align: center; text-transform: uppercase; }
-        .form-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 8px 10px; }
-        .form-group { margin-bottom: 4px; }
-        .form-group.full-width { grid-column: span 2; }
-        .form-group label { display: block; font-weight: 600; font-size: 11.5px; color: #495057; margin-bottom: 3px; }
-        .form-group input, .form-group select { width: 100%; padding: 7px 10px; border: 1.2px solid #ced4da; border-radius: 6px; font-size: 12px; transition: all 0.2s ease; outline: none; background-color: #fff; }
-        .form-group input:focus, .form-group select:focus { border-color: #0d6efd; box-shadow: 0 0 0 2px rgba(13, 110, 253, 0.15); }
+        .matrix-item.excellent { background: #d1e7dd; border-color: #0f5132; color: #0f5132; }
+        .matrix-item.passed { background: #e8f5e9; border-color: #2e7d32; color: #1b5e20; }
+        .matrix-item.failed { background: #ffebee; border-color: #c62828; color: #b71c1c; }
+        .matrix-item.pending { background: #fffde7; border-color: #ffe082; color: #664d03; }
+        .matrix-item.active-selected { outline: 2px solid #0d6efd; box-shadow: 0 0 0 2px rgba(13, 110, 253, 0.25); }
+        
+        .progress-bar-wrap { width: 100%; background: #e9ecef; border-radius: 6px; height: 9px; margin-bottom: 8px; overflow: hidden; }
+        .progress-bar-fill { background: #198754; height: 100%; width: 0%; transition: width 0.4s ease; }
 
-        .selection-box { background: #f8f9fa; border: 1.2px dashed #b6d4fe; border-radius: 8px; padding: 8px 10px; margin-bottom: 6px; transition: border-color 0.2s; }
-        .selection-box.active { border-color: #0d6efd; background: #f0f7ff; }
-        .selection-header { display: flex; align-items: center; gap: 6px; font-weight: bold; font-size: 12px; color: #0d6efd; margin-bottom: 4px; cursor: pointer; }
-        .selection-header input[type="radio"] { width: 14px; height: 14px; cursor: pointer; accent-color: #0d6efd; margin: 0; }
-
-        .btn-start-quiz { width: 100%; padding: 10px; font-size: 13.5px; font-weight: bold; color: white; background: #198754; border: none; border-radius: 6px; cursor: pointer; margin-top: 8px; box-shadow: 0 3px 8px rgba(25, 135, 84, 0.2); transition: background 0.2s; }
+        .btn-start-quiz { width: 100%; padding: 9px; font-size: 12.5px; font-weight: bold; color: white; background: #198754; border: none; border-radius: 6px; cursor: pointer; margin-top: 5px; }
         .btn-start-quiz:hover { background: #146c43; }
 
-        /* VIEW LÀM BÀI */
-        .meta-bar { display: flex; justify-content: space-between; align-items: center; margin-bottom: 10px; gap: 6px; flex-wrap: wrap; }
-        #item-status { font-size: 11.5px; font-weight: bold; padding: 4px 10px; border-radius: 16px; text-align: left; }
+        /* VIEW LÀM BÀI NGHE */
+        .meta-bar { display: flex; justify-content: space-between; align-items: center; margin-bottom: 8px; gap: 5px; flex-wrap: wrap; }
+        #item-status { font-size: 11px; font-weight: bold; padding: 3px 8px; border-radius: 12px; }
         .status-answered { background-color: #d1e7dd; color: #0f5132; border: 1px solid #badbcc; }
         .status-skipped { background-color: #e2e3e5; color: #383d41; border: 1px solid #d6d8db; }
         .status-pending { background-color: #fff3cd; color: #664d03; border: 1px solid #ffecb5; }
         .status-correct { background-color: #d1e7dd; color: #0f5132; border: 1px solid #badbcc; }
         .status-incorrect { background-color: #f8d7da; color: #842029; border: 1px solid #f5c6cb; }
 
-        #timer-box { font-size: 11.5px; font-weight: bold; color: #0d6efd; background: #e7f1ff; padding: 4px 10px; border-radius: 16px; border: 1px solid #b6d4fe; transition: all 0.3s; white-space: nowrap; }
+        #timer-box { font-size: 11px; font-weight: bold; color: #0d6efd; background: #e7f1ff; padding: 3px 8px; border-radius: 12px; border: 1px solid #b6d4fe; white-space: nowrap; }
         .timer-warning { color: #dc3545 !important; background: #f8d7da !important; border-color: #f5c6cb !important; animation: blink 1s infinite; }
         @keyframes blink { 50% { opacity: 0.5; } }
 
-        .audio-box { background: #e7f1ff; border: 1.5px dashed #0d6efd; padding: 8px 10px; border-radius: 8px; margin: 8px 0; }
-        #play-btn { background: #0d6efd; color: white; padding: 9px 14px; font-size: 13px; font-weight: bold; border: none; border-radius: 20px; cursor: pointer; box-shadow: 0 2px 6px rgba(0,0,0,0.12); transition: all 0.2s; width: 100%; }
+        .audio-box { background: #e7f1ff; border: 1.2px dashed #0d6efd; padding: 6px 8px; border-radius: 7px; margin: 6px 0; }
+        #play-btn { background: #0d6efd; color: white; padding: 8px 12px; font-size: 12px; font-weight: bold; border: none; border-radius: 18px; cursor: pointer; transition: all 0.2s; width: 100%; }
         
-        .tts-controls { display: flex; gap: 6px; margin-top: 6px; text-align: left; }
-        .tts-controls select { padding: 5px 8px; font-size: 11.5px; border-radius: 5px; border: 1px solid #b6d4fe; background: #fff; font-weight: 600; color: #0d6efd; flex: 1; outline: none; }
+        .tts-controls { display: flex; gap: 5px; margin-top: 5px; text-align: left; }
+        .tts-controls select { padding: 4px 6px; font-size: 11px; border-radius: 5px; border: 1px solid #b6d4fe; background: #fff; font-weight: 600; color: #0d6efd; flex: 1; outline: none; }
         
-        .question-title { text-align: left; font-weight: bold; margin-bottom: 8px; color: #212529; font-size: 13.5px; line-height: 1.35; }
-        .options-container { display: flex; flex-direction: column; gap: 6px; margin: 8px 0; text-align: left; }
-        .option-btn { padding: 8px 12px; font-size: 13px; background: #fff; border: 1.5px solid #dee2e6; border-radius: 6px; cursor: pointer; font-weight: 500; transition: all 0.2s; line-height: 1.35; }
+        .question-title { text-align: left; font-weight: bold; margin-bottom: 6px; color: #212529; font-size: 12.5px; line-height: 1.35; }
+        .options-container { display: flex; flex-direction: column; gap: 5px; margin: 6px 0; text-align: left; }
+        .option-btn { padding: 7px 10px; font-size: 12px; background: #fff; border: 1.2px solid #dee2e6; border-radius: 5px; cursor: pointer; font-weight: 500; transition: all 0.2s; line-height: 1.3; }
         .option-btn.selected { background-color: #cff4fc !important; border-color: #0dcaf0 !important; font-weight: bold; color: #055160; }
         .option-btn.opt-correct { background-color: #d1e7dd !important; border-color: #198754 !important; color: #0f5132; font-weight: bold; }
         .option-btn.opt-incorrect { background-color: #f8d7da !important; border-color: #dc3545 !important; color: #842029; font-weight: bold; }
         .wrong-word-highlight { color: #dc3545; text-decoration: underline; font-weight: bold; }
 
-        .vi-trans { display: block; margin-top: 3px; font-weight: normal; font-size: 12px; color: #495057; line-height: 1.35; }
+        .vi-trans { display: block; margin-top: 2px; font-weight: normal; font-size: 11px; color: #495057; line-height: 1.3; }
 
-        .fill-container { background: #ffffff; border: 1.2px solid #e2e8f0; border-radius: 8px; padding: 12px 10px; margin: 10px 0; text-align: center; box-shadow: 0 1px 4px rgba(0, 0, 0, 0.03); }
-        .blank-sentence { font-size: 14px; font-weight: 600; color: #1e293b; line-height: 1.45; margin-bottom: 8px; }
-        .fill-input { width: 100%; max-width: 320px; padding: 8px 12px; font-size: 13.5px; font-weight: 600; text-align: center; color: #0f172a; border: 1.5px solid #0d6efd; border-radius: 6px; outline: none; background-color: #f8fafc; transition: all 0.2s ease; }
+        .fill-container { background: #ffffff; border: 1.2px solid #e2e8f0; border-radius: 7px; padding: 10px 8px; margin: 8px 0; text-align: center; }
+        .blank-sentence { font-size: 13px; font-weight: 600; color: #1e293b; line-height: 1.4; margin-bottom: 6px; }
+        .fill-input { width: 100%; max-width: 300px; padding: 6px 10px; font-size: 12.5px; font-weight: 600; text-align: center; color: #0f172a; border: 1.5px solid #0d6efd; border-radius: 5px; outline: none; background-color: #f8fafc; }
         .fill-input:focus { background-color: #ffffff; border-color: #0284c7; box-shadow: 0 0 0 2px rgba(13, 110, 253, 0.2); }
 
-        .char-hint { display: block; margin-top: 5px; font-size: 11.5px; font-weight: 600; color: #64748b; }
-        .correct-answer-text { display: block; margin-top: 6px; font-size: 12.5px; font-weight: bold; padding: 6px; border-radius: 5px; background-color: #f1f5f9; }
+        .char-hint { display: block; margin-top: 4px; font-size: 11px; font-weight: 600; color: #64748b; }
+        .correct-answer-text { display: block; margin-top: 5px; font-size: 11.5px; font-weight: bold; padding: 5px; border-radius: 5px; background-color: #f1f5f9; }
 
-        .control-group { display: flex; justify-content: space-between; gap: 6px; margin-top: 10px; flex-wrap: wrap; }
-        .action-btn { padding: 9px 12px; font-size: 12.5px; font-weight: bold; border: none; border-radius: 6px; cursor: pointer; flex: 1; min-width: 110px; }
+        .control-group { display: flex; justify-content: space-between; gap: 5px; margin-top: 8px; flex-wrap: wrap; }
+        .action-btn { padding: 8px 10px; font-size: 11.5px; font-weight: bold; border: none; border-radius: 5px; cursor: pointer; flex: 1; }
         #prev-btn { background: #fd7e14; color: white; }
         #next-btn { background: #198754; color: white; }
         
         /* RESULT CARD */
         .result-card { text-align: center; }
-        .result-title-banner { font-size: 13px; font-weight: bold; color: #1e7e34; margin-bottom: 3px; }
-        .score-row { display: flex; align-items: center; justify-content: center; gap: 8px; margin: 2px 0 5px 0; }
-        .score-box { font-size: 26px; font-weight: bold; color: #1e7e34; line-height: 1; }
-        .level-badge { display: inline-block; padding: 3px 10px; border-radius: 14px; font-weight: bold; font-size: 11.5px; }
+        .result-title-banner { font-size: 12.5px; font-weight: bold; color: #1e7e34; margin-bottom: 3px; }
+        .score-row { display: flex; align-items: center; justify-content: center; gap: 6px; margin: 2px 0 4px 0; }
+        .score-box { font-size: 24px; font-weight: bold; color: #1e7e34; line-height: 1; }
+        .level-badge { display: inline-block; padding: 3px 10px; border-radius: 14px; font-weight: bold; font-size: 11px; }
         .level-excellent { background-color: #d1e7dd; color: #0f5132; border: 1px solid #badbcc; }
         .level-passed { background-color: #cff4fc; color: #055160; border: 1px solid #b6effb; }
         .level-failed { background-color: #f8d7da; color: #721c24; border: 1px solid #f5c6cb; }
 
-        .advice-box { font-size: 11.5px; line-height: 1.35; color: #333; margin: 4px 0 5px 0; background: #e9ecef; padding: 6px 8px; border-radius: 6px; text-align: left; }
-        .stats-box { background: #f8f9fa; border: 1px solid #dee2e6; border-radius: 8px; padding: 7px 10px; margin: 5px 0; text-align: left; font-size: 11.5px; line-height: 1.45; }
-        
+        .advice-box { font-size: 11px; line-height: 1.35; color: #333; margin: 4px 0 5px 0; background: #e9ecef; padding: 6px 8px; border-radius: 6px; text-align: left; }
+        .stats-box { background: #f8f9fa; border: 1px solid #dee2e6; border-radius: 7px; padding: 6px 8px; margin: 4px 0; text-align: left; font-size: 11px; line-height: 1.4; }
+
         .feedback-card { background: #fff8e6; border: 1px solid #ffe8a1; border-radius: 6px; padding: 5px 8px; margin-top: 5px; text-align: left; }
-        .feedback-card label { font-size: 11px; font-weight: bold; color: #8c6d00; display: block; margin-bottom: 2px; }
+        .feedback-card label { font-size: 10.5px; font-weight: bold; color: #8c6d00; display: block; margin-bottom: 2px; }
         .feedback-input-group { display: flex; gap: 6px; }
-        .feedback-card input[type="text"] { 
-            flex: 1;
-            padding: 5px 8px; 
-            border: 1.2px solid #ffe082; 
-            border-radius: 5px; 
-            font-size: 11.5px; 
-            outline: none; 
-            background: #ffffff; 
-        }
-        .btn-send-feedback { background: #ffc107; color: #000; font-weight: bold; border: none; padding: 5px 10px; border-radius: 5px; cursor: pointer; font-size: 11px; white-space: nowrap; }
+        .feedback-card input[type="text"] { flex: 1; padding: 5px 8px; border: 1.2px solid #ffe082; border-radius: 5px; font-size: 11px; outline: none; background: #ffffff; }
+        .btn-send-feedback { background: #ffc107; color: #000; font-weight: bold; border: none; padding: 5px 10px; border-radius: 5px; cursor: pointer; font-size: 10.5px; white-space: nowrap; }
 
         .extra-tools-card { background: #f0f7ff; border: 1px solid #b6d4fe; border-radius: 6px; padding: 5px 8px; margin-top: 5px; display: flex; gap: 6px; flex-wrap: wrap; text-align: left; align-items: center; }
-        .extra-tools-title { width: 100%; font-size: 11px; font-weight: bold; color: #0d6efd; margin-bottom: 2px; }
-        .btn-tool { flex: 1; min-width: 120px; padding: 6px 6px; font-size: 11px; font-weight: bold; border: none; border-radius: 5px; cursor: pointer; transition: background 0.2s; }
+        .extra-tools-title { width: 100%; font-size: 10.5px; font-weight: bold; color: #0d6efd; margin-bottom: 2px; }
+        .btn-tool { flex: 1; min-width: 120px; padding: 6px; font-size: 10.5px; font-weight: bold; border: none; border-radius: 5px; cursor: pointer; }
         .btn-screenshot { background: #0d6efd; color: white; }
         .btn-upload-drive { background: #198754; color: white; }
 
-        /* NÚT ĐIỀU HƯỚNG */
+        /* ĐIỀU HƯỚNG TRANG KẾT QUẢ */
         .action-container { margin-top: 6px; display: flex; flex-direction: column; gap: 5px; }
-        .group-title { font-size: 11px; font-weight: bold; color: #495057; text-transform: uppercase; letter-spacing: 0.4px; text-align: left; margin-bottom: -2px; }
+        .group-title { font-size: 10.5px; font-weight: bold; color: #495057; text-transform: uppercase; letter-spacing: 0.4px; text-align: left; margin-bottom: -2px; }
         .action-row-a { display: flex; gap: 6px; justify-content: center; }
-        .btn-review { background: #17a2b8; color: white; flex: 1; padding: 8px 6px; border-radius: 6px; font-weight: bold; border: none; cursor: pointer; font-size: 11.5px; }
-        .btn-retry-same { background: #0d6efd; color: white; flex: 1; padding: 8px 6px; border-radius: 6px; font-weight: bold; border: none; cursor: pointer; font-size: 11.5px; }
-        .btn-next-exercise { width: 100%; background: #198754; color: white; padding: 8.5px 8px; border-radius: 6px; font-weight: bold; border: none; cursor: pointer; font-size: 12px; box-shadow: 0 2px 6px rgba(25, 135, 84, 0.2); }
-        .btn-next-exercise:hover { background: #146c43; }
-        
-        .user-switch-note { font-size: 11px; color: #6c757d; margin-top: 2px; }
-        .user-switch-link { color: #dc3545; font-weight: bold; text-decoration: underline; cursor: pointer; margin-left: 4px; }
+        .btn-review { background: #17a2b8; color: white; flex: 1; padding: 7px 6px; border-radius: 5px; font-weight: bold; font-size: 11px; }
+        .btn-retry-same { background: #0d6efd; color: white; flex: 1; padding: 7px 6px; border-radius: 5px; font-weight: bold; font-size: 11px; }
+        .btn-next-exercise { width: 100%; background: #198754; color: white; padding: 8px; border-radius: 5px; font-weight: bold; font-size: 11.5px; }
 
         .hidden { display: none !important; }
-        #save-status-msg { font-size: 11px; font-weight: bold; color: #0f5132; margin: 1px 0 3px 0; background: #d1e7dd; padding: 2px 10px; border-radius: 12px; display: inline-block; border: 1px solid #badbcc; }
+        #save-status-msg { font-size: 10.5px; font-weight: bold; color: #0f5132; margin: 1px 0 3px 0; background: #d1e7dd; padding: 2px 8px; border-radius: 10px; display: inline-block; border: 1px solid #badbcc; }
+
+        /* MODAL HỌC VIÊN MỚI */
+        .modal-overlay { position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.5); display: flex; align-items: center; justify-content: center; z-index: 999; }
+        .modal-box { background: white; border-radius: 9px; max-width: 400px; width: 90%; padding: 16px; text-align: left; }
+        .modal-title { font-size: 13.5px; font-weight: bold; color: #0d6efd; margin-bottom: 6px; }
+        .modal-btn-group { display: flex; flex-direction: column; gap: 6px; margin-top: 12px; }
+        .btn-modal { padding: 8px 10px; border-radius: 5px; font-size: 11.5px; font-weight: bold; border: none; cursor: pointer; text-align: center; }
+        .btn-modal-new { background: #198754; color: white; }
+        .btn-modal-recheck { background: #6c757d; color: white; }
     </style>
 </head>
 <body>
@@ -291,7 +276,7 @@
     <div class="brand-header">BRG LEARNING</div>
 
     <div class="container" id="main-container">
-        <!-- LOGO / BADGE BIỂU TƯỢNG NGHE GÓC TRÊN BÊN TRÁI -->
+        <!-- LOGO BADGE GÓC TRÊN TRÁI -->
         <div class="listening-badge-corner" title="Kỹ năng Nghe / Listening Skill">
             <span class="icon">🎧</span>
             <div class="text">
@@ -301,12 +286,12 @@
         </div>
 
         <h1>TIẾNG ANH GIAO TIẾP CƠ BẢN</h1>
-        <h2>LUYỆN TẬP KỸ NĂNG NGHE / LISTENING PRACTICE</h2>
-        <h3 id="lesson-title" class="lesson-title">VUI LÒNG CHỌN NỘI DUNG VÀ BẮT ĐẦU / PLEASE SELECT CONTENT & START</h3>
+        <div class="sub-type">LUYỆN TẬP KỸ NĂNG NGHE & LỘ TRÌNH 29 CHUYÊN ĐỀ</div>
+        <div id="lesson-subtitle">VUI LÒNG ĐIỀN THÔNG TIN ĐỂ TRA CỨU TIẾN ĐỘ & LÀM BÀI</div>
         
-        <!-- ==================== BƯỚC 1: THÔNG TIN HỌC VIÊN (TRANG ĐẦU TIÊN) ==================== -->
+        <!-- ==================== VIEW 1: FORM & MA TRẬN TIẾN ĐỘ ==================== -->
         <div id="user-info-view">
-            <!-- 1. KHUNG CHUYỂN SANG PHẦN PHÁT ÂM (TRANG 1) -->
+            <!-- BANNER NÓI -->
             <a href="https://brggrouplearning.github.io/Caddie-pronunciation/" target="_blank" class="speaking-switch-banner" title="Chuyển sang làm bài Phát âm / Speaking">
                 <div class="banner-left">
                     <div class="banner-icon">🎤</div>
@@ -318,7 +303,7 @@
                 <div class="banner-btn-tag">Học ngay ➔</div>
             </a>
 
-            <!-- 2. KHUNG TIỆN ÍCH / TÀI LIỆU CHỈ DẪN (TRANG 1) -->
+            <!-- TÀI LIỆU -->
             <div class="portal-section-title">📚 TÀI NGUYÊN & HƯỚNG DẪN ĐÀO TẠO / RESOURCES:</div>
             <div class="resource-grid">
                 <a href="https://brggrouplearning.github.io/caddie-videoenglish/" target="_blank" class="resource-card">
@@ -338,8 +323,8 @@
                 </a>
             </div>
 
-            <!-- FORM THÔNG TIN HỌC VIÊN -->
-            <div class="user-card" style="margin-top: 10px;">
+            <!-- FORM NHẬP LIỆU -->
+            <div class="user-card" style="margin-top: 8px;">
                 <div class="user-card-header">📋 THÔNG TIN HỌC VIÊN / STUDENT INFORMATION</div>
                 
                 <div class="form-grid">
@@ -357,22 +342,7 @@
                     </div>
 
                     <div class="form-group full-width">
-                        <label for="student-name">2. Họ Và Tên / Full name (*):</label>
-                        <input type="text" id="student-name" placeholder="Nhập họ và tên đầy đủ / Enter your full name" oninput="this.value = this.value.replace(/[0-9]/g, '')" autocomplete="off">
-                    </div>
-
-                    <div class="form-group">
-                        <label for="staff-number">3. Mã Nhân viên / Staff ID (*):</label>
-                        <input type="text" id="staff-number" placeholder="Ví dụ / e.g. 123, 435" inputmode="numeric" oninput="this.value = this.value.replace(/[^0-9]/g, '')" autocomplete="off">
-                    </div>
-
-                    <div class="form-group">
-                        <label for="birthday-date">4. Ngày sinh / Date of birth (*):</label>
-                        <input type="date" id="birthday-date">
-                    </div>
-
-                    <div class="form-group full-width">
-                        <label for="department">5. Bộ phận, Phòng, Ban / Department, Division (*):</label>
+                        <label for="department">2. Bộ phận, Phòng, Ban / Department (*):</label>
                         <select id="department">
                             <option value="">-- Chọn bộ phận / Select Department --</option>
                             <option value="Caddie">Caddie</option>
@@ -383,71 +353,59 @@
                         </select>
                     </div>
 
-                    <!-- LỰA CHỌN 1 TRONG 2 -->
                     <div class="form-group full-width">
-                        <label style="color: #0d6efd; font-weight: bold; margin-bottom: 4px;">NỘI DUNG THI / EXAM CONTENT (Chọn 1 trong 2 / Select 1 of 2):</label>
+                        <label for="student-name">3. Họ Và Tên / Full name (*):</label>
+                        <input type="text" id="student-name" placeholder="Nhập họ và tên đầy đủ" oninput="this.value = this.value.replace(/[0-9]/g, '')" autocomplete="off">
+                    </div>
 
-                        <div class="selection-box" id="box-section">
-                            <label class="selection-header">
-                                <input type="radio" name="content_mode" value="section" id="mode-section" onclick="toggleContentMode('section')">
-                                <span>6. Bài luyện tập theo bài / Practice Section (Lesson / Section)</span>
-                            </label>
-                            <select id="select-section" disabled onchange="syncRadioOnSelect('section')">
-                                <option value="">-- Chọn Chuyên đề Luyện tập / Select Practice Section --</option>
-                                <option value="1.1">Section 1.1: Bảng chữ cái tiếng Anh / English Alphabet</option>
-                                <option value="1.2">Section 1.2: Giới thiệu bản thân / Self-Introduction</option>
-                                <option value="1.3">Section 1.3: Số đếm / Numbers & Counting</option>
-                                <option value="1.4">Section 1.4: Sở thích / Hobbies & Interests</option>
-                                <option value="1.5">Section 1.5: Thực hành & Luyện tập / Review & Practice</option>
-                                <option value="2.1">Section 2.1: Thời tiết / Weather Conditions</option>
-                                <option value="2.2">Section 2.2: Các mùa trong năm / Seasons</option>
-                                <option value="2.3">Section 2.3: Thực hành & Luyện tập / Review & Practice</option>
-                                <option value="3.1">Section 3.1: Mô tả vị trí / Describing Positions</option>
-                                <option value="3.2">Section 3.2: Mô tả hướng / Describing Directions</option>
-                                <option value="3.3">Section 3.3: Giới thiệu trên sân / On-Course Intro</option>
-                                <option value="3.4">Section 3.4: Thực hành & Luyện tập / Review & Practice</option>
-                                <option value="4.1">Section 4.1: Màu sắc / Colors</option>
-                                <option value="4.2">Section 4.2: Giao tiếp cơ bản / Basic Communication</option>
-                                <option value="4.3">Section 4.3: Thực hành & Luyện tập / Review & Practice</option>
-                                <option value="5.1">Section 5.1: Xử lý than phiền / Handling Complaints</option>
-                                <option value="5.2">Section 5.2: Lời đề nghị & Giúp đỡ / Offering Assistance</option>
-                                <option value="5.3">Section 5.3: Động viên, khích lệ / Encouragement</option>
-                                <option value="5.4">Section 5.4: Lời chào tạm biệt / Farewell Greetings</option>
-                                <option value="5.5">Section 5.5: Thực hành & Luyện tập / Review & Practice</option>
-                                <option value="6.1">Section 6.1: Tình trạng sức khoẻ / Health & Well-being</option>
-                                <option value="6.2">Section 6.2: Biểu đạt cảm xúc / Expressing Emotions</option>
-                                <option value="6.3">Section 6.3: Tình huống khẩn cấp / Emergency Situations</option>
-                                <option value="6.4">Section 6.4: Thực hành & Luyện tập / Review & Practice</option>
-                            </select>
-                        </div>
+                    <div class="form-group">
+                        <label for="birthday-date">4. Ngày sinh / Date of birth (*):</label>
+                        <input type="date" id="birthday-date">
+                    </div>
 
-                        <div class="selection-box" id="box-exam">
-                            <label class="selection-header">
-                                <input type="radio" name="content_mode" value="exam" id="mode-exam" onclick="toggleContentMode('exam')">
-                                <span>7. Bài thi / Kiểm tra tổng hợp (Exam / Stage Test)</span>
-                            </label>
-                            <select id="select-exam" disabled onchange="syncRadioOnSelect('exam')">
-                                <option value="">-- Chọn Bài thi / Kiểm tra / Select Exam --</option>
-                                <option value="1">Exam 1: Giai đoạn 1 / Stage 1 (Lesson 1)</option>
-                                <option value="2-3">Exam 2: Giai đoạn 2 / Stage 2 (Lesson 2-3)</option>
-                                <option value="4">Exam 3: Giai đoạn 3 / Stage 3 (Lesson 4)</option>
-                                <option value="5-6">Exam 4: Giai đoạn 4 / Stage 4 (Lesson 5-6)</option>
-                                <option value="all">Final Exam: Cuối khóa / Comprehensive Test (All Lessons)</option>
-                            </select>
-                        </div>
+                    <div class="form-group">
+                        <label for="staff-number">5. Mã Nhân viên / Staff ID (*):</label>
+                        <input type="text" id="staff-number" placeholder="Ví dụ: 123, 435" inputmode="numeric" oninput="this.value = this.value.replace(/[^0-9]/g, '')" autocomplete="off">
                     </div>
                 </div>
 
-                <p id="user-info-error" style="color: #dc3545; font-size: 12px; font-weight: bold; margin: 4px 0 0 0; display: none;"></p>
-                <button class="btn-start-quiz" onclick="startQuizPractice()">BẮT ĐẦU LÀM BÀI / START TEST 🚀</button>
+                <p id="user-info-error" style="color: #dc3545; font-size: 11.5px; font-weight: bold; margin: 4px 0 0 0; display: none;"></p>
+                <button class="btn-check-progress" onclick="fetchProgressFromSheet()">🔍 KIỂM TRA THÔNG TIN & QUÁ TRÌNH LÀM BÀI</button>
+            </div>
+
+            <!-- MA TRẬN TIẾN ĐỘ 29 Ô VUÔNG -->
+            <div id="roadmap-box" class="roadmap-container hidden">
+                <div class="roadmap-title">
+                    <span>📊 TIẾN ĐỘ 29 CHUYÊN ĐỀ CỦA BẠN (LISTENING)</span>
+                    <span id="progress-percent" style="color:#198754;">0%</span>
+                </div>
+                
+                <div class="progress-bar-wrap">
+                    <div class="progress-bar-fill" id="progress-bar-fill"></div>
+                </div>
+
+                <!-- NHẬN XÉT TIẾN ĐỘ TỰ ĐỘNG -->
+                <div id="progress-remark" class="progress-remark-box remark-warning">
+                    ⏳ Đang tính toán mức độ bám sát kế hoạch đào tạo...
+                </div>
+                
+                <!-- LƯỚI 29 Ô VUÔNG -->
+                <div class="matrix-grid" id="matrix-grid-view"></div>
+
+                <div class="form-group" style="margin-top: 6px;">
+                    <label style="font-weight: bold; color: #0d6efd; font-size: 11px;">Bài học đang chọn:</label>
+                    <input type="text" id="selected-lesson-display" readonly style="background:#f8f9fa; font-weight:bold; color:#198754;" value="Chưa chọn bài học">
+                </div>
+
+                <button class="btn-start-quiz" onclick="startQuizPractice()">BẮT ĐẦU LÀM BÀI ĐÃ CHỌN 🚀</button>
             </div>
         </div>
 
-        <!-- ==================== BƯỚC 2: MÀN HÌNH LÀM BÀI ==================== -->
+        <!-- ==================== VIEW 2: LÀM BÀI ==================== -->
         <div id="quiz-area" class="hidden">
             <div class="meta-bar" id="top-meta-bar">
-                <div id="item-status" class="status-pending">⏳ Trạng thái: Chưa hoàn thành / Status: Pending</div>
-                <div id="timer-box">⏳ Thời gian / Time: <span id="time-left">00:00</span></div>
+                <div id="item-status" class="status-pending">⏳ Trạng thái: Đang làm bài</div>
+                <div id="timer-box">⏳ Thời gian: <span id="time-left">00:00</span></div>
             </div>
 
             <div class="audio-box">
@@ -455,10 +413,10 @@
                 <div class="tts-controls">
                     <select id="speech-voice-select" title="Chọn giọng đọc"></select>
                     <select id="speech-rate-select" title="Chọn tốc độ đọc">
-                        <option value="0.70">🐢 Rất chậm / Very slow (0.70x)</option>
-                        <option value="0.78" selected>🚶 Chậm rõ ràng / Normal (0.78x)</option>
-                        <option value="0.85">🏃 Vừa phải / Medium (0.85x)</option>
-                        <option value="1.00">⚡ Nhanh / Fast (1.00x)</option>
+                        <option value="0.70">🐢 Rất chậm (0.70x)</option>
+                        <option value="0.78" selected>🚶 Chậm rõ ràng (0.78x)</option>
+                        <option value="0.85">🏃 Vừa phải (0.85x)</option>
+                        <option value="1.00">⚡ Bình thường (1.00x)</option>
                     </select>
                 </div>
             </div>
@@ -470,24 +428,35 @@
             <div id="fill-container" class="fill-container" style="display:none;">
                 <div id="blank-sentence" class="blank-sentence"></div>
                 <div>
-                    <input type="text" id="fill-input" class="fill-input" placeholder="Nhập từ còn thiếu... / Enter missing word..." oninput="saveFillAnswer(this.value)" onkeydown="handleFillKeydown(event)">
+                    <input type="text" id="fill-input" class="fill-input" placeholder="Nhập từ còn thiếu..." oninput="saveFillAnswer(this.value)" onkeydown="handleFillKeydown(event)">
                 </div>
                 <span id="char-hint" class="char-hint"></span>
                 <span id="correct-answer-display" class="correct-answer-text" style="display:none;"></span>
             </div>
 
             <div class="control-group">
-                <button id="prev-btn" class="action-btn" onclick="goToPrevious()">⏮️ Câu trước / Back</button>
-                <button id="next-btn" class="action-btn" onclick="goToNext()">Câu tiếp / Next ⏩</button>
+                <button id="prev-btn" class="action-btn" onclick="goToPrevious()">⏮️ Câu trước</button>
+                <button id="next-btn" class="action-btn" onclick="goToNext()">Câu tiếp ⏩</button>
             </div>
-            <p id="status" style="font-size: 12px; font-weight: bold; color: #0d6efd; margin-top: 6px;"></p>
+            <p id="status" style="font-size: 11.5px; font-weight: bold; color: #0d6efd; margin-top: 6px;"></p>
         </div>
 
-        <!-- ==================== BƯỚC 3: MÀN HÌNH TỔNG KẾT & GÓP Ý (TRANG CUỐI CÙNG) ==================== -->
+        <!-- ==================== VIEW 3: KẾT QUẢ ==================== -->
         <div id="result-view" class="hidden"></div>
+    </div>
 
-        <!-- ==================== BƯỚC 4: MÀN HÌNH XEM LẠI BÀI LÀM ==================== -->
-        <div id="review-view" class="hidden"></div>
+    <!-- MODAL HỌC VIÊN MỚI -->
+    <div id="new-user-modal" class="modal-overlay hidden">
+        <div class="modal-box">
+            <div class="modal-title">🔍 KHÔNG TÌM THẤY LỊCH SỬ HỌC TẬP</div>
+            <div style="font-size:11px; color:#444; line-height:1.4;">
+                Hệ thống chưa tìm thấy hồ sơ đào tạo khớp với thông tin vừa nhập. Vui lòng xác nhận:
+            </div>
+            <div class="modal-btn-group">
+                <button class="btn-modal btn-modal-new" onclick="setupNewStudentFlow()">🌱 Tôi là Học viên mới (Bắt đầu từ Section 1.1)</button>
+                <button class="btn-modal btn-modal-recheck" onclick="closeNewUserModal()">🔄 Tôi đã học rồi (Muốn kiểm tra lại thông tin)</button>
+            </div>
+        </div>
     </div>
 
     <script> window.masterQuizData = []; </script>
@@ -495,28 +464,15 @@
     <script>
         (function loadAllDataFiles() {
             const filesToLoad = ['data/exams.js'];
-            for (let i = 1; i <= 10; i++) {
-                filesToLoad.push(`data/lesson${i}.js`);
-            }
-
+            for (let i = 1; i <= 10; i++) filesToLoad.push(`data/lesson${i}.js`);
             let loadedCount = 0;
-            let isInitialized = false;
-
-            const checkAndInit = () => {
-                if (isInitialized) return;
-                isInitialized = true;
-                if (typeof initApp === 'function') initApp();
-            };
-
             filesToLoad.forEach(src => {
                 const script = document.createElement('script');
                 script.src = src;
                 script.async = false;
                 script.onload = script.onerror = () => {
                     loadedCount++;
-                    if (loadedCount === filesToLoad.length) {
-                        checkAndInit();
-                    }
+                    if (loadedCount === filesToLoad.length && typeof initApp === 'function') initApp();
                 };
                 document.head.appendChild(script);
             });
@@ -526,146 +482,56 @@
     <script>
         const GOOGLE_SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbwro5Muu7fzx7ibeBtGoOXhMVBkt_Wy6CpVnewxbfnDUHdWuZRZXoBtoLJy2RoSU8px/exec';
 
-        // BẢNG ÁNH XẠ TIÊU ĐỀ SONG NGỮ CHUẨN
-        const SECTION_TITLES = {
-            "1.1": "Section 1.1: Bảng chữ cái tiếng Anh / English Alphabet",
-            "1.2": "Section 1.2: Giới thiệu bản thân / Self-Introduction",
-            "1.3": "Section 1.3: Số đếm / Numbers & Counting",
-            "1.4": "Section 1.4: Sở thích / Hobbies & Interests",
-            "1.5": "Section 1.5: Thực hành & Luyện tập / Review & Practice",
-            "2.1": "Section 2.1: Thời tiết / Weather Conditions",
-            "2.2": "Section 2.2: Các mùa trong năm / Seasons",
-            "2.3": "Section 2.3: Thực hành & Luyện tập / Review & Practice",
-            "3.1": "Section 3.1: Mô tả vị trí / Describing Positions",
-            "3.2": "Section 3.2: Mô tả hướng / Describing Directions",
-            "3.3": "Section 3.3: Giới thiệu trên sân / On-Course Intro",
-            "3.4": "Section 3.4: Thực hành & Luyện tập / Review & Practice",
-            "4.1": "Section 4.1: Màu sắc / Colors",
-            "4.2": "Section 4.2: Giao tiếp cơ bản / Basic Communication",
-            "4.3": "Section 4.3: Thực hành & Luyện tập / Review & Practice",
-            "5.1": "Section 5.1: Xử lý than phiền / Handling Complaints",
-            "5.2": "Section 5.2: Lời đề nghị & Giúp đỡ / Offering Assistance",
-            "5.3": "Section 5.3: Động viên, khích lệ / Encouragement",
-            "5.4": "Section 5.4: Lời chào tạm biệt / Farewell Greetings",
-            "5.5": "Section 5.5: Thực hành & Luyện tập / Review & Practice",
-            "6.1": "Section 6.1: Tình trạng sức khoẻ / Health & Well-being",
-            "6.2": "Section 6.2: Biểu đạt cảm xúc / Expressing Emotions",
-            "6.3": "Section 6.3: Tình huống khẩn cấp / Emergency Situations",
-            "6.4": "Section 6.4: Thực hành & Luyện tập / Review & Practice"
-        };
+        // 29 CHUYÊN ĐỀ GẮN CHUẨN THỜI HẠN KẾ HOẠCH
+        const LESSON_ROADMAP = [
+            { code: "1.1", title: "Section 1.1: Bảng chữ cái tiếng Anh", planDate: "2026-08-18", planDisplay: "18/08" },
+            { code: "1.2", title: "Section 1.2: Giới thiệu bản thân", planDate: "2026-08-19", planDisplay: "19/08" },
+            { code: "1.3", title: "Section 1.3: Số đếm", planDate: "2026-08-20", planDisplay: "20/08" },
+            { code: "1.4", title: "Section 1.4: Sở thích", planDate: "2026-08-21", planDisplay: "21/08" },
+            { code: "1.5", title: "Section 1.5: Thực hành L1", planDate: "2026-08-22", planDisplay: "22/08" },
+            { code: "exam1", title: "Exam 1: Giai đoạn 1 (L1)", planDate: "2026-08-23", planDisplay: "23/08" },
+            { code: "2.1", title: "Section 2.1: Thời tiết", planDate: "2026-08-25", planDisplay: "25/08" },
+            { code: "2.2", title: "Section 2.2: Các mùa trong năm", planDate: "2026-08-26", planDisplay: "26/08" },
+            { code: "2.3", title: "Section 2.3: Thực hành L2", planDate: "2026-08-27", planDisplay: "27/08" },
+            { code: "3.1", title: "Section 3.1: Mô tả vị trí", planDate: "2026-08-28", planDisplay: "28/08" },
+            { code: "3.2", title: "Section 3.2: Mô tả hướng", planDate: "2026-08-29", planDisplay: "29/08" },
+            { code: "3.3", title: "Section 3.3: Giới thiệu trên sân", planDate: "2026-08-30", planDisplay: "30/08" },
+            { code: "3.4", title: "Section 3.4: Thực hành L3", planDate: "2026-08-31", planDisplay: "31/08" },
+            { code: "exam2", title: "Exam 2: Giai đoạn 2 (L2-3)", planDate: "2026-09-02", planDisplay: "02/09" },
+            { code: "4.1", title: "Section 4.1: Màu sắc", planDate: "2026-09-03", planDisplay: "03/09" },
+            { code: "4.2", title: "Section 4.2: Giao tiếp cơ bản", planDate: "2026-09-04", planDisplay: "04/09" },
+            { code: "4.3", title: "Section 4.3: Thực hành L4", planDate: "2026-09-05", planDisplay: "05/09" },
+            { code: "5.1", title: "Section 5.1: Xử lý than phiền", planDate: "2026-09-06", planDisplay: "06/09" },
+            { code: "5.2", title: "Section 5.2: Lời đề nghị", planDate: "2026-09-07", planDisplay: "07/09" },
+            { code: "5.3", title: "Section 5.3: Động viên khích lệ", planDate: "2026-09-08", planDisplay: "08/09" },
+            { code: "5.4", title: "Section 5.4: Lời chào tạm biệt", planDate: "2026-09-09", planDisplay: "09/09" },
+            { code: "5.5", title: "Section 5.5: Thực hành L5", planDate: "2026-09-10", planDisplay: "10/09" },
+            { code: "exam3", title: "Exam 3: Giai đoạn 3 (L4-5)", planDate: "2026-09-12", planDisplay: "12/09" },
+            { code: "6.1", title: "Section 6.1: Tình trạng sức khoẻ", planDate: "2026-09-13", planDisplay: "13/09" },
+            { code: "6.2", title: "Section 6.2: Biểu đạt cảm xúc", planDate: "2026-09-14", planDisplay: "14/09" },
+            { code: "6.3", title: "Section 6.3: Tình huống khẩn cấp", planDate: "2026-09-15", planDisplay: "15/09" },
+            { code: "6.4", title: "Section 6.4: Thực hành L6", planDate: "2026-09-17", planDisplay: "17/09" },
+            { code: "exam4", title: "Exam 4: Giai đoạn 4 (L5-6)", planDate: "2026-09-19", planDisplay: "19/09" },
+            { code: "all", title: "Final Exam: Cuối khóa", planDate: "2026-09-22", planDisplay: "22/09" }
+        ];
 
-        const EXAM_TITLES = {
-            "1": "Exam 1: Giai đoạn 1 / Stage 1 (Lesson 1)",
-            "2-3": "Exam 2: Giai đoạn 2 / Stage 2 (Lesson 2-3)",
-            "4": "Exam 3: Giai đoạn 3 / Stage 3 (Lesson 4)",
-            "5-6": "Exam 4: Giai đoạn 4 / Stage 4 (Lesson 5-6)",
-            "all": "Final Exam: Cuối khóa / Comprehensive Test (All Lessons)"
-        };
-
+        let studentProgressMap = {}; 
         let studentInfo = {
             workPlace: '',
-            studentName: '',
-            staffNumber: '',
-            birthday: '',
             department: '',
+            studentName: '',
+            birthday: '',
+            staffNumber: '',
             rawLessonCode: '',
             lessonTitle: '',
             isSectionMode: true,
-            selectedVal: ''
+            selectedVal: '1.1'
         };
 
-        let lastSessionMessage = "";
-
-        document.addEventListener("DOMContentLoaded", function() {
-            const dateInput = document.getElementById('birthday-date');
-            if (dateInput) {
-                const today = new Date();
-                const currentYear = today.getFullYear();
-                const minYear = currentYear - 60;
-                const maxYear = currentYear - 18;
-                const month = String(today.getMonth() + 1).padStart(2, '0');
-                const day = String(today.getDate()).padStart(2, '0');
-                dateInput.min = `${minYear}-${month}-${day}`;
-                dateInput.max = `${maxYear}-${month}-${day}`;
-            }
-            loadSavedStudentProfile();
-        });
-
-        function saveStudentProfileToStorage(info) {
-            try {
-                const profile = {
-                    workPlace: info.workPlace,
-                    studentName: info.studentName,
-                    staffNumber: info.staffNumber,
-                    birthday: info.birthday,
-                    department: info.department
-                };
-                localStorage.setItem('caddie_student_profile', JSON.stringify(profile));
-            } catch (e) {
-                console.warn("Không thể lưu profile vào localStorage:", e);
-            }
+        function cleanString(str) {
+            if (!str) return "";
+            return str.toString().toLowerCase().replace(/[\s\-_]/g, '').trim();
         }
-
-        function loadSavedStudentProfile() {
-            try {
-                const saved = localStorage.getItem('caddie_student_profile');
-                if (saved) {
-                    const data = JSON.parse(saved);
-                    if (data.workPlace) document.getElementById('work-place').value = data.workPlace;
-                    if (data.studentName) document.getElementById('student-name').value = data.studentName;
-                    if (data.staffNumber) document.getElementById('staff-number').value = data.staffNumber.replace(/[^0-9]/g, '');
-                    if (data.birthday) document.getElementById('birthday-date').value = data.birthday;
-                    if (data.department) document.getElementById('department').value = data.department;
-                }
-            } catch (e) {
-                console.warn("Lỗi đọc dữ liệu học viên:", e);
-            }
-        }
-
-        function clearStudentProfile() {
-            if (confirm("Bạn có muốn đổi sang thông tin thí sinh khác không? / Switch student info?")) {
-                try {
-                    localStorage.removeItem('caddie_student_profile');
-                } catch(e) {}
-                document.getElementById('work-place').value = "";
-                document.getElementById('student-name').value = "";
-                document.getElementById('staff-number').value = "";
-                document.getElementById('birthday-date').value = "";
-                document.getElementById('department').value = "";
-                goToChooseExercise();
-            }
-        }
-
-        function toggleContentMode(mode) {
-            const radioSection = document.getElementById('mode-section');
-            const radioExam = document.getElementById('mode-exam');
-            const selectSection = document.getElementById('select-section');
-            const selectExam = document.getElementById('select-exam');
-            const boxSection = document.getElementById('box-section');
-            const boxExam = document.getElementById('box-exam');
-
-            if (mode === 'section') {
-                radioSection.checked = true;
-                selectSection.disabled = false;
-                boxSection.classList.add('active');
-
-                radioExam.checked = false;
-                selectExam.disabled = true;
-                selectExam.value = "";
-                boxExam.classList.remove('active');
-            } else if (mode === 'exam') {
-                radioExam.checked = true;
-                selectExam.disabled = false;
-                boxExam.classList.add('active');
-
-                radioSection.checked = false;
-                selectSection.disabled = true;
-                selectSection.value = "";
-                boxSection.classList.remove('active');
-            }
-        }
-
-        function syncRadioOnSelect(mode) { toggleContentMode(mode); }
 
         function convertToNonAccent(str) {
             if (!str) return "";
@@ -675,7 +541,7 @@
         }
 
         function cleanSectionCode(secStr) {
-            if (secStr === null || secStr === undefined) return "";
+            if (!secStr) return "";
             return secStr.toString().toLowerCase().replace(/section/gi, '').replace(/\s+/g, '').trim();
         }
 
@@ -686,69 +552,184 @@
             }
         }
 
-        function fixStuckText(text) {
-            if (!text) return "";
-            return text.normalize('NFC').replace(/\s+/g, ' ').trim();
+        function formatDuration(seconds) {
+            const mins = Math.floor(seconds / 60);
+            const secs = seconds % 60;
+            return (mins > 0 ? `${mins}m ` : "") + `${secs}s`;
         }
 
-        function getFilteredListeningItemsBySelection(isSectionMode, selectedVal) {
-            let rawPool = (window.masterQuizData && window.masterQuizData.length > 0) ? JSON.parse(JSON.stringify(window.masterQuizData)) : [];
-            let filtered = [];
-            let targetCount = 30; 
-            let titleBanner = "LUYỆN NGHE TỔNG HỢP / GENERAL LISTENING PRACTICE";
+        function formatTime(seconds) {
+            const mins = Math.floor(seconds / 60);
+            const secs = seconds % 60;
+            return `${mins.toString().padStart(2, '0')}:${secs.toString().padStart(2, '0')}`;
+        }
 
-            if (isSectionMode && selectedVal) {
-                titleBanner = SECTION_TITLES[selectedVal] || `Section ${selectedVal}`;
-                let cleanTarget = cleanSectionCode(selectedVal);
-                filtered = rawPool.filter(q => q.section && cleanSectionCode(q.section) === cleanTarget);
-                targetCount = 30;
-            } else if (!isSectionMode && selectedVal) {
-                titleBanner = EXAM_TITLES[selectedVal] || `Exam ${selectedVal}`;
-                if (selectedVal === 'all') {
-                    filtered = [...rawPool];
-                    targetCount = 50;
-                } else {
-                    let examLessons = selectedVal.split('-').map(n => n.trim());
-                    filtered = rawPool.filter(q => {
-                        let qLes = (q.lesson || "").toString().replace(/[^\d]/g, '');
-                        return examLessons.includes(qLes);
-                    });
-                    targetCount = 50;
-                }
+        // TRA CỨU TIẾN ĐỘ QUA GET/FETCH (CHỐNG LỖI CORS)
+        function fetchProgressFromSheet() {
+            const workPlace = document.getElementById('work-place').value;
+            const department = document.getElementById('department').value;
+            const studentName = document.getElementById('student-name').value.trim();
+            const birthdayDate = document.getElementById('birthday-date').value;
+            const staffNumber = document.getElementById('staff-number').value.trim();
+            const errorElem = document.getElementById('user-info-error');
+
+            if (!workPlace || !department || !studentName || !birthdayDate || !staffNumber) {
+                errorElem.innerText = "⚠️ Vui lòng điền đầy đủ các thông tin (*)!";
+                errorElem.style.display = "block";
+                return;
             }
 
-            const subTitleElem = document.getElementById('lesson-title');
-            if (subTitleElem) subTitleElem.innerText = titleBanner;
-            
-            studentInfo.lessonTitle = titleBanner;
+            if (!/^\d+$/.test(staffNumber)) {
+                errorElem.innerText = "⚠️ Mã nhân viên chỉ được chứa ký tự số!";
+                errorElem.style.display = "block";
+                return;
+            }
 
-            filtered.forEach(item => {
-                if (item.translation) {
-                    item.translation = fixStuckText(item.translation.replace(/\+\]/gi, '').replace(/cite:\s*[\d,\s]+/gi, '').trim());
+            errorElem.style.display = "none";
+
+            studentInfo.workPlace = workPlace;
+            studentInfo.department = department;
+            studentInfo.studentName = studentName;
+            studentInfo.birthday = birthdayDate;
+            studentInfo.staffNumber = staffNumber;
+
+            const checkBtn = document.querySelector('.btn-check-progress');
+            checkBtn.innerText = "⏳ Đang tra cứu thông tin & tiến độ...";
+            checkBtn.disabled = true;
+
+            const url = `${GOOGLE_SCRIPT_URL}?action=get_student_progress` +
+                        `&workPlace=${encodeURIComponent(workPlace)}` +
+                        `&department=${encodeURIComponent(department)}` +
+                        `&studentName=${encodeURIComponent(studentName)}` +
+                        `&staffNumber=${encodeURIComponent(staffNumber)}` +
+                        `&birthday=${encodeURIComponent(birthdayDate)}` +
+                        `&_t=${new Date().getTime()}`;
+
+            fetch(url)
+            .then(res => res.json())
+            .then(data => {
+                checkBtn.innerText = "🔍 KIỂM TRA THÔNG TIN & QUÁ TRÌNH LÀM BÀI";
+                checkBtn.disabled = false;
+
+                if (data && data.found) {
+                    studentProgressMap = data.progress || {};
+                    renderRoadmapMatrix();
+                } else {
+                    document.getElementById('new-user-modal').classList.remove('hidden');
                 }
-                if (item.options && Array.isArray(item.options)) {
-                    item.options.forEach(opt => {
-                        if (opt.en) opt.en = fixStuckText(opt.en);
-                        if (opt.vi) opt.vi = fixStuckText(opt.vi);
-                    });
+            })
+            .catch(err => {
+                console.error("Lỗi tra cứu:", err);
+                checkBtn.innerText = "🔍 KIỂM TRA THÔNG TIN & QUÁ TRÌNH LÀM BÀI";
+                checkBtn.disabled = false;
+                document.getElementById('new-user-modal').classList.remove('hidden');
+            });
+        }
 
-                    if (item.type === "mcq" && typeof item.correct === 'number') {
-                        let correctOptionObj = item.options[item.correct];
-                        shuffleArray(item.options);
-                        item.correct = item.options.findIndex(opt => opt === correctOptionObj);
+        // RENDER 29 Ô MATRIX: HIỂN THỊ ĐIỂM CAO NHẤT KÈM NGÀY
+        function renderRoadmapMatrix() {
+            const grid = document.getElementById('matrix-grid-view');
+            grid.innerHTML = "";
+            let passedCount = 0;
+            let overdueCount = 0;
+            const todayStr = new Date().toISOString().slice(0, 10);
+
+            LESSON_ROADMAP.forEach(item => {
+                const record = studentProgressMap[item.code] || {};
+                const score = (record.score !== undefined && record.score !== null) ? record.score : null;
+                const examDate = record.date || "";
+
+                let statusClass = "pending";
+                let icon = "⏳";
+                let isCompleted = false;
+
+                if (score !== null) {
+                    if (score >= 90) {
+                        statusClass = "excellent";
+                        icon = "🌟";
+                        passedCount++;
+                        isCompleted = true;
+                    } else if (score >= 70) {
+                        statusClass = "passed";
+                        icon = "✅";
+                        passedCount++;
+                        isCompleted = true;
+                    } else {
+                        statusClass = "failed";
+                        icon = "❌";
                     }
                 }
+
+                if (!isCompleted && item.planDate < todayStr) {
+                    overdueCount++;
+                }
+
+                const subText = score !== null 
+                    ? `${score}đ${examDate ? ` • ${examDate}` : ''}` 
+                    : item.planDisplay;
+
+                const box = document.createElement('div');
+                const isCurrent = (studentInfo.selectedVal === item.code);
+                box.className = `matrix-item ${statusClass} ${isCurrent ? 'active-selected' : ''}`;
+                box.id = `matrix-item-${item.code}`;
+                box.innerHTML = `
+                    <div class="matrix-row-top">
+                        <span class="matrix-icon">${icon}</span>
+                        <span class="matrix-code">${item.code.toUpperCase()}</span>
+                    </div>
+                    <div class="matrix-row-sub" style="font-weight: 600;">${subText}</div>
+                `;
+                box.title = `${item.title} | ${score !== null ? `Điểm cao nhất: ${score}đ (Ngày: ${examDate})` : `Hạn: ${item.planDisplay}`}`;
+                box.onclick = () => selectLessonFromMatrix(item);
+                grid.appendChild(box);
             });
 
-            if (filtered.length === 0) {
-                document.getElementById('question-title').innerText = "⚠️ Chưa có dữ liệu câu hỏi nghe / No listening data available!";
-                return [];
+            const percent = Math.round((passedCount / LESSON_ROADMAP.length) * 100);
+            document.getElementById('progress-percent').innerText = `${percent}% (${passedCount}/29 Bài)`;
+            document.getElementById('progress-bar-fill').style.width = `${percent}%`;
+
+            const remarkElem = document.getElementById('progress-remark');
+            if (passedCount === LESSON_ROADMAP.length) {
+                remarkElem.className = "progress-remark-box remark-good";
+                remarkElem.innerHTML = "🏆 <b>Xuất sắc!</b> Bạn đã hoàn thành trọn vẹn lộ trình 29 chuyên đề Nghe!";
+            } else if (overdueCount === 0) {
+                remarkElem.className = "progress-remark-box remark-good";
+                remarkElem.innerHTML = "🟢 <b>Tiến độ rất tốt:</b> Bạn đang hoàn thành đúng theo kế hoạch đào tạo!";
+            } else if (overdueCount <= 2) {
+                remarkElem.className = "progress-remark-box remark-warning";
+                remarkElem.innerHTML = `⚠️ <b>Cần tăng tốc:</b> Bạn đang chậm <b>${overdueCount} bài</b> so với kế hoạch, hãy hoàn thành bổ sung nhé!`;
+            } else {
+                remarkElem.className = "progress-remark-box remark-danger";
+                remarkElem.innerHTML = `🔴 <b>Dưới kế hoạch:</b> Bạn đang trễ <b>${overdueCount} bài</b>. Vui lòng ưu tiên làm bài để theo kịp lớp!`;
             }
 
-            shuffleArray(filtered);
-            return filtered.slice(0, Math.min(targetCount, filtered.length));
+            document.getElementById('roadmap-box').classList.remove('hidden');
         }
 
+        function selectLessonFromMatrix(item) {
+            studentInfo.selectedVal = item.code;
+            studentInfo.isSectionMode = !item.code.startsWith('exam') && item.code !== 'all';
+            studentInfo.rawLessonCode = studentInfo.isSectionMode ? ("section" + item.code) : item.code;
+            studentInfo.lessonTitle = item.title;
+            document.getElementById('selected-lesson-display').value = `${item.title} (Hạn: ${item.planDisplay})`;
+
+            document.querySelectorAll('.matrix-item').forEach(el => el.classList.remove('active-selected'));
+            const activeEl = document.getElementById(`matrix-item-${item.code}`);
+            if (activeEl) activeEl.classList.add('active-selected');
+        }
+
+        function closeNewUserModal() {
+            document.getElementById('new-user-modal').classList.add('hidden');
+        }
+
+        function setupNewStudentFlow() {
+            closeNewUserModal();
+            studentProgressMap = {};
+            renderRoadmapMatrix();
+            selectLessonFromMatrix(LESSON_ROADMAP[0]);
+        }
+
+        // ENGINE LÀM BÀI NGHE
         let quizData = [];
         const MAX_LISTEN_PER_QUESTION = 3; 
         const DELAY_BEFORE_AUDIO_MS = 1000; 
@@ -788,9 +769,8 @@
                 if (name.includes('Zira')) return 100;
                 if (name.includes('David')) return 90;
                 if (name.includes('Natural') || name.includes('Online')) return 80;
-                if (name.includes('Neural') || name.includes('Studio') || name.includes('Premium')) return 70;
+                if (name.includes('Neural') || name.includes('Studio')) return 70;
                 if (name.includes('Google')) return 60;
-                if (name.includes('Aria') || name.includes('Jenny') || name.includes('Guy') || name.includes('Samantha')) return 50;
                 return 10;
             }
 
@@ -799,30 +779,19 @@
             enVoices.forEach((voice) => {
                 const opt = document.createElement('option');
                 opt.value = voice.name;
-                
                 let label = voice.name;
-                if (voice.name.includes('Zira')) {
-                    label = '👩‍💼 Microsoft Zira - English (Mặc định chuẩn)';
-                } else if (voice.name.includes('David')) {
-                    label = '👨‍💼 Microsoft David - English (Nam chuẩn)';
-                } else if (voice.name.includes('Natural') || voice.name.includes('Online') || voice.name.includes('Neural')) {
-                    label = '🌟 ' + voice.name + ' (Tự nhiên cao cấp)';
-                } else if (voice.name.includes('Google')) {
-                    label = '🎙️ ' + voice.name + ' (Google rõ âm)';
-                } else {
-                    label = '🔊 ' + voice.name;
-                }
+                if (voice.name.includes('Zira')) label = '👩‍💼 Microsoft Zira (Mặc định chuẩn)';
+                else if (voice.name.includes('David')) label = '👨‍💼 Microsoft David (Nam chuẩn)';
+                else if (voice.name.includes('Natural') || voice.name.includes('Online') || voice.name.includes('Neural')) label = '🌟 ' + voice.name + ' (Tự nhiên)';
+                else if (voice.name.includes('Google')) label = '🎙️ ' + voice.name + ' (Google)';
+                else label = '🔊 ' + voice.name;
                 
                 opt.innerText = label;
                 voiceSelect.appendChild(opt);
             });
 
             const ziraIndex = enVoices.findIndex(v => v.name.includes('Zira'));
-            if (ziraIndex !== -1) {
-                voiceSelect.selectedIndex = ziraIndex;
-            } else {
-                voiceSelect.selectedIndex = 0;
-            }
+            voiceSelect.selectedIndex = (ziraIndex !== -1) ? ziraIndex : 0;
         }
 
         function initApp() {
@@ -830,94 +799,43 @@
         }
 
         function startQuizPractice() {
-            const workPlace = document.getElementById('work-place').value;
-            const studentName = document.getElementById('student-name').value.trim();
-            const staffNumber = document.getElementById('staff-number').value.trim();
-            const birthdayDate = document.getElementById('birthday-date').value;
-            const department = document.getElementById('department').value;
-            const errorElem = document.getElementById('user-info-error');
-
-            const isSectionMode = document.getElementById('mode-section').checked;
-            const isExamMode = document.getElementById('mode-exam').checked;
-            const selectedSection = document.getElementById('select-section').value;
-            const selectedExam = document.getElementById('select-exam').value;
-
-            if (!workPlace || !studentName || !staffNumber || !birthdayDate || !department) {
-                errorElem.innerText = "⚠️ Vui lòng điền đầy đủ thông tin học viên / Please fill in all required fields (*)!";
-                errorElem.style.display = "block";
+            if (!studentInfo.selectedVal) {
+                alert("Vui lòng chọn 1 bài học từ bảng 29 chuyên đề!");
                 return;
             }
-
-            if (/\d/.test(studentName)) {
-                errorElem.innerText = "⚠️ Họ và Tên không được chứa ký tự số / Full name must not contain numbers!";
-                errorElem.style.display = "block";
-                return;
-            }
-
-            if (!/^\d+$/.test(staffNumber)) {
-                errorElem.innerText = "⚠️ Mã nhân viên chỉ được chứa số, không được chứa chữ hoặc ký tự khác / Staff ID must contain numbers only!";
-                errorElem.style.display = "block";
-                return;
-            }
-
-            if (birthdayDate) {
-                const birthDateObj = new Date(birthdayDate);
-                const today = new Date();
-                let age = today.getFullYear() - birthDateObj.getFullYear();
-                const monthDiff = today.getMonth() - birthDateObj.getMonth();
-                if (monthDiff < 0 || (monthDiff === 0 && today.getDate() < birthDateObj.getDate())) {
-                    age--;
-                }
-
-                if (isNaN(age) || age < 18 || age > 60) {
-                    errorElem.innerText = "⚠️ Độ tuổi không hợp lệ (18 - 60 tuổi) / Invalid age! Must be between 18 and 60 years old.";
-                    errorElem.style.display = "block";
-                    return;
-                }
-            }
-
-            if (!isSectionMode && !isExamMode) {
-                errorElem.innerText = "⚠️ Vui lòng chọn Mục 6 hoặc Mục 7 / Please select Section 6 or Section 7!";
-                errorElem.style.display = "block";
-                return;
-            }
-
-            if (isSectionMode && !selectedSection) {
-                errorElem.innerText = "⚠️ Vui lòng chọn một Chuyên đề Luyện tập ở Mục 6 / Please select a practice section!";
-                errorElem.style.display = "block";
-                return;
-            }
-
-            if (isExamMode && !selectedExam) {
-                errorElem.innerText = "⚠️ Vui lòng chọn một Bài thi / Kiểm tra ở Mục 7 / Please select an exam!";
-                errorElem.style.display = "block";
-                return;
-            }
-
-            errorElem.style.display = "none";
-
-            studentInfo.workPlace = workPlace;
-            studentInfo.studentName = studentName;
-            studentInfo.staffNumber = staffNumber;
-            studentInfo.birthday = birthdayDate;
-            studentInfo.department = department;
-            studentInfo.isSectionMode = isSectionMode;
-            studentInfo.selectedVal = isSectionMode ? selectedSection : selectedExam;
-            studentInfo.rawLessonCode = isSectionMode ? ("section" + selectedSection) : (selectedExam === 'all' ? 'examall' : 'exam' + selectedExam);
-            
-            if (isSectionMode) {
-                studentInfo.lessonTitle = SECTION_TITLES[selectedSection] || `Section ${selectedSection}`;
-            } else {
-                studentInfo.lessonTitle = EXAM_TITLES[selectedExam] || `Exam ${selectedExam}`;
-            }
-
-            saveStudentProfileToStorage(studentInfo);
             runQuizEngine(studentInfo.isSectionMode, studentInfo.selectedVal);
         }
 
         function runQuizEngine(isSectionMode, selectedVal) {
-            quizData = getFilteredListeningItemsBySelection(isSectionMode, selectedVal);
-            if (quizData.length === 0) return;
+            let rawPool = (window.masterQuizData && window.masterQuizData.length > 0) ? JSON.parse(JSON.stringify(window.masterQuizData)) : [];
+            let filtered = [];
+            let targetCount = 20;
+
+            if (isSectionMode) {
+                let cleanTarget = cleanSectionCode(selectedVal);
+                filtered = rawPool.filter(q => q.section && cleanSectionCode(q.section) === cleanTarget);
+                targetCount = 20;
+            } else {
+                if (selectedVal === 'all') {
+                    filtered = [...rawPool];
+                    targetCount = 30;
+                } else {
+                    let examLessons = selectedVal.replace('exam','').split('-').map(n => n.trim());
+                    filtered = rawPool.filter(q => {
+                        let qLes = (q.lesson || "").toString().replace(/[^\d]/g, '');
+                        return examLessons.includes(qLes);
+                    });
+                    targetCount = 30;
+                }
+            }
+
+            if (filtered.length === 0) {
+                alert("Bài học đang cập nhật câu hỏi nghe!");
+                return;
+            }
+
+            shuffleArray(filtered);
+            quizData = filtered.slice(0, Math.min(targetCount, filtered.length));
 
             listenCounts = new Array(quizData.length).fill(0);
             userAnswers = new Array(quizData.length).fill(null);
@@ -935,7 +853,6 @@
 
             document.getElementById('user-info-view').classList.add('hidden');
             document.getElementById('result-view').classList.add('hidden');
-            document.getElementById('review-view').classList.add('hidden');
             document.getElementById('quiz-area').classList.remove('hidden');
 
             const timerBox = document.getElementById('timer-box');
@@ -945,62 +862,8 @@
             loadQuestion();
         }
 
-        function retryCurrentQuiz() {
-            if (!studentInfo.selectedVal) {
-                goToChooseExercise();
-                return;
-            }
-            runQuizEngine(studentInfo.isSectionMode, studentInfo.selectedVal);
-        }
-
-        function goToChooseExercise() {
-            clearInterval(timerInterval);
-            clearTimeout(autoPlayTimer);
-            if ('speechSynthesis' in window) window.speechSynthesis.cancel();
-
-            document.getElementById('quiz-area').classList.add('hidden');
-            document.getElementById('result-view').classList.add('hidden');
-            document.getElementById('review-view').classList.add('hidden');
-            document.getElementById('user-info-view').classList.remove('hidden');
-
-            const subTitleElem = document.getElementById('lesson-title');
-            if (subTitleElem) subTitleElem.innerText = "VUI LÒNG CHỌN NỘI DUNG VÀ BẮT ĐẦU / PLEASE SELECT CONTENT & START";
-
-            loadSavedStudentProfile();
-        }
-
-        function highlightWrongWords(userText, correctText) {
-            if (!userText) return "";
-            const userWords = userText.split(" ");
-            const correctWords = correctText.split(" ");
-
-            return userWords.map((word, idx) => {
-                const cleanUserWord = word.replace(/[^a-zA-Z0-9]/g, "").toLowerCase();
-                const cleanCorrectWord = correctWords[idx] ? correctWords[idx].replace(/[^a-zA-Z0-9]/g, "").toLowerCase() : "";
-
-                if (cleanUserWord !== cleanCorrectWord && cleanUserWord !== "") {
-                    return `<span class="wrong-word-highlight">${word}</span>`;
-                }
-                return word;
-            }).join(" ");
-        }
-
-        function formatTime(seconds) {
-            const mins = Math.floor(seconds / 60);
-            const secs = seconds % 60;
-            return `${mins.toString().padStart(2, '0')}:${secs.toString().padStart(2, '0')}`;
-        }
-
-        function formatDuration(seconds) {
-            const mins = Math.floor(seconds / 60);
-            const secs = seconds % 60;
-            return (mins > 0 ? `${mins}m ` : "") + `${secs}s`;
-        }
-
         function startTotalTimer() {
-            const timerBox = document.getElementById('timer-box');
             const timeLeftElem = document.getElementById('time-left');
-
             if (timeLeftElem) timeLeftElem.innerText = formatTime(totalSeconds);
 
             clearInterval(timerInterval);
@@ -1010,14 +873,15 @@
                     elapsedSeconds++;
                     if (timeLeftElem) timeLeftElem.innerText = formatTime(totalSeconds);
 
-                    if (totalSeconds <= 120 && timerBox) {
-                        timerBox.classList.add('timer-warning');
+                    if (totalSeconds <= 60) {
+                        const timerBox = document.getElementById('timer-box');
+                        if (timerBox) timerBox.classList.add('timer-warning');
                     }
                 } else {
                     clearInterval(timerInterval);
                     clearTimeout(autoPlayTimer);
                     if ('speechSynthesis' in window) window.speechSynthesis.cancel();
-                    finishSession("⏰ ĐÃ HẾT THỜI GIAN LÀM BÀI / TIME IS UP!");
+                    finishSession("⏰ ĐÃ HẾT THỜI GIAN LÀM BÀI!");
                 }
             }, 1000);
         }
@@ -1031,29 +895,29 @@
             if (!isReviewMode) {
                 if (userAns !== null && userAns !== "") {
                     statusTag.className = "status-answered";
-                    statusTag.innerText = "🔒 Trạng thái: Đã trả lời / Answered";
+                    statusTag.innerText = "🔒 Trạng thái: Đã trả lời";
                 } else {
                     statusTag.className = "status-pending";
-                    statusTag.innerText = "⏳ Trạng thái: Chưa xong / Pending";
+                    statusTag.innerText = "⏳ Trạng thái: Đang làm bài";
                 }
             } else {
                 if (userAns === null || userAns === "") {
                     statusTag.className = "status-skipped";
-                    statusTag.innerText = "⏭️ Trạng thái: Đã bỏ qua / Skipped";
+                    statusTag.innerText = "⏭️ Trạng thái: Đã bỏ qua";
                 } else {
                     let isCorrect = false;
                     if (currentQuiz.type === 'mcq') {
                         isCorrect = (userAns === currentQuiz.correct);
                     } else if (currentQuiz.type === 'fill') {
-                        isCorrect = (userAns.toLowerCase() === currentQuiz.targetWord.toLowerCase());
+                        isCorrect = (userAns.toLowerCase() === (currentQuiz.targetWord || "").toLowerCase());
                     }
 
                     if (isCorrect) {
                         statusTag.className = "status-correct";
-                        statusTag.innerText = "✅ Trạng thái: Đúng / Correct";
+                        statusTag.innerText = "✅ Trạng thái: Đúng";
                     } else {
                         statusTag.className = "status-incorrect";
-                        statusTag.innerText = "❌ Trạng thái: Sai / Incorrect";
+                        statusTag.innerText = "❌ Trạng thái: Sai";
                     }
                 }
                 updatePlayButtonState();
@@ -1070,42 +934,32 @@
                 updateItemStatusTag();
 
                 const currentQuiz = quizData[currentIndex];
-                document.getElementById('question-title').innerText = `Câu / Item ${currentIndex + 1}/${quizData.length}: ${currentQuiz.title}`;
+                document.getElementById('question-title').innerText = `Câu ${currentIndex + 1}/${quizData.length}: ${currentQuiz.title || "Nghe và chọn đáp án chính xác:"}`;
 
                 const mcqContainer = document.getElementById('mcq-container');
                 const fillContainer = document.getElementById('fill-container');
                 const correctDisplay = document.getElementById('correct-answer-display');
 
-                if (currentQuiz.type === "mcq") {
+                if (currentQuiz.type === "mcq" || !currentQuiz.type) {
                     mcqContainer.style.display = "flex";
                     fillContainer.style.display = "none";
                     mcqContainer.innerHTML = "";
 
-                    const correctObj = currentQuiz.options[currentQuiz.correct];
-
-                    currentQuiz.options.forEach((optObj, index) => {
+                    (currentQuiz.options || []).forEach((optObj, index) => {
                         const btn = document.createElement('button');
                         btn.className = 'option-btn';
-                        
-                        let displayEnText = optObj.en;
+                        let displayEnText = optObj.en || optObj.text || optObj;
 
                         if (!isReviewMode) {
-                            if (userAnswers[currentIndex] === index) {
-                                btn.classList.add('selected');
-                            }
+                            if (userAnswers[currentIndex] === index) btn.classList.add('selected');
                             btn.onclick = () => selectMcqOption(index);
                         } else {
                             btn.disabled = true;
-                            if (index === currentQuiz.correct) {
-                                btn.classList.add('opt-correct');
-                            }
-                            if (userAnswers[currentIndex] === index && index !== currentQuiz.correct) {
-                                btn.classList.add('opt-incorrect');
-                                displayEnText = highlightWrongWords(optObj.en, correctObj.en);
-                            }
+                            if (index === currentQuiz.correct) btn.classList.add('opt-correct');
+                            if (userAnswers[currentIndex] === index && index !== currentQuiz.correct) btn.classList.add('opt-incorrect');
                         }
 
-                        btn.innerHTML = `<span>${displayEnText}</span><span class="vi-trans">${optObj.vi}</span>`;
+                        btn.innerHTML = `<span>${displayEnText}</span>${optObj.vi ? `<span class="vi-trans">${optObj.vi}</span>` : ''}`;
                         mcqContainer.appendChild(btn);
                     });
                 } 
@@ -1114,16 +968,11 @@
                     fillContainer.style.display = "block";
 
                     document.getElementById('blank-sentence').innerHTML = `
-                        ${currentQuiz.displaySentence}
+                        ${currentQuiz.displaySentence || ""}
                         <span class="vi-trans">${currentQuiz.translation || ""}</span>
                     `;
 
-                    if (currentQuiz.hint) {
-                        let cleanHint = currentQuiz.hint.replace(/^💡\s*/, '').replace(/^Gợi ý:\s*/i, '').trim();
-                        document.getElementById('char-hint').innerText = `💡 Gợi ý / Hint: ${cleanHint}`;
-                    } else {
-                        document.getElementById('char-hint').innerText = "";
-                    }
+                    document.getElementById('char-hint').innerText = currentQuiz.hint ? `💡 Gợi ý: ${currentQuiz.hint}` : "";
 
                     const fillInput = document.getElementById('fill-input');
                     fillInput.value = userAnswers[currentIndex] || "";
@@ -1131,15 +980,11 @@
                     if (isReviewMode) {
                         fillInput.disabled = true;
                         correctDisplay.style.display = "block";
-                        
                         const userVal = userAnswers[currentIndex] || "";
-                        if (userVal.toLowerCase() === currentQuiz.targetWord.toLowerCase()) {
-                            correctDisplay.innerHTML = "<span style='color:#198754;'>🎯 Đáp án đúng / Correct: " + currentQuiz.targetWord + "</span>";
+                        if (userVal.toLowerCase() === (currentQuiz.targetWord || "").toLowerCase()) {
+                            correctDisplay.innerHTML = "<span style='color:#198754;'>🎯 Đáp án đúng: " + currentQuiz.targetWord + "</span>";
                         } else {
-                            const wrongWordFormatted = userVal !== "" 
-                                ? `<span class="wrong-word-highlight">${userVal}</span>` 
-                                : `<span class="wrong-word-highlight">(Bỏ trống / Blank)</span>`;
-                            correctDisplay.innerHTML = `<span style='color:#dc3545;'>❌ Bạn nhập sai / Your input: ${wrongWordFormatted}</span> <br>🎯 Đáp án đúng / Correct: <b style="color:#198754;">${currentQuiz.targetWord}</b>`;
+                            correctDisplay.innerHTML = `<span style='color:#dc3545;'>❌ Bạn nhập: ${userVal || "(Bỏ trống)"}</span> | 🎯 Đúng: <b style="color:#198754;">${currentQuiz.targetWord}</b>`;
                         }
                     } else {
                         fillInput.disabled = false;
@@ -1152,9 +997,9 @@
 
                 const nextBtn = document.getElementById('next-btn');
                 if (currentIndex === quizData.length - 1) {
-                    nextBtn.innerText = isReviewMode ? "Hoàn tất xem lại / Done 🏁" : "Nộp bài / Submit 🏆";
+                    nextBtn.innerText = isReviewMode ? "Hoàn tất xem lại 🏁" : "Nộp bài 🏆";
                 } else {
-                    nextBtn.innerText = "Câu tiếp / Next ⏩";
+                    nextBtn.innerText = "Câu tiếp ⏩";
                 }
 
                 updatePlayButtonState();
@@ -1164,12 +1009,7 @@
                 }
 
             } else {
-                if (isReviewMode) {
-                    finishSession(lastSessionMessage || "🎉 HOÀN THÀNH BÀI KIỂM TRA NGHE / TEST COMPLETED!", true);
-                } else {
-                    clearInterval(timerInterval);
-                    finishSession("🎉 HOÀN THÀNH BÀI KIỂM TRA NGHE / TEST COMPLETED!");
-                }
+                finishSession("🎉 HOÀN THÀNH BÀI THI!");
             }
         }
 
@@ -1181,45 +1021,23 @@
 
             if (isReviewMode) {
                 playBtn.disabled = false;
-                playBtn.innerText = `🔊 NGHE LẠI / REPLAY AUDIO (CÂU ${currentIndex + 1}/${quizData.length})`;
+                playBtn.innerText = `🔊 NGHE LẠI (CÂU ${currentIndex + 1}/${quizData.length})`;
             } else {
                 if (remaining > 0) {
                     playBtn.disabled = false;
-                    playBtn.innerText = `🔊 NGHE CÂU HỎI (CÂU ${currentIndex + 1}/${quizData.length} - Còn ${remaining} lượt)`;
+                    playBtn.innerText = `🔊 NGHE CÂU HỎI (${currentIndex + 1}/${quizData.length} - Còn ${remaining} lượt)`;
                 } else {
                     playBtn.disabled = true;
-                    playBtn.innerText = `🚫 ĐÃ HẾT LƯỢT NGHE (CÂU ${currentIndex + 1}/${quizData.length})`;
+                    playBtn.innerText = `🚫 HẾT LƯỢT NGHE (${currentIndex + 1}/${quizData.length})`;
                 }
             }
-        }
-
-        function formatAudioTextForClearPronunciation(text) {
-            if (!text) return "";
-            const words = text.split(' ');
-            const processedWords = words.map((word, idx) => {
-                const cleanWord = word.replace(/[^a-zA-Z]/g, '');
-                const isProperName = (idx > 0) && cleanWord.length > 1 && /^[A-Z][a-z]+$/.test(cleanWord);
-                if (isProperName) {
-                    return `, ${word}, `;
-                }
-                return word;
-            });
-
-            let formatted = processedWords.join(' ');
-            formatted = formatted.replace(/\bMr\./gi, "Mr. ")
-                                 .replace(/\bMrs\./gi, "Mrs. ")
-                                 .replace(/\bMs\./gi, "Ms. ")
-                                 .replace(/\bHole\s+(\d+)/gi, "Hole Par , $1")
-                                 .replace(/\bPar\s+(\d+)/gi, "Par , $1");
-
-            return formatted;
         }
 
         function playAudio() {
             clearTimeout(autoPlayTimer); 
 
             if (!isReviewMode && listenCounts[currentIndex] >= MAX_LISTEN_PER_QUESTION) {
-                document.getElementById('status').innerText = "⚠️ Bạn đã dùng hết lượt nghe / Limit reached!";
+                document.getElementById('status').innerText = "⚠️ Đã hết lượt nghe câu này!";
                 return;
             }
 
@@ -1227,7 +1045,7 @@
                 window.speechSynthesis.cancel();
                 
                 const currentQuiz = quizData[currentIndex];
-                const textToRead = formatAudioTextForClearPronunciation(currentQuiz.audioText);
+                const textToRead = currentQuiz.audioText || currentQuiz.text || "";
 
                 const utterance = new SpeechSynthesisUtterance(textToRead);
                 utterance.lang = 'en-US';
@@ -1235,11 +1053,9 @@
                 const rateElem = document.getElementById('speech-rate-select');
                 utterance.rate = rateElem ? parseFloat(rateElem.value) : 0.78; 
                 utterance.pitch = 1.0; 
-                utterance.volume = 1.0;
 
                 const voices = window.speechSynthesis.getVoices();
                 const selectedVoiceName = document.getElementById('speech-voice-select')?.value;
-                
                 let chosenVoice = voices.find(v => v.name === selectedVoiceName);
 
                 if (!chosenVoice) {
@@ -1248,9 +1064,7 @@
                                   voices.find(v => v.lang.startsWith('en'));
                 }
 
-                if (chosenVoice) {
-                    utterance.voice = chosenVoice;
-                }
+                if (chosenVoice) utterance.voice = chosenVoice;
 
                 window.speechSynthesis.speak(utterance);
                 
@@ -1259,7 +1073,7 @@
                     updatePlayButtonState();
                 }
                 
-                document.getElementById('status').innerText = "🔊 Đang phát âm thanh... / Playing audio...";
+                document.getElementById('status').innerText = "🔊 Đang phát âm thanh...";
             }
         }
 
@@ -1270,13 +1084,10 @@
             
             const buttons = document.querySelectorAll('.option-btn');
             buttons.forEach((btn, idx) => {
-                if (idx === selectedIndex) {
-                    btn.classList.add('selected');
-                } else {
-                    btn.classList.remove('selected');
-                }
+                if (idx === selectedIndex) btn.classList.add('selected');
+                else btn.classList.remove('selected');
             });
-            document.getElementById('status').innerText = "Đã ghi nhận lựa chọn / Selected. Bấm 'Câu tiếp / Next' để tiếp tục.";
+            document.getElementById('status').innerText = "Đã chọn. Bấm 'Câu tiếp' để tiếp tục.";
         }
 
         function saveFillAnswer(val) {
@@ -1299,7 +1110,7 @@
             if ('speechSynthesis' in window) window.speechSynthesis.cancel();
             
             if (isReviewMode && currentIndex === quizData.length - 1) {
-                finishSession(lastSessionMessage || "🎉 HOÀN THÀNH BÀI KIỂM TRA NGHE / TEST COMPLETED!", true);
+                returnToResultView();
                 return;
             }
 
@@ -1316,36 +1127,158 @@
             }
         }
 
-        function sendResultToGoogleSheet(payload, isFeedback = false) {
-            if (!GOOGLE_SCRIPT_URL) return;
+        function finishSession(msg, isFromReview = false) {
+            clearInterval(timerInterval);
+            clearTimeout(autoPlayTimer);
 
-            const msgElem = document.getElementById('save-status-msg');
+            let correctCount = 0;
+            let incorrectCount = 0;
+            let skippedCount = 0;
+            let totalItems = quizData.length;
 
-            fetch(GOOGLE_SCRIPT_URL, {
-                method: 'POST',
-                headers: { 'Content-Type': 'text/plain;charset=utf-8' },
-                body: JSON.stringify(payload)
-            })
-            .then(res => res.json())
-            .then(resData => {
-                if (msgElem) {
-                    if (isFeedback) {
-                        msgElem.innerText = "✅ Cảm ơn bạn đã góp ý! / Thank you for your feedback!";
-                        msgElem.style.color = "#0f5132";
-                        msgElem.style.backgroundColor = "#d1e7dd";
-                    } else {
-                        msgElem.innerText = "✅ Đã lưu kết quả thành công! / Result saved successfully!";
-                        msgElem.style.color = "#0f5132";
-                        msgElem.style.backgroundColor = "#d1e7dd";
-                    }
-                }
-            })
-            .catch(err => {
-                console.error("Lỗi gửi dữ liệu:", err);
-                if (msgElem) {
-                    msgElem.innerText = "✅ Đã gửi dữ liệu bài làm / Data transmitted!";
+            quizData.forEach((item, index) => {
+                const userAns = userAnswers[index];
+                if (userAns === null || userAns === "") {
+                    skippedCount++;
+                } else if (item.type === "mcq" || !item.type) {
+                    if (userAns === item.correct) correctCount++;
+                    else incorrectCount++;
+                } else if (item.type === "fill") {
+                    if (userAns.toLowerCase() === (item.targetWord || "").toLowerCase()) correctCount++;
+                    else incorrectCount++;
                 }
             });
+
+            let finalScore = totalItems > 0 ? Math.round((correctCount / totalItems) * 100) : 0;
+            const now = new Date();
+            const dateShort = `${String(now.getDate()).padStart(2,'0')}/${String(now.getMonth()+1).padStart(2,'0')}`;
+
+            // CHỈ CẬP NHẬT KẾT QUẢ CAO NHẤT
+            const oldRecord = studentProgressMap[studentInfo.selectedVal] || null;
+            const oldScore = (oldRecord && oldRecord.score !== undefined) ? oldRecord.score : -1;
+
+            if (finalScore >= oldScore) {
+                studentProgressMap[studentInfo.selectedVal] = {
+                    score: finalScore,
+                    date: dateShort,
+                    status: finalScore >= 70 ? 'passed' : 'failed'
+                };
+            }
+
+            let evalText = "Chưa đạt";
+            let levelBadgeHtml = "";
+            let adviceText = "";
+
+            if (finalScore >= 90) {
+                evalText = "Xuất sắc";
+                levelBadgeHtml = `<div class="level-badge level-excellent">🌟 Xuất sắc (${finalScore}/100)</div>`;
+                adviceText = "<b>Đánh giá:</b> Kỹ năng nghe hiểu xuất sắc! Phản xạ tốt và nhận diện chính xác từ vựng.";
+            } else if (finalScore >= 70) {
+                evalText = "Đạt";
+                levelBadgeHtml = `<div class="level-badge level-passed">✅ Đạt (${finalScore}/100)</div>`;
+                adviceText = "<b>Đánh giá:</b> Đạt yêu cầu! Nghe hiểu tốt các thông tin trọng tâm.";
+            } else {
+                evalText = "Chưa đạt";
+                levelBadgeHtml = `<div class="level-badge level-failed">❌ Chưa đạt (${finalScore}/100)</div>`;
+                adviceText = "<b>Đánh giá:</b> Chưa đạt yêu cầu. Hãy luyện nghe lại để cải thiện phản xạ từ vựng.";
+            }
+
+            if (!isFromReview) {
+                lastSavedPayload = {
+                    timestamp: startTimeFormatted,
+                    studentName: studentInfo.studentName,
+                    staffNumber: studentInfo.staffNumber,
+                    birthday: studentInfo.birthday,
+                    workPlace: studentInfo.workPlace,
+                    department: studentInfo.department,
+                    rawLessonCode: studentInfo.rawLessonCode,
+                    lessonTitle: studentInfo.lessonTitle,
+                    score: finalScore,
+                    evaluationText: evalText,
+                    passedCount: `${correctCount}/${totalItems}`,
+                    approxCount: `${incorrectCount}/${totalItems}`,
+                    skippedCount: `${skippedCount}/${totalItems}`,
+                    elapsedTime: formatDuration(elapsedSeconds),
+                    feedback: ""
+                };
+
+                fetch(GOOGLE_SCRIPT_URL, {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'text/plain;charset=utf-8' },
+                    body: JSON.stringify(lastSavedPayload)
+                }).catch(e => console.warn("Lưu Sheet:", e));
+            }
+
+            document.getElementById('quiz-area').classList.add('hidden');
+            const resultArea = document.getElementById('result-view');
+
+            resultArea.innerHTML = `
+                <div class="result-card">
+                    <div class="result-title-banner">${msg}</div>
+                    
+                    <div class="score-row">
+                        <div class="score-box">${finalScore} <span style="font-size:12px; color:#666;">/ 100đ</span></div>
+                        ${levelBadgeHtml}
+                    </div>
+                    
+                    <div id="save-status-msg">✅ Đã lưu kết quả thành công!</div>
+                    <div class="advice-box">${adviceText}</div>
+
+                    <div class="stats-box">
+                        • 👤 Học viên: <b>${studentInfo.studentName}</b> | <b>${studentInfo.workPlace} - ${studentInfo.department}</b><br>
+                        • 📚 Chuyên đề: <b>${studentInfo.lessonTitle}</b><br>
+                        • ⏱️ Thời gian: <b>${formatDuration(elapsedSeconds)}</b><br>
+                        • 📊 Thống kê: ✅ Đúng: <b>${correctCount}/${totalItems}</b> | ❌ Sai: <b>${incorrectCount}/${totalItems}</b> | ⏭️ Bỏ qua: <b>${skippedCount}/${totalItems}</b>
+                    </div>
+
+                    <div class="feedback-card">
+                        <label for="user-feedback">✍️ Đề xuất góp ý (nếu có):</label>
+                        <div class="feedback-input-group">
+                            <input type="text" id="user-feedback" placeholder="Nhập ý kiến đóng góp...">
+                            <button class="btn-send-feedback" onclick="sendFeedbackOnly()">✉️ Gửi góp ý</button>
+                        </div>
+                    </div>
+
+                    <div class="extra-tools-card">
+                        <div class="extra-tools-title">🛠️ LƯU KẾT QUẢ & TIỆN ÍCH:</div>
+                        <button class="btn-tool btn-screenshot" onclick="captureResultScreenshot()">📸 Chụp ảnh kết quả</button>
+                        <button class="btn-tool btn-upload-drive" id="btn-drive-status" onclick="uploadResultToDrive()">☁️ Tải lên Cloud</button>
+                    </div>
+
+                    <div class="action-container">
+                        <div class="group-title">🎯 ÔN TẬP LẠI & CẢI THIỆN KẾT QUẢ</div>
+                        <div class="action-row-a">
+                            <button class="btn-review" onclick="startReview()">🔍 Xem lại chi tiết</button>
+                            <button class="btn-retry-same" onclick="runQuizEngine(studentInfo.isSectionMode, studentInfo.selectedVal)">🔄 Làm lại bài này</button>
+                        </div>
+
+                        <div class="group-title" style="margin-top: 6px;">🚀 CHUYỂN TIẾP LỘ TRÌNH</div>
+                        <button class="btn-next-exercise" onclick="returnToRoadmapView()">📊 Xem lại bảng tiến độ 29 chuyên đề & Học tiếp</button>
+                    </div>
+                </div>
+            `;
+            resultArea.classList.remove('hidden');
+        }
+
+        function startReview() {
+            isReviewMode = true;
+            currentIndex = 0;
+            document.getElementById('result-view').classList.add('hidden');
+            document.getElementById('quiz-area').classList.remove('hidden');
+            loadQuestion();
+        }
+
+        function returnToResultView() {
+            isReviewMode = false;
+            document.getElementById('quiz-area').classList.add('hidden');
+            document.getElementById('result-view').classList.remove('hidden');
+        }
+
+        function returnToRoadmapView() {
+            document.getElementById('result-view').classList.add('hidden');
+            document.getElementById('quiz-area').classList.add('hidden');
+            document.getElementById('user-info-view').classList.remove('hidden');
+            renderRoadmapMatrix();
         }
 
         function sendFeedbackOnly() {
@@ -1355,21 +1288,22 @@
             const fbText = fbInput ? fbInput.value.trim() : '';
 
             if (!fbText) {
-                alert("Vui lòng nhập nội dung góp ý trước khi gửi / Please enter your comment!");
+                alert("Vui lòng nhập nội dung góp ý!");
                 return;
             }
 
             lastSavedPayload.feedback = fbText;
-
             if (fbInput) fbInput.disabled = true;
             if (fbBtn) {
                 fbBtn.disabled = true;
-                fbBtn.innerText = "✔ Đã gửi / Sent";
-                fbBtn.style.opacity = "0.6";
-                fbBtn.style.cursor = "not-allowed";
+                fbBtn.innerText = "✔ Đã gửi";
             }
 
-            sendResultToGoogleSheet(lastSavedPayload, true);
+            fetch(GOOGLE_SCRIPT_URL, {
+                method: 'POST',
+                headers: { 'Content-Type': 'text/plain;charset=utf-8' },
+                body: JSON.stringify(lastSavedPayload)
+            });
         }
 
         function captureResultScreenshot() {
@@ -1377,25 +1311,14 @@
             if (!resultElem) return;
 
             const workPlaceCode = studentInfo.workPlace || "BRG";
-            const studentNameRaw = studentInfo.studentName || "hocvien";
+            const cleanName = convertToNonAccent(studentInfo.studentName || "hocvien");
             const staffId = studentInfo.staffNumber || "000";
-            const birthDateRaw = studentInfo.birthday || "2000-01-01";
-
-            const birthYear = birthDateRaw.split('-')[0] || "2000";
-            const cleanName = convertToNonAccent(studentNameRaw);
-
             const now = new Date();
-            const yearStr = now.getFullYear();
-            const monthStr = String(now.getMonth() + 1).padStart(2, '0');
-            const dayStr = String(now.getDate()).padStart(2, '0');
-            const hourStr = String(now.getHours()).padStart(2, '0');
-            const minStr = String(now.getMinutes()).padStart(2, '0');
-
-            const fileName = `${workPlaceCode}_${yearStr}${monthStr}${dayStr}_${hourStr}${minStr}_${cleanName}_${staffId}_${birthYear}_lis.jpg`;
+            const dateStr = `${now.getFullYear()}${String(now.getMonth()+1).padStart(2,'0')}${String(now.getDate()).padStart(2,'0')}`;
+            const fileName = `${workPlaceCode}_${dateStr}_${cleanName}_${staffId}_lis.jpg`;
 
             html2canvas(resultElem, { scale: 1.2, useCORS: true }).then(canvas => {
                 const imageBase64 = canvas.toDataURL("image/jpeg", 0.65);
-
                 const link = document.createElement('a');
                 link.download = fileName;
                 link.href = imageBase64;
@@ -1409,50 +1332,27 @@
             if (!resultElem) return;
 
             if (statusBtn) {
-                statusBtn.innerText = "⏳ Đang tải lên Drive... / Uploading to Drive...";
+                statusBtn.innerText = "⏳ Đang tải...";
                 statusBtn.disabled = true;
             }
 
-            const workPlaceMap = {
-                'KI': 'KINGS ISLAND',
-                'LH': 'LEGEND HILL',
-                'RT': 'RUBY TREE',
-                'LV': 'LEGEND VALLEY',
-                'LDN': 'LEGEND DANANG',
-                'GS': 'GOLDEN SANDS'
-            };
-
-            const workPlaceCode = studentInfo.workPlace || "KI";
-            const fullWorkPlace = workPlaceMap[workPlaceCode] || studentInfo.workPlace || "CHƯA PHÂN LOẠI";
-            const studentNameRaw = studentInfo.studentName || "hocvien";
+            const workPlaceCode = studentInfo.workPlace || "BRG";
+            const cleanName = convertToNonAccent(studentInfo.studentName || "hocvien");
             const staffId = studentInfo.staffNumber || "000";
-            const birthDateRaw = studentInfo.birthday || "2000-01-01";
-
-            const birthYear = birthDateRaw.split('-')[0] || "2000";
-            const cleanName = convertToNonAccent(studentNameRaw);
-
             const now = new Date();
-            const yearStr = now.getFullYear();
-            const monthStr = String(now.getMonth() + 1).padStart(2, '0');
-            const dayStr = String(now.getDate()).padStart(2, '0');
-            const hourStr = String(now.getHours()).padStart(2, '0');
-            const minStr = String(now.getMinutes()).padStart(2, '0');
-
-            const fileName = `${workPlaceCode}_${yearStr}${monthStr}${dayStr}_${hourStr}${minStr}_${cleanName}_${staffId}_${birthYear}_lis.jpg`;
-            const dateFolderStr = `${yearStr}.${monthStr}.${dayStr}`;
-            let rawLessonCode = studentInfo.rawLessonCode ? studentInfo.rawLessonCode.toUpperCase() : "EXAM";
+            const dateStr = `${now.getFullYear()}${String(now.getMonth()+1).padStart(2,'0')}${String(now.getDate()).padStart(2,'0')}`;
+            const fileName = `${workPlaceCode}_${dateStr}_${cleanName}_${staffId}_lis.jpg`;
+            const dateFolderStr = `${now.getFullYear()}.${String(now.getMonth()+1).padStart(2,'0')}.${String(now.getDate()).padStart(2,'0')}`;
 
             html2canvas(resultElem, { scale: 1.2, useCORS: true }).then(canvas => {
                 const imageBase64 = canvas.toDataURL("image/jpeg", 0.65);
-
                 const payload = {
                     action: "upload_image",
                     imageBase64: imageBase64,
                     fileName: fileName,
                     workPlace: workPlaceCode,
-                    fullWorkPlace: fullWorkPlace,
                     dateFolderStr: dateFolderStr,
-                    rawLessonCode: rawLessonCode,
+                    rawLessonCode: (studentInfo.rawLessonCode || "EXAM").toUpperCase(),
                     studentName: studentInfo.studentName,
                     staffNumber: studentInfo.staffNumber
                 };
@@ -1463,226 +1363,22 @@
                     body: JSON.stringify(payload)
                 })
                 .then(res => res.json())
-                .then(resData => {
+                .then(() => {
                     if (statusBtn) {
-                        statusBtn.innerText = "✅ Đã tải lên Drive / Uploaded to Drive!";
+                        statusBtn.innerText = "✅ Đã lưu Drive";
                         statusBtn.style.backgroundColor = "#198754";
                     }
                 })
                 .catch(err => {
-                    console.error("Lỗi upload Drive:", err);
-                    if (statusBtn) {
-                        statusBtn.innerText = "✅ Đã hoàn tất tải ảnh / Upload Finished!";
-                        statusBtn.style.backgroundColor = "#198754";
-                    }
+                    console.error("Lỗi Drive:", err);
+                    if (statusBtn) statusBtn.innerText = "✅ Hoàn tất";
                 });
             });
-        }
-
-        function finishSession(message, isFromReview = false) {
-            clearInterval(timerInterval);
-            clearTimeout(autoPlayTimer);
-            isReviewMode = false;
-            lastSessionMessage = message;
-
-            let correctCount = 0;
-            let incorrectCount = 0;
-            let skippedCount = 0;
-            let totalItems = quizData.length;
-
-            quizData.forEach((item, index) => {
-                const userAns = userAnswers[index];
-                if (userAns === null || userAns === "") {
-                    skippedCount++;
-                } else if (item.type === "mcq") {
-                    if (userAns === item.correct) correctCount++;
-                    else incorrectCount++;
-                } else if (item.type === "fill") {
-                    if (userAns.toLowerCase() === item.targetWord.toLowerCase()) correctCount++;
-                    else incorrectCount++;
-                }
-            });
-
-            let calculatedScore = 0;
-            if (totalItems > 0) {
-                calculatedScore = Math.round((correctCount / totalItems) * 100);
-            }
-
-            let levelBadgeHtml = "";
-            let adviceText = "";
-
-            if (calculatedScore >= 90) {
-                levelBadgeHtml = `<div class="level-badge level-excellent">🌟 Xuất sắc / Excellent (${calculatedScore}/100)</div>`;
-                adviceText = "<b>Đánh giá / Evaluation:</b> Kỹ năng nghe hiểu xuất sắc! Phản xạ tốt, nhận biết chính xác từ vựng và ngữ cảnh / Excellent listening comprehension and quick reflex.";
-            } else if (calculatedScore >= 70) {
-                levelBadgeHtml = `<div class="level-badge level-passed">✅ Đạt / Passed (${calculatedScore}/100)</div>`;
-                adviceText = "<b>Đánh giá / Evaluation:</b> Đạt yêu cầu! Nghe hiểu tốt các ý chính và thông tin quan trọng / Good comprehension of key messages and core details.";
-            } else {
-                levelBadgeHtml = `<div class="level-badge level-failed">❌ Chưa đạt / Failed (${calculatedScore}/100)</div>`;
-                adviceText = "<b>Đánh giá / Evaluation:</b> Chưa đạt yêu cầu; Khuyến nghị luyện nghe lại để cải thiện phản xạ từ vựng / Listening reflex needs practice; please retake and review.";
-            }
-
-            if (!isFromReview) {
-                lastSavedPayload = {
-                    timestamp: startTimeFormatted,
-                    studentName: studentInfo.studentName,
-                    staffNumber: studentInfo.staffNumber,
-                    birthday: studentInfo.birthday,
-                    workPlace: studentInfo.workPlace,
-                    department: studentInfo.department,
-                    rawLessonCode: studentInfo.rawLessonCode,
-                    lessonTitle: studentInfo.lessonTitle,
-                    score: calculatedScore,
-                    passedCount: `${correctCount}/${totalItems}`,
-                    approxCount: `${incorrectCount}/${totalItems}`,
-                    skippedCount: `${skippedCount}/${totalItems}`,
-                    elapsedTime: formatDuration(elapsedSeconds),
-                    feedback: ""
-                };
-                sendResultToGoogleSheet(lastSavedPayload, false);
-            }
-
-            const quizArea = document.getElementById('quiz-area');
-            const reviewArea = document.getElementById('review-view');
-            const resultArea = document.getElementById('result-view');
-
-            if (quizArea) quizArea.classList.add('hidden');
-            if (reviewArea) reviewArea.classList.add('hidden');
-
-            /* BỐ CỤC ĐẦY ĐỦ TRANG KẾT QUẢ / TRANG CUỐI CÙNG */
-            resultArea.innerHTML = `
-                <div class="result-card">
-                    <div class="result-title-banner">🎉 ${message}</div>
-                    
-                    <div class="score-row">
-                        <div class="score-box">${calculatedScore} <span style="font-size:13px; color:#666;">/ 100đ (pts)</span></div>
-                        ${levelBadgeHtml}
-                    </div>
-                    
-                    <div id="save-status-msg">✅ Đã lưu kết quả thành công! / Result saved!</div>
-
-                    <div class="advice-box">
-                        ${adviceText}
-                    </div>
-
-                    <div class="stats-box">
-                        <b>📊 BẢNG THỐNG KÊ CHI TIẾT / PERFORMANCE SUMMARY:</b><br>
-                        • 👤 Thí sinh / Name: <b>${studentInfo.studentName}</b> | Mã / ID: <b>${studentInfo.staffNumber}</b> | Đơn vị / Unit: <b>${studentInfo.workPlace} - ${studentInfo.department}</b><br>
-                        • 🕒 Bắt đầu / Start: <b>${startTimeFormatted}</b> | ⏱️ Làm bài / Elapsed: <b>${formatDuration(elapsedSeconds)}</b><br>
-                        • ✅ Đúng / Correct: <b>${correctCount}/${totalItems}</b> &nbsp;|&nbsp; ❌ Sai / Incorrect: <b>${incorrectCount}/${totalItems}</b> &nbsp;|&nbsp; ⏭️ Bỏ qua / Skipped: <b>${skippedCount}/${totalItems}</b>
-                    </div>
-
-                    <div class="feedback-card">
-                        <label for="user-feedback">✍️ Đề xuất góp ý (nếu có) / Feedbacks & Comments:</label>
-                        <div class="feedback-input-group">
-                            <input type="text" id="user-feedback" placeholder="Nhập ý kiến đóng góp... / Enter comments...">
-                            <button class="btn-send-feedback" onclick="sendFeedbackOnly()">✉️ Gửi góp ý / Submit</button>
-                        </div>
-                    </div>
-
-                    <div class="extra-tools-card">
-                        <div class="extra-tools-title">🛠️ LƯU KẾT QUẢ & TIỆN ÍCH / SAVE & TOOLS:</div>
-                        <button class="btn-tool btn-screenshot" onclick="captureResultScreenshot()">📸 Chụp ảnh kết quả / Screenshot</button>
-                        <button class="btn-tool btn-upload-drive" id="btn-drive-status" onclick="uploadResultToDrive()">☁️ Tải lên Cloud / Save to Drive</button>
-                    </div>
-
-                    <!-- CỤM ĐIỀU HƯỚNG VÀ CHUYỂN TIẾP TRANG KẾT QUẢ -->
-                    <div class="action-container">
-                        <div class="group-title">🎯 ÔN TẬP LẠI & CẢI THIỆN KẾT QUẢ / REVIEW & IMPROVE</div>
-                        <div class="action-row-a">
-                            <button class="btn-review" onclick="startReview()">🔍 Xem lại chi tiết / Review</button>
-                            <button class="btn-retry-same" onclick="retryCurrentQuiz()">🔄 Làm lại bài này / Retake</button>
-                        </div>
-
-                        <div class="group-title" style="margin-top: 6px;">🚀 CHUYỂN TIẾP LỘ TRÌNH / NEXT STEPS</div>
-                        <button class="btn-next-exercise" onclick="goToChooseExercise()">➡️ Chọn bài tập khác / Next Exercise</button>
-                        
-                        <!-- CHUYỂN SANG PHẦN PHÁT ÂM TẠI TRANG KẾT QUẢ -->
-                        <a href="https://brggrouplearning.github.io/Caddie-pronunciation/" target="_blank" class="speaking-switch-banner" style="margin-top: 4px;">
-                            <div class="banner-left">
-                                <div class="banner-icon">🎤</div>
-                                <div>
-                                    <div class="banner-title">Luyện tập Kỹ năng Phát âm / Speaking</div>
-                                    <div class="banner-desc">Chuyển sang cổng bài tập phát âm Tiếng Anh & nhận diện giọng nói</div>
-                                </div>
-                            </div>
-                            <div class="banner-btn-tag">Học ngay ➔</div>
-                        </a>
-
-                        <!-- KHUNG CHỈ DẪN & TÀI LIỆU TẠI TRANG KẾT QUẢ -->
-                        <div class="portal-section-title" style="margin-top: 8px;">📚 TÀI LIỆU THAM KHẢO & ĐÀO TẠO / RESOURCES:</div>
-                        <div class="resource-grid">
-                            <a href="https://brggrouplearning.github.io/caddie-videoenglish/" target="_blank" class="resource-card">
-                                <div class="resource-icon">🎬</div>
-                                <div class="resource-name">CLIPS Đào tạo</div>
-                                <div class="resource-sub">Video bài giảng</div>
-                            </a>
-                            <a href="https://drive.google.com/drive/folders/16FQ87gRXF1Zb9Bwpl6ynju3QPMdeJk-V" target="_blank" class="resource-card">
-                                <div class="resource-icon">📂</div>
-                                <div class="resource-name">Tài liệu Đào tạo</div>
-                                <div class="resource-sub">Google Drive</div>
-                            </a>
-                            <a href="https://docs.google.com/document/d/15oweLWJ0qDmIiOLuzTAC8pw3NEH63SWQtx_NMtLPAtk/edit?tab=t.0" target="_blank" class="resource-card">
-                                <div class="resource-icon">📖</div>
-                                <div class="resource-name">Hướng dẫn</div>
-                                <div class="resource-sub">Tài liệu hướng dẫn</div>
-                            </a>
-                        </div>
-                        
-                        <div class="user-switch-note">
-                            Đang lưu thông tin / Current user: <b>${studentInfo.studentName} (${studentInfo.staffNumber})</b>
-                            <span class="user-switch-link" onclick="clearStudentProfile()">[Đổi thí sinh / Switch]</span>
-                        </div>
-                    </div>
-                </div>
-            `;
-            resultArea.classList.remove('hidden');
-        }
-
-        function startReview() {
-            isReviewMode = true;
-            currentIndex = 0;
-            
-            const quizArea = document.getElementById('quiz-area');
-            const resultArea = document.getElementById('result-view');
-
-            if (resultArea) resultArea.classList.add('hidden');
-            if (quizArea) quizArea.classList.remove('hidden');
-
-            const titleElem = document.getElementById('lesson-title');
-            if (titleElem) titleElem.innerText = "XEM LẠI CHI TIẾT BÀI THI NGHE / REVIEW LISTENING EXAM";
-
-            const timerBox = document.getElementById('timer-box');
-            if (timerBox) timerBox.innerText = "🔍 CHẾ ĐỘ XEM LẠI / REVIEW MODE";
-
-            let backBtn = document.getElementById('back-result-btn');
-            if (!backBtn) {
-                backBtn = document.createElement('button');
-                backBtn.id = 'back-result-btn';
-                backBtn.className = 'action-btn';
-                backBtn.style.backgroundColor = '#6c757d';
-                backBtn.style.color = '#ffffff';
-                backBtn.style.width = '100%';
-                backBtn.style.marginTop = '10px';
-                backBtn.innerHTML = '↩️ Quay lại Bảng điểm / Return to Score Board';
-                backBtn.onclick = () => finishSession(lastSessionMessage || "🎉 HOÀN THÀNH BÀI KIỂM TRA NGHE / TEST COMPLETED!", true);
-                
-                const quizContainer = document.getElementById('quiz-area');
-                if (quizContainer) quizContainer.appendChild(backBtn);
-            } else {
-                backBtn.style.display = 'block';
-            }
-
-            loadQuestion();
         }
 
         if ('speechSynthesis' in window) {
             window.speechSynthesis.onvoiceschanged = () => { loadVoices(); };
         }
-
-        window.addEventListener('DOMContentLoaded', () => {
-            initApp();
-        });
     </script>
 </body>
 </html>
