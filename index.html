@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <title>Listening Test - BRG Learning</title>
-    <!-- Sửa Favicon icon tai nghe không bị cắt -->
+    <!-- Favicon icon tai nghe chuẩn giữa, không bị cắt mép -->
     <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text x=%2250%%22 y=%2265%%22 font-size=%2268%22 text-anchor=%22middle%22 dominant-baseline=%22central%22>🎧</text></svg>">
     
     <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
@@ -38,7 +38,7 @@
             box-shadow: 0 2px 10px rgba(0,0,0,0.05); 
         }
 
-        /* HEADER & BADGE TỰ CO GIÃN THEO DÒNG */
+        /* HEADER & BADGE */
         .header-section {
             display: flex;
             flex-direction: column;
@@ -75,7 +75,7 @@
             color: #495057;
             text-transform: uppercase;
             letter-spacing: 0.3px;
-            margin: 12px 0 6px 0;
+            margin: 10px 0 6px 0;
             text-align: left;
             display: flex;
             align-items: center;
@@ -167,7 +167,7 @@
         
         .btn-check-progress { width: 100%; min-height: 38px; padding: 8px; font-size: 11.5px; font-weight: bold; color: white; background: #0d6efd; border: none; border-radius: 6px; cursor: pointer; margin-top: 6px; }
 
-        /* MA TRẬN TIẾN ĐỘ TỰ THÍCH ỨNG MOBILE */
+        /* MA TRẬN TIẾN ĐỘ */
         .roadmap-container { background: #f8fbff; border: 1.2px solid #b6d4fe; border-radius: 8px; padding: 8px; margin-top: 8px; text-align: left; }
         .roadmap-title { font-size: 11px; font-weight: bold; color: #0d6efd; margin-bottom: 4px; text-transform: uppercase; display: flex; justify-content: space-between; align-items: center; }
         
@@ -254,7 +254,21 @@
         .tts-controls { display: flex; gap: 4px; margin-top: 4px; text-align: left; }
         .tts-controls select { padding: 4px; font-size: 10px; border-radius: 5px; border: 1px solid #b6d4fe; background: #fff; font-weight: 600; color: #0d6efd; flex: 1; outline: none; }
         
-        .question-title { text-align: left; font-weight: bold; margin-bottom: 6px; color: #212529; font-size: 12px; line-height: 1.35; }
+        .question-title { text-align: left; font-weight: bold; margin-bottom: 4px; color: #212529; font-size: 12px; line-height: 1.35; }
+        .question-ipa-display {
+            font-size: 13.5px;
+            font-family: 'Segoe UI', Arial, sans-serif;
+            color: #d63384;
+            background: #fff0f6;
+            padding: 4px 8px;
+            border-radius: 6px;
+            margin: 4px 0 6px 0;
+            font-weight: 700;
+            letter-spacing: 0.5px;
+            border: 1px solid #fcc2d7;
+            display: inline-block;
+        }
+
         .options-container { display: flex; flex-direction: column; gap: 5px; margin: 6px 0; text-align: left; }
         .option-btn { min-height: 40px; padding: 6px 8px; font-size: 11.5px; background: #fff; border: 1.2px solid #dee2e6; border-radius: 5px; cursor: pointer; font-weight: 500; text-align: left; line-height: 1.3; }
         .option-btn.selected { background-color: #cff4fc !important; border-color: #0dcaf0 !important; font-weight: bold; color: #055160; }
@@ -349,7 +363,7 @@
             background: #ffffff;
             border: 1.2px solid #dee2e6;
             border-radius: 8px;
-            padding: 8px;
+            padding: 8px 10px;
             margin-bottom: 8px;
             box-shadow: 0 1px 3px rgba(0,0,0,0.03);
         }
@@ -363,25 +377,51 @@
             margin-bottom: 4px;
         }
         .review-q-number { font-size: 11px; font-weight: bold; color: #0d6efd; }
-        .review-audio-btn {
-            background: #e7f1ff;
-            color: #0d6efd;
-            border: 1px solid #b6d4fe;
-            border-radius: 12px;
-            font-size: 10px;
-            font-weight: bold;
-            padding: 2px 8px;
-            cursor: pointer;
+        
+        /* CÂU VÀ NÚT NGHE TRỰC DIỆN */
+        .review-sentence-row {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 8px;
+            background: #f8fbff;
+            border: 1px solid #d0e2ff;
+            border-radius: 6px;
+            padding: 6px 8px;
+            margin: 4px 0;
         }
         .review-keyphrase {
             font-size: 12px;
             font-weight: 700;
             color: #111;
-            margin: 4px 0 2px 0;
             line-height: 1.35;
+            flex: 1;
         }
         .key-highlight { color: #dc3545; font-weight: 800; text-decoration: underline; }
-        .review-trans { font-size: 10.5px; color: #555; margin-bottom: 4px; }
+        .review-audio-btn-big {
+            background: #0d6efd;
+            color: #ffffff;
+            border: none;
+            border-radius: 6px;
+            font-size: 11px;
+            font-weight: bold;
+            padding: 6px 10px;
+            cursor: pointer;
+            white-space: nowrap;
+            display: flex;
+            align-items: center;
+            gap: 4px;
+            box-shadow: 0 1px 3px rgba(13,110,253,0.3);
+        }
+        .review-audio-btn-big:active { background: #0b5ed7; }
+
+        .review-ipa-line {
+            font-size: 12px;
+            color: #d63384;
+            font-weight: 700;
+            margin: 2px 0 3px 0;
+        }
+        .review-trans { font-size: 10.5px; color: #495057; margin-bottom: 4px; }
         .review-ans-row {
             font-size: 10px;
             background: #f8f9fa;
@@ -393,10 +433,11 @@
             font-size: 9.5px;
             color: #495057;
             background: #f1f5f9;
-            border-left: 2.5px solid #0d6efd;
-            padding: 3px 6px;
+            border-left: 3px solid #0d6efd;
+            padding: 4px 6px;
             margin-top: 4px;
             border-radius: 0 4px 4px 0;
+            line-height: 1.35;
         }
 
         .hidden { display: none !important; }
@@ -444,6 +485,26 @@
                 </div>
                 <div class="banner-btn-tag">Học ngay ➔</div>
             </a>
+
+            <!-- MỤC TÀI NGUYÊN & HƯỚNG DẪN ĐÀO TẠO Ở TRANG ĐẦU (NẰM DƯỚI BANNER) -->
+            <div class="portal-section-title">📚 TÀI NGUYÊN & HƯỚNG DẪN ĐÀO TẠO / RESOURCES:</div>
+            <div class="resource-grid">
+                <a href="https://brggrouplearning.github.io/caddie-videoenglish/" target="_blank" class="resource-card">
+                    <div class="resource-icon">🎬</div>
+                    <div class="resource-name">CLIPS Đào tạo</div>
+                    <div class="resource-sub">Video bài giảng</div>
+                </a>
+                <a href="https://drive.google.com/drive/folders/16FQ87gRXF1Zb9Bwpl6ynju3QPMdeJk-V" target="_blank" class="resource-card">
+                    <div class="resource-icon">📂</div>
+                    <div class="resource-name">Tài liệu Đào tạo</div>
+                    <div class="resource-sub">Google Drive</div>
+                </a>
+                <a href="https://docs.google.com/document/d/15oweLWJ0qDmIiOLuzTAC8pw3NEH63SWQtx_NMtLPAtk/edit?tab=t.0" target="_blank" class="resource-card">
+                    <div class="resource-icon">📖</div>
+                    <div class="resource-name">Hướng dẫn</div>
+                    <div class="resource-sub">Quy trình làm bài</div>
+                </a>
+            </div>
 
             <!-- FORM NHẬP LIỆU -->
             <div class="user-card" style="margin-top: 6px;">
@@ -519,26 +580,6 @@
 
                 <button class="btn-start-quiz" onclick="startQuizPractice()">BẮT ĐẦU LÀM BÀI ĐÃ CHỌN 🚀</button>
             </div>
-
-            <!-- MỤC TÀI NGUYÊN ĐÃ ĐƯỢC CHUYỂN XUỐNG PHÍA DƯỚI -->
-            <div class="portal-section-title">📚 TÀI NGUYÊN & HƯỚNG DẪN ĐÀO TẠO / RESOURCES:</div>
-            <div class="resource-grid">
-                <a href="https://brggrouplearning.github.io/caddie-videoenglish/" target="_blank" class="resource-card">
-                    <div class="resource-icon">🎬</div>
-                    <div class="resource-name">CLIPS Đào tạo</div>
-                    <div class="resource-sub">Video bài giảng</div>
-                </a>
-                <a href="https://drive.google.com/drive/folders/16FQ87gRXF1Zb9Bwpl6ynju3QPMdeJk-V" target="_blank" class="resource-card">
-                    <div class="resource-icon">📂</div>
-                    <div class="resource-name">Tài liệu Đào tạo</div>
-                    <div class="resource-sub">Google Drive</div>
-                </a>
-                <a href="https://docs.google.com/document/d/15oweLWJ0qDmIiOLuzTAC8pw3NEH63SWQtx_NMtLPAtk/edit?tab=t.0" target="_blank" class="resource-card">
-                    <div class="resource-icon">📖</div>
-                    <div class="resource-name">Hướng dẫn</div>
-                    <div class="resource-sub">Quy trình làm bài</div>
-                </a>
-            </div>
         </div>
 
         <!-- VIEW 2: LÀM BÀI -->
@@ -563,6 +604,7 @@
 
             <div id="progress" class="progress-box"></div>
             <div id="question-title" class="question-title">...</div>
+            <div id="question-ipa" class="question-ipa-display" style="display:none;"></div>
             
             <div id="mcq-container" class="options-container"></div>
 
@@ -585,7 +627,7 @@
         <!-- VIEW 3: KẾT QUẢ -->
         <div id="result-view" class="hidden"></div>
 
-        <!-- VIEW 4: XEM LẠI BÀI TOÀN BỘ (LIST REVIEW KHÔNG CẦN BẤM TỪNG CÂU) -->
+        <!-- VIEW 4: XEM LẠI BÀI TOÀN BỘ (LIST REVIEW) -->
         <div id="review-list-view" class="hidden review-list-wrapper"></div>
     </div>
 
@@ -765,6 +807,25 @@
             return `${mins.toString().padStart(2, '0')}:${secs.toString().padStart(2, '0')}`;
         }
 
+        /* TRỘN CÁC PHƯƠNG ÁN TRẢ LỜI ĐỂ KHÔNG BỊ TRÙNG VÀO CÂU A */
+        function shuffleQuizOptions(item) {
+            if (item.type === 'mcq' || !item.type) {
+                if (!item.options || item.options.length <= 1) return item;
+                const correctObj = item.options[item.correct];
+                const newOptions = [...item.options];
+                shuffleArray(newOptions);
+                item.options = newOptions;
+                item.correct = newOptions.findIndex(opt => {
+                    const optText = opt.en || opt.text || opt;
+                    const corrText = correctObj.en || correctObj.text || correctObj;
+                    return optText === corrText;
+                });
+                if (item.correct === -1) item.correct = 0;
+            }
+            return item;
+        }
+
+        /* ƯU TIÊN CÂU HỎI MỚI VÀ XÁO TRỘN */
         function getFilteredListeningItemsBySelection(isSectionMode, selectedVal) {
             let rawPool = (window.masterQuizData && window.masterQuizData.length > 0) ? JSON.parse(JSON.stringify(window.masterQuizData)) : [];
             let filtered = [];
@@ -789,7 +850,6 @@
             }
 
             if (filtered.length === 0) return [];
-            shuffleArray(filtered);
 
             let lastUsedKey = `pool_history_lis_${isSectionMode ? 'sec_' : 'ex_'}${selectedVal}`;
             let historyTexts = [];
@@ -800,11 +860,13 @@
             let unusedItems = filtered.filter(item => !historyTexts.includes(normalizeText(item.audioText || item.text || item.title || "")));
             let usedItems = filtered.filter(item => historyTexts.includes(normalizeText(item.audioText || item.text || item.title || "")));
 
+            shuffleArray(unusedItems);
+            shuffleArray(usedItems);
+
             let selectedSet = [];
             if (unusedItems.length >= targetCount) {
                 selectedSet = unusedItems.slice(0, targetCount);
             } else {
-                shuffleArray(usedItems);
                 selectedSet = [...unusedItems, ...usedItems].slice(0, Math.min(targetCount, filtered.length));
                 historyTexts = [];
             }
@@ -816,6 +878,10 @@
             } catch(e) {}
 
             shuffleArray(selectedSet);
+
+            // Trộn đáp án cho từng câu
+            selectedSet = selectedSet.map(item => shuffleQuizOptions(item));
+
             return selectedSet;
         }
 
@@ -880,7 +946,6 @@
             });
         }
 
-        /* BỔ SUNG NGÀY HOÀN THÀNH TRƯỚC ĐIỂM SỐ */
         function renderRoadmapMatrix() {
             const grid = document.getElementById('matrix-grid-view');
             grid.innerHTML = "";
@@ -918,7 +983,6 @@
                     overdueCount++;
                 }
 
-                // Cắt lấy định dạng ngày DD/MM nếu có
                 let displayDate = "";
                 if (examDate) {
                     const dParts = examDate.split('/');
@@ -942,7 +1006,7 @@
                     </div>
                     <div class="matrix-row-sub">${subText}</div>
                 `;
-                box.title = `${item.title} | ${score !== null ? `Điểm: ${score}đ (Ngày làm: ${examDate || 'Gần đây'})` : `Hạn: ${item.planDisplay}`}`;
+                box.title = `${item.title} | ${score !== null ? `Điểm: ${score}đ (Ngày: ${examDate || 'Gần đây'})` : `Hạn: ${item.planDisplay}`}`;
                 box.onclick = () => selectLessonFromMatrix(item);
                 grid.appendChild(box);
             });
@@ -1008,50 +1072,62 @@
         let startTimeFormatted = "";
         let lastSavedPayload = null;
 
+        /* BỘ LỌC GIỌNG ĐỌC US TỰ NHIÊN CHUẨN MỸ */
         function loadVoices() {
             if (!('speechSynthesis' in window)) return;
             const voiceSelect = document.getElementById('speech-voice-select');
             if (!voiceSelect) return;
 
             const voices = window.speechSynthesis.getVoices();
-            const enVoices = voices.filter(v => v.lang.startsWith('en'));
+            // Lọc các giọng tiếng Anh, ưu tiên chuẩn US
+            const enVoices = voices.filter(v => v.lang.startsWith('en') || v.lang.includes('US'));
 
             voiceSelect.innerHTML = '';
             if (enVoices.length === 0) {
                 const opt = document.createElement('option');
                 opt.value = "";
-                opt.innerText = "Giọng mặc định";
+                opt.innerText = "Giọng US mặc định";
                 voiceSelect.appendChild(opt);
                 return;
             }
 
-            function getVoicePriority(voice) {
-                const name = voice.name;
-                if (name.includes('Zira')) return 100;
-                if (name.includes('David')) return 90;
-                if (name.includes('Natural') || name.includes('Online')) return 80;
-                if (name.includes('Neural') || name.includes('Studio')) return 70;
-                if (name.includes('Google')) return 60;
-                return 10;
+            function getVoiceScore(v) {
+                const name = v.name.toLowerCase();
+                const lang = (v.lang || "").toLowerCase();
+                let score = 0;
+
+                if (lang === 'en-us' || lang.includes('us')) score += 50;
+                if (name.includes('google') && name.includes('us')) score += 100;
+                if (name.includes('natural') || name.includes('neural') || name.includes('online')) score += 90;
+                if (name.includes('jenny') || name.includes('guy') || name.includes('aria') || name.includes('zira') || name.includes('david')) score += 85;
+                if (name.includes('samantha') || name.includes('ava') || name.includes('tom')) score += 80;
+                if (name.includes('studio') || name.includes('premium')) score += 75;
+                
+                return score;
             }
 
-            enVoices.sort((a, b) => getVoicePriority(b) - getVoicePriority(a));
+            enVoices.sort((a, b) => getVoiceScore(b) - getVoiceScore(a));
 
             enVoices.forEach((voice) => {
                 const opt = document.createElement('option');
                 opt.value = voice.name;
                 let label = voice.name;
-                if (voice.name.includes('Zira')) label = '👩‍💼 Zira (Mặc định)';
-                else if (voice.name.includes('David')) label = '👨‍💼 David (Nam)';
-                else if (voice.name.includes('Natural') || voice.name.includes('Online') || voice.name.includes('Neural')) label = '🌟 ' + voice.name.substring(0, 15);
-                else label = '🔊 ' + voice.name.substring(0, 15);
+                const vname = voice.name.toLowerCase();
+                
+                if (vname.includes('google') && vname.includes('us')) label = '🇺🇸 Google US English (Chuẩn Mỹ)';
+                else if (vname.includes('jenny')) label = '🇺🇸 Jenny (Giọng Nữ Tự Nhiên)';
+                else if (vname.includes('guy')) label = '🇺🇸 Guy (Giọng Nam Tự Nhiên)';
+                else if (vname.includes('aria')) label = '🇺🇸 Aria (Giọng Nữ Chuẩn)';
+                else if (vname.includes('zira')) label = '🇺🇸 Zira (Giọng Nữ US)';
+                else if (vname.includes('david')) label = '🇺🇸 David (Giọng Nam US)';
+                else if (voice.lang.includes('US') || vname.includes('united states')) label = '🇺🇸 ' + voice.name.substring(0, 18);
+                else label = '🔊 ' + voice.name.substring(0, 18);
                 
                 opt.innerText = label;
                 voiceSelect.appendChild(opt);
             });
 
-            const ziraIndex = enVoices.findIndex(v => v.name.includes('Zira'));
-            voiceSelect.selectedIndex = (ziraIndex !== -1) ? ziraIndex : 0;
+            voiceSelect.selectedIndex = 0;
         }
 
         function startQuizPractice() {
@@ -1154,6 +1230,15 @@
 
                 const currentQuiz = quizData[currentIndex];
                 document.getElementById('question-title').innerText = currentQuiz.title || "Nghe và chọn đáp án chính xác:";
+
+                // Hiển thị IPA (nếu có dữ liệu)
+                const ipaElem = document.getElementById('question-ipa');
+                if (currentQuiz.ipa || currentQuiz.phonetic) {
+                    ipaElem.innerText = `🗣️ Phiên âm: ${currentQuiz.ipa || currentQuiz.phonetic}`;
+                    ipaElem.style.display = "inline-block";
+                } else {
+                    ipaElem.style.display = "none";
+                }
 
                 const mcqContainer = document.getElementById('mcq-container');
                 const fillContainer = document.getElementById('fill-container');
@@ -1259,8 +1344,7 @@
                 let chosenVoice = voices.find(v => v.name === selectedVoiceName);
 
                 if (!chosenVoice) {
-                    chosenVoice = voices.find(v => v.name.includes('Zira')) || 
-                                  voices.find(v => v.name.includes('David')) || 
+                    chosenVoice = voices.find(v => v.lang === 'en-US') || 
                                   voices.find(v => v.lang.startsWith('en'));
                 }
 
@@ -1368,7 +1452,7 @@
             if (finalScore >= 90) {
                 evalText = "Xuất sắc";
                 levelBadgeHtml = `<div class="level-badge level-excellent">🌟 Xuất sắc (${finalScore}/100)</div>`;
-                adviceText = "<b>Đánh giá:</b> Kỹ năng nghe hiểu xuất sắc! Bắt âm và nhận diện chuẩn xác.";
+                adviceText = "<b>Đánh giá:</b> Kỹ năng nghe hiểu xuất sắc! Bắt âm và nhận diện keyword rất tốt.";
             } else if (finalScore >= 70) {
                 evalText = "Đạt";
                 levelBadgeHtml = `<div class="level-badge level-passed">✅ Đạt (${finalScore}/100)</div>`;
@@ -1406,6 +1490,7 @@
             document.getElementById('quiz-area').classList.add('hidden');
             const resultArea = document.getElementById('result-view');
 
+            /* BỐ CỤC TRANG KẾT QUẢ: TÀI NGUYÊN NẰM GIỮA ÔN TẬP VÀ LƯU KẾT QUẢ */
             resultArea.innerHTML = `
                 <div class="result-card">
                     <div class="result-title-banner">${msg}</div>
@@ -1434,12 +1519,34 @@
                         </div>
                     </div>
 
+                    <!-- 1. LƯU KẾT QUẢ & TIỆN ÍCH -->
                     <div class="extra-tools-card">
                         <div class="extra-tools-title">🛠️ LƯU KẾT QUẢ & TIỆN ÍCH:</div>
                         <button class="btn-tool btn-screenshot" onclick="captureResultScreenshot()">📸 Chụp ảnh</button>
                         <button class="btn-tool btn-upload-drive" id="btn-drive-status" onclick="uploadResultToDrive()">☁️ Tải lên Cloud</button>
                     </div>
 
+                    <!-- 2. TÀI NGUYÊN & HƯỚNG DẪN ĐÀO TẠO NẰM Ở GIỮA -->
+                    <div class="portal-section-title" style="margin: 8px 0 4px 0;">📚 TÀI NGUYÊN ÔN TẬP BỔ TRỢ:</div>
+                    <div class="resource-grid">
+                        <a href="https://brggrouplearning.github.io/caddie-videoenglish/" target="_blank" class="resource-card">
+                            <div class="resource-icon">🎬</div>
+                            <div class="resource-name">CLIPS Đào tạo</div>
+                            <div class="resource-sub">Video bài giảng</div>
+                        </a>
+                        <a href="https://drive.google.com/drive/folders/16FQ87gRXF1Zb9Bwpl6ynju3QPMdeJk-V" target="_blank" class="resource-card">
+                            <div class="resource-icon">📂</div>
+                            <div class="resource-name">Tài liệu Đào tạo</div>
+                            <div class="resource-sub">Google Drive</div>
+                        </a>
+                        <a href="https://docs.google.com/document/d/15oweLWJ0qDmIiOLuzTAC8pw3NEH63SWQtx_NMtLPAtk/edit?tab=t.0" target="_blank" class="resource-card">
+                            <div class="resource-icon">📖</div>
+                            <div class="resource-name">Hướng dẫn</div>
+                            <div class="resource-sub">Quy trình làm bài</div>
+                        </a>
+                    </div>
+
+                    <!-- 3. ÔN TẬP LẠI & CHUYỂN TIẾP -->
                     <div class="action-container">
                         <div class="group-title">🎯 ÔN TẬP LẠI</div>
                         <div class="action-row-a">
@@ -1450,7 +1557,6 @@
                         <div class="group-title" style="margin-top: 4px;">🚀 CHUYỂN TIẾP</div>
                         <button class="btn-next-exercise" onclick="returnToRoadmapView()">📊 Xem tiến độ 29 bài</button>
 
-                        <!-- BANNER PHÁT ÂM ĐƯỢC LÀM NHỎ GỌN HƠN -->
                         <a href="https://brggrouplearning.github.io/Caddie-pronunciation/" target="_blank" class="speaking-switch-banner compact-banner">
                             <div class="banner-left">
                                 <div class="banner-icon">🎤</div>
@@ -1472,14 +1578,25 @@
             resultArea.classList.remove('hidden');
         }
 
-        /* HÀM TẠO DANH SÁCH XEM LẠI TẤT CẢ CÂU HỎI */
+        /* HÀM LÀM NỔI BẬT KEYWORD QUAN TRỌNG TRONG CÂU */
         function highlightKeyWords(sentence, target) {
             if (!sentence) return "";
-            if (!target) return sentence;
+            if (!target) {
+                // Tự động tìm từ mang thông tin chính nếu chưa khai báo target
+                const stopWords = ['the', 'a', 'an', 'is', 'am', 'are', 'was', 'were', 'to', 'for', 'in', 'on', 'at', 'it', 'sir', 'you', 'your', 'i', 'my'];
+                const words = sentence.split(/\s+/);
+                const mainWord = words.find(w => !stopWords.includes(w.toLowerCase().replace(/[^a-z]/g, '')) && w.length > 2);
+                if (mainWord) {
+                    const cleanWord = mainWord.replace(/[^a-zA-Z0-9]/g, '');
+                    return sentence.replace(new RegExp(`\\b(${cleanWord})\\b`, 'gi'), `<span class="key-highlight">$1</span>`);
+                }
+                return sentence;
+            }
             const regex = new RegExp(`(${target})`, 'gi');
             return sentence.replace(regex, `<span class="key-highlight">$1</span>`);
         }
 
+        /* XEM LẠI TOÀN BỘ CÂU HỎI VỚI NÚT NGHE TO RÕ LIỀN SAU CÂU NÓI */
         function renderReviewList() {
             document.getElementById('result-view').classList.add('hidden');
             const listContainer = document.getElementById('review-list-view');
@@ -1492,7 +1609,7 @@
                 </div>
                 
                 <div class="review-tip-box">
-                    💡 <b>Bí quyết nghe giao tiếp:</b> Hãy tập trung bắt các <b>từ khóa chính (bôi đỏ)</b> mang trọng âm câu. Nhấn nút 🔊 bên cạnh từng câu để nghe lại không giới hạn!
+                    💡 <b>Bí quyết nghe giao tiếp:</b> Tập trung nghe các <b>từ khóa chính (bôi đỏ)</b> mang thông tin cốt lõi để phán đoán trọn vẹn ý của khách. Nhấn nút <b>🔊 Nghe</b> ngay sau mỗi câu để nghe lại không giới hạn!
                 </div>
             `;
 
@@ -1514,12 +1631,12 @@
 
                     if (!keyWord && correctChoiceText) {
                         const words = correctChoiceText.split(' ');
-                        keyWord = words.length > 2 ? words[1] : words[0];
+                        keyWord = words.find(w => w.length > 3) || words[0];
                     }
 
                     if (userAns === null || userAns === "") {
                         cardClass = "item-skipped";
-                        statusBadge = "<span style='color:#6c757d; font-weight:bold; font-size:10px;'>⏭️ Chưa trả lời</span>";
+                        statusBadge = "<span style='color:#6c757d; font-weight:bold; font-size:10px;'>⏭️ Bỏ qua</span>";
                         userChoiceText = "(Bỏ qua)";
                     } else if (userAns === q.correct) {
                         isCorrect = true;
@@ -1539,7 +1656,7 @@
 
                     if (userAns === null || userAns === "") {
                         cardClass = "item-skipped";
-                        statusBadge = "<span style='color:#6c757d; font-weight:bold; font-size:10px;'>⏭️ Chưa trả lời</span>";
+                        statusBadge = "<span style='color:#6c757d; font-weight:bold; font-size:10px;'>⏭️ Bỏ qua</span>";
                         userChoiceText = "(Bỏ qua)";
                     } else if (userAns.toLowerCase() === (q.targetWord || "").toLowerCase()) {
                         isCorrect = true;
@@ -1555,27 +1672,31 @@
 
                 const highlightedEn = highlightKeyWords(fullSentenceEn || correctChoiceText, keyWord);
                 const safeAudioText = (fullSentenceEn || correctChoiceText).replace(/'/g, "\\'");
+                const ipaText = q.ipa || q.phonetic || "";
 
                 html += `
                     <div class="review-item-card ${cardClass}">
                         <div class="review-item-header">
                             <span class="review-q-number">Câu ${idx + 1}</span>
-                            <div>
-                                ${statusBadge}
-                                <button class="review-audio-btn" onclick="playAudio('${safeAudioText}')">🔊 Nghe</button>
-                            </div>
+                            ${statusBadge}
                         </div>
 
-                        <div class="review-keyphrase">${highlightedEn}</div>
+                        <!-- CÂU NÓI VÀ NÚT BẤM NGHE NGAY LIỀN KỀ -->
+                        <div class="review-sentence-row">
+                            <div class="review-keyphrase">${highlightedEn}</div>
+                            <button class="review-audio-btn-big" onclick="playAudio('${safeAudioText}')">🔊 Nghe</button>
+                        </div>
+
+                        ${ipaText ? `<div class="review-ipa-line">🗣️ /${ipaText}/</div>` : ''}
                         ${translationVi ? `<div class="review-trans">🇻🇳 ${translationVi}</div>` : ''}
 
                         <div class="review-ans-row">
                             <span>🎯 <b>Đáp án đúng:</b> <b style="color:#198754;">${correctChoiceText}</b></span><br>
-                            <span>📝 <b>Bạn chọn:</b> <span style="color:${isCorrect ? '#198754' : '#dc3545'}; font-weight:600;">${userChoiceText}</span></span>
+                            <span>📝 <b>Bạn chọn:</b> <span style="color:${isCorrect ? '#198754' : '#dc3545'}; font-weight:bold;">${userChoiceText}</span></span>
                         </div>
 
                         <div class="review-note-box">
-                            📌 <b>Lưu ý bắt tai:</b> Chú ý từ khóa đỏ <b>"${keyWord || 'trọng âm'}"</b> khi khách nói nhanh trên sân.
+                            📌 <b>Lưu ý khi nghe:</b> Chú ý từ khóa <b>"${keyWord || 'trọng tâm'}"</b> để nắm bắt ngay ý định của người nói khi giao tiếp nhanh trên sân.
                         </div>
                     </div>
                 `;
@@ -1583,7 +1704,7 @@
 
             html += `
                 <div style="margin-top:12px; margin-bottom: 20px;">
-                    <button class="btn-back-result" style="width:100%; min-height:38px; font-size:12px;" onclick="backToResultFromList()">⬅️ Quay lại màn hình kết quả</button>
+                    <button class="btn-back-result" style="width:100%; min-height:40px; font-size:12px;" onclick="backToResultFromList()">⬅️ Quay lại màn hình kết quả</button>
                 </div>
             `;
 
