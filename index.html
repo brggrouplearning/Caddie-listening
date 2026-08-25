@@ -137,11 +137,11 @@
         .banner-desc { font-size: 8.5px; opacity: 0.9; }
         .banner-btn-tag { background: #ffffff; color: #B21818; font-weight: 800; font-size: 10px; padding: 4px 6px; border-radius: 5px; white-space: nowrap; }
 
-        /* HỘP THÔNG BÁO THÂN THIỆN (.stage-notice-banner) */
+        /* HỘP THÔNG BÁO XANH LÁ MỚI (.stage-notice-banner) */
         .stage-notice-banner {
-            background: #fff3cd;
-            border: 1.2px solid #ffeeba;
-            color: #856404;
+            background: linear-gradient(135deg, #198754 0%, #20c997 100%);
+            border: 1.2px solid #157347;
+            color: #ffffff;
             padding: 8px 10px;
             border-radius: 7px;
             font-size: 10.5px;
@@ -152,6 +152,7 @@
             display: flex;
             align-items: flex-start;
             gap: 6px;
+            box-shadow: 0 2px 5px rgba(25, 135, 84, 0.2);
         }
         .stage-notice-banner .notice-icon { font-size: 14px; line-height: 1; }
 
@@ -594,8 +595,8 @@
             <div id="roadmap-box" class="roadmap-container hidden">
                 <!-- HỘP THÔNG BÁO THÂN THIỆN (.stage-notice-banner) -->
                 <div id="stage-notice-banner" class="stage-notice-banner hidden">
-                    <span class="notice-icon">💡</span>
-                    <div id="stage-notice-text">Chào mừng bạn đã bước sang Giai đoạn 2 của khóa học! Bạn có thể thoải mái lựa chọn và luyện tập các chuyên đề tiếp theo</div>
+                    <span class="notice-icon">🌟</span>
+                    <div id="stage-notice-text">Chào mừng bạn đã bước sang Giai đoạn 2 của khóa học! Bạn có thể thoải mái lựa chọn và luyện tập các chuyên đề tiếp theo.</div>
                 </div>
 
                 <div class="roadmap-title">
@@ -1010,11 +1011,9 @@
 
                 if (data && data.found) {
                     studentProgressMap = data.progress || {};
-                    // Nếu tìm thấy: Ẩn thông báo hoặc báo thành công nhẹ nhàng, học viên làm bài luôn
                     if (noticeBanner) noticeBanner.classList.add('hidden');
                     renderRoadmapMatrix();
                 } else {
-                    // Nếu KHÔNG tìm thấy: Hiện hộp thông báo hướng dẫn đóng/mở lại trình duyệt mới theo yêu cầu
                     studentProgressMap = {};
                     if (noticeBanner && noticeText) {
                         noticeText.innerHTML = "⚠️ Không tìm thấy thông tin trên hệ thống. <b>Vui lòng đóng và mở lại trình duyệt mới</b> để đồng bộ lại dữ liệu, hoặc bạn có thể bắt đầu chọn chuyên đề bên dưới để làm bài ngay!";
@@ -1028,7 +1027,6 @@
                 checkBtn.innerText = "🔍 KIỂM TRA THÔNG TIN & QUÁ TRÌNH LÀM BÀI";
                 checkBtn.disabled = false;
 
-                // Xử lý khi mất kết nối tạm thời với Google Sheet
                 const noticeBanner = document.getElementById('stage-notice-banner');
                 const noticeText = document.getElementById('stage-notice-text');
                 if (noticeBanner && noticeText) {
@@ -1158,7 +1156,6 @@
         let startTimeFormatted = "";
         let lastSavedPayload = null;
 
-        /* BỘ LỌC 04 GIỌNG ĐỌC TỰ NHIÊN CHUẨN MỸ: 2 NỮ, 2 NAM */
         function loadVoices() {
             if (!('speechSynthesis' in window)) return;
             const voiceSelect = document.getElementById('speech-voice-select');
