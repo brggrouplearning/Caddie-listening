@@ -137,6 +137,24 @@
         .banner-desc { font-size: 8.5px; opacity: 0.9; }
         .banner-btn-tag { background: #ffffff; color: #B21818; font-weight: 800; font-size: 10px; padding: 4px 6px; border-radius: 5px; white-space: nowrap; }
 
+        /* HỘP THÔNG BÁO THÂN THIỆN (.stage-notice-banner) */
+        .stage-notice-banner {
+            background: #fff3cd;
+            border: 1.2px solid #ffeeba;
+            color: #856404;
+            padding: 8px 10px;
+            border-radius: 7px;
+            font-size: 10.5px;
+            font-weight: 600;
+            text-align: left;
+            margin-bottom: 8px;
+            line-height: 1.4;
+            display: flex;
+            align-items: flex-start;
+            gap: 6px;
+        }
+        .stage-notice-banner .notice-icon { font-size: 14px; line-height: 1; }
+
         /* FORM THÔNG TIN HỌC VIÊN */
         .user-card { background: #ffffff; border: 1.2px solid #e7f1ff; border-radius: 8px; padding: 10px; text-align: left; }
         .user-card-header { font-size: 11.5px; font-weight: bold; color: #0d6efd; border-bottom: 1.2px solid #e7f1ff; padding-bottom: 4px; margin-bottom: 8px; text-align: center; text-transform: uppercase; }
@@ -467,15 +485,6 @@
 
         .hidden { display: none !important; }
         #save-status-msg { font-size: 10px; font-weight: bold; color: #0f5132; margin: 1px 0 2px 0; background: #d1e7dd; padding: 2px 6px; border-radius: 8px; display: inline-block; border: 1px solid #badbcc; }
-
-        /* MODAL */
-        .modal-overlay { position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.5); display: flex; align-items: center; justify-content: center; z-index: 999; }
-        .modal-box { background: white; border-radius: 8px; max-width: 360px; width: 90%; padding: 12px; text-align: left; }
-        .modal-title { font-size: 12px; font-weight: bold; color: #0d6efd; margin-bottom: 4px; }
-        .modal-btn-group { display: flex; flex-direction: column; gap: 5px; margin-top: 8px; }
-        .btn-modal { padding: 6px 8px; border-radius: 4px; font-size: 10.5px; font-weight: bold; border: none; cursor: pointer; text-align: center; }
-        .btn-modal-new { background: #198754; color: white; }
-        .btn-modal-recheck { background: #6c757d; color: white; }
     </style>
 </head>
 <body>
@@ -583,6 +592,12 @@
 
             <!-- MA TRẬN TIẾN ĐỘ -->
             <div id="roadmap-box" class="roadmap-container hidden">
+                <!-- HỘP THÔNG BÁO THÂN THIỆN (.stage-notice-banner) -->
+                <div id="stage-notice-banner" class="stage-notice-banner hidden">
+                    <span class="notice-icon">💡</span>
+                    <div id="stage-notice-text">Chào mừng bạn đã bước sang Giai đoạn 2 của khóa học! Bạn có thể thoải mái lựa chọn và luyện tập các chuyên đề tiếp theo</div>
+                </div>
+
                 <div class="roadmap-title">
                     <span>📊 TIẾN ĐỘ 29 CHUYÊN ĐỀ CỦA BẠN (LISTENING)</span>
                     <span id="progress-percent" style="color:#198754;">0%</span>
@@ -653,20 +668,6 @@
 
         <!-- VIEW 4: XEM LẠI BÀI TOÀN BỘ (LIST REVIEW) -->
         <div id="review-list-view" class="hidden review-list-wrapper"></div>
-    </div>
-
-    <!-- MODAL -->
-    <div id="new-user-modal" class="modal-overlay hidden">
-        <div class="modal-box">
-            <div class="modal-title">🔍 KHÔNG TÌM THẤY LỊCH SỬ HỌC TẬP</div>
-            <div style="font-size:10.5px; color:#444; line-height:1.4;">
-                Hệ thống chưa tìm thấy hồ sơ đào tạo khớp với thông tin vừa nhập. Vui lòng xác nhận:
-            </div>
-            <div class="modal-btn-group">
-                <button class="btn-modal btn-modal-new" onclick="setupNewStudentFlow()">🌱 Tôi là Học viên mới (Bắt đầu từ Section 1.1)</button>
-                <button class="btn-modal btn-modal-recheck" onclick="closeNewUserModal()">🔄 Tôi đã học rồi (Muốn kiểm tra lại thông tin)</button>
-            </div>
-        </div>
     </div>
 
     <script> window.masterQuizData = []; </script>
@@ -748,7 +749,59 @@
                 dateInput.max = `${maxYear}-${month}-${day}`;
             }
             loadSavedStudentProfile();
+            checkAndRestoreLocalBackup();
         });
+
+        // --- CƠ CHẾ TỰ ĐỘNG LƯU DỰ PHÒNG CỤC BỘ ---
+        function saveLocalBackup() {
+            try {
+                const backupData = {
+                    studentInfo: studentInfo,
+                    currentIndex: currentIndex,
+                    userAnswers: userAnswers,
+                    totalSeconds: totalSeconds,
+                    elapsedSeconds: elapsedSeconds,
+                    quizData: quizData,
+                    timestamp: new Date().getTime()
+                };
+                localStorage.setItem('listening_test_local_backup', JSON.stringify(backupData));
+            } catch (e) {}
+        }
+
+        function checkAndRestoreLocalBackup() {
+            try {
+                const saved = localStorage.getItem('listening_test_local_backup');
+                if (saved) {
+                    const data = JSON.parse(saved);
+                    if (data && data.quizData && data.quizData.length > 0 && (new Date().getTime() - data.timestamp < 24 * 3600 * 1000)) {
+                        if (confirm("🔄 Phát hiện phiên làm việc trước đó chưa hoàn thành hoặc mất kết nối mạng. Bạn có muốn khôi phục lại dữ liệu đang làm dở không?")) {
+                            studentInfo = data.studentInfo;
+                            currentIndex = data.currentIndex || 0;
+                            userAnswers = data.userAnswers || [];
+                            totalSeconds = data.totalSeconds || 600;
+                            elapsedSeconds = data.elapsedSeconds || 0;
+                            quizData = data.quizData;
+
+                            document.getElementById('user-info-view').classList.add('hidden');
+                            document.getElementById('result-view').classList.add('hidden');
+                            document.getElementById('review-list-view').classList.add('hidden');
+                            document.getElementById('quiz-area').classList.remove('hidden');
+
+                            const subTitleElem = document.getElementById('lesson-subtitle');
+                            if (subTitleElem && studentInfo.lessonTitle) {
+                                subTitleElem.innerText = studentInfo.lessonTitle.toUpperCase();
+                            }
+
+                            startTotalTimer();
+                            loadQuestion();
+                            return;
+                        } else {
+                            localStorage.removeItem('listening_test_local_backup');
+                        }
+                    }
+                }
+            } catch (e) {}
+        }
 
         function saveStudentProfileToStorage(info) {
             try {
@@ -781,6 +834,7 @@
             if (confirm("Bạn có muốn đổi sang thông tin thí sinh khác không? / Switch student?")) {
                 try {
                     localStorage.removeItem('caddie_student_profile');
+                    localStorage.removeItem('listening_test_local_backup');
                 } catch(e) {}
                 document.getElementById('work-place').value = "";
                 document.getElementById('student-name').value = "";
@@ -951,18 +1005,38 @@
                 checkBtn.innerText = "🔍 KIỂM TRA THÔNG TIN & QUÁ TRÌNH LÀM BÀI";
                 checkBtn.disabled = false;
 
+                const noticeBanner = document.getElementById('stage-notice-banner');
+                const noticeText = document.getElementById('stage-notice-text');
+
                 if (data && data.found) {
                     studentProgressMap = data.progress || {};
+                    // Nếu tìm thấy: Ẩn thông báo hoặc báo thành công nhẹ nhàng, học viên làm bài luôn
+                    if (noticeBanner) noticeBanner.classList.add('hidden');
                     renderRoadmapMatrix();
                 } else {
-                    document.getElementById('new-user-modal').classList.remove('hidden');
+                    // Nếu KHÔNG tìm thấy: Hiện hộp thông báo hướng dẫn đóng/mở lại trình duyệt mới theo yêu cầu
+                    studentProgressMap = {};
+                    if (noticeBanner && noticeText) {
+                        noticeText.innerHTML = "⚠️ Không tìm thấy thông tin trên hệ thống. <b>Vui lòng đóng và mở lại trình duyệt mới</b> để đồng bộ lại dữ liệu, hoặc bạn có thể bắt đầu chọn chuyên đề bên dưới để làm bài ngay!";
+                        noticeBanner.classList.remove('hidden');
+                    }
+                    renderRoadmapMatrix();
                 }
             })
             .catch(err => {
-                console.error("Lỗi tra cứu:", err);
+                console.warn("Lỗi kết nối:", err);
                 checkBtn.innerText = "🔍 KIỂM TRA THÔNG TIN & QUÁ TRÌNH LÀM BÀI";
                 checkBtn.disabled = false;
-                document.getElementById('new-user-modal').classList.remove('hidden');
+
+                // Xử lý khi mất kết nối tạm thời với Google Sheet
+                const noticeBanner = document.getElementById('stage-notice-banner');
+                const noticeText = document.getElementById('stage-notice-text');
+                if (noticeBanner && noticeText) {
+                    noticeText.innerHTML = "⚠️ Mất kết nối tạm thời với Google Sheet. <b>Vui lòng đóng và mở lại trình duyệt mới</b> nếu sự cố vẫn tiếp diễn. Bạn vẫn có thể tự do lựa chọn chuyên đề để làm bài bình thường!";
+                    noticeBanner.classList.remove('hidden');
+                }
+                studentProgressMap = {};
+                renderRoadmapMatrix();
             });
         }
 
@@ -1051,6 +1125,9 @@
             }
 
             document.getElementById('roadmap-box').classList.remove('hidden');
+            if(!studentInfo.selectedVal) {
+                selectLessonFromMatrix(LESSON_ROADMAP[0]);
+            }
         }
 
         function selectLessonFromMatrix(item) {
@@ -1063,17 +1140,6 @@
             document.querySelectorAll('.matrix-item').forEach(el => el.classList.remove('active-selected'));
             const activeEl = document.getElementById(`matrix-item-${item.code}`);
             if (activeEl) activeEl.classList.add('active-selected');
-        }
-
-        function closeNewUserModal() {
-            document.getElementById('new-user-modal').classList.add('hidden');
-        }
-
-        function setupNewStudentFlow() {
-            closeNewUserModal();
-            studentProgressMap = {};
-            renderRoadmapMatrix();
-            selectLessonFromMatrix(LESSON_ROADMAP[0]);
         }
 
         let quizData = [];
@@ -1205,6 +1271,7 @@
 
             startTotalTimer();
             loadQuestion();
+            saveLocalBackup();
         }
 
         function startTotalTimer() {
@@ -1221,6 +1288,9 @@
                     if (totalSeconds <= 60) {
                         const timerBox = document.getElementById('timer-box');
                         if (timerBox) timerBox.classList.add('timer-warning');
+                    }
+                    if (elapsedSeconds % 5 === 0) {
+                        saveLocalBackup();
                     }
                 } else {
                     clearInterval(timerInterval);
@@ -1290,7 +1360,6 @@
                         <span class="vi-trans">${currentQuiz.translation || ""}</span>
                     `;
 
-                    // XỬ LÝ TRIỆT ĐỂ LỖI LẶP TỪ GỢI Ý
                     let rawHint = currentQuiz.hint || "";
                     let cleanHint = rawHint.replace(/^💡\s*Gợi ý:?\s*/i, '').replace(/^💡\s*Gợi ý:?\s*/i, '').trim();
                     document.getElementById('char-hint').innerText = cleanHint ? `💡 Gợi ý: ${cleanHint}` : "";
@@ -1387,6 +1456,7 @@
         function selectMcqOption(selectedIndex) {
             userAnswers[currentIndex] = selectedIndex;
             updateItemStatusTag();
+            saveLocalBackup();
             
             const buttons = document.querySelectorAll('.option-btn');
             buttons.forEach((btn, idx) => {
@@ -1399,6 +1469,7 @@
         function saveFillAnswer(val) {
             userAnswers[currentIndex] = val.trim();
             updateItemStatusTag();
+            saveLocalBackup();
         }
 
         function handleFillKeydown(event) {
@@ -1421,6 +1492,7 @@
 
             currentIndex++;
             loadQuestion();
+            saveLocalBackup();
         }
 
         function goToPrevious() {
@@ -1429,12 +1501,14 @@
             if (currentIndex > 0) {
                 currentIndex--;
                 loadQuestion();
+                saveLocalBackup();
             }
         }
 
         function finishSession(msg) {
             clearInterval(timerInterval);
             clearTimeout(autoPlayTimer);
+            try { localStorage.removeItem('listening_test_local_backup'); } catch(e) {}
 
             let correctCount = 0;
             let incorrectCount = 0;
@@ -1509,7 +1583,7 @@
                 method: 'POST',
                 headers: { 'Content-Type': 'text/plain;charset=utf-8' },
                 body: JSON.stringify(lastSavedPayload)
-            }).catch(e => console.warn("Lưu Sheet:", e));
+            }).catch(e => console.warn("Lưu Sheet (dự phòng ngoại tuyến):", e));
 
             document.getElementById('quiz-area').classList.add('hidden');
             const resultArea = document.getElementById('result-view');
@@ -1601,13 +1675,11 @@
             resultArea.classList.remove('hidden');
         }
 
-        /* HÀM TRÍCH XUẤT TỪ KHÓA TRỌNG TÂM THÔNG MINH - ƯU TIÊN DANH TỪ, ĐỘNG TỪ, CỤM CHUYÊN NGHÀNH GOLF VÀ HƯỚNG DẪN */
         function extractCoreKeywords(fullText, specificTarget = null) {
             if (!fullText) return [];
 
             const cleanText = fullText.replace(/^[A-D]\.\s*/i, '').trim();
             
-            // Danh sách cụm từ chuyên môn và hướng dẫn thường gặp
             const specialPhrases = [
                 'stay on the cart path', 'cart path', 'stay on', 'stay',
                 'hidden lake', 'left side', 'right side', 'aim right', 'aim left', 'aim to',
@@ -1620,7 +1692,6 @@
             let matched = [];
             for (let phrase of specialPhrases) {
                 if (new RegExp(`\\b${phrase}\\b`, 'i').test(cleanText)) {
-                    // Tránh thêm từ con nếu đã có cụm từ lớn hơn bao hàm nó
                     if (!matched.some(m => m.includes(phrase))) {
                         matched.push(phrase);
                     }
@@ -1635,11 +1706,9 @@
             }
 
             if (matched.length > 0) {
-                // Lấy tối đa 3 cụm từ tiêu biểu nhất
                 return Array.from(new Set(matched)).slice(0, 3);
             }
 
-            // Bộ lọc từ đệm, từ chỉ định, đại từ không mang trọng âm chính
             const stopWords = new Set([
                 'there', 'their', 'the', 'a', 'an', 'is', 'am', 'are', 'was', 'were', 'be', 'been', 'being',
                 'to', 'for', 'in', 'on', 'at', 'by', 'with', 'from', 'about', 'of', 'off',
@@ -1655,11 +1724,9 @@
             return contentWords.length > 0 ? contentWords.slice(0, 3) : (words.length > 0 ? [words[0]] : []);
         }
 
-        /* HÀM BÔI ĐỎ CÁC KEYWORDS TRÊN CÂU ĐỌC */
         function highlightKeyWords(sentence, keywords) {
             if (!sentence || !keywords || keywords.length === 0) return sentence || "";
             let res = sentence;
-            // Sắp xếp keyword dài hơn lên trước để tránh regex match đè
             const sortedKeywords = [...keywords].sort((a, b) => b.length - a.length);
             sortedKeywords.forEach(kw => {
                 if (!kw) return;
@@ -1670,7 +1737,6 @@
             return res;
         }
 
-        /* RENDER DANH SÁCH ÔN TẬP VỚI ĐẦY ĐỦ CÁC PHƯƠNG ÁN A, B, C, D */
         function renderReviewList() {
             document.getElementById('result-view').classList.add('hidden');
             const listContainer = document.getElementById('review-list-view');
@@ -1716,7 +1782,6 @@
                         statusBadge = "<span style='color:#dc3545; font-weight:bold; font-size:10px;'>❌ Sai</span>";
                     }
 
-                    // Render toàn bộ các phương án A, B, C, D
                     optionsListHtml += `<div class="review-options-list">`;
                     (q.options || []).forEach((opt, optIdx) => {
                         const optText = opt.en || opt.text || opt;
@@ -1798,7 +1863,6 @@
                             ${statusBadge}
                         </div>
 
-                        <!-- CÂU NÓI VÀ NÚT BẤM NGHE NGAY LIỀN KỀ -->
                         <div class="review-sentence-row">
                             <div class="review-keyphrase">${highlightedEn}</div>
                             <button class="review-audio-btn-big" onclick="playAudio('${safeAudioText}')">🔊 Nghe</button>
@@ -1807,7 +1871,6 @@
                         ${ipaText ? `<div class="review-ipa-line">🗣️ Phiên âm: /${ipaText}/</div>` : ''}
                         ${translationVi ? `<div class="review-trans">🇻🇳 ${translationVi}</div>` : ''}
 
-                        <!-- HIỂN THỊ CHI TIẾT CÁC PHƯƠNG ÁN A, B, C, D ĐƯỢC BÔI MÀU -->
                         ${optionsListHtml}
 
                         <div class="review-note-box">
@@ -1935,7 +1998,7 @@
                     }
                 })
                 .catch(err => {
-                    console.error("Lỗi Drive:", err);
+                    console.warn("Lỗi Drive:", err);
                     if (statusBtn) statusBtn.innerText = "✅ Hoàn tất";
                 });
             });
