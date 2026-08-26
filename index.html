@@ -137,11 +137,11 @@
         .banner-desc { font-size: 8.5px; opacity: 0.9; }
         .banner-btn-tag { background: #ffffff; color: #B21818; font-weight: 800; font-size: 10px; padding: 4px 6px; border-radius: 5px; white-space: nowrap; }
 
-        /* HỘP THÔNG BÁO THÂN THIỆN CHUẨN SPEAKING (.stage-notice-banner) */
+        /* HỘP THÔNG BÁO CHUẨN SPEAKING (.stage-notice-banner) */
         .stage-notice-banner {
-            background: #d1e7dd;
-            border: 1.2px solid #badbcc;
-            color: #0f5132;
+            background: linear-gradient(135deg, #198754 0%, #20c997 100%);
+            border: 1.2px solid #157347;
+            color: #ffffff;
             padding: 8px 10px;
             border-radius: 7px;
             font-size: 10.5px;
@@ -152,6 +152,7 @@
             display: flex;
             align-items: flex-start;
             gap: 6px;
+            box-shadow: 0 2px 5px rgba(25, 135, 84, 0.2);
         }
         .stage-notice-banner .notice-icon { font-size: 14px; line-height: 1; }
 
@@ -592,10 +593,13 @@
 
             <!-- MA TRẬN TIẾN ĐỘ -->
             <div id="roadmap-box" class="roadmap-container hidden">
-                <!-- HỘP THÔNG BÁO THÂN THIỆN (.stage-notice-banner) -->
+                <!-- HỘP THÔNG BÁO CHUẨN SPEAKING (.stage-notice-banner) -->
                 <div id="stage-notice-banner" class="stage-notice-banner hidden">
-                    <span class="notice-icon">🟢</span>
-                    <div id="stage-notice-text">Hướng dẫn: Bấm chọn bất kỳ chuyên đề nào từ Giai đoạn 2 trở đi để bắt đầu học ngay!</div>
+                    <span class="notice-icon">🌟</span>
+                    <div>
+                        <b>Chào mừng bạn đã bước sang Giai đoạn 2 của khóa học!</b><br>
+                        Bạn có thể thoải mái lựa chọn và luyện tập các chuyên đề tiếp theo.
+                    </div>
                 </div>
 
                 <div class="roadmap-title">
@@ -1006,21 +1010,14 @@
                 checkBtn.disabled = false;
 
                 const noticeBanner = document.getElementById('stage-notice-banner');
-                const noticeText = document.getElementById('stage-notice-text');
 
                 if (data && data.found) {
                     studentProgressMap = data.progress || {};
-                    if (noticeBanner && noticeText) {
-                        noticeText.innerHTML = "🟢 <b>Hướng dẫn:</b> Bấm chọn bất kỳ chuyên đề nào từ Giai đoạn 2 trở đi để bắt đầu học ngay!";
-                        noticeBanner.classList.remove('hidden');
-                    }
+                    if (noticeBanner) noticeBanner.classList.remove('hidden');
                     renderRoadmapMatrix();
                 } else {
                     studentProgressMap = {};
-                    if (noticeBanner && noticeText) {
-                        noticeText.innerHTML = "🟢 <b>Hướng dẫn:</b> Bấm chọn bất kỳ chuyên đề nào để bắt đầu học và lưu tiến độ ngay!";
-                        noticeBanner.classList.remove('hidden');
-                    }
+                    if (noticeBanner) noticeBanner.classList.remove('hidden');
                     renderRoadmapMatrix();
                 }
             })
@@ -1030,11 +1027,8 @@
                 checkBtn.disabled = false;
 
                 const noticeBanner = document.getElementById('stage-notice-banner');
-                const noticeText = document.getElementById('stage-notice-text');
-                if (noticeBanner && noticeText) {
-                    noticeText.innerHTML = "🟢 <b>Hướng dẫn:</b> Bấm chọn bất kỳ chuyên đề nào để bắt đầu học và lưu tiến độ ngay!";
-                    noticeBanner.classList.remove('hidden');
-                }
+                if (noticeBanner) noticeBanner.classList.remove('hidden');
+                
                 studentProgressMap = {};
                 renderRoadmapMatrix();
             });
