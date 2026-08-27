@@ -137,7 +137,7 @@
         .banner-desc { font-size: 8.5px; opacity: 0.9; }
         .banner-btn-tag { background: #ffffff; color: #B21818; font-weight: 800; font-size: 10px; padding: 4px 6px; border-radius: 5px; white-space: nowrap; }
 
-        /* HỘP THÔNG BÁO CHUẨN SPEAKING (.stage-notice-banner) */
+        /* HỘP THÔNG BÁO CHUẨN SPEAKING */
         .stage-notice-banner {
             background: linear-gradient(135deg, #198754 0%, #20c997 100%);
             border: 1.2px solid #157347;
@@ -156,7 +156,7 @@
         }
         .stage-notice-banner .notice-icon { font-size: 14px; line-height: 1; }
 
-        /* KHUNG HƯỚNG DẪN XANH NHẠT THAY THẾ DƯỚI KẾ HOẠCH (.progress-remark-box) */
+        /* KHUNG HƯỚNG DẪN XANH NHẠT */
         .progress-remark-box {
             font-size: 10.5px;
             font-weight: 600;
@@ -595,7 +595,6 @@
 
             <!-- MA TRẬN TIẾN ĐỘ -->
             <div id="roadmap-box" class="roadmap-container hidden">
-                <!-- HỘP THÔNG BÁO CHUẨN SPEAKING (.stage-notice-banner) -->
                 <div id="stage-notice-banner" class="stage-notice-banner hidden">
                     <span class="notice-icon">🌟</span>
                     <div>
@@ -613,7 +612,6 @@
                     <div class="progress-bar-fill" id="progress-bar-fill"></div>
                 </div>
 
-                <!-- ĐÃ THAY THẾ HỘP ĐỎ BẰNG KHUNG HƯỚNG DẪN XANH NHẠT -->
                 <div id="progress-remark" class="progress-remark-box">
                     🟢 <b>Hướng dẫn:</b> Bấm chọn bất kỳ chuyên đề nào từ Giai đoạn 2 trở đi để bắt đầu học ngay!
                 </div>
@@ -894,16 +892,36 @@
 
         function shuffleQuizOptions(item) {
             if (item.type === 'mcq' || !item.type) {
-                if (!item.options || item.options.length <= 1) return item;
-                const correctObj = item.options[item.correct];
-                const newOptions = [...item.options];
-                shuffleArray(newOptions);
-                item.options = newOptions;
-                item.correct = newOptions.findIndex(opt => {
-                    const optText = opt.en || opt.text || opt;
-                    const corrText = correctObj.en || correctObj.text || correctObj;
-                    return optText === corrText;
-                });
+                if (!item.options || !Array.isArray(item.options) || item.options.length <= 1) return item;
+
+                // Chuẩn hóa xác định index đáp án đúng ban đầu
+                let origCorrectIdx = 0;
+                if (typeof item.correct === 'number') {
+                    origCorrectIdx = item.correct;
+                } else if (typeof item.correct === 'string') {
+                    const cleanC = item.correct.trim().toUpperCase();
+                    const mapLetter = { 'A': 0, 'B': 1, 'C': 2, 'D': 3, 'E': 4, 'F': 5 };
+                    if (cleanC in mapLetter) {
+                        origCorrectIdx = mapLetter[cleanC];
+                    } else if (/^\d+$/.test(cleanC)) {
+                        origCorrectIdx = parseInt(cleanC, 10);
+                    }
+                }
+
+                if (origCorrectIdx < 0 || origCorrectIdx >= item.options.length) {
+                    origCorrectIdx = 0;
+                }
+
+                // Gắn cờ để theo dõi chính xác phần tử đúng trước khi đảo
+                const mappedOptions = item.options.map((opt, idx) => ({
+                    raw: opt,
+                    isOriginalCorrect: (idx === origCorrectIdx)
+                }));
+
+                shuffleArray(mappedOptions);
+
+                item.options = mappedOptions.map(m => m.raw);
+                item.correct = mappedOptions.findIndex(m => m.isOriginalCorrect);
                 if (item.correct === -1) item.correct = 0;
             }
             return item;
@@ -1741,8 +1759,8 @@
                 let optionsListHtml = "";
 
                 if (q.type === 'mcq' || !q.type) {
-                    const correctOpt = q.options[q.correct];
-                    const correctChoiceText = (correctOpt.en || correctOpt.text || correctOpt);
+                    const correctOpt = q.options[q.correct] || {};
+                    const correctChoiceText = (correctOpt.en || correctOpt.text || correctOpt || "");
                     translationVi = correctOpt.vi || q.translation || "";
 
                     if (userAns === null || userAns === "") {
@@ -1822,7 +1840,7 @@
                 let baseSentence = fullSentenceEn;
                 if (!baseSentence && q.options && q.options[q.correct]) {
                     const cOpt = q.options[q.correct];
-                    baseSentence = (cOpt.en || cOpt.text || cOpt).replace(/^[A-D]\.\s*/i, '');
+                    baseSentence = (cOpt.en || cOpt.text || cOpt || "").replace(/^[A-D]\.\s*/i, '');
                 }
 
                 const keywordsList = extractCoreKeywords(baseSentence, keyWord);
